@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Oyé-uken – Reisebok 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+:root{--ink:#1f2d3a;--muted:#5f6b76;--line:#d9d2c5;--paper:#fffdf9;--bg:#f4efe7;
+  --accent:#8b5e3c;--accent-soft:#efe3d6;--r:16px;
+  --green:#2d7a4f;--green-soft:#eaf5ee;--warn:#c17f24;--warn-soft:#fdf3e1}
+*{box-sizing:border-box}html{font-size:16px}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6}a{color:var(--accent)}
+.topbar{background:var(--paper);border-bottom:1px solid var(--line);
+  padding:14px 16px;display:flex;align-items:center;gap:12px;
+  position:sticky;top:0;z-index:100}
+.back{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none}
+.topbar h1{margin:0;font-size:16px;font-weight:700;flex:1}
+.hero-map{height:260px;width:100%}
+.content{padding:16px;max-width:800px;margin:0 auto;padding-bottom:48px}
+.section{background:var(--paper);border:1px solid var(--line);
+  border-radius:var(--r);padding:16px;margin-bottom:14px}
+.section-warn{background:var(--warn-soft);border-color:#e8c97a}
+h2{margin:0 0 12px;font-size:17px;font-weight:700}
+h3{margin:14px 0 6px;font-size:14px;font-weight:700;color:var(--accent)}
+.day-grid{display:grid;gap:12px}
+@media(min-width:640px){.day-grid{grid-template-columns:1fr 1fr}}
+.day-card{background:var(--bg);border:1px solid var(--line);
+  border-radius:var(--r);padding:14px}
+.day-card h3{margin:0 0 8px;font-size:14px;font-weight:700;color:var(--accent)}
+.day-card p{font-size:13px;color:var(--muted);margin:0 0 6px;line-height:1.6}
+.distance{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent);display:inline-block;margin-bottom:8px}
+.distance.bike{background:var(--green-soft);color:var(--green)}
+.distance.walk{background:#e6f0fb;color:#185fa5}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;
+  border-radius:999px;background:var(--accent-soft);color:var(--accent);
+  margin:0 4px 4px 0}
+.tag.g{background:var(--green-soft);color:var(--green)}
+.tag.b{background:#e6f0fb;color:#185fa5}
+.tag.w{background:var(--warn-soft);color:var(--warn)}
+.event{border-left:3px solid var(--warn);background:var(--warn-soft);
+  border-radius:0 var(--r) var(--r) 0;padding:11px 14px;margin:10px 0;font-size:13px}
+.event strong{display:block;margin-bottom:2px;color:var(--warn)}
+.place{border-bottom:1px solid var(--line);padding:10px 0}
+.place:last-child{border-bottom:none;padding-bottom:0}
+.place-title{font-size:14px;font-weight:700;margin:0 0 3px}
+.place-desc{font-size:13px;color:var(--muted);margin:0 0 6px;line-height:1.6}
+.plinks{display:flex;gap:7px;flex-wrap:wrap}
+.plink{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent);text-decoration:none}
+.plink.m{background:#e6f0fb;color:#185fa5}
+.plink.g{background:var(--green-soft);color:var(--green)}
+.tip-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13px}
+.tip-row:last-child{border-bottom:none}
+.tip-label{font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.04em;color:var(--muted);min-width:80px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.hero-map{height:340px}.content{padding:20px 24px 60px}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="back" href="../">← Tilbake</a>
+  <h1>Oyé-uken — 19.–26. juli 2026</h1>
+</div>
+<div id="map" class="hero-map"></div>
+<div class="content">
+
+<!-- INTRO -->
+<div class="section">
+  <h2>En uke i hjertet av Burgund</h2>
+  <p style="font-size:14px;color:var(--muted);line-height:1.7;margin:0 0 12px">
+    Oyé (pop. ~300) ligger i Brionnais — et bølgende landskap av grønne beitemarker, hvite Charolais-kuer, og over 100 romanske kirker fra 1000-1100-tallet. Det er stille, autentisk Burgund uten turister. Alt er innenfor 20 km sykkel- eller bilavstand. Uken er perfekt for å lade ned, utforske på sykkel og la hverdagen fra resten av turen synke inn.
+  </p>
+  <div>
+    <span class="tag">Charolais-Brionnais</span>
+    <span class="tag">100+ romanske kirker</span>
+    <span class="tag">Hvite kuer overalt</span>
+    <span class="tag g">Sykkelparadis</span>
+    <span class="tag g">Hunder fritt i naturen</span>
+  </div>
+</div>
+
+<!-- BEGIVENHETER -->
+<div class="section section-warn">
+  <h2>📅 Begivenheter i uken 19.–26. juli 2026</h2>
+  <p style="font-size:13px;color:var(--muted);margin:0 0 10px">Disse arrangementene er bekreftet for sommeren 2026 eller er faste årsbegivenheter i samme uke. Sjekk oppdaterte datoer på <a href="https://www.destination-saone-et-loire.fr" target="_blank">destination-saone-et-loire.fr</a></p>
+
+  <div class="event">
+    <strong>🏰 Jeux Médiévaux — Semur-en-Brionnais (lørdag)</strong>
+    Hvert år i juli/august arrangeres ettermiddagsleker fra middelalderen ved foten av Château Saint-Hugues. Quintaine-riddertrening, kubbespill, ringkasting, buekyting ledet av bueskyttere fra Paray-le-Monial. Moro for alle aldre. Sjekk nøyaktig dato på chateau-semur-en-brionnais.fr · 10 km fra Oyé
+  </div>
+
+  <div class="event">
+    <strong>🐄 Marché aux Bovins — Saint-Christophe-en-Brionnais (hver onsdag)</strong>
+    Frankrike nr. 1 auksjonsmarked for Charolais-storfe — en institusjon siden 1400-tallet. Guidet omvisning fra kl. 08:30. Middag i landsbyrestaurantene med maquignons (kveghandlere) i svarte frakker. AOP-entrecôte fra kl. 06:00. Uforglemmelig og helt unikt. 4 km fra Oyé
+  </div>
+
+  <div class="event">
+    <strong>🎨 Les Arts à Semur (helg)</strong>
+    6. utgave av kunstutstillinger i Semur-en-Brionnais: fotografi, maleri, litteratur, kunsthåndverk. Åpent lørdag 11–19, søndag 11–18. Ateliers: stenopé, kalligrafi, nostalgisk kino. 10 km fra Oyé
+  </div>
+
+  <div class="event">
+    <strong>🎵 Festival Musique en Charolais-Brionnais (juli/august)</strong>
+    Musikere fra hele verden spiller i de vakreste romanske kirkene i regionen. Klassisk musikk i atmosfæriske omgivelser med fantastisk akustikk. Se program på musique-en-charolais-brionnais.com
+  </div>
+
+  <div class="event">
+    <strong>🌄 L'Été Musical d'Anzy-le-Duc (sommer)</strong>
+    Klassiske konserter i den vakre romanske kirken i Anzy-le-Duc — regnet som en av Sør-Burgunds vakreste kirker. Billetter selges i forkant. Konserter til inntekt for restaurering av kirkens veggmalerier. 12 km fra Oyé
+  </div>
+
+  <div class="event">
+    <strong>🥩 Fête de l'Entrecôte — Oyé (første søndag i august)</strong>
+    Oyés egen landsbyfest! Messe om morgenen, ettermiddagsaktiviteter, middag/kvelds med grillet entrecôte og "plat brionnais" til alle — og populærbal utendørs om kvelden. Arrangert av Foyer Rural. Dere er i Oyé den 26. juli — muligvis holder festen seg til første søndag i august (2. august).
+  </div>
+
+  <div class="event">
+    <strong>🛒 Marché de Semur-en-Brionnais (annenhver søndag)</strong>
+    Lokalprodukter ved foten av slottet — søndag morgen. Andre og fjerde søndag i måneden, april til november. 10 km fra Oyé
+  </div>
+</div>
+
+<!-- 7-DAGERS PLAN -->
+<div class="section">
+  <h2>🗓 Forslag til uke-program</h2>
+  <div class="day-grid">
+
+    <div class="day-card">
+      <h3>Søndag 19. juli — Ankomst fra Beaune</h3>
+      <span class="distance">120 km kjøring</span>
+      <p>Ankommer ettermiddag. Pakk ut, handle inn på <strong>Carrefour i Charolles</strong> (13 km). Enkel middag hjemme. Planlegg uken over lokal vin.</p>
+    </div>
+
+    <div class="day-card">
+      <h3>Mandag 20. juli — Semur-en-Brionnais</h3>
+      <span class="distance bike">🚲 10 km (sykkel)</span>
+      <p>Sykkel til <strong>Semur-en-Brionnais</strong> — ett av Frankrikes vakreste landsbyer. Besøk Château Saint-Hugues (åpent 10–19 i juli). Collégiale Saint-Hilaire. Lunsj på bistro i landsbyen. <strong>Les Arts à Semur</strong>-utstillingen om ettermiddagen. Sykkel hjem via Chapelle de Sancenay.</p>
+    </div>
+
+    <div class="day-card">
+      <h3>Tirsdag 21. juli — Anzy-le-Duc</h3>
+      <span class="distance bike">🚲 14 km (sykkel)</span>
+      <p>Sykkel til <strong>Prieuré d'Anzy-le-Duc</strong> — regnet som Brionnais' vakreste kirke med åttesidet tårn og krypt. Kaffe og croissant i Arconce-dalen. Retur via Saint-Laurent-en-Brionnais og langs elven <em>Arconce</em> — flat og vakker.</p>
+    </div>
+
+    <div class="day-card">
+      <h3>Onsdag 22. juli — Kvegmarkedet i St-Christophe</h3>
+      <span class="distance walk">🚗 4 km</span>
+      <p>Tidlig opp — markedet starter kl. 07:00! Guidet tur fra kl. 08:30. Se transaksjonene ved "Mur d'Argent". Middag kl. 12 i La Tour d'Auvergne eller Le Mur d'Argent — AOP-entrecôte med maquignons. Ettermiddag: hvildag hjemme eller kort tur med hundene.</p>
+    </div>
+
+    <div class="day-card">
+      <h3>Torsdag 23. juli — Paray-le-Monial</h3>
+      <span class="distance bike">🚲 18 km (sykkel) eller bil</span>
+      <p>Sykkel langs Canal du Centre til <strong>Paray-le-Monial</strong> — sjarmerende by med storslått romansk basilika (1100-tallet). Musée du Hiéron (gjenåpnet 2026 med ny utstilling). Svømmehall med utendørsbassin (åpent alle dager 11–19 i juli). Lunsj ved kanalen. Sykkel hjem via grønnrute.</p>
+    </div>
+
+    <div class="day-card">
+      <h3>Fredag 24. juli — Marcigny og Château de Drée</h3>
+      <span class="distance walk">🚗 20 km (bil)</span>
+      <p><strong>Marcigny</strong>: sjarmerende by med ukemarked mandager, keramikk-fabrikken Émile Henry (grunnlagt 1850), og restaurantene Béatrice Héritier (reiselyst-inspirert meny). Ettermiddag: <strong>Château de Drée</strong> i Curbigny — "Lille Versailles i Charolais", franske hager, interiør og kapell. Hagebilletter ~8 €.</p>
+    </div>
+
+    <div class="day-card">
+      <h3>Lørdag 25. juli — Jeux Médiévaux + landsbystemning</h3>
+      <span class="distance bike">🚲 10 km</span>
+      <p>Formiddag: ledig eller markedet i Semur (2. lørdag). Ettermiddag: <strong>Jeux Médiévaux</strong> ved Château Saint-Hugues (kvintaine, buer, ringkasting, kuplespill). Kveldsmat hjemme med kjøpt charolais-biff fra bøndene.</p>
+    </div>
+
+    <div class="day-card">
+      <h3>Søndag 26. juli — Avreise til Saint-Émilion</h3>
+      <span class="distance">500 km kjøring ⚡</span>
+      <p>Avreise tidlig — 500 km til Saint-Émilion. Ladestopp ved Ionity Poitiers Jaunay-Clan (~240 km). Ankomst ettermiddag.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- SYKKELRUTER -->
+<div class="section">
+  <h2>🚲 Sykkelruter fra Oyé</h2>
+  <p style="font-size:13px;color:var(--muted);margin:0 0 12px">Brionnais er et sykkelparadis — stille landeveier, varsomme bakker og Charolais-kuer over alt. Hundene kan løpe fritt på private veier (husk line gjennom landsbyer og ved mark). Terrenget er bølgende — ikke flatt, men ingen store stigninger.</p>
+
+  <div class="place">
+    <p class="place-title">Runde 1: Oyé → Semur → Chapelle Sancenay → Oyé</p>
+    <p class="place-desc"><strong>Ca. 20 km · Lett/moderat</strong> — Sykkel vestover mot Semur-en-Brionnais. Besøk Château Saint-Hugues og Collégiale. Retur via den mystiske Chapelle de Sancenay (120 malte takpaneler fra 1626, unik i Brionnais). Panorama over Loire-sletten underveis.</p>
+    <div class="plinks"><a class="plink m" href="https://www.google.com/maps/dir/?api=1&origin=Oyé,71800,Frankrike&destination=Semur-en-Brionnais,71110,Frankrike&travelmode=bicycling" target="_blank">📍 Rute</a></div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">Runde 2: Oyé → Anzy-le-Duc → Arconce-dal → Oyé</p>
+    <p class="place-desc"><strong>Ca. 25 km · Lett</strong> — Ned mot Arconce-elven og langs dalen til Anzy-le-Duc (vakrest kirke i regionen). Delvis skogsvei. Returnér via den rolige landsbyen Montceaux-l'Étoile. Flat langs elva. Hunder elsker det.</p>
+    <div class="plinks"><a class="plink m" href="https://www.google.com/maps/dir/?api=1&origin=Oyé,71800,Frankrike&destination=Anzy-le-Duc,71110,Frankrike&travelmode=bicycling" target="_blank">📍 Rute</a></div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">Runde 3: Oyé → Canal du Centre → Paray-le-Monial</p>
+    <p class="place-desc"><strong>Ca. 18 km én vei · Lett</strong> — Nedover til kanalen og langs den trafikkseparerte towpath (grusbelagt, hunder ok). Helt flat hele veien til Paray-le-Monial. Returner med bilen/taxi hvis dere ikke orker å sykle tilbake.</p>
+    <div class="plinks"><a class="plink m" href="https://www.google.com/maps/dir/?api=1&origin=Oyé,71800,Frankrike&destination=Paray-le-Monial,71600,Frankrike&travelmode=bicycling" target="_blank">📍 Rute</a></div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">Musée Mémoire d'Oyé — rett i landsbyen</p>
+    <p class="place-desc">Kjedelig navn — overraskende innhold. Et levende dokumentasjonsmuseum om landsbylivet i Oyé og Brionnais. Presenterer eksposisjoner i to år av gangen. Nattmuseum ved "Nuit des Musées" med parafinlamper. Gratis eller nominell pris. 0 km fra huset.</p>
+    <div class="plinks"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Musée+Mémoire+Oyé+71800" target="_blank">📍 Kart</a></div>
+  </div>
+</div>
+
+<!-- DAGSUTFLUKTER MED BIL -->
+<div class="section">
+  <h2>🚗 Dagsutflukter (10–20 km)</h2>
+
+  <div class="place">
+    <p class="place-title">Semur-en-Brionnais — 10 km</p>
+    <p class="place-desc">Et av Frankrikes vakreste landsbyer. Château Saint-Hugues (10.–15. årh., åpent 10–19 i juli), Collégiale Saint-Hilaire (kluniacensisk mestersjef), utsiktstårn over Loire-sletten, Chapelle de Sancenay med 120 malte paneler. Markeder 2. og 4. søndag i måneden.</p>
+    <div class="plinks">
+      <a class="plink" href="https://www.chateau-semur-en-brionnais.fr" target="_blank">🌐 Château</a>
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Semur-en-Brionnais" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">Saint-Christophe-en-Brionnais — 4 km</p>
+    <p class="place-desc">Hver onsdag: Frankrikes nr. 1 auksjonistsmarked for Charolais-storfe (siden 1400-tallet). Guidet tur fra 08:30. Middag med maquignons i bluser. Entrecôte fra 06:00! Bestill guidet tour via turistkontoret: +33 3 85 25 98 05.</p>
+    <div class="plinks">
+      <a class="plink" href="https://www.stchristophe-tourisme.fr" target="_blank">🌐 Turistinfo</a>
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Saint-Christophe-en-Brionnais+marché+bovins" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">Anzy-le-Duc — 12 km</p>
+    <p class="place-desc">Prieuré d'Anzy-le-Duc — universelt regnet som Brionnais' fineste romanske kirke (slutten av 1000-tallet). Åttesidet klokketårn, rik skulpturell dekor, unik krypt. Ekstremt vakker innvendig og utvendig. Organiserte konserter sommer (L'Été Musical).</p>
+    <div class="plinks">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Prieuré+Anzy-le-Duc" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">Paray-le-Monial — 18 km</p>
+    <p class="place-desc">Storslått romansk basilika (1100-t.) — en av de finest bevarte i Frankrike. Mosaikkfestival om sommeren. Musée du Hiéron (gjenåpnet 2026). Sykkel langs Canal du Centre. Utendørssvømmehall åpent daglig 11–19 i juli (toboggane og 2 bassenger). Gate-tur i historisk sentrum.</p>
+    <div class="plinks">
+      <a class="plink" href="https://www.tourisme-paraylemonial.fr" target="_blank">🌐 Turistinfo</a>
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Basilique+Paray-le-Monial" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">Château de Drée, Curbigny — 20 km</p>
+    <p class="place-desc">"Lille Versailles i Charolais" — bygget 1650-tallet. Franske hager, interiør med kapell, 400 m lang charmille-tunnel som gjør en 90°-sving. Labellert "jardin remarquable." Åpent sommer. Billetter ~8 €.</p>
+    <div class="plinks">
+      <a class="plink" href="https://chateau-de-dree.com" target="_blank">🌐 chateau-de-dree.com</a>
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Château+de+Drée+Curbigny" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">Marcigny — 20 km</p>
+    <p class="place-desc">Sjarmerende by med mandagsmarked (ferskvarer, lokale producenter). <strong>Émile Henry</strong> — verdens mest kjente keramikk-kreasjoner i farger laget her siden 1850. Butikkutsalg. <strong>Restaurant Béatrice Héritier</strong> — reiseinspirert meny med sneglevol-au-vent og Charolais-parmentier.</p>
+    <div class="plinks">
+      <a class="plink" href="https://www.emilehenry.com" target="_blank">🌐 emilehenry.com</a>
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Marcigny+71110+France" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">Charolles — 13 km</p>
+    <p class="place-desc">Regionhovedstaden. Carrefour for innkjøp. Utendørsbassin (åpent daglig 11–19 i juli). Museé du Charolais. Sjarmerende gamlebyen rundt kanalen. Godt kafé-tilbud.</p>
+    <div class="plinks">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Charolles+71120+France" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">Vinsmaking — Domaine Roche des Bancs, Mailly — 18 km</p>
+    <p class="place-desc">Overraskende Brionnais-viner fra Mailly og Fleury-la-Montagne: "Vin des Fossiles" — pinot noir, pinot gris, auxerrois, chardonnay — organisk. Thierry Hellin og Sophie Barcella ønsker gjester velkomne. Avtal på forhånd.</p>
+    <div class="plinks">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Domaine+Roche+des+Bancs+Mailly+71" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+</div>
+
+<!-- PRAKTISK -->
+<div class="section">
+  <h2>🐾 Hunder i Brionnais</h2>
+  <div class="tip-row"><span class="tip-label">Natur</span><span>Beitemarker og skog overalt. Hundene kan løpe fritt langt fra veier. Hold på line gjennom landsbyer og ved kveg.</span></div>
+  <div class="tip-row"><span class="tip-label">Varme</span><span>Juli kan bli varmt i Brionnais (28–35 °C). Arconce-elven er fin for svømmende hunder. Ha alltid vann med.</span></div>
+  <div class="tip-row"><span class="tip-label">Sykkel</span><span>Ta hundene på line ved siden av sykkelen eller bruk sykkeltrailer. De korte rundene på 15–25 km er perfekte.</span></div>
+  <div class="tip-row"><span class="tip-label">Restauranter</span><span>Uteserveringer i landsbyer tar nesten alltid imot hunder. Be om en vannskål ("un bol d'eau pour mon chien, s'il vous plaît").</span></div>
+</div>
+
+<div class="section">
+  <h2>ℹ️ Nyttig info</h2>
+  <div class="tip-row"><span class="tip-label">Handlested</span><span>Carrefour/Super U i Charolles (13 km) for storhandel. Boucherie Chabanon i Saint-Christophe for AOP-biff direkte fra produsent.</span></div>
+  <div class="tip-row"><span class="tip-label">Turistinfo</span><span>Office de Tourisme Marcigny-Semur: +33 3 85 25 39 60 · brionnais-tourisme.fr</span></div>
+  <div class="tip-row"><span class="tip-label">Lading</span><span>Nærmeste hurtiglader: Paray-le-Monial eller Charolles. Sjekk på Chargemap-appen.</span></div>
+  <div class="tip-row"><span class="tip-label">Vær</span><span>Juli: typisk 25–33 °C dagen, kjølige netter. Brionnais-skyene er vakre. Ta med parasoll til terrassen.</span></div>
+</div>
+
+</div>
+<script>
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+  iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+  shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'
+});
+const m=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+  {attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
+
+function dot(c,s){s=s||13;return L.divIcon({className:'',
+  html:`<div style="width:${s}px;height:${s}px;border-radius:50%;background:${c};border:2.5px solid white;box-shadow:0 1px 5px rgba(0,0,0,.3)"></div>`,
+  iconSize:[s,s],iconAnchor:[s/2,s/2],popupAnchor:[0,-8]})}
+
+const home=dot('#8b5e3c',20), site=dot('#2d7a4f',14), event=dot('#c17f24',14);
+
+const places=[
+  [46.373,4.325, home, 'Oyé 🏡', 'Foreldrehuset – base for uken'],
+  [46.387,4.228, site, 'Semur-en-Brionnais', 'Vakreste landsby – Château Saint-Hugues · 10 km'],
+  [46.373,4.350, site, 'Saint-Christophe-en-Brionnais', 'Kvegmarked hver onsdag · 4 km'],
+  [46.322,4.127, site, 'Anzy-le-Duc', 'Vakreste romanske kirke · 12 km'],
+  [46.452,4.124, site, 'Paray-le-Monial', 'Romansk basilika + kanal · 18 km'],
+  [46.287,4.030, site, 'Marcigny', 'Émile Henry keramikk + marked · 20 km'],
+  [46.435,4.279, site, 'Charolles', 'Innkjøp + piscine · 13 km'],
+  [46.371,4.242, event, 'Château de Drée', '"Lille Versailles" · 20 km'],
+  [46.329,4.130, event, 'Domaine Roche des Bancs', 'Brionnais-vinsmaking · 18 km'],
+  [46.308,4.194, site, 'Varenne-l\'Arconce', 'Romansk kirke, elvepromenade · 5 km'],
+];
+
+places.forEach(([lat,lng,ic,n,note])=>{
+  L.marker([lat,lng],{icon:ic}).addTo(m)
+    .bindPopup(`<strong>${n}</strong><br><small>${note}</small>`);
+});
+
+// Draw approximate cycle route circles
+L.circle([46.373,4.325],{radius:10000,color:'#8b5e3c',weight:1,
+  fillColor:'#8b5e3c',fillOpacity:.05,dashArray:'6 4'}).addTo(m);
+L.circle([46.373,4.325],{radius:20000,color:'#8b5e3c',weight:1,
+  fillColor:'#8b5e3c',fillOpacity:.03,dashArray:'6 4'}).addTo(m);
+
+m.setView([46.38,4.23],11);
+</script>
+</body>
+</html>
