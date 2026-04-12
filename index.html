@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reisebok – Frankrike sommeren 2026</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <style>
+    :root {
+      --paper:#fffdf9; --ink:#1f2d3a; --muted:#5f6b76; --line:#d9d2c5;
+      --accent:#8b5e3c; --accent-soft:#efe3d6;
+      --warning:#c17f24; --warning-soft:#fdf3e1;
+      --shadow:0 8px 24px rgba(31,45,58,0.08); --radius:18px; --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Georgia,serif;background:linear-gradient(180deg,#f7f3ec,#f4efe7);color:var(--ink);line-height:1.6}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .hero{padding:56px 0 28px}
+    .hero-card{background:var(--paper);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:34px}
+    .eyebrow{display:inline-block;padding:8px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:13px;font-weight:600;font-family:system-ui,sans-serif;letter-spacing:.04em}
+    h1{margin:14px 0 10px;font-size:clamp(30px,5vw,50px);line-height:1.05;letter-spacing:-.02em}
+    .lead{max-width:760px;color:var(--muted);font-size:17px;margin:0 0 18px;font-family:system-ui,sans-serif}
+    .hero-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;margin-top:24px}
+    .mini-card{background:#fcfaf6;border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+    .mini-card h3{margin:0 0 10px;font-size:15px;font-family:system-ui,sans-serif;font-weight:700}
+    .mini-card p{color:var(--muted);font-size:14px;margin:0;font-family:system-ui,sans-serif}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:white;color:var(--ink);font-weight:600;font-family:system-ui,sans-serif;font-size:14px;cursor:pointer}
+    .btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+    .btn:hover{text-decoration:none;filter:brightness(.96)}
+    .print-note{margin-top:12px;color:var(--muted);font-size:13px;font-family:system-ui,sans-serif}
+    .toc{position:sticky;top:14px;z-index:10;padding-bottom:20px}
+    .toc-card{background:rgba(255,253,249,.92);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:var(--shadow);overflow-x:auto}
+    .toc-list{display:flex;flex-wrap:nowrap;gap:8px;min-width:max-content}
+    .toc-list a{display:inline-block;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);color:var(--ink);font-size:13px;font-family:system-ui,sans-serif;white-space:nowrap}
+    .toc-list a:hover{background:var(--accent-soft);text-decoration:none}
+    main{padding:8px 0 60px}
+    section{margin:20px 0 28px}
+    .section-card{background:var(--paper);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:28px}
+    h2{margin:0 0 8px;font-size:26px;letter-spacing:-.01em}
+    .section-intro{margin:0 0 18px;color:var(--muted);font-family:system-ui,sans-serif;font-size:15px}
+    .overview-table{width:100%;border-collapse:collapse;font-size:14px;font-family:system-ui,sans-serif;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+    .overview-table th,.overview-table td{text-align:left;padding:12px 14px;vertical-align:top;border-bottom:1px solid #e9e2d8}
+    .overview-table th{background:var(--accent-soft);color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+    .overview-table tr:last-child td{border-bottom:none}
+    .overview-table .warn-row td{background:var(--warning-soft)}
+    .day{scroll-margin-top:86px}
+    .day-header{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:20px;flex-wrap:wrap}
+    .day-meta{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{padding:7px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:700;font-family:system-ui,sans-serif;letter-spacing:.02em}
+    .chip.warn{background:var(--warning-soft);color:var(--warning)}
+    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    .card{border:1px solid var(--line);border-radius:18px;padding:18px;background:#fffdfa}
+    .card h3{margin:0 0 12px;font-size:13px;font-family:system-ui,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+    .meta-list{display:grid;gap:10px}
+    .meta-item{display:grid;grid-template-columns:110px 1fr;gap:8px;align-items:start;font-size:14px;font-family:system-ui,sans-serif}
+    .label{color:var(--muted);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;padding-top:2px}
+    ul.clean{margin:0;padding-left:18px;font-family:system-ui,sans-serif;font-size:14px}
+    ul.clean li{margin:0 0 8px}
+    .tips{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .tips-4{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .tip{background:#fcfaf6;border:1px solid var(--line);border-radius:16px;padding:16px;font-family:system-ui,sans-serif}
+    .tip.warn-tip{background:var(--warning-soft);border-color:#e8c97a}
+    .tip h4{margin:0 0 8px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+    .tip h4.warn{color:var(--warning)}
+    .tip p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+    .charge-table{width:100%;border-collapse:collapse;font-size:13px;font-family:system-ui,sans-serif;margin-top:14px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+    .charge-table th{background:var(--warning-soft);color:var(--warning);padding:8px 12px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+    .charge-table td{padding:8px 12px;border-bottom:1px solid #e9e2d8;vertical-align:top}
+    .charge-table tr:last-child td{border-bottom:none}
+    .route-link{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:10px 14px;border-radius:12px;background:var(--accent-soft);color:var(--accent);font-weight:600;font-family:system-ui,sans-serif;font-size:13px;border:1px solid var(--line)}
+    .route-link:hover{text-decoration:none;filter:brightness(.96)}
+    .day-map{margin-top:16px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    .lmap{height:260px;width:100%}
+    .lmap-tall{height:480px;width:100%}
+    .map-cap{padding:9px 14px 10px;font-size:12px;font-family:system-ui,sans-serif;color:var(--muted);border-top:1px solid var(--line);background:rgba(255,255,255,.7)}
+    .overview-map-wrap{margin-top:22px;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+    .footer{padding:24px 0 48px;color:var(--muted);font-size:13px;font-family:system-ui,sans-serif;text-align:center}
+    @media(max-width:920px){.hero-grid,.grid,.tips,.tips-4{grid-template-columns:1fr}.meta-item{grid-template-columns:1fr;gap:3px}}
+    @media print{body{background:white}.toc,.actions{display:none!important}.lmap,.lmap-tall{height:180px}}
+
+    /* ── Booking modal ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(31,45,58,0.55); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--paper); border: 1px solid var(--line);
+      border-radius: 24px; box-shadow: 0 24px 64px rgba(31,45,58,0.22);
+      max-width: 560px; width: 100%; max-height: 90vh; overflow-y: auto;
+      padding: 32px; position: relative;
+      font-family: system-ui, sans-serif;
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--accent-soft); border: none; border-radius: 50%;
+      width: 36px; height: 36px; cursor: pointer; font-size: 18px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+    }
+    .modal-close:hover { background: var(--accent); color: white; }
+    .modal-logo {
+      font-size: 22px; font-weight: 700; letter-spacing: -0.01em;
+      margin: 0 0 4px; font-family: Georgia, serif; color: var(--ink);
+    }
+    .modal-sub { font-size: 13px; color: var(--muted); margin: 0 0 20px; }
+    .modal-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #eaf5ee; border: 1.5px solid #7abe98;
+      color: #2d7a4f; font-weight: 700; font-size: 13px;
+      border-radius: 999px; padding: 6px 14px; margin-bottom: 20px;
+    }
+    .modal-table {
+      width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 16px;
+      border-radius: 12px; overflow: hidden; border: 1px solid var(--line);
+    }
+    .modal-table th {
+      background: var(--accent-soft); color: var(--accent);
+      padding: 8px 12px; text-align: left;
+      font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .modal-table td { padding: 9px 12px; border-bottom: 1px solid #e9e2d8; vertical-align: top; }
+    .modal-table tr:last-child td { border-bottom: none; }
+    .modal-total {
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--accent-soft); border-radius: 12px;
+      padding: 12px 16px; margin-bottom: 16px; font-weight: 700; font-size: 15px;
+    }
+    .modal-section { margin-bottom: 14px; }
+    .modal-section h4 {
+      font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em;
+      color: var(--muted); font-weight: 700; margin: 0 0 6px;
+    }
+    .modal-section p { font-size: 13px; color: var(--ink); margin: 0; line-height: 1.6; }
+    .modal-warn {
+      background: var(--warning-soft); border: 1px solid #e8c97a;
+      border-radius: 12px; padding: 12px 14px; font-size: 13px;
+      color: var(--ink); margin-bottom: 14px; line-height: 1.6;
+    }
+    .booking-btn {
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 14px;
+      padding: 10px 16px; border-radius: 12px;
+      background: #eaf5ee; border: 1.5px solid #7abe98;
+      color: #2d7a4f; font-weight: 700; font-family: system-ui, sans-serif;
+      font-size: 13px; cursor: pointer;
+    }
+    .booking-btn:hover { background: #d4edd9; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="hero-card">
+    <span class="eyebrow">Reisebok • Sommeren 2026</span>
+    <h1>Roadtrip til Frankrike</h1>
+    <p class="lead">Fra Arendal til Oyé og hjem igjen — med to hunder, sykler og elbil. 22 dager, 7 land, interaktive kart for hver etappe.</p>
+    <div class="actions">
+      <button class="btn primary" onclick="window.print()">🖨 Skriv ut / lagre som PDF</button>
+      <a class="btn" href="#oversikt">Oversikt</a>
+      <a class="btn" href="#praktisk">Praktisk</a>
+      <a class="btn" href="#ladeplan">⚡ Ladeplan</a>
+    </div>
+    <div class="hero-grid">
+      <div class="mini-card"><h3>Ramme for turen</h3><p>Utreise: søndag 12. juli 2026<br>Opphold i Oyé: 19.–26. juli 2026<br>Retur: Color Line søndag 2. august 2026</p></div>
+      <div class="mini-card"><h3>Viktig å huske</h3><p>Bekreft direkte med alle hotell at de godtar <strong>to hunder</strong>, og avklar parkering og lademuligheter.</p></div>
+    </div>
+    <p class="print-note">Kontaktinfo bør dobbeltsjekkes ved bestilling. Kart © OpenStreetMap-bidragsytere.</p>
+  </div>
+</header>
+
+<div class="toc"><div class="toc-card"><nav class="toc-list">
+  <a href="#oversikt">Oversikt</a><a href="#praktisk">Praktisk</a><a href="#ladeplan">⚡ Ladeplan</a>
+  <a href="#dag1">12. jul</a><a href="#dag2">13. jul</a><a href="#dag3">14. jul</a>
+  <a href="#dag4">15. jul</a><a href="#dag5">16. jul</a><a href="#dag6">17. jul</a>
+  <a href="#dag7">18. jul</a><a href="#dag8">19. jul</a><a href="#dag9">26. jul</a>
+  <a href="#dag10">27. jul</a><a href="#dag11">28. jul</a><a href="#dag12">29. jul</a>
+  <a href="#dag13">30. jul</a><a href="#dag14">31. jul</a><a href="#dag15">1. aug</a>
+  <a href="#dag16">2. aug</a>
+</nav></div></div>
+
+<main>
+
+<!-- OVERSIKT -->
+<section id="oversikt"><div class="section-card">
+  <h2>Hovedoversikt</h2>
+  <p class="section-intro">Hele ruten samlet. Etapper merket ⚡ krever planlagt ladetopp underveis.</p>
+  <div style="overflow-x:auto"><table class="overview-table">
+    <thead><tr><th>Dag</th><th>Stopp</th><th>Kjørerute</th><th>Ca. avstand</th></tr></thead>
+    <tbody>
+      <tr><td>Søn 12. jul</td><td>Ribe<br><span style="font-size:12px;color:#2d7a4f;font-weight:700;font-family:system-ui,sans-serif">✓ Booket</span></td><td>Arendal – Hirtshals (ferge) – Ribe<br><span style="font-size:12px;color:#5f6b76;font-family:system-ui,sans-serif">Hotel Dagmar — hunder ✓ parkering ✓</span></td><td>220 km + ferge</td></tr>
+      <tr class="warn-row"><td>Man 13. jul</td><td>Celle</td><td>Ribe – Hamburg – Celle</td><td>ca. 430 km ⚡</td></tr>
+      <tr class="warn-row"><td>Tir 14. jul</td><td>Trier</td><td>Celle – Bad Hersfeld – Frankfurt – Trier</td><td>ca. 500 km ⚡</td></tr>
+      <tr><td>Ons 15. jul</td><td>Strasbourg</td><td>Trier – Luxembourg – Strasbourg</td><td>ca. 220 km</td></tr>
+      <tr><td>Tor 16. jul</td><td>Mittelwihr</td><td>Strasbourg – Alsace vinrute</td><td>ca. 80 km</td></tr>
+      <tr><td>Fre 17. jul</td><td>Mittelwihr</td><td>Rolig dag / sykkel</td><td>0 km</td></tr>
+      <tr><td>Lør 18. jul</td><td>Beaune</td><td>Mittelwihr – Beaune</td><td>ca. 260 km</td></tr>
+      <tr><td>Søn 19. jul</td><td>Oyé</td><td>Beaune – Oyé</td><td>ca. 120 km</td></tr>
+      <tr class="warn-row"><td>Søn 26. jul</td><td>Saint-Émilion</td><td>Oyé – Poitiers – Saint-Émilion</td><td>ca. 500 km ⚡</td></tr>
+      <tr><td>Man 27. jul</td><td>Saint-Émilion</td><td>Besøksdag</td><td>0 km</td></tr>
+      <tr><td>Tir 28. jul</td><td>Amboise</td><td>Saint-Émilion – Tours – Amboise</td><td>ca. 320 km</td></tr>
+      <tr><td>Ons 29. jul</td><td>Honfleur</td><td>Amboise – Le Mans – Honfleur</td><td>ca. 320 km</td></tr>
+      <tr class="warn-row"><td>Tor 30. jul</td><td>Lübeck</td><td>Honfleur – Ressons – Hamburg – Lübeck</td><td>ca. 650 km ⚡⚡</td></tr>
+      <tr class="warn-row"><td>Fre 31. jul</td><td>Aalborg</td><td>Lübeck – Padborg – Aalborg</td><td>ca. 430 km ⚡</td></tr>
+      <tr><td>Lør 1. aug</td><td>Skagen</td><td>Aalborg – Skagen</td><td>ca. 100 km</td></tr>
+      <tr><td>Søn 2. aug</td><td>Arendal</td><td>Hirtshals – Color Line – Kristiansand – Arendal</td><td>ferge</td></tr>
+    </tbody>
+  </table></div>
+  <div class="overview-map-wrap">
+    <div id="map-overview" class="lmap-tall"></div>
+    <div class="map-cap">Interaktivt oversiktskart — klikk markørene for detaljer. Brun linje = kjøring, stiplet blå = ferge. Kart © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>.</div>
+  </div>
+</div></section>
+
+<!-- PRAKTISK -->
+<section id="praktisk"><div class="section-card">
+  <h2>Praktiske notater</h2>
+  <div class="tips-4">
+    <div class="tip"><h4>🐕 Hunder</h4><p>Kontakt alle hotell direkte og bekreft at dere kommer med <strong>to hunder</strong>. Spør om tillegg, romtype og om hundene kan være alene kortvarig. Elbilen kan holde AC på under lading — sjekk i bilinnstillingene.</p></div>
+    <div class="tip warn-tip"><h4 class="warn">⚡ Elbil generelt</h4><p>WLTP 500 km er laboratorietall. Med sommervarme, last og motorveifart er reell rekkevidde <strong>ca. 350 km</strong>. Dette betyr at 5 av 13 kjøredager krever ladestopp. Se dedikert ladeplan nedenfor.</p></div>
+    <div class="tip"><h4>⛴ Color Line — hunder</h4><p>Hunder <strong>er ikke tillatt i lugar</strong> — opphold i bil på bildekk eller husdyrbås. Bestill hundeplass med billetten. Ha kjæledyrpass og veterinærpapirer klart ved innsjekk.</p></div>
+    <div class="tip"><h4>🚲 Sykler</h4><p>Høydepunkter: Alsace vinrute fra Mittelwihr (flat, hundrevennlig) og Loire à Vélo ved Amboise (trafikkseparert langs elva). Husk lås og enkelt verktøy.</p></div>
+  </div>
+</div></section>
+
+<!-- LADEPLAN -->
+<section id="ladeplan"><div class="section-card">
+  <h2>⚡ Ladeplan — 350 km reell rekkevidde</h2>
+  <p class="section-intro">Med 350 km reell rekkevidde ved motorveikjøring krever <strong>5 av 13 kjøredager</strong> planlagt ladestopp. Start alltid fulladet fra overnatting.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:20px">
+    <div class="tip warn-tip">
+      <h4 class="warn">Dag 2 — Ribe → Celle (ca. 430 km)</h4>
+      <p>1 ladestopp. Anbefalt: <strong>Ionity/Aral Hamburg Moorfleet</strong>, Neuländer Str. 75, 21109 Hamburg.<br>
+      Ca. 225 km fra Ribe → lading → ca. 205 km til Celle.<br>
+      <a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">📍 53.4661, 10.0224</a></p>
+    </div>
+    <div class="tip warn-tip">
+      <h4 class="warn">Dag 3 — Celle → Trier (ca. 500 km)</h4>
+      <p>1 ladestopp. Anbefalt: <strong>Ionity Kirchheimer Dreieck</strong>, A4/A7-kryss, 36251 Bad Hersfeld.<br>
+      Ca. 190 km fra Celle → lading → ca. 310 km til Trier.<br>
+      <a href="https://www.google.com/maps/search/?api=1&query=50.8337,9.5707" target="_blank">📍 50.8411, 9.6722</a></p>
+    </div>
+    <div class="tip warn-tip">
+      <h4 class="warn">Dag 9 — Oyé → Saint-Émilion (ca. 500 km)</h4>
+      <p>1 ladestopp. Anbefalt: <strong>Ionity Poitiers Chincé (A10)</strong>, Aire de Vendeuvre, A10, 86380.<br>
+      Ca. 240 km fra Oyé → lading → ca. 260 km til Saint-Émilion.<br>
+      <a href="https://www.google.com/maps/search/?api=1&query=46.7014,0.3668" target="_blank">📍 46.5311, 0.3856</a></p>
+    </div>
+    <div class="tip warn-tip">
+      <h4 class="warn">Dag 13 — Honfleur → Lübeck (ca. 650 km)</h4>
+      <p>2 ladestopp. Stopp 1: <strong>Ionity Baie de Somme (Sailly-Flibeaucourt)</strong>, A1, 60490 Ressons-sur-Matz.<br>
+      Ca. 175 km fra Honfleur → lading → Stopp 2: <strong>Ionity Hamburg Moorfleet</strong>, Moorfleeter Str. 34.<br>
+      Ca. 390 km → lading → ca. 85 km til Lübeck.<br>
+      <a href="https://www.google.com/maps/search/?api=1&query=50.1673,1.7556" target="_blank">📍 Ressons 49.5406, 2.7467</a> · <a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">📍 Moorfleet 53.5052, 10.0674</a></p>
+    </div>
+    <div class="tip warn-tip">
+      <h4 class="warn">Dag 14 — Lübeck → Aalborg (ca. 430 km)</h4>
+      <p>1 ladestopp. Anbefalt: <strong>Ionity Aabenraa (E45)</strong>, Hanherredvej 5, 6330 Padborg (E45, rett ved grensen).<br>
+      Ca. 180 km fra Lübeck → lading → ca. 250 km til Aalborg.<br>
+      <a href="https://www.google.com/maps/search/?api=1&query=55.0651,9.3663" target="_blank">📍 54.8292, 9.3614</a></p>
+    </div>
+  </div>
+  <table class="charge-table">
+    <thead><tr><th>Dag</th><th>Etappe</th><th>Ladestopp</th><th>Km før</th><th>Km etter</th><th>Koordinater</th></tr></thead>
+    <tbody>
+      <tr><td>Dag 2</td><td>Ribe → Celle</td><td>Ionity/Aral Hamburg Moorfleet</td><td>~225 km</td><td>~205 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">53.4661, 10.0224</a></td></tr>
+      <tr><td>Dag 3</td><td>Celle → Trier</td><td>Ionity Kirchheimer Dreieck</td><td>~190 km</td><td>~310 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=50.8337,9.5707" target="_blank">50.8411, 9.6722</a></td></tr>
+      <tr><td>Dag 9</td><td>Oyé → Saint-Émilion</td><td>Ionity Poitiers Chincé (A10)</td><td>~240 km</td><td>~260 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=46.7014,0.3668" target="_blank">46.5311, 0.3856</a></td></tr>
+      <tr><td>Dag 13</td><td>Honfleur → Lübeck</td><td>Ionity Baie de Somme (Sailly-Flibeaucourt)</td><td>~175 km</td><td>—</td><td><a href="https://www.google.com/maps/search/?api=1&query=50.1673,1.7556" target="_blank">49.5406, 2.7467</a></td></tr>
+      <tr><td>Dag 13</td><td>— fortsetter →</td><td>Ionity Hamburg Moorfleet</td><td>~390 km</td><td>~85 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">53.5052, 10.0674</a></td></tr>
+      <tr><td>Dag 14</td><td>Lübeck → Aalborg</td><td>Ionity Aabenraa (E45)</td><td>~180 km</td><td>~250 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=55.0651,9.3663" target="_blank">54.8292, 9.3614</a></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;color:var(--muted);margin-top:12px;font-family:system-ui,sans-serif">Bruk <a href="https://abetterrouteplanner.com" target="_blank">abetterrouteplanner.com</a> med din eksakte bilmodell for finjustering. Ladestopp (20–30 min til 80 %) passer fint som hundepause.</p>
+</div></section>
+
+<!-- ── DAG-MAKRO: each day card ── -->
+
+<section class="day" id="dag1"><div class="section-card">
+  <div class="day-header"><div><h2>Søndag 12. juli — Ribe, Danmark</h2><p class="section-intro">Arendal → Kristiansand → Hirtshals (ferge) → Ribe</p></div>
+  <div class="day-meta"><span class="chip">220 km + ferge</span><span class="chip">Dag 1</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>Hotel Dagmar</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>Torvet 1, 6760 Ribe</div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+4575420033">+45 7542 0033</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.hoteldagmar.dk" target="_blank">hoteldagmar.dk</a></div></div>
+      <div class="meta-item"><div class="label">Merknad</div><div>Ring og bekreft to hunder.</div></div>
+      <div class="meta-item"><div class="label" style="color:#3a7d52">✓ Status</div><div style="color:#3a7d52;font-weight:600">BOOKET — hunder ✓ &amp; parkering ✓</div></div>
+    </div>
+    <button class="booking-btn" onclick="document.getElementById('modal-dagmar').classList.add('open')">
+      ✓ Bekreftet reservasjon — vis detaljer
+    </button>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Arendal,Norge&destination=Ribe,Danmark&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m1" class="lmap"></div><div class="map-cap">Hirtshals → Ribe etter ankomst med Color Line-ferge.</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>Restaurant Backhaus – godt førstevalg, helst ute.</li>
+    <li>Weis Stue – klassisk dansk stemning.</li>
+    <li>Kveldstur langs Ribe Å.</li>
+    <li>Utepils ved torget og domkirken.</li>
+    <li>Rolig start på ferien.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag2"><div class="section-card">
+  <div class="day-header"><div><h2>Mandag 13. juli — Celle, Tyskland</h2><p class="section-intro">Ribe → Flensburg → Hamburg ⚡ → Celle</p></div>
+  <div class="day-meta"><span class="chip">ca. 430 km</span><span class="chip warn">⚡ Ladestopp</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>Althoff Hotel Fürstenhof Celle</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>Hannoversche Str. 55/56, 29221 Celle</div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+4951412010">+49 5141 2010</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.althoffcollection.com" target="_blank">althoffcollection.com</a></div></div>
+      <div class="meta-item"><div class="label">Merknad</div><div>Bekreft hunder, parkering og lading.</div></div>
+      <div class="meta-item"><div class="label" style="color:var(--warning)">⚡ Lading</div><div style="color:var(--warning)"><strong>Ionity/Aral Hamburg Moorfleet</strong> (~225 km fra Ribe)<br>→ 205 km igjen til Celle<br><a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">📍 Åpne i Google Maps</a></div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Ribe,Danmark&destination=Celle,Tyskland&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m2" class="lmap"></div><div class="map-cap">Ribe → Hamburg ⚡ Ionity Stillhorn (~225 km) → Celle (~205 km). Totalt ca. 430 km.</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>Thaers Wirtshaus – tradisjonelt og hyggelig.</li>
+    <li>Kveldstur blant bindingsverkshusene.</li>
+    <li>Se Celle slott utvendig.</li>
+    <li>Kort sykkeltur langs Aller.</li>
+    <li>Rolig kveld etter kjøredagen.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag3"><div class="section-card">
+  <div class="day-header"><div><h2>Tirsdag 14. juli — Trier, Tyskland</h2><p class="section-intro">Celle → Kassel → Frankfurt → Trier</p></div>
+  <div class="day-meta"><span class="chip">ca. 500 km</span><span class="chip warn">⚡ Ladestopp</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>Nells Park Hotel</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>Dasbachstraße 12, 54292 Trier</div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+4965114440">+49 651 14440</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.nellsparkhotel.de" target="_blank">nellsparkhotel.de</a></div></div>
+      <div class="meta-item"><div class="label" style="color:var(--warning)">⚡ Lading</div><div style="color:var(--warning)"><strong>Ionity Kirchheimer Dreieck</strong> (~190 km fra Celle)<br>→ 310 km igjen til Trier<br><a href="https://www.google.com/maps/search/?api=1&query=50.8337,9.5707" target="_blank">📍 Åpne i Google Maps</a></div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Celle,Tyskland&destination=Trier,Tyskland&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m3" class="lmap"></div><div class="map-cap">Celle → Bad Hersfeld ⚡ Ionity (~190 km) → Trier (~310 km). Totalt ca. 500 km.</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>Weinstube Kesselstatt – fin Mosel-stemning.</li>
+    <li>Porta Nigra og gamlebyen.</li>
+    <li>Kveldstur langs Mosel.</li>
+    <li>Liten sykkeltur på flat elverute.</li>
+    <li>Smak lokal Riesling.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag4"><div class="section-card">
+  <div class="day-header"><div><h2>Onsdag 15. juli — Strasbourg, Frankrike</h2><p class="section-intro">Trier → Luxembourg → Strasbourg</p></div>
+  <div class="day-meta"><span class="chip">ca. 220 km</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>Sofitel Strasbourg Grande Île</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>4 place Saint Pierre le Jeune, 67000 Strasbourg</div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+33388154900">+33 3 88 15 49 00</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.sofitel.accor.com" target="_blank">sofitel.accor.com</a></div></div>
+      <div class="meta-item"><div class="label">Merknad</div><div>Avklar hunderegler og parkering.</div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Trier,Tyskland&destination=Strasbourg,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m4" class="lmap"></div><div class="map-cap">Trier → Luxembourg → Strasbourg. Behagelig kort dag.</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>Le Tire-Bouchon – be om terrasse.</li>
+    <li>Maison Kammerzell – flott hvis dere får sitte ute.</li>
+    <li>Petite France på kvelden.</li>
+    <li>Katedralen og kanalene.</li>
+    <li>Kort og behagelig kjøredag.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag5"><div class="section-card">
+  <div class="day-header"><div><h2>Torsdag 16. juli — Mittelwihr / Alsace</h2><p class="section-intro">Strasbourg → Colmar → Mittelwihr</p></div>
+  <div class="day-meta"><span class="chip">ca. 80 km</span><span class="chip">🚲 Sykkelvennlig</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>Hôtel Le Mittelwihr</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>19 Route du Vin, 68630 Mittelwihr</div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+33389490990">+33 3 89 49 09 90</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.hotelmittelwihr.fr" target="_blank">hotelmittelwihr.fr</a></div></div>
+      <div class="meta-item"><div class="label">Merknad</div><div>Sjekk lading i Colmar-området.</div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Strasbourg,Frankrike&destination=Mittelwihr,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m5" class="lmap"></div><div class="map-cap">Strasbourg → langs Route du Vin → Mittelwihr.</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>Winstub La Dime – avslappet og fint.</li>
+    <li>La Table du Gourmet – mer påkostet.</li>
+    <li>Sykkeltur mellom vinlandsbyer.</li>
+    <li>Rusle i Riquewihr.</li>
+    <li>Lang lunsj med utsikt mot vinmarkene.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag6"><div class="section-card">
+  <div class="day-header"><div><h2>Fredag 17. juli — Mittelwihr / Alsace</h2><p class="section-intro">Rolig sykkeldag — ingen kjøring</p></div>
+  <div class="day-meta"><span class="chip">0 km</span><span class="chip">🚲 Heldag ferie</span></div></div>
+  <div class="grid">
+    <div class="card"><h3>Overnatting</h3>
+      <div class="meta-list">
+        <div class="meta-item"><div class="label">Hotell</div><div>Hôtel Le Mittelwihr (samme rom)</div></div>
+        <div class="meta-item"><div class="label">Merknad</div><div>Alsace er flatt og perfekt med hunder og sykler.</div></div>
+      </div>
+      <a class="route-link" href="https://www.google.com/maps/search/?api=1&query=Riquewihr,Frankrike" target="_blank">→ Riquewihr på kart</a>
+    </div>
+    <div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+      <li>Heldag på sykkel mellom vinlandsbyer.</li>
+      <li>Pause i Riquewihr — uterestaurant et must.</li>
+      <li>Lufting i rolige vinmarker.</li>
+      <li>Hold kvelden uplanlagt.</li>
+      <li>Bevisst dag uten stress.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section class="day" id="dag7"><div class="section-card">
+  <div class="day-header"><div><h2>Lørdag 18. juli — Beaune, Frankrike</h2><p class="section-intro">Mittelwihr → Besançon → Beaune</p></div>
+  <div class="day-meta"><span class="chip">ca. 260 km</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>ibis Beaune – La Ferme aux Vins</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>Rue Yves-Bertrand Burgalat, 21200 Beaune</div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+33380224675">+33 3 80 22 46 75</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.all.accor.com" target="_blank">all.accor.com</a></div></div>
+      <div class="meta-item"><div class="label">Merknad</div><div>Parkering, hunder og lading tilgjengelig.</div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Mittelwihr,Frankrike&destination=Beaune,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m7" class="lmap"></div><div class="map-cap">Mittelwihr → Besançon → Beaune. Ca. 260 km gjennom Bourgogne.</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>Middag i Beaune sentrum.</li>
+    <li>Kveld i gamlebyen.</li>
+    <li>Se Hospices de Beaune.</li>
+    <li>Smak burgundervin.</li>
+    <li>Kort sykkeltur i nærområdet.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag8"><div class="section-card">
+  <div class="day-header"><div><h2>Søndag 19. juli — Oyé, Frankrike</h2><p class="section-intro">Beaune → Oyé (Saône-et-Loire)</p></div>
+  <div class="day-meta"><span class="chip">ca. 120 km</span><span class="chip">🏡 Inn i huset</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Sted</div><div>Foreldrehuset i Oyé, 71800</div></div>
+      <div class="meta-item"><div class="label">Merknad</div><div>Rolig ankomstdag. Hold dagen åpen!</div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Beaune,Frankrike&destination=Oy%C3%A9,71800,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m8" class="lmap"></div><div class="map-cap">Beaune → Oyé. Kort og rolig siste steg til basen.</div></div>
+  </div><div class="card"><h3>Første dag i Oyé</h3><ul class="clean">
+    <li>Handle inn lokalt og lag middag hjemme.</li>
+    <li>Rolig luftetur i nærområdet.</li>
+    <li>Pakk ut sykler og hundeutstyr.</li>
+    <li>Planlegg dagene frem til 26. juli.</li>
+    <li>Nyt å ha kommet frem.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag9"><div class="section-card">
+  <div class="day-header"><div><h2>Søndag 26. juli — Saint-Émilion / Maransin</h2><p class="section-intro">Oyé → Poitiers ⚡ → Saint-Émilion</p></div>
+  <div class="day-meta"><span class="chip">ca. 500 km</span><span class="chip warn">⚡ Ladestopp</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>Badon Boutique Hôtel</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>8 rue de la Porte Bouqueyre, 33330 Saint-Émilion</div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+33535371660">+33 5 35 37 16 60</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.badonboutiquehotel.com" target="_blank">badonboutiquehotel.com</a></div></div>
+      <div class="meta-item"><div class="label" style="color:var(--warning)">⚡ Lading</div><div style="color:var(--warning)"><strong>Ionity Poitiers Chincé (A10)</strong> (~240 km fra Oyé)<br>→ 260 km igjen til Saint-Émilion<br><a href="https://www.google.com/maps/search/?api=1&query=46.7014,0.3668" target="_blank">📍 Åpne i Google Maps</a></div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Oy%C3%A9,Frankrike&destination=Saint-%C3%89milion,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m9" class="lmap"></div><div class="map-cap">Oyé → Poitiers ⚡ Ionity (~240 km) → Saint-Émilion (~260 km). Totalt ca. 500 km.</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>L'Envers du Décor – be om terrasse.</li>
+    <li>Kveld i Saint-Émilion.</li>
+    <li>Rusle i steingatene.</li>
+    <li>Et glass vin på torget.</li>
+    <li>Rolig ankomst etter lang kjøredag.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag10"><div class="section-card">
+  <div class="day-header"><div><h2>Mandag 27. juli — Saint-Émilion / Maransin</h2><p class="section-intro">Besøksdag</p></div>
+  <div class="day-meta"><span class="chip">0 km</span></div></div>
+  <div class="grid">
+    <div class="card"><h3>Overnatting</h3>
+      <div class="meta-list">
+        <div class="meta-item"><div class="label">Sted</div><div>Badon Boutique Hôtel eller hos vennen</div></div>
+        <div class="meta-item"><div class="label">Merknad</div><div>Fin bufferdag uten kjørepress.</div></div>
+      </div>
+      <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Saint-%C3%89milion,Frankrike&destination=Maransin,Frankrike&travelmode=driving" target="_blank">→ Rute til Maransin</a>
+    </div>
+    <div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+      <li>Besøk vennen i Maransin.</li>
+      <li>Sykkel blant vinrankene.</li>
+      <li>Lett lunsj i Saint-Émilion.</li>
+      <li>Mulig vinsmaking.</li>
+      <li>Sen terrassemiddag.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section class="day" id="dag11"><div class="section-card">
+  <div class="day-header"><div><h2>Tirsdag 28. juli — Amboise, Frankrike</h2><p class="section-intro">Saint-Émilion → Angoulême → Tours → Amboise</p></div>
+  <div class="day-meta"><span class="chip">ca. 320 km</span><span class="chip">🚲 Loire</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>La Maison Rabelais</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>8 rue Rabelais, 37400 Amboise</div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+33219003100">+33 2 19 00 31 00</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.maisonrabelais.com" target="_blank">maisonrabelais.com</a></div></div>
+      <div class="meta-item"><div class="label">Merknad</div><div>Parkering, lading og hunder mot tillegg.</div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Saint-%C3%89milion,Frankrike&destination=Amboise,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m11" class="lmap"></div><div class="map-cap">Saint-Émilion → Angoulême → Tours → Amboise. Ca. 320 km.</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>L'Épicerie Amboise – uformelt og hyggelig.</li>
+    <li>Kveldstur langs Loire.</li>
+    <li>Se Château d'Amboise.</li>
+    <li>Loire à Vélo – trafikkseparert og hundrevennlig.</li>
+    <li>Rolig småbykveld.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag12"><div class="section-card">
+  <div class="day-header"><div><h2>Onsdag 29. juli — Honfleur, Frankrike</h2><p class="section-intro">Amboise → Le Mans → Caen → Honfleur</p></div>
+  <div class="day-meta"><span class="chip">ca. 320 km</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>La Ferme Saint-Siméon</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>20 rue Adolphe Marais, 14600 Honfleur</div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+33231817800">+33 2 31 81 78 00</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.fermesaintsimeon.fr" target="_blank">fermesaintsimeon.fr</a></div></div>
+      <div class="meta-item"><div class="label">Merknad</div><div>Ring og avklar to hunder og lading.</div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Amboise,Frankrike&destination=Honfleur,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m12" class="lmap"></div><div class="map-cap">Amboise → Le Mans → Caen → Honfleur. Ca. 320 km mot Normandie.</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>Le Vieux Honfleur – terrasse er best med hundene.</li>
+    <li>Havnen på kvelden.</li>
+    <li>Rusle blant gallerier og sjøhus.</li>
+    <li>Kort sykkeltur i området.</li>
+    <li>En av turens fineste kvelder.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag13"><div class="section-card">
+  <div class="day-header"><div><h2>Torsdag 30. juli — Lübeck, Tyskland</h2><p class="section-intro">Honfleur → Belgia → Hamburg → Lübeck</p></div>
+  <div class="day-meta"><span class="chip">ca. 650 km</span><span class="chip warn">⚡⚡ 2 ladestopp</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>Park Inn by Radisson Lübeck</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>Willy Brandt Allee 1–5, 23554 Lübeck</div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+494511504 0">+49 451 1504 0</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.radissonhotels.com" target="_blank">radissonhotels.com</a></div></div>
+      <div class="meta-item"><div class="label" style="color:var(--warning)">⚡ Lading</div><div style="color:var(--warning)"><strong>Stopp 1: Ionity Baie de Somme (Sailly-Flibeaucourt)</strong> (~175 km fra Honfleur)<br><a href="https://www.google.com/maps/search/?api=1&query=50.1673,1.7556" target="_blank">📍 49.5406, 2.7467</a><br><strong>Stopp 2: Ionity Hamburg Moorfleet</strong> (~390 km fra Honfleur)<br><a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">📍 53.5052, 10.0674</a> → 85 km til Lübeck</div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Honfleur,Frankrike&destination=L%C3%BCbeck,Tyskland&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m13" class="lmap"></div><div class="map-cap">Honfleur → Ressons ⚡ (~175 km) → Hamburg ⚡ (~390 km) → Lübeck (~85 km). Start tidlig!</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>Schiffergesellschaft – <strong>bekreft hundvennlig bord</strong>.</li>
+    <li>Kort tur i gamlebyen.</li>
+    <li>Se kanalene og byportene.</li>
+    <li>Smak marcipan om dere rekker.</li>
+    <li>Prioriter hvile denne kvelden.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag14"><div class="section-card">
+  <div class="day-header"><div><h2>Fredag 31. juli — Aalborg, Danmark</h2><p class="section-intro">Lübeck → Padborg ⚡ → Flensburg → Aarhus → Aalborg</p></div>
+  <div class="day-meta"><span class="chip">ca. 430 km</span><span class="chip warn">⚡ Ladestopp</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>Scandic Aalborg City</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>Europa Plads 1, 9000 Aalborg</div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+4570125151">+45 70 12 51 51</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.scandichotels.com" target="_blank">scandichotels.com</a></div></div>
+      <div class="meta-item"><div class="label">Merknad</div><div>Book hundvennlig rom. Lading tilgjengelig.</div></div>
+      <div class="meta-item"><div class="label" style="color:var(--warning)">⚡ Lading</div><div style="color:var(--warning)"><strong>Ionity Aabenraa</strong>, E45 syd for Aabenraa (~180 km fra Lübeck)<br>→ 250 km igjen til Aalborg<br><a href="https://www.google.com/maps/search/?api=1&query=55.0651,9.3663" target="_blank">📍 Åpne i Google Maps</a></div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=L%C3%BCbeck,Tyskland&destination=Aalborg,Danmark&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m14" class="lmap"></div><div class="map-cap">Lübeck → Padborg ⚡ Ionity (~180 km) → Aalborg (~250 km). Totalt ca. 430 km.</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>Restaurant Provence ved havnen.</li>
+    <li>Kveldstur ved havnefronten.</li>
+    <li>Kort runde langs vannet.</li>
+    <li>En siste dansk bykveld.</li>
+    <li>Lad bilen godt — i morgen til Hirtshals.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag15"><div class="section-card">
+  <div class="day-header"><div><h2>Lørdag 1. august — Skagen, Danmark</h2><p class="section-intro">Aalborg → Skagen</p></div>
+  <div class="day-meta"><span class="chip">ca. 100 km</span><span class="chip">Siste kveld</span></div></div>
+  <div class="grid"><div class="card"><h3>Overnatting</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Hotell</div><div>Ruths Hotel</div></div>
+      <div class="meta-item"><div class="label">Adresse</div><div>Hans Ruths Vej 1, 9990 Skagen<br><a href="https://www.google.com/maps/search/?api=1&query=Hans+Ruths+Vej+1,+9990+Skagen" target="_blank">Åpne i kart</a></div></div>
+      <div class="meta-item"><div class="label">Telefon</div><div><a href="tel:+4598441124">+45 9844 1124</a></div></div>
+      <div class="meta-item"><div class="label">Nettside</div><div><a href="https://www.ruths.dk" target="_blank">ruths.dk</a></div></div>
+      <div class="meta-item"><div class="label">Merknad</div><div>Hunder velkommen (alle størrelser) — DKK 300/opphold. Mat- og vannskål medfølger. Gratis parkering. Bekreft to hunder ved booking.</div></div>
+    </div>
+    <a class="route-link" href="https://www.google.com/maps/dir/?api=1&origin=Aalborg,9000,Danmark&destination=Hans+Ruths+Vej+1,+9990+Skagen,+Danmark&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+    <div class="day-map"><div id="m15" class="lmap"></div><div class="map-cap">Aalborg → Skagen. Ca. 100 km — en vakker avslutning på turen.</div></div>
+  </div><div class="card"><h3>Middag &amp; opplevelser</h3><ul class="clean">
+    <li>Ruths Brasserie — eksepsjonell mat, be om uteplass med hundene.</li>
+    <li>Strand og luftetur ved Gammel Skagen — fantastisk kveldslys.</li>
+    <li>Se Grenen der Skagerrak møter Nordsjøen.</li>
+    <li>Kveldspromenade i den gule Skagen-by.</li>
+    <li>Spa og basseng — velfortjent etter tre uker på veien.</li>
+  </ul></div></div>
+</div></section>
+
+<section class="day" id="dag16"><div class="section-card">
+  <div class="day-header"><div><h2>Søndag 2. august — Hjem! 🏡</h2><p class="section-intro">Skagen → Hirtshals → Color Line → Kristiansand → Arendal</p></div>
+  <div class="day-meta"><span class="chip">⛴ Ferge</span><span class="chip">Hjemkomst</span></div></div>
+  <div class="grid"><div class="card"><h3>Ferge og retur</h3>
+    <div class="meta-list">
+      <div class="meta-item"><div class="label">Ferge</div><div>Color Line, Hirtshals – Kristiansand</div></div>
+      <div class="meta-item"><div class="label">Hunder</div><div><strong>Ikke tillatt i lugar</strong> — bil på bildekk eller husdyrbås. Ta med kjæledyrpass.</div></div>
+      <div class="meta-item"><div class="label">Etterpå</div><div>Ca. 80 km Kristiansand → Arendal.</div></div>
+    </div>
+    <a class="route-link" href="https://www.colorline.no" target="_blank">→ Color Line billetter</a>
+    <div class="day-map"><div id="m16" class="lmap"></div><div class="map-cap">Skagen → Hirtshals (70 km) → Color Line → Kristiansand → Arendal.</div></div>
+  </div><div class="card"><h3>Hjem igjen</h3><ul class="clean">
+    <li>Nyt fergeturen — utsikt over Skagerrak.</li>
+    <li>Hundene trenger godt stopp etter fergen.</li>
+    <li>Siste strekning hjem til Arendal.</li>
+    <li>22 dager, 7 land, utallige minner.</li>
+  </ul></div></div>
+</div></section>
+
+</main>
+  <!-- ── Hotel Dagmar booking modal ── -->
+  <div class="modal-overlay" id="modal-dagmar" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('modal-dagmar').classList.remove('open')">✕</button>
+      <p class="modal-logo">Hotel Dagmar</p>
+      <p class="modal-sub">Torvet 1, 6760 Ribe · +45 75 42 00 33 · info@hoteldagmar.dk</p>
+      <div class="modal-badge">✓ Bekreftet reservasjon — Res.nr. 3126411</div>
+
+      <table class="modal-table">
+        <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Gjester</th><th>Pris</th></tr></thead>
+        <tbody>
+          <tr><td>Standard Twin</td><td>12.07.2026</td><td>13.07.2026</td><td>2</td><td>DKK 1.545</td></tr>
+        </tbody>
+      </table>
+
+      <table class="modal-table">
+        <thead><tr><th>Tillegg</th><th>Dato</th><th>Pris</th></tr></thead>
+        <tbody>
+          <tr><td>Frokost (Morgenmad) × 2</td><td>13.07.2026 kl. 07:00</td><td>Inkludert</td></tr>
+          <tr><td>Husdyr (1 hund)</td><td>12.07.2026</td><td>DKK 200</td></tr>
+          <tr><td>Privat parkering (50 m fra hotellet)</td><td>12.07.2026</td><td>DKK 200</td></tr>
+        </tbody>
+      </table>
+
+      <div class="modal-total"><span>Totalt inkl. mva.</span><span>DKK 1.945</span></div>
+
+      <div class="modal-warn">⚠️ <strong>NB — parkering:</strong> Hotellet har ingen parkering på tomten. Laste av bagasje foran hotellet, deretter kjøre til privat parkeringsplass (50 m fra hotellet, forhåndsbestilt — DKK 200/natt). Gratisparkering finnes også ved P-north (Saltgade 21) og P-south (Tøndervej).</div>
+
+      <div class="modal-section"><h4>Innsjekk / Utsjekk</h4>
+        <p>Innsjekk fra kl. 15:00. Ankommer etter 16:00? Ring hotellet på forhånd.<br>
+        Utsjekk senest kl. 11:00.</p></div>
+
+      <div class="modal-section"><h4>Avbestilling</h4>
+        <p>Gratis avbestilling til og med 2 dager før ankomst.<br>
+        Kun skriftlig til: info@hoteldagmar.dk</p></div>
+
+      <div class="modal-section"><h4>Kontakt</h4>
+        <p><a href="tel:+4575420033">+45 75 42 00 33</a> · <a href="mailto:info@hoteldagmar.dk">info@hoteldagmar.dk</a></p></div>
+    </div>
+  </div>
+
+<footer class="footer">
+  <p>Reisebok – Frankrike sommeren 2026 · Kart © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>-bidragsytere</p>
+  <p style="margin-top:6px">Oppdatert april 2026 · Kontroller alltid hoteller, ferger og ladestasjoner direkte.</p>
+</footer>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+// Leaflet helper setup
+// ─────────────────────────────────────────────────────────────
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+  iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+  shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'
+});
+
+function dot(color, size){
+  size = size||13;
+  return L.divIcon({className:'',
+    html:`<div style="width:${size}px;height:${size}px;border-radius:50%;background:${color};border:2.5px solid white;box-shadow:0 1px 5px rgba(0,0,0,.35)"></div>`,
+    iconSize:[size,size],iconAnchor:[size/2,size/2],popupAnchor:[0,-8]});
+}
+const DOT_START  = dot('#5f7d6b');
+const DOT_END    = dot('#8b5e3c');
+const DOT_MID    = dot('#c17f24');
+const DOT_BASE   = dot('#8b5e3c',18);
+const DOT_FERRY  = dot('#4a90b8');
+
+const TILE = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+const ATTR = '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · © <a href="https://carto.com/attributions">CARTO</a>';
+
+function makeMap(id, height){
+  const el = document.getElementById(id);
+  if(!el) return null;
+  el.style.height = (height||260)+'px';
+  const m = L.map(el,{zoomControl:true,scrollWheelZoom:false});
+  L.tileLayer(TILE,{attribution:ATTR,maxZoom:19}).addTo(m);
+  return m;
+}
+
+function addMarker(map, lat, lng, icon, label, note){
+  return L.marker([lat,lng],{icon})
+    .addTo(map)
+    .bindPopup(`<strong>${label}</strong>${note?'<br><small style="color:#666">'+note+'</small>':''}`);
+}
+
+function addRoute(map, pts, color, dash){
+  L.polyline(pts,{color:color||'#8b5e3c',weight:3.5,opacity:.85,dashArray:dash||null}).addTo(map);
+}
+function addFerry(map, pts){
+  L.polyline(pts,{color:'#4a90b8',weight:3,opacity:.85,dashArray:'9 6'}).addTo(map);
+}
+function fitMap(map, pts, pad){
+  map.fitBounds(L.latLngBounds(pts),{padding:[pad||28,pad||28]});
+}
+
+// ─────────────────────────────────────────────────────────────
+// Pre-computed road waypoints (real E-road geometry, simplified)
+// ─────────────────────────────────────────────────────────────
+
+// Helper — these are GPS coords traced along actual motorways
+const ROADS = {
+
+  // Dag 1: Hirtshals → Ribe (E45 south through Jutland)
+  d1: [[57.587,9.965],[57.29,9.93],[57.05,9.84],[56.80,9.73],[56.46,9.50],[56.09,9.03],[55.70,8.93],[55.47,8.81],[55.332,8.773]],
+
+  // Dag 2: Ribe → Flensburg → Hamburg → Celle (E45 → A7)
+  d2: [[55.332,8.773],[55.08,8.97],[54.78,9.44],[54.34,9.47],[53.77,9.76],[53.55,9.99],[53.22,10.04],[52.80,10.03],[52.615,10.082]],
+
+  // Dag 3: Celle → Kassel → Frankfurt → Trier (A7 → A4 → A48)
+  d3: [[52.615,10.082],[52.19,9.87],[51.74,9.62],[51.31,9.48],[50.56,9.68],[50.11,8.68],[49.88,7.91],[49.75,6.637]],
+
+  // Dag 4: Trier → Luxembourg → Strasbourg (A64 → A4)
+  d4: [[49.749,6.637],[49.61,6.13],[49.48,6.10],[49.18,6.39],[48.82,7.33],[48.573,7.752]],
+
+  // Dag 5: Strasbourg → Colmar → Mittelwihr (D83 Route du Vin)
+  d5: [[48.573,7.752],[48.35,7.45],[48.08,7.36],[48.127,7.357]],
+
+  // Dag 7: Mittelwihr → Besançon → Beaune (A36)
+  d7: [[48.127,7.357],[47.85,7.33],[47.52,7.01],[47.24,6.02],[47.06,5.41],[47.025,4.836]],
+
+  // Dag 8: Beaune → Oyé (N6 → D)
+  d8: [[47.025,4.836],[46.78,4.83],[46.60,4.62],[46.45,4.42],[46.373,4.325]],
+
+  // Dag 9: Oyé → Poitiers → Saint-Émilion (A6 → A10 → A89)
+  d9: [[46.373,4.325],[46.45,3.87],[46.58,3.46],[46.40,2.78],[46.58,0.34],[45.82,0.61],[45.18,-0.07],[44.894,-0.155]],
+
+  // Dag 11: Saint-Émilion → Angoulême → Tours → Amboise (A10)
+  d11: [[44.894,-0.155],[45.26,0.05],[45.65,0.16],[46.35,0.48],[46.80,0.69],[47.21,0.79],[47.40,0.99],[47.413,0.989]],
+
+  // Dag 12: Amboise → Le Mans → Caen → Honfleur (A11 → A28 → A13)
+  d12: [[47.413,0.989],[47.80,0.75],[47.995,0.193],[48.43,0.10],[48.73,-0.36],[49.18,-0.36],[49.33,0.00],[49.419,0.233]],
+
+  // Dag 13: Honfleur → Baie de Somme → Gent → Hamburg → Lübeck (A13 → A16 → E40 → A1)
+  d13: [[49.419,0.233],[50.06,1.53],[50.19,1.62],[50.45,2.22],[50.85,3.10],[51.05,3.72],[52.52,9.90],[53.55,9.99],[53.866,10.686]],
+
+  // Dag 14: Lübeck → Flensburg → Aarhus → Aalborg (A7 → E45)
+  d14: [[53.866,10.686],[54.25,9.93],[54.79,9.43],[55.50,9.47],[55.80,9.89],[56.16,10.21],[56.61,10.03],[57.048,9.918]],
+
+  // Dag 15: Aalborg → Hirtshals (E39)
+  d15: [[57.048,9.918],[57.25,9.97],[57.42,10.01],[57.587,9.965]],
+
+  // Dag 16: Kristiansand → Arendal (E18)
+  d16: [[58.147,7.996],[58.24,8.26],[58.37,8.55],[58.461,8.772]],
+};
+
+// Named stops
+const S = {
+  arendal:      [58.461,8.772],
+  kristiansand: [58.147,7.996],
+  hirtshals:    [57.587,9.965],
+  ribe:         [55.332,8.773],
+  flensburg:    [54.792,9.434],
+  hamburg:      [53.550,9.993],
+  celle:        [52.615,10.082],
+  kassel:       [51.313,9.481],
+  frankfurt:    [50.110,8.682],
+  trier:        [49.749,6.637],
+  luxembourg:   [49.612,6.132],
+  strasbourg:   [48.573,7.752],
+  colmar:       [48.081,7.358],
+  mittelwihr:   [48.127,7.357],
+  besancon:     [47.237,6.023],
+  beaune:       [47.025,4.836],
+  oye:          [46.373,4.325],
+  poitiers:     [46.581,0.340],
+  stemilion:    [44.894,-0.155],
+  amboise:      [47.413,0.989],
+  lemans:       [47.995,0.193],
+  caen:         [49.183,-0.356],
+  honfleur:     [49.419,0.233],
+  baidesomme:   [50.186,1.624],
+  lubeck:       [53.866,10.686],
+  aarhus:       [56.162,10.203],
+  aalborg:      [57.048,9.918],
+  maransin:     [44.978,-0.272],
+};
+
+window.addEventListener('load', function(){
+
+  // ── OVERVIEW MAP ──────────────────────────────────────────
+  const ov = makeMap('map-overview', 480);
+  if(ov){
+    // Draw route segments
+    // Outbound: Hirtshals→Ribe→Celle→Trier→Strasbourg→Mittelwihr→Beaune→Oyé
+    const outbound = [...ROADS.d1,...ROADS.d2.slice(1),...ROADS.d3.slice(1),...ROADS.d4.slice(1),...ROADS.d5.slice(1),...ROADS.d7.slice(1),...ROADS.d8.slice(1)];
+    // Loop: Oyé→St-Émilion→Amboise→Honfleur
+    const loop = [...ROADS.d9,...ROADS.d11.slice(1),...ROADS.d12.slice(1)];
+    // Return: Honfleur→Lübeck→Aalborg→Hirtshals
+    const ret = [...ROADS.d13,...ROADS.d14.slice(1),...ROADS.d15.slice(1)];
+    // Ferries
+    const ferry1 = [S.kristiansand, S.hirtshals]; // Color Line outbound
+    const ferry2 = [S.hirtshals, S.kristiansand]; // return
+
+    addRoute(ov, outbound, '#8b5e3c');
+    addRoute(ov, loop, '#a0724a');
+    addRoute(ov, ret, '#7a5235');
+    addFerry(ov, [S.arendal, S.kristiansand, S.hirtshals]);
+
+    // Markers
+    const stops_ov = [
+      [S.arendal,      DOT_START, 'Arendal',      'Start / slutt'],
+      [S.hirtshals,    DOT_FERRY, 'Hirtshals',    'Color Line ferge'],
+      [S.ribe,         DOT_MID,   'Ribe',          'Dag 1 – Hotel Dagmar'],
+      [S.celle,        DOT_MID,   'Celle',         'Dag 2 – Althoff Fürstenhof'],
+      [S.trier,        DOT_MID,   'Trier',         'Dag 3 – Nells Park Hotel'],
+      [S.strasbourg,   DOT_MID,   'Strasbourg',    'Dag 4 – Sofitel Grande Île'],
+      [S.mittelwihr,   DOT_MID,   'Mittelwihr',    'Dag 5–6 – Hôtel Le Mittelwihr'],
+      [S.beaune,       DOT_MID,   'Beaune',        'Dag 7 – ibis La Ferme aux Vins'],
+      [S.oye,          DOT_BASE,  'Oyé ★',         'Base 19.–26. juli – Foreldrehuset'],
+      [S.stemilion,    DOT_MID,   'Saint-Émilion', 'Dag 9–10 – Badon Boutique'],
+      [S.amboise,      DOT_MID,   'Amboise',       'Dag 11 – La Maison Rabelais'],
+      [S.honfleur,     DOT_MID,   'Honfleur',      'Dag 12 – La Ferme Saint-Siméon'],
+      [S.lubeck,       DOT_MID,   'Lübeck',        'Dag 13 – Park Inn Radisson'],
+      [S.aalborg,      DOT_MID,   'Aalborg',       'Dag 14 – Scandic City'],
+    ];
+    stops_ov.forEach(([pos,ic,lbl,note])=>addMarker(ov,pos[0],pos[1],ic,lbl,note));
+    fitMap(ov, [...outbound,...loop,...ret,[S.arendal[0],S.arendal[1]]]);
+  }
+
+  // ── DAY MAPS ─────────────────────────────────────────────
+
+  // Dag 1
+  (function(){
+    const m = makeMap('m1');
+    if(!m) return;
+    addFerry(m, [S.arendal, S.hirtshals]);
+    addRoute(m, ROADS.d1);
+    addMarker(m,...S.arendal,DOT_START,'Arendal','Start — ferge til Hirtshals');
+    addMarker(m,...S.hirtshals,DOT_MID,'Hirtshals','Fergeankomst');
+    addMarker(m,...S.ribe,DOT_END,'Ribe','Hotel Dagmar');
+    fitMap(m,[S.arendal,S.hirtshals,...ROADS.d1]);
+  })();
+
+  // Dag 2
+  (function(){
+    const m = makeMap('m2');
+    if(!m) return;
+    addRoute(m, ROADS.d2);
+    addMarker(m,...S.ribe,DOT_START,'Ribe','');
+    addMarker(m,...S.flensburg,DOT_MID,'Flensburg','');
+    addMarker(m,53.5057,10.0900,DOT_MID,'⚡ Ionity/Aral Hamburg Moorfleet','Ladestopp ~225 km fra Ribe · <a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">Åpne kart</a>');
+    addMarker(m,...S.celle,DOT_END,'Celle','Althoff Fürstenhof · ~205 km etter lading');
+    fitMap(m, ROADS.d2);
+  })();
+
+  // Dag 3
+  (function(){
+    const m = makeMap('m3');
+    if(!m) return;
+    addRoute(m, ROADS.d3);
+    addMarker(m,...S.celle,DOT_START,'Celle','');
+    addMarker(m,50.8337,9.5707,DOT_MID,'⚡ Ionity Kirchheimer Dreieck','Ladestopp ~190 km fra Celle · <a href="https://www.google.com/maps/search/?api=1&query=50.8337,9.5707" target="_blank">Åpne kart</a>');
+    addMarker(m,...S.frankfurt,DOT_MID,'Frankfurt-området','');
+    addMarker(m,...S.trier,DOT_END,'Trier','Nells Park Hotel · ~310 km etter lading');
+    fitMap(m, ROADS.d3);
+  })();
+
+  // Dag 4
+  (function(){
+    const m = makeMap('m4');
+    if(!m) return;
+    addRoute(m, ROADS.d4);
+    addMarker(m,...S.trier,DOT_START,'Trier','');
+    addMarker(m,...S.luxembourg,DOT_MID,'Luxembourg','');
+    addMarker(m,...S.strasbourg,DOT_END,'Strasbourg','Sofitel Grande Île');
+    fitMap(m, ROADS.d4);
+  })();
+
+  // Dag 5
+  (function(){
+    const m = makeMap('m5');
+    if(!m) return;
+    addRoute(m, ROADS.d5);
+    addMarker(m,...S.strasbourg,DOT_START,'Strasbourg','');
+    addMarker(m,...S.colmar,DOT_MID,'Colmar','');
+    addMarker(m,...S.mittelwihr,DOT_END,'Mittelwihr','Hôtel Le Mittelwihr');
+    fitMap(m, ROADS.d5, 40);
+  })();
+
+  // Dag 7
+  (function(){
+    const m = makeMap('m7');
+    if(!m) return;
+    addRoute(m, ROADS.d7);
+    addMarker(m,...S.mittelwihr,DOT_START,'Mittelwihr','');
+    addMarker(m,...S.besancon,DOT_MID,'Besançon','');
+    addMarker(m,...S.beaune,DOT_END,'Beaune','ibis La Ferme aux Vins');
+    fitMap(m, ROADS.d7);
+  })();
+
+  // Dag 8
+  (function(){
+    const m = makeMap('m8');
+    if(!m) return;
+    addRoute(m, ROADS.d8);
+    addMarker(m,...S.beaune,DOT_START,'Beaune','');
+    addMarker(m,...S.oye,DOT_BASE,'Oyé ★','Foreldrehuset — base i 7 dager');
+    fitMap(m, ROADS.d8, 40);
+  })();
+
+  // Dag 9
+  (function(){
+    const m = makeMap('m9');
+    if(!m) return;
+    addRoute(m, ROADS.d9);
+    addMarker(m,...S.oye,DOT_START,'Oyé','');
+    addMarker(m,46.7014,0.3668,DOT_MID,'⚡ Ionity Poitiers Chincé (A10)','Ladestopp ~240 km fra Oyé · <a href="https://www.google.com/maps/search/?api=1&query=46.7014,0.3668" target="_blank">Åpne kart</a>');
+    addMarker(m,...S.stemilion,DOT_END,'Saint-Émilion','Badon Boutique Hôtel · ~260 km etter lading');
+    fitMap(m, ROADS.d9);
+  })();
+
+  // Dag 11
+  (function(){
+    const m = makeMap('m11');
+    if(!m) return;
+    addRoute(m, ROADS.d11);
+    addMarker(m,...S.stemilion,DOT_START,'Saint-Émilion','');
+    addMarker(m,...S.lemans,DOT_MID,'Le Mans','');
+    addMarker(m,...S.amboise,DOT_END,'Amboise','La Maison Rabelais');
+    fitMap(m, ROADS.d11);
+  })();
+
+  // Dag 12
+  (function(){
+    const m = makeMap('m12');
+    if(!m) return;
+    addRoute(m, ROADS.d12);
+    addMarker(m,...S.amboise,DOT_START,'Amboise','');
+    addMarker(m,...S.lemans,DOT_MID,'Le Mans','');
+    addMarker(m,...S.caen,DOT_MID,'Caen','');
+    addMarker(m,...S.honfleur,DOT_END,'Honfleur','La Ferme Saint-Siméon');
+    fitMap(m, ROADS.d12);
+  })();
+
+  // Dag 13
+  (function(){
+    const m = makeMap('m13');
+    if(!m) return;
+    addRoute(m, ROADS.d13);
+    addMarker(m,...S.honfleur,DOT_START,'Honfleur','');
+    addMarker(m,50.1673,1.7556,DOT_MID,'⚡ Ionity Baie de Somme (Sailly-Flibeaucourt)','Ladestopp 1 — ~175 km fra Honfleur · <a href="https://www.google.com/maps/search/?api=1&query=50.1673,1.7556" target="_blank">Åpne kart</a>');
+    addMarker(m,53.5057,10.0900,DOT_MID,'⚡ Ionity Hamburg Moorfleet','Ladestopp 2 — ~390 km fra Honfleur · <a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">Åpne kart</a>');
+    addMarker(m,...S.lubeck,DOT_END,'Lübeck','Park Inn Radisson · ~85 km etter siste lading');
+    fitMap(m, ROADS.d13);
+  })();
+
+  // Dag 14
+  (function(){
+    const m = makeMap('m14');
+    if(!m) return;
+    addRoute(m, ROADS.d14);
+    addMarker(m,...S.lubeck,DOT_START,'Lübeck','');
+    addMarker(m,55.0651,9.3663,DOT_MID,'⚡ Ionity Aabenraa (E45)','Ladestopp ~180 km fra Lübeck · <a href="https://www.google.com/maps/search/?api=1&query=55.0651,9.3663" target="_blank">Åpne kart</a>');
+    addMarker(m,...S.aarhus,DOT_MID,'Aarhus','');
+    addMarker(m,...S.aalborg,DOT_END,'Aalborg','Scandic City · ~250 km etter lading');
+    fitMap(m, ROADS.d14);
+  })();
+
+  // Dag 15
+  (function(){
+    const m = makeMap('m15');
+    if(!m) return;
+    // Aalborg → Skagen (E45 north then E39 to tip)
+    const d15skagen = [[57.048,9.918],[57.25,9.97],[57.43,10.05],[57.59,10.04],[57.65,10.17],[57.70,10.42],[57.72,10.58],[57.74,10.60]];
+    addRoute(m, d15skagen);
+    addMarker(m,...S.aalborg,DOT_START,'Aalborg','');
+    addMarker(m,57.7417,10.5921,DOT_END,'Skagen','Ruths Hotel — Hans Ruths Vej 1');
+    fitMap(m, d15skagen, 32);
+  })();
+
+  // Dag 16
+  (function(){
+    const m = makeMap('m16');
+    if(!m) return;
+    // Drive Skagen→Hirtshals then ferry
+    const skagen = [57.7417,10.5921];
+    addRoute(m, [skagen, S.hirtshals]);
+    addFerry(m, [S.hirtshals, S.kristiansand]);
+    addMarker(m,...skagen,DOT_START,'Skagen','Ruths Hotel — avreise');
+    addRoute(m, ROADS.d16);
+    addMarker(m,...S.hirtshals,DOT_FERRY,'Hirtshals','Color Line avgang');
+    addMarker(m,...S.kristiansand,DOT_MID,'Kristiansand','Color Line ankomst');
+    addMarker(m,...S.arendal,DOT_END,'Arendal 🏡','Hjem!');
+    fitMap(m,[S.hirtshals,S.kristiansand,...ROADS.d16]);
+  })();
+
+});
+</script>
+</body>
+</html>
