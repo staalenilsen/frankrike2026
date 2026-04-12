@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Aalborg, Danmark – Reisebok 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+:root{--ink:#1f2d3a;--muted:#5f6b76;--line:#d9d2c5;--paper:#fffdf9;--bg:#f4efe7;--accent:#8b5e3c;--accent-soft:#efe3d6;--r:16px}
+*{box-sizing:border-box}html{font-size:16px}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}a{color:var(--accent)}
+.topbar{background:var(--paper);border-bottom:1px solid var(--line);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.back{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none}.topbar h1{margin:0;font-size:16px;font-weight:700;flex:1}
+.hero-map{height:240px;width:100%}.content{padding:16px;max-width:760px;margin:0 auto}
+.section{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+h2{margin:0 0 12px;font-size:16px;font-weight:700}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin:0 4px 4px 0}
+.tag.g{background:#eaf5ee;color:#2d7a4f}.tag.b{background:#e6f0fb;color:#185fa5}.tag.w{background:#fdf3e1;color:#c17f24}
+.place{border-bottom:1px solid var(--line);padding:12px 0}.place:last-child{border-bottom:none;padding-bottom:0}
+.place-title{font-size:15px;font-weight:700;margin:0 0 3px}
+.stars{font-size:12px;color:#c17f24;margin-left:6px}
+.place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
+.place-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.plink{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none}
+.plink.m{background:#e6f0fb;color:#185fa5}.plink.g{background:#eaf5ee;color:#2d7a4f}
+.info-row{display:flex;gap:8px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}.info-row:last-child{border-bottom:none}
+.lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);min-width:80px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:320px}}
+</style>
+</head>
+<body>
+<div class="topbar"><a class="back" href="index.html">← Tilbake</a><h1>Aalborg, Danmark</h1></div>
+<div id="map" class="hero-map"></div>
+<div class="content">
+
+<div class="section"><h2>Om Aalborg</h2>
+<p style="font-size:14px;color:var(--muted);margin:0 0 10px">Aalborg er Nord-Jyllands største by og en hyggelig overraskelse – den historiske gamlebyen med Jomfru Ane Gade er Danmarks mest kjente festgate. Men byen har også en vakker havnefront langs Limfjorden, fine museer og en avslappet nordjysk stemning. God base en natt før Skagen-avslutningen.</p>
+<div><span class="tag">Nord-Jyllands by</span><span class="tag">Jomfru Ane Gade</span><span class="tag">Limfjorden</span><span class="tag g">Hundrevennlig</span></div></div>
+
+<div class="section"><h2>🍽 Restauranter</h2>
+<div class="place"><p class="place-title">Restaurant Provence <span class="stars">★★★★</span></p>
+<p class="place-desc">Fransk-inspirert restaurant ved havnen med glimrende mat og service. Sjømat, franske klassikere og god vinliste. Fin terrasse mot Limfjorden. God ramme for den nest siste kvelden på turen.</p>
+<div><span class="tag">Fransk</span><span class="tag">Havneutsikt</span><span class="tag g">Terrasse – hunder ok</span></div>
+<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Restaurant+Provence+Aalborg" target="_blank">📍 Kart</a></div></div>
+
+<div class="place"><p class="place-title">Penny Lane Café</p>
+<p class="place-desc">Eksplisitt hundrevennlig bakeri, patisserie og kafé anbefalt av BringFido. Lager eget brød og kaker i kjelleren. Frokostalternativer, smørbrød, salater, kaffe og smoothies. Perfekt morgen-kafé. Uteservering.</p>
+<div><span class="tag g">Eksplisitt hundrevennlig</span><span class="tag">Hjemmebakt</span><span class="tag">Frokost</span></div>
+<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Penny+Lane+Café+Aalborg" target="_blank">📍 Kart</a></div></div>
+
+<div class="place"><p class="place-title">Jomfru Ane Gade – gate med mange valg</p>
+<p class="place-desc">Danmarks mest kjente gate for mat og drikke. Rekke på rekke med restauranter, barer og kafeer. Noe for enhver smak – fra smørrebrød til internationalt kjøkken. Uformelt og festlig. Gå langs gaten og velg etter lyst – hunder tillatt på de fleste uteserveringer.</p>
+<div><span class="tag">Mest kjente gate</span><span class="tag">Mange valg</span><span class="tag g">Hunder ute</span></div>
+<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Jomfru+Ane+Gade+Aalborg" target="_blank">📍 Kart</a></div></div></div>
+
+<div class="section"><h2>🐾 Opplevelser med hund</h2>
+<div class="place"><p class="place-title">Limfjorden-promenaden</p>
+<p class="place-desc">Gå langs Limfjorden-kaiene – flott og åpent med godt hundevenlig areal. Utmerket for morgen- og kveldstur. Se fjordmiljøet og de mange bysyklistene.</p>
+<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Limfjorden+Aalborg+promenade" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Klostertorvet og gamlebyen</p>
+<p class="place-desc">Aalborgkloster (1431), Budolfi Kirke og historiske gater er vakre og hundrevennlige. Kort morgentur mens dere lader bilen og spiser frokost.</p>
+<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Budolfi+Kirke+Aalborg" target="_blank">📍 Kart</a></div></div></div>
+
+<div class="section"><h2>ℹ️ Praktisk</h2>
+<div class="info-row"><span class="lbl">Lading</span><span>Ionity Aabenraa E45 (~180 km fra Lübeck). Ankommer Aalborg med 250 km rekkevidde igjen.</span></div>
+<div class="info-row"><span class="lbl">Neste dag</span><span>Skagen 100 km nord. Lett og vakker siste kjøredag.</span></div>
+<div class="info-row"><span class="lbl">Scandic</span><span>Book hundvennlig rom direkte.</span></div></div>
+</div>
+<script>
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});
+const m=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
+const places=[[57.048,9.918,'Scandic Aalborg City','Overnatting'],[57.043,9.920,'Jomfru Ane Gade','Festgaten'],[57.046,9.914,'Limfjorden-promenaden','Fin hundetursttur'],[57.048,9.916,'Restaurant Provence','Fransk, havneutsikt'],[57.047,9.917,'Penny Lane Café','Hundrevennlig bakeri'],[57.048,9.915,'Budolfi Kirke','Historisk gamlebyen']];
+places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
+m.setView([57.047,9.917],14);
+</script>
+</body>
+</html>

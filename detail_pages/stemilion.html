@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Saint-Émilion, Frankrike – Reisebok 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+:root{--ink:#1f2d3a;--muted:#5f6b76;--line:#d9d2c5;--paper:#fffdf9;--bg:#f4efe7;--accent:#8b5e3c;--accent-soft:#efe3d6;--r:16px}
+*{box-sizing:border-box}html{font-size:16px}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--accent)}
+.topbar{background:var(--paper);border-bottom:1px solid var(--line);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.back{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none}
+.topbar h1{margin:0;font-size:16px;font-weight:700;flex:1}
+.hero-map{height:240px;width:100%}
+.content{padding:16px;max-width:760px;margin:0 auto}
+.section{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+h2{margin:0 0 12px;font-size:16px;font-weight:700}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin:0 4px 4px 0}
+.tag.g{background:#eaf5ee;color:#2d7a4f}
+.tag.b{background:#e6f0fb;color:#185fa5}
+.tag.w{background:#fdf3e1;color:#c17f24}
+.place{border-bottom:1px solid var(--line);padding:12px 0}
+.place:last-child{border-bottom:none;padding-bottom:0}
+.place-title{font-size:15px;font-weight:700;margin:0 0 3px;display:flex;align-items:center;gap:8px}
+.stars{font-size:12px;color:#c17f24}
+.place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
+.place-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.plink{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none;display:inline-block}
+.plink.m{background:#e6f0fb;color:#185fa5}
+.plink.g{background:#eaf5ee;color:#2d7a4f}
+.info-row{display:flex;gap:8px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}
+.info-row:last-child{border-bottom:none}
+.lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);min-width:80px;flex-shrink:0;padding-top:2px}
+.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.img-ph{background:var(--accent-soft);border-radius:10px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:28px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:320px}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="back" href="index.html">← Tilbake</a>
+  <h1>Saint-Émilion, Frankrike</h1>
+</div>
+<div id="map" class="hero-map"></div>
+<div class="content">
+
+<div class="section">
+  <h2>Om Saint-Émilion</h2>
+  <p style="font-size:14px;color:var(--muted);margin:0 0 10px">Saint-Émilion er en middelaldersk UNESCO-listet vinby 40 min øst for Bordeaux. Byen er berømt for sine Premier Grand Crus Classés, den monolittiske kirken hugget ut av fjellet, og de brosteinsbelagte gatene som bugner av vinsmaking og gastronomisk tradisjon. Sykkel mellom vinmarkene er en helt egen opplevelse.</p>
+  <div><span class="tag">UNESCO Verdensarv</span><span class="tag">Premier Grand Cru</span><span class="tag">Middelaldersk vinby</span><span class="tag g">Hundrevennlige terrasser</span></div>
+</div>
+
+<div class="section">
+  <h2>🍽 Restauranter</h2>
+  <div class="place">
+    <p class="place-title">L'Envers du Décor <span class="stars">★★★★★</span></p>
+    <p class="place-desc">Saint-Émilions første vinbar (åpnet 1987), nå eid av Château Pavie-familien. En institusjon i byen og et naturlig samlingspunkt for lokale og besøkende. Sesongbasert meny med lokale spesialiteter – okseribbe for to og Grand Marnier-sufflé er klassikere. Over 500 viner på kartet. <strong>Be om terrassen</strong> – den er fantastisk sommerkveld.</p>
+    <div><span class="tag">Institusjon</span><span class="tag">500+ viner</span><span class="tag g">Terrasse – hunder ok</span></div>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=L+Envers+du+Decor+Saint-Emilion" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+  <div class="place">
+    <p class="place-title">La Terrasse Rouge</p>
+    <p class="place-desc">Unikt matopplevelse på taket av Château La Dominique, omgitt av vinmarkene til berømte naboer som Château Cheval Blanc og Château Pétrus. Bistronomisk meny med regionale råvarer – Aquitaine kaviar, Cap Ferret østers og sesongbaserte retter. Lunsj er ideelt. Ca. 5 min kjøring fra sentrum.</p>
+    <div><span class="tag">Vinmark-utsikt</span><span class="tag">Bistronomisk</span><span class="tag b">Reservasjon nødvendig</span></div>
+    <div class="place-links">
+      <a class="plink" href="https://laterrasserouge.com" target="_blank">🌐 laterrasserouge.com</a>
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=La+Terrasse+Rouge+Saint-Emilion" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+  <div class="place">
+    <p class="place-title">Chai Pascal</p>
+    <p class="place-desc">Koselig kjøkken med åpen steinvegg. Eier Pascal arbeidet i en av Paris' fremste vinbutikker før han åpnet her. Enkle, fremragende retter med lokale råvarer til rimelige priser – ferske østers, croque monsieur, lokale oster. Utmerket vinliste. <strong>Book bord på forhånd.</strong></p>
+    <div><span class="tag">Sjarmerende</span><span class="tag">Rimelig</span><span class="tag">Ferske østers</span></div>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Chai+Pascal+Saint-Emilion" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+  <div class="place">
+    <p class="place-title">Café Saïgon</p>
+    <p class="place-desc">Overraskende og eksplisitt hundrevennlig vietnamesisk restaurant i Saint-Émilion. Glimrende vinstekort og autentisk mat – rekestarter og tofu-retter er bestselgere. Perfekt kontrast til alt det franske. Mye rost for unik mat og god service.</p>
+    <div><span class="tag">Vietnamesisk</span><span class="tag g">Eksplisitt hundrevennlig</span><span class="tag">Annerledes</span></div>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Café+Saigon+Saint-Émilion" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🍷 Vinsmaking</h2>
+  <div class="place">
+    <p class="place-title">Les Cordeliers – Crémant de Bordeaux</p>
+    <p class="place-desc">Det gamle 13. århundre-klosteret er omgjort til en elegant vinbar og produsent av musserende Crémant de Bordeaux. 3 km katakomber 17 m under bakken. Guidede turer på engelsk (11:00 og 14:00, €12,50). Sjarmerende gårdsplass for picnic og glasvin. Generøse smakerbolker.</p>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Les+Cordeliers+Saint-Emilion" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+  <div class="place">
+    <p class="place-title">The Wine Buff St-Émilion</p>
+    <p class="place-desc">Irlendingen Paddy O'Flynn driver denne sjarmerende vinbutikken. Spesialiserer seg på organiske og biodynamiske viner. Fritt og morsomt vinsmaking med ekspertise og historier. "Irish spoken here." 2 rue du Marché.</p>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=The+Wine+Buff+Saint-Emilion" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🐾 Opplevelser med hund</h2>
+  <div class="place">
+    <p class="place-title">Sykkel mellom vinmarkene</p>
+    <p class="place-desc">Sykkel ut fra Saint-Émilion mot Pomerol og St-Christophe-des-Bardes. Flatt terreng, asfalterte veier og spektakulær vinmark-landskap. Hunder på line er standard – alle markene er private, men veiene er offentlige. Morgentur ca. 10 km er fantastisk.</p>
+    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Saint-Emilion+velo+route" target="_blank">📍 Kart</a></div>
+  </div>
+  <div class="place">
+    <p class="place-title">Brosteinsgatene i gamlebyen</p>
+    <p class="place-desc">Gå gjennom de middelalderske gatene opp og ned i det steinbelagte sentrum. Hunder tillatt overalt ute. Kvelds-stemningen med vin og solnedgang over vinmarkene er uforglemmelig. Bratt noen steder – hundene trenger vann i varmen.</p>
+    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Saint-Emilion+gamlebyen" target="_blank">📍 Kart</a></div>
+  </div>
+</div>
+</div>
+<script>
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+  iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+  shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'
+});
+const m=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
+const places=[
+  [44.8944,-0.1552,'Badon Boutique Hôtel','Overnatting'],
+  [44.8942,-0.1559,'L'Envers du Décor','Institusjon – terrasse'],
+  [44.8968,-0.1736,'La Terrasse Rouge','Vinmark-restaurant Château La Dominique'],
+  [44.8956,-0.1567,'Les Cordeliers','Crémant-katakomber og vinbar'],
+  [44.8940,-0.1555,'Café Saïgon','Hundrevennlig vietnamesisk'],
+];
+places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
+m.setView([44.894,-0.155],14);
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Skagen, Danmark – Reisebok 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+:root{--ink:#1f2d3a;--muted:#5f6b76;--line:#d9d2c5;--paper:#fffdf9;--bg:#f4efe7;--accent:#8b5e3c;--accent-soft:#efe3d6;--r:16px}
+*{box-sizing:border-box}html{font-size:16px}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--accent)}
+.topbar{background:var(--paper);border-bottom:1px solid var(--line);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.back{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none}
+.topbar h1{margin:0;font-size:16px;font-weight:700;flex:1}
+.hero-map{height:240px;width:100%}
+.content{padding:16px;max-width:760px;margin:0 auto}
+.section{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+h2{margin:0 0 12px;font-size:16px;font-weight:700}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin:0 4px 4px 0}
+.tag.g{background:#eaf5ee;color:#2d7a4f}
+.tag.b{background:#e6f0fb;color:#185fa5}
+.tag.w{background:#fdf3e1;color:#c17f24}
+.place{border-bottom:1px solid var(--line);padding:12px 0}
+.place:last-child{border-bottom:none;padding-bottom:0}
+.place-title{font-size:15px;font-weight:700;margin:0 0 3px;display:flex;align-items:center;gap:8px}
+.stars{font-size:12px;color:#c17f24}
+.place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
+.place-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.plink{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none;display:inline-block}
+.plink.m{background:#e6f0fb;color:#185fa5}
+.plink.g{background:#eaf5ee;color:#2d7a4f}
+.info-row{display:flex;gap:8px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}
+.info-row:last-child{border-bottom:none}
+.lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);min-width:80px;flex-shrink:0;padding-top:2px}
+.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.img-ph{background:var(--accent-soft);border-radius:10px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:28px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:320px}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="back" href="index.html">← Tilbake</a>
+  <h1>Skagen, Danmark</h1>
+</div>
+<div id="map" class="hero-map"></div>
+<div class="content">
+
+<div class="section">
+  <h2>Om Skagen</h2>
+  <p style="font-size:14px;color:var(--muted);margin:0 0 10px">Skagen er Danmarks nordligste punkt, der Skagerrak og Nordsjøen møtes ved Grenen. Kunstnerkolonien fra 1800-tallet satte Skagen på verdenskartet – P.S. Krøyer og Michael Ancher malte det unike gule lyset her. Sjømat av absolutt toppkvalitet, vakre strender og en avslappet atmosfære gjør dette til en verdig avslutning på turen.</p>
+  <div><span class="tag">Grenen – to hav møtes</span><span class="tag">Skagen-maler-skolen</span><span class="tag">Fersk sjømat</span><span class="tag g">Hundrevennlig</span></div>
+</div>
+
+<div class="section">
+  <h2>🍽 Restauranter</h2>
+  <div class="place">
+    <p class="place-title">Ruths Brasserie <span class="stars">★★★★★</span></p>
+    <p class="place-desc">Hjertet i Ruths Hotel – restaurert til sin fordums glans av den avdøde Philip Sørensen. Sjefskokk Michel Michaud serverer klassisk fransk bistro-mat med dansk vri. Muslinger i hvitvinssaus og Fish & Chips Skagen-stil er bestselgere. Åpent kjøkken inne i restauranten – spennende å se. Reservasjon er nødvendig – svært populær om sommeren. <strong>Be om uteplass med hundene.</strong></p>
+    <div><span class="tag">Hotellets restaurant</span><span class="tag">Fransk bistro</span><span class="tag g">Terrasse – hunder ok</span><span class="tag b">Reservasjon nødvendig</span></div>
+    <div class="place-links">
+      <a class="plink" href="https://www.ruths.dk/brasserie" target="_blank">🌐 ruths.dk</a>
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Ruths+Brasserie+Skagen" target="_blank">📍 Kart</a>
+      <a class="plink" href="tel:+4598441124">📞 Reservasjon</a>
+    </div>
+  </div>
+  <div class="place">
+    <p class="place-title">Skagen Fiskerestaurant <span class="stars">★★★★</span></p>
+    <p class="place-desc">50 år gammel klassiker i ett av de ikoniske fiskehusene ved havnen. Fisk og skalldyr løftet opp av havet foran restauranten samme morgen. Flott plass, god verdi og ekte Skagen-atmosfære. Enorm og vakker lokasjon. Bestill bord – populær.</p>
+    <div><span class="tag">50 år gammel institusjon</span><span class="tag">Havnebeliggenhet</span><span class="tag">Ultraferskt</span></div>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Skagen+Fiskerestaurant" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+  <div class="place">
+    <p class="place-title">Jakobs Café & Bar</p>
+    <p class="place-desc">Koselig, populær kafé i sentrum. Hyggelig atmosfære, god mat og tilgjengelig uten reservasjon. Bra alternativ for lunsj eller en uformell middag. Craft øl og enkel, god mat.</p>
+    <div><span class="tag">Uformelt</span><span class="tag">Craft øl</span></div>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Jakobs+Cafe+Bar+Skagen" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+  <div class="place">
+    <p class="place-title">Skagen Bryghus</p>
+    <p class="place-desc">Lokalt mikrobryggeri med levende musikk, god stemning og egenbrygget øl. Hamburgere, nachos og enkel mat. Passer perfekt for en avslappet kveld. Prøv "Strandbasker"-ølet – husbrygget og berømt.</p>
+    <div><span class="tag">Mikrobryggeri</span><span class="tag">Live musikk</span></div>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Skagen+Bryghus" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🐾 Opplevelser med hund</h2>
+  <div class="place">
+    <p class="place-title">Grenen – der to hav møtes</p>
+    <p class="place-desc">Det absolutte høydepunkt i Skagen. Sanden spiss der Skagerrak og Nordsjøen møtes – to ulike bølgesett kolliderer. Parkér ved Grenen P-plass og gå/sykle (ingen biler), ca. 2 km tur-retur. Hunder tillatt hele veien. Uforglemmelig og vindfullt. Gå hit tidlig morgen for å unngå folkemengder.</p>
+    <div><span class="tag">Ikonisk</span><span class="tag g">Hunder tillatt</span></div>
+    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Grenen+Skagen" target="_blank">📍 Kart</a></div>
+  </div>
+  <div class="place">
+    <p class="place-title">Gammel Skagen / Gl. Skagen-stranden</p>
+    <p class="place-desc">Rett utenfor Ruths Hotel ligger den vakre Gammel Skagen-stranden. Fin sand, lavt hav og det berømmede Skagen-lyset. Rolig og fin om morgenen. Hundene elsker det.</p>
+    <div><span class="tag">Strandtur</span><span class="tag g">Hunder ok</span></div>
+    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Gammel+Skagen+strand" target="_blank">📍 Kart</a></div>
+  </div>
+  <div class="place">
+    <p class="place-title">Råbjerg Mile – vandrende sanddyne</p>
+    <p class="place-desc">Én av Nord-Europas største innlandsdyner – 40 meter høy og "vandrer" 15 meter i året! Ca. 10 km sør for Skagen. Absolutt verdt en omveg. Hunder tillatt. Spektakulær og surrealistisk.</p>
+    <div><span class="tag">Naturwunder</span><span class="tag g">Hunder ok</span></div>
+    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Råbjerg+Mile" target="_blank">📍 Kart</a></div>
+  </div>
+  <div class="place">
+    <p class="place-title">Skagens Museum</p>
+    <p class="place-desc">Samlingen av Skagen-malernes verker – P.S. Krøyer, Anna og Michael Ancher, Laurits Tuxen. Verdensnivå. Hunder kan ikke være inne, men utearealet er fint. Litt utenfor sentrum.</p>
+    <div class="place-links">
+      <a class="plink" href="https://skagensmuseum.dk" target="_blank">🌐 skagensmuseum.dk</a>
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Skagens+Museum" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>ℹ️ Praktisk</h2>
+  <div class="info-row"><span class="lbl">Ruths Hotel</span><span>Hunder DKK 300/opphold. Mat- og vannskål inkl. Gratis parkering. Reservér hundevenlig rom.</span></div>
+  <div class="info-row"><span class="lbl">Ferge</span><span>Neste dag: 70 km til Hirtshals. Color Line Hirtshals–Kristiansand. Hunder i bil på bildekk.</span></div>
+  <div class="info-row"><span class="lbl">Grenen</span><span>Parkering ved inngangen, deretter gåing/sykkel 1 km ut til spissen. Kan bli folksomt – gå tidlig.</span></div>
+</div>
+</div>
+<script>
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+  iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+  shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'
+});
+const m=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
+const places=[
+  [57.7417,10.5921,'Ruths Hotel','Overnatting – Gl. Skagen'],
+  [57.7456,10.6311,'Grenen','Der to hav møtes'],
+  [57.7271,10.5876,'Skagen Fiskerestaurant','50 år gammel institusjon'],
+  [57.7287,10.5874,'Jakobs Café & Bar','Hyggelig og uformelt'],
+  [57.6003,10.4297,'Råbjerg Mile','Vandrende sanddyne – 10 km sør'],
+  [57.7285,10.5889,'Skagens Museum','Skagen-malerne'],
+];
+places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
+m.setView([57.7350,10.590],13);
+</script>
+</body>
+</html>

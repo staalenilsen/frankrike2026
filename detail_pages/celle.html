@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Celle, Tyskland – Reisebok 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+:root{--ink:#1f2d3a;--muted:#5f6b76;--line:#d9d2c5;--paper:#fffdf9;--bg:#f4efe7;--accent:#8b5e3c;--accent-soft:#efe3d6;--r:16px}
+*{box-sizing:border-box}html{font-size:16px}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}a{color:var(--accent)}
+.topbar{background:var(--paper);border-bottom:1px solid var(--line);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.back{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none}.topbar h1{margin:0;font-size:16px;font-weight:700;flex:1}
+.hero-map{height:240px;width:100%}.content{padding:16px;max-width:760px;margin:0 auto}
+.section{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+h2{margin:0 0 12px;font-size:16px;font-weight:700}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin:0 4px 4px 0}
+.tag.g{background:#eaf5ee;color:#2d7a4f}.tag.b{background:#e6f0fb;color:#185fa5}.tag.w{background:#fdf3e1;color:#c17f24}
+.place{border-bottom:1px solid var(--line);padding:12px 0}.place:last-child{border-bottom:none;padding-bottom:0}
+.place-title{font-size:15px;font-weight:700;margin:0 0 3px}
+.stars{font-size:12px;color:#c17f24;margin-left:6px}
+.place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
+.place-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.plink{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none}
+.plink.m{background:#e6f0fb;color:#185fa5}.plink.g{background:#eaf5ee;color:#2d7a4f}
+.info-row{display:flex;gap:8px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}.info-row:last-child{border-bottom:none}
+.lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);min-width:80px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:320px}}
+</style>
+</head>
+<body>
+<div class="topbar"><a class="back" href="index.html">← Tilbake</a><h1>Celle, Tyskland</h1></div>
+<div id="map" class="hero-map"></div>
+<div class="content">
+
+<div class="section"><h2>Om Celle</h2>
+<p style="font-size:14px;color:var(--muted);margin:0 0 10px">Celle er en nydelig bindingsverks-by i Niedersachsen med over 500 velbevalte halvtimberhus fra 1400–1800-tallet. Gamlebyen er bilfri og perfekt å vandre i. Herzogschloss-slottet dominerer sentrum, og elvene Aller og Fuhse gir fine turmuligheter. Overraskende hyggelig og uventet vakker by som det er lett å undervurdere.</p>
+<div><span class="tag">500+ halvtimberhus</span><span class="tag">Historisk Altstadt</span><span class="tag">Herzogschloss</span><span class="tag g">Hundrevennlig</span></div></div>
+
+<div class="section"><h2>🍽 Restauranter</h2>
+<div class="place"><p class="place-title">Ratskeller Celle<span class="stars">★★★★</span></p>
+<p class="place-desc">600 år gammel kjelder under rådhuset i gamlebyen. Historisk atmosfære, tysk og europeisk mat med lokale råvarer. Escargot, schnitzel og rettene med Heide-sopp er fremragende. Noen gjester kaller det "the most unique dining experience I've ever had." Nylansert eierskap med fornyet energi. Reservér gjerne.</p>
+<div><span class="tag">600 år gammel kjeller</span><span class="tag">Lokale råvarer</span><span class="tag">Historisk atmosfære</span></div>
+<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Ratskeller+Celle+Germany" target="_blank">📍 Kart</a></div></div>
+
+<div class="place"><p class="place-title">Thaers Wirtshaus</p>
+<p class="place-desc">Tradisjonelt og sjarmerende vertshus med utmerket tysk mat. Anbefalt av lokale som ett av de beste stedene i byen. Hyggelig atmosfære, god service og solide porsjoner. Passer perfekt etter en lang kjøretur.</p>
+<div><span class="tag">Tradisjonelt</span><span class="tag">Lokalt favoritt</span><span class="tag g">Hunder ute</span></div>
+<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Thaers+Wirtshaus+Celle" target="_blank">📍 Kart</a></div></div>
+
+<div class="place"><p class="place-title">Bier-Akademie</p>
+<p class="place-desc">Populær plass kjent for utmerket Flammkuchen (alsatisk tarte flambée) og god øl. Rask service, hyggelig atmosfære, og et vennlig sted. En gjest beskriver det: "A wonderful find. Excellent food and excellent beer." Godt valg for en uformell middag.</p>
+<div><span class="tag">Flammkuchen</span><span class="tag">Ølspesialiteter</span></div>
+<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Bier+Akademie+Celle" target="_blank">📍 Kart</a></div></div>
+
+<div class="place"><p class="place-title">Restaurant Martas <span class="stars">★★★★★</span></p>
+<p class="place-desc">Berømt for eksepsjonell service og fantastisk mat. Eier er "varm og sjenerøs", hundene er eksplisitt velkomne, og personalet gir deg en varm velkomst. En av de best vurderte i Celle. Ferskt og smakfullt på alle retter. Reservér på forhånd.</p>
+<div><span class="tag g">Eksplisitt hundrevennlig</span><span class="tag">Fantastisk service</span><span class="tag">Ferskt</span></div>
+<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Restaurant+Martas+Celle" target="_blank">📍 Kart</a></div></div></div>
+
+<div class="section"><h2>🐾 Opplevelser med hund</h2>
+<div class="place"><p class="place-title">Altstadt-vandring</p>
+<p class="place-desc">Cellesr middelalderbyen er bilfri og helt flat – perfekt for hundetur. Gå langs de krokete smykkede halvtimbergatene, se Hoppener-huset (1532) og torg med sprechende Laternen (snakkende lykter). Hele gamlebyen er hundevennlig.</p>
+<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Altstadt+Celle" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Aller-elven og Französischer Garten</p>
+<p class="place-desc">Den franske hagen rett ved elven er flott for morgenturer. Flat, vakker og rolig. Aller-elven gir fine spaserturer begge veier fra hotellet. Hunder kan bades i elven (sjekk lokale regler).</p>
+<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Französischer+Garten+Celle" target="_blank">📍 Kart</a></div></div></div>
+
+<div class="section"><h2>ℹ️ Praktisk</h2>
+<div class="info-row"><span class="lbl">Hotell</span><span>Althoff Hotel Fürstenhof – sjekk hundepolitikk og parkering direkte.</span></div>
+<div class="info-row"><span class="lbl">Lading</span><span>Husk ladestopp ved Aral Hamburg Moorfleet (~225 km fra Ribe) dagen du ankommer.</span></div>
+<div class="info-row"><span class="lbl">Varme</span><span>Juli kan være varmt. Aller-elven er et godt sted for å kjøle ned hundene.</span></div></div>
+</div>
+<script>
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});
+const m=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
+const places=[[52.615,10.082,'Althoff Hotel Fürstenhof','Overnatting'],[52.621,10.080,'Ratskeller Celle','600 år gammel kjeller'],[52.619,10.081,'Herzogschloss','Slottet'],[52.620,10.080,'Bier-Akademie','Flammkuchen og øl'],[52.618,10.079,'Thaers Wirtshaus','Tradisjonelt vertshus'],[52.616,10.073,'Französischer Garten','Park ved elven']];
+places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
+m.setView([52.619,10.080],14);
+</script>
+</body>
+</html>

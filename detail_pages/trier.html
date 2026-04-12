@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Trier, Tyskland – Reisebok 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+:root{--ink:#1f2d3a;--muted:#5f6b76;--line:#d9d2c5;--paper:#fffdf9;--bg:#f4efe7;--accent:#8b5e3c;--accent-soft:#efe3d6;--r:16px}
+*{box-sizing:border-box}html{font-size:16px}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--accent)}
+.topbar{background:var(--paper);border-bottom:1px solid var(--line);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.back{font-size:14px;font-weight:600;color:var(--accent);text-decoration:none}
+.topbar h1{margin:0;font-size:16px;font-weight:700;flex:1}
+.hero-map{height:240px;width:100%}
+.content{padding:16px;max-width:760px;margin:0 auto}
+.section{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+h2{margin:0 0 12px;font-size:16px;font-weight:700}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin:0 4px 4px 0}
+.tag.g{background:#eaf5ee;color:#2d7a4f}
+.tag.b{background:#e6f0fb;color:#185fa5}
+.tag.w{background:#fdf3e1;color:#c17f24}
+.place{border-bottom:1px solid var(--line);padding:12px 0}
+.place:last-child{border-bottom:none;padding-bottom:0}
+.place-title{font-size:15px;font-weight:700;margin:0 0 3px;display:flex;align-items:center;gap:8px}
+.stars{font-size:12px;color:#c17f24}
+.place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
+.place-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.plink{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none;display:inline-block}
+.plink.m{background:#e6f0fb;color:#185fa5}
+.plink.g{background:#eaf5ee;color:#2d7a4f}
+.info-row{display:flex;gap:8px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}
+.info-row:last-child{border-bottom:none}
+.lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);min-width:80px;flex-shrink:0;padding-top:2px}
+.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.img-ph{background:var(--accent-soft);border-radius:10px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:28px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:320px}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="back" href="index.html">← Tilbake</a>
+  <h1>Trier, Tyskland</h1>
+</div>
+<div id="map" class="hero-map"></div>
+<div class="content">
+
+<div class="section">
+  <h2>Om Trier</h2>
+  <p style="font-size:14px;color:var(--muted);margin:0 0 10px">Trier er Tysklands eldste by, grunnlagt av romerne rundt 15 f.Kr. Den er full av spektakulære romanske monumenter – Porta Nigra, Konstantin-basiilkaen, amfiteateret og termene er alle UNESCO-listestedet. Moselvinene er blant Tysklands beste Riesling. Elva og de tilstøtende vinmarkene gir perfekte sykkelruter.</p>
+  <div><span class="tag">Tysklands eldste by</span><span class="tag">UNESCO Verdensarv</span><span class="tag">Mosel Riesling</span><span class="tag g">Hundrevennlig</span></div>
+</div>
+
+<div class="section">
+  <h2>🍽 Restauranter</h2>
+  <div class="place">
+    <p class="place-title">Weinstube Kesselstatt <span class="stars">★★★★</span></p>
+    <p class="place-desc">Klassisk Moselvinstue med 650 år gammel vinslagertradisjon. Vinbaren ligger rett ved Trier Dom og har en fantastisk uteservering med utsikt mot katedralen. "Best i test" for lokal Riesling. Stor, utmerket vinkart med regionale viner, og solid mat (schnitzel, salater). Hunder er generelt velkomne ute.</p>
+    <div><span class="tag">Uteservering v/katedralen</span><span class="tag">Mosel Riesling</span><span class="tag g">Hunder ute</span></div>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Weinstube+Kesselstatt+Trier" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+  <div class="place">
+    <p class="place-title">Brasserie ZUR SIM <span class="stars">★★★★</span></p>
+    <p class="place-desc">Utmerket restaurant med fantastisk utsikt mot Porta Nigra fra den rommelige uteserveringen. Klassisk tyskt kjøkken med sjømat, biff og lokal vin. Hunder er eksplisitt velkomne på terrassen, og det er bordvarme utenfor sesongen. Veldig hyggelig atmosfære.</p>
+    <div><span class="tag">Porta Nigra-utsikt</span><span class="tag g">Eksplisitt hundrevennlig</span><span class="tag">Bordvarme ute</span></div>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Brasserie+ZUR+SIM+Trier" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+  <div class="place">
+    <p class="place-title">Paulaner am Schloss</p>
+    <p class="place-desc">Flott uteservering rett ved Mosel-elven. Ikke den beste maten i Trier, men uslåelig beliggenhet for en øl, en bretzel eller bratwurst i kveldssolen. Populær samlingsplass ved elvekanten. Gå gjerne ned til trappene langs elva etterpå.</p>
+    <div><span class="tag">Mosel-elv</span><span class="tag">Sommerøl</span><span class="tag g">Hunder ute</span></div>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Paulaner+Trier+Mosel" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+  <div class="place">
+    <p class="place-title">Das Weinhaus</p>
+    <p class="place-desc">Sjarmerende vintaverna rett overfor Karl Marx-huset. Rustikk interiør med høye bord, normalt bord og barområde. Flott valg av Mosel-vin på glass og flaske. Wiener schnitzel stor nok for to til lunsj. Perfekt for vinsmaking med god mat.</p>
+    <div><span class="tag">Vinsmaking</span><span class="tag">Lokal Riesling</span><span class="tag">Rimelig</span></div>
+    <div class="place-links">
+      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Das+Weinhaus+Trier" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🐾 Opplevelser med hund</h2>
+  <div class="place">
+    <p class="place-title">Porta Nigra</p>
+    <p class="place-desc">Det mektigste bevarte romanske byport i Tyskland (2. årh. e.Kr.), UNESCO-listet. Hunder tillatt rundt monumentet. Bare noen minutter å gå fra Nells Park Hotel.</p>
+    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Porta+Nigra+Trier" target="_blank">📍 Kart</a></div>
+  </div>
+  <div class="place">
+    <p class="place-title">Tur langs Mosel</p>
+    <p class="place-desc">Elvepromenaden langs Mosel er flat, vakker og perfekt med hund. Går i begge retninger fra sentrum – sørover mot Zurlauben-området med sjarmerende fiskerbyer og uterestauranter, eller nordover mot vinmarkene.</p>
+    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/dir/?api=1&origin=Dasbachstrasse+12,+54292+Trier&destination=49.7496,6.6370&travelmode=walking" target="_blank">📍 Rute til elva</a></div>
+  </div>
+  <div class="place">
+    <p class="place-title">Sykkeltur langs Mosel-ruten</p>
+    <p class="place-desc">Moselradweg er en av Tysklands fineste sykkelruter – flat, asfaltert og langs elva hele veien. Fra Trier kan dere sykle noen kilometer sørover til vinlandsbyer som Konz eller Igel. Perfekt med hunder.</p>
+    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Moselradweg+Trier" target="_blank">📍 Kart</a></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>ℹ️ Praktisk</h2>
+  <div class="info-row"><span class="lbl">Vin</span><span>Mosel Riesling er verdensklasse – prøv tørr og off-dry stil. Kjøp med hjem fra lokale vinbutikker.</span></div>
+  <div class="info-row"><span class="lbl">Nells Park</span><span>Hotellet har park/grøntareal rundt seg – fint for hundene tidlig morgen og kveld.</span></div>
+  <div class="info-row"><span class="lbl">Sykkel</span><span>Mosel-elva er flat og hundrevennlig. Bare 5 min fra hotellet.</span></div>
+</div>
+</div>
+<script>
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+  iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+  shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'
+});
+const m=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
+const places=[
+  [49.7490,6.6379,'Nells Park Hotel','Overnatting'],
+  [49.7522,6.6402,'Porta Nigra','UNESCO-romansk byport'],
+  [49.7499,6.6380,'Weinstube Kesselstatt','Moselvinstue v/katedralen'],
+  [49.7541,6.6371,'Brasserie ZUR SIM','Utsikt Porta Nigra, hunder ok'],
+  [49.7478,6.6345,'Paulaner am Schloss','Øl ved Mosel-elva'],
+];
+places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
+m.setView([49.7505,6.637],14);
+</script>
+</body>
+</html>
