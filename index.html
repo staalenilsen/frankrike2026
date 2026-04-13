@@ -48,19 +48,6 @@
     .btn-secondary{background:white;color:var(--ink);border:1px solid var(--line)}
     .print-note{font-size:11px;color:var(--muted);margin-top:12px}
 
-    /* ── STICKY NAV ── */
-    .nav-wrap{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);
-      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line)}
-    .nav-scroll{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;
-      scrollbar-width:none;-ms-overflow-style:none}
-    .nav-scroll::-webkit-scrollbar{display:none}
-    .nav-btn{flex-shrink:0;padding:7px 13px;border-radius:999px;font-size:13px;font-weight:600;
-      background:white;border:1px solid var(--line);color:var(--ink);cursor:pointer;
-      white-space:nowrap;transition:background .15s}
-    .nav-btn:hover,.nav-btn.active{background:var(--sky-soft);color:var(--sky)}
-    .nav-btn.warn-nav{background:var(--sun-soft);color:var(--warn);border-color:var(--sun)}
-
     /* ── MAIN ── */
     main{padding:12px 12px 60px;background:var(--bg)}
 
@@ -75,7 +62,7 @@
     .sub{font-size:13px;color:var(--muted);margin:0 0 14px}
 
     /* ── DAY HEADER ── */
-    .day{scroll-margin-top:56px}
+    .day{scroll-margin-top:16px}
     .day-head{display:flex;align-items:flex-start;justify-content:space-between;
       gap:10px;padding:16px 16px 12px;border-bottom:1px solid var(--line);background:linear-gradient(to right,#f7fcff,#fff)}
     .day-title{flex:1}
@@ -295,6 +282,13 @@
     .gm-divider{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;
       letter-spacing:.05em;margin:10px 0 6px;padding-top:6px;border-top:1px solid var(--line)}
     @media(min-width:500px){.gm-grid{grid-template-columns:1fr 1fr}}
+
+    /* ── KLIKKBARE DAGSRADER ── */
+    .day-link{color:var(--ink);text-decoration:none;font-weight:600;display:block;
+      padding:2px 0}
+    .day-link:hover{color:var(--sky);text-decoration:underline}
+    .ov-table tr:has(.day-link){cursor:pointer}
+    .ov-table tr:has(.day-link):hover td{background:var(--sky-soft)}
   </style>
 </head>
 <body>
@@ -312,36 +306,13 @@
   <div class="hero-actions">
     <button class="btn-hero btn-primary" onclick="window.print()">🖨 Skriv ut</button>
     <a class="btn-hero btn-secondary" href="#oversikt">Oversikt</a>
-    <a class="btn-hero btn-secondary" href="#ladeplan">⚡ Ladeplan</a>
+    <a class="btn-hero btn-secondary" href="#ladeplan">⚡ Lading</a>
+    <a class="btn-hero btn-secondary" href="#gmaps">🗺 Kart</a>
   </div>
   <p class="print-note">Sjekk alltid detaljer direkte med hotell og ferge. Kart © OpenStreetMap.</p>
 </header>
 
-<!-- ── STICKY NAV ── -->
-<div class="nav-wrap">
-  <nav class="nav-scroll">
-    <button class="nav-btn" onclick="goto('oversikt')">Oversikt</button>
-    <button class="nav-btn" onclick="goto('praktisk')">Praktisk</button>
-    <button class="nav-btn warn-nav" onclick="goto('ladeplan')">⚡ Lading</button>
-    <button class="nav-btn" onclick="goto('gmaps')" style="background:var(--sky-soft);color:var(--sky)">🗺 Kart</button>
-    <button class="nav-btn" onclick="goto('dag1')">12. jul</button>
-    <button class="nav-btn" onclick="goto('dag2')">13. jul</button>
-    <button class="nav-btn warn-nav" onclick="goto('dag3')">14. jul ⚡</button>
-    <button class="nav-btn" onclick="goto('dag4')">15. jul</button>
-    <button class="nav-btn" onclick="goto('dag5')">16. jul</button>
-    <button class="nav-btn" onclick="goto('dag6')">17. jul</button>
-    <button class="nav-btn" onclick="goto('dag7')">18. jul</button>
-    <button class="nav-btn" onclick="goto('dag8')">19. jul</button>
-    <button class="nav-btn warn-nav" onclick="goto('dag9')">26. jul ⚡</button>
-    <button class="nav-btn" onclick="goto('dag10')">27. jul</button>
-    <button class="nav-btn" onclick="goto('dag11')">28. jul</button>
-    <button class="nav-btn" onclick="goto('dag12')">29. jul</button>
-    <button class="nav-btn warn-nav" onclick="goto('dag13')">30. jul ⚡⚡</button>
-    <button class="nav-btn warn-nav" onclick="goto('dag14')">31. jul ⚡</button>
-    <button class="nav-btn" onclick="goto('dag15')">1. aug</button>
-    <button class="nav-btn" onclick="goto('dag16')">2. aug</button>
-  </nav>
-</div>
+
 
 <main>
 
@@ -353,22 +324,22 @@
       <table class="ov-table">
         <thead><tr><th>Dag</th><th>Stopp</th><th>Km</th></tr></thead>
         <tbody>
-          <tr><td>Søn 12. jul</td><td>Ribe<span class="booked-badge">✓ Booket</span></td><td>220+ferge</td></tr>
-          <tr class="wr"><td>Man 13. jul</td><td>Celle</td><td>430 ⚡</td></tr>
-          <tr class="wr"><td>Tir 14. jul</td><td>Trier</td><td>500 ⚡</td></tr>
-          <tr><td>Ons 15. jul</td><td>Strasbourg</td><td>220</td></tr>
-          <tr><td>Tor 16. jul</td><td>Mittelwihr</td><td>80</td></tr>
-          <tr><td>Fre 17. jul</td><td>Mittelwihr</td><td>0 🚲</td></tr>
-          <tr><td>Lør 18. jul</td><td>Beaune</td><td>260</td></tr>
-          <tr><td>Søn 19. jul</td><td>Oyé 🏡</td><td>120</td></tr>
-          <tr class="wr"><td>Søn 26. jul</td><td>Saint-Émilion ✅</td><td>468 ⚡</td></tr>
-          <tr><td>Man 27. jul</td><td>Saint-Émilion ✅</td><td>0</td></tr>
-          <tr><td>Tir 28. jul</td><td>Amboise</td><td>320</td></tr>
-          <tr><td>Ons 29. jul</td><td>Honfleur</td><td>320</td></tr>
-          <tr class="wr"><td>Tor 30. jul</td><td>Lübeck</td><td>650 ⚡⚡</td></tr>
-          <tr class="wr"><td>Fre 31. jul</td><td>Aalborg</td><td>430 ⚡</td></tr>
-          <tr><td>Lør 1. aug</td><td>Skagen</td><td>100</td></tr>
-          <tr><td>Søn 2. aug</td><td>Arendal</td><td>ferge</td></tr>
+          <tr><td><a href="#dag1" class="day-link">Søn 12. jul</a></td><td>Ribe<span class="booked-badge">✓ Booket</span></td><td>220+ferge</td></tr>
+          <tr class="wr"><td><a href="#dag2" class="day-link">Man 13. jul</a></td><td>Celle</td><td>430 ⚡</td></tr>
+          <tr class="wr"><td><a href="#dag3" class="day-link">Tir 14. jul</a></td><td>Trier</td><td>500 ⚡</td></tr>
+          <tr><td><a href="#dag4" class="day-link">Ons 15. jul</a></td><td>Strasbourg</td><td>220</td></tr>
+          <tr><td><a href="#dag5" class="day-link">Tor 16. jul</a></td><td>Mittelwihr</td><td>80</td></tr>
+          <tr><td><a href="#dag6" class="day-link">Fre 17. jul</a></td><td>Mittelwihr</td><td>0 🚲</td></tr>
+          <tr><td><a href="#dag7" class="day-link">Lør 18. jul</a></td><td>Beaune</td><td>260</td></tr>
+          <tr><td><a href="#dag8" class="day-link">Søn 19. jul</a></td><td>Oyé 🏡</td><td>120</td></tr>
+          <tr class="wr"><td><a href="#dag9" class="day-link">Søn 26. jul</a></td><td>Saint-Émilion ✅</td><td>468 ⚡</td></tr>
+          <tr><td><a href="#dag10" class="day-link">Man 27. jul</a></td><td>Saint-Émilion ✅</td><td>0</td></tr>
+          <tr><td><a href="#dag11" class="day-link">Tir 28. jul</a></td><td>Amboise</td><td>320</td></tr>
+          <tr><td><a href="#dag12" class="day-link">Ons 29. jul</a></td><td>Honfleur</td><td>320</td></tr>
+          <tr class="wr"><td><a href="#dag13" class="day-link">Tor 30. jul</a></td><td>Lübeck</td><td>650 ⚡⚡</td></tr>
+          <tr class="wr"><td><a href="#dag14" class="day-link">Fre 31. jul</a></td><td>Aalborg</td><td>430 ⚡</td></tr>
+          <tr><td><a href="#dag15" class="day-link">Lør 1. aug</a></td><td>Skagen</td><td>100</td></tr>
+          <tr><td><a href="#dag16" class="day-link">Søn 2. aug</a></td><td>Arendal</td><td>ferge</td></tr>
         </tbody>
       </table>
     </div>
@@ -1468,10 +1439,7 @@
 </footer>
 
 <script>
-function goto(id){
-  const el=document.getElementById(id);
-  if(el){el.scrollIntoView({behavior:'smooth',block:'start'})}
-}
+
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
