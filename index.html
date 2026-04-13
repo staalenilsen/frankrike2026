@@ -1391,22 +1391,29 @@ const PLACES = {
   dag13: { lat:53.866,  lon:10.686,  name:"Park Inn by Radisson Lübeck",address:"Willy-Brandt-Allee 1–5, 23554 Lübeck",  mapsQ:"Willy-Brandt-Allee+1+23554+Lubeck+Germany" },
   dag14: { lat:57.048,  lon:9.918,   name:"Scandic Aalborg City",         address:"Europa Plads 1, 9000 Aalborg",                    mapsQ:"Europa+Plads+1+9000+Aalborg+Denmark" },
   dag15: { lat:57.742,  lon:10.578,  name:"Ruths Hotel",                  address:"Hans Ruths Vej 1, 9990 Skagen",                   mapsQ:"Hans+Ruths+Vej+1+9990+Skagen+Denmark" },
-  // LADESTOPP
-  brive:      { lat:45.1672, lon:1.4830,  name:"Tesla Brive-la-Gaillarde",    address:"Le Griffolet, 19270 Ussac",            mapsQ:"45.1672%2C1.4830" },
-  poitiers:   { lat:46.5285, lon:0.2868,  name:"Tesla Poitiers Sud",          address:"6 rue de la Saulaie, 86240 Croutelle",mapsQ:"6+rue+de+la+Saulaie+86240+Croutelle+France" },
-  moorfleet:  { lat:53.5057, lon:10.0900, name:"Aral Hamburg-Moorfleet",      address:"Amandus-Stubbe-Str. 6, 22113 Hamburg",mapsQ:"53.5057%2C10.0900" },
-  kirchheim:  { lat:50.8383, lon:9.5750,  name:"IONITY Kirchheimer Dreieck",  address:"Industriestr. 7, 36275 Kirchheim",    mapsQ:"50.8383%2C9.5750" },
-  baidesomme: { lat:50.1673, lon:1.7556,  name:"IONITY Baie de Somme",        address:"A16 Sailly-Flibeaucourt, 80970",       mapsQ:"50.1673%2C1.7556" },
-  aabenraa:   { lat:55.0651, lon:9.3663,  name:"IONITY Aabenraa",             address:"Egevej 6, 6200 Aabenraa",             mapsQ:"55.0651%2C9.3663" },
+  // LADESTOPP — mapsQ bruker adresse for presist treff i Google Maps
+  brive:      { lat:45.1672, lon:1.4830,  name:"Tesla Brive-la-Gaillarde",    address:"Le Griffolet, 19270 Ussac",               mapsQ:"Le+Griffolet+19270+Ussac+France" },
+  poitiers:   { lat:46.5285, lon:0.2868,  name:"Tesla Poitiers Sud",          address:"6 rue de la Saulaie, 86240 Croutelle",    mapsQ:"6+rue+de+la+Saulaie+86240+Croutelle+France" },
+  moorfleet:  { lat:53.5057, lon:10.0900, name:"Aral Hamburg-Moorfleet",      address:"Amandus-Stubbe-Straße+6+22113+Hamburg",   mapsQ:"Amandus-Stubbe-Stra%C3%9Fe+6+22113+Hamburg+Germany" },
+  kirchheim:  { lat:50.8383, lon:9.5750,  name:"IONITY Kirchheimer Dreieck",  address:"Industriestr. 7, 36275 Kirchheim",        mapsQ:"Industriestrasse+7+36275+Kirchheim+Hessen+Germany" },
+  baidesomme: { lat:50.1673, lon:1.7556,  name:"IONITY Baie de Somme",        address:"Aire de la Baie de Somme, A16, 80970",    mapsQ:"Aire+de+la+Baie+de+Somme+A16+Sailly-Flibeaucourt+80970+France" },
+  aabenraa:   { lat:55.0651, lon:9.3663,  name:"IONITY Aabenraa",             address:"Egevej 6, 6200 Aabenraa",                mapsQ:"Egevej+6+6200+Aabenraa+Denmark" },
 };
 function mapsPin(key){var p=PLACES[key];return p?"https://www.google.com/maps/search/?api=1&query="+p.mapsQ:"#";}
-// Auto-inject: alle <a data-place="key"> får href fra PLACES; data-show-address viser adresse
-window.addEventListener("load",function(){
-  document.querySelectorAll("[data-place]").forEach(function(el){
-    var key=el.getAttribute("data-place"),p=PLACES[key];if(!p)return;
-    if(el.tagName==="A")el.href=mapsPin(key);
-    if(el.hasAttribute("data-show-address"))el.textContent=p.address;
-    if(el.hasAttribute("data-show-name"))el.textContent=p.name;
+// Klikk-delegering: alltid hent URL fra PLACES ved klikk (ikke avhengig av load-timing)
+document.addEventListener("click",function(e){
+  var a=e.target.closest("a[data-place]");if(!a)return;
+  var key=a.getAttribute("data-place"),p=PLACES[key];if(!p)return;
+  e.preventDefault();
+  window.open("https://www.google.com/maps/search/?api=1&query="+p.mapsQ,"_blank");
+});
+// Sett tekst for data-show-address / data-show-name (kjøres etter DOM)
+document.addEventListener("DOMContentLoaded",function(){
+  document.querySelectorAll("[data-show-address]").forEach(function(el){
+    var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.address;
+  });
+  document.querySelectorAll("[data-show-name]").forEach(function(el){
+    var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.name;
   });
 });
 const S={
