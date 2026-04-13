@@ -1511,7 +1511,7 @@ function ferry(m,pts){L.polyline(pts,{color:'#4a90b8',weight:3,opacity:.85,dashA
 function fit(m,pts,pad){m.fitBounds(L.latLngBounds(pts),{padding:[pad||28,pad||28]})}
 
 const ROADS={
-  d1:[[57.587,9.965],[57.29,9.93],[57.05,9.84],[56.80,9.73],[56.46,9.50],[56.09,9.03],[55.70,8.93],[55.47,8.81],[55.332,8.773]],
+  d1:[[57.587,9.965],[57.462,9.979],[57.276,9.942],[57.048,9.918],[56.655,9.806],[56.460,10.044],[56.157,10.203],[55.710,9.540],[55.490,9.472],[55.470,8.930],[55.332,8.773]],
   d2:[[55.332,8.773],[55.08,8.97],[54.78,9.44],[54.34,9.47],[53.77,9.76],[53.55,9.99],[53.22,10.04],[52.80,10.03],[52.615,10.082]],
   d3:[[52.615,10.082],[52.19,9.87],[51.74,9.62],[50.83,9.57],[50.56,9.68],[50.11,8.68],[49.88,7.91],[49.75,6.637]],
   d4:[[49.749,6.637],[49.61,6.13],[49.48,6.10],[49.18,6.39],[48.82,7.33],[48.573,7.752]],
@@ -1523,7 +1523,7 @@ const ROADS={
   d12:[[47.413,0.989],[47.80,0.75],[47.995,0.193],[48.43,0.10],[48.73,-0.36],[49.18,-0.36],[49.33,0.00],[49.419,0.233]],
   d13:[[49.419,0.233],[50.17,1.76],[50.45,2.22],[50.85,3.10],[51.05,3.72],[52.52,9.90],[53.55,9.99],[53.866,10.686]],
   d14:[[53.866,10.686],[54.25,9.93],[55.07,9.37],[55.50,9.47],[55.80,9.89],[56.16,10.21],[56.61,10.03],[57.048,9.918]],
-  d15:[[57.048,9.918],[57.25,9.97],[57.43,10.05],[57.59,10.04],[57.65,10.17],[57.70,10.42],[57.74,10.58]],
+  d15:[[57.048,9.918],[57.276,9.942],[57.441,10.537],[57.600,10.520],[57.721,10.578]],
   d16:[[58.147,7.996],[58.24,8.26],[58.37,8.55],[58.461,8.772]]
 };
 const S={
@@ -1537,7 +1537,7 @@ const S={
   stemilion:[44.894,-0.155],amboise:[47.413,0.989],lemans:[47.995,0.193],
   caen:[49.183,-0.356],honfleur:[49.419,0.233],baidesomme:[50.1673,1.7556],
   lubeck:[53.866,10.686],aarhus:[56.162,10.203],aalborg:[57.048,9.918],
-  skagen:[57.7417,10.5921],padborg:[55.0651,9.3663]
+  frederikshavn:[57.441,10.537],skagen:[57.7417,10.5921],padborg:[55.0651,9.3663]
 };
 
 window.addEventListener('load',function(){
@@ -1562,7 +1562,7 @@ window.addEventListener('load',function(){
   })();
 
   (function(){const m=mkMap('m1');if(!m)return;ferry(m,[S.arendal,S.hirtshals]);route(m,ROADS.d1);
-    mk(m,...S.arendal,DS,'Arendal','Ferge til Hirtshals');mk(m,...S.hirtshals,DM,'Hirtshals','Fergeankomst');mk(m,...S.ribe,DE,'Ribe','Hotel Dagmar');
+    mk(m,...S.arendal,DS,'Arendal','Ferge til Hirtshals');mk(m,...S.hirtshals,DM,'Hirtshals','Fergeankomst');mk(m,...S.aalborg,DM,'Aalborg','E39→E45');mk(m,...S.ribe,DE,'Ribe','Hotel Dagmar');
     fit(m,[S.arendal,...ROADS.d1]);})();
 
   (function(){const m=mkMap('m2');if(!m)return;route(m,ROADS.d2);
@@ -1610,11 +1610,11 @@ window.addEventListener('load',function(){
     fit(m,ROADS.d14);})();
 
   (function(){const m=mkMap('m15');if(!m)return;
-    route(m,ROADS.d15);mk(m,...S.aalborg,DS,'Aalborg','');mk(m,...S.skagen,DE,'Skagen','Ruths Hotel');fit(m,ROADS.d15,32);})();
+    route(m,ROADS.d15);mk(m,...S.aalborg,DS,'Aalborg','');mk(m,...S.frederikshavn,DM,'Frederikshavn','E45 nordende → sving nordvest');mk(m,...S.skagen,DE,'Skagen','Ruths Hotel');fit(m,ROADS.d15,32);})();
 
   (function(){const m=mkMap('m16');if(!m)return;
     const skagen=S.skagen;
-    route(m,[skagen,S.hirtshals]);ferry(m,[S.hirtshals,S.kristiansand]);route(m,ROADS.d16);
+    route(m,[skagen,[57.600,10.520],[57.441,10.537],[57.462,9.979],S.hirtshals]);ferry(m,[S.hirtshals,S.kristiansand]);route(m,ROADS.d16);
     mk(m,...skagen,DS,'Skagen','Ruths Hotel – avreise');mk(m,...S.hirtshals,DF,'Hirtshals','Color Line');mk(m,...S.kristiansand,DM,'Kristiansand','Ankomst');mk(m,...S.arendal,DE,'Arendal 🏡','Hjem!');
     fit(m,[skagen,S.hirtshals,S.kristiansand,...ROADS.d16]);})();
 });
