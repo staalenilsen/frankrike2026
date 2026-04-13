@@ -238,6 +238,10 @@
     }
     .detail-link:hover { background: #fde8cc; }
     .detail-link:active { filter: brightness(.94); }
+
+    /* ── Timing row ── */
+    .trow.note{font-size:12px;color:var(--muted);line-height:1.6;padding-top:2px;
+      border-top:1px dashed var(--line);margin-top:2px}
   </style>
 </head>
 <body>
@@ -362,13 +366,13 @@
   </div>
 </section>
 
-
 <!-- ── DAG 1 ── -->
 <section class="sc day" id="dag1">
   <div class="day-head">
     <div class="day-title"><h2>Søndag 12. juli — Ribe</h2><p class="sub">Arendal → Hirtshals (ferge) → Ribe</p></div>
     <div class="chips"><span class="chip">220 km + ferge</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -400,6 +404,20 @@
       <div class="map-wrap"><div id="m1" class="lmap"></div><div class="map-cap">Hirtshals → Ribe etter Color Line-fergen</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 08:30</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~13:25</span>
+          <span style="color:var(--line)">·</span><span style="font-size:12px;font-weight:600;color:var(--warn)">⛴ Color Line 2t 15m</span>
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">08:30 Arendal → 09:18 Kristiansand havn → 10:03 ombord → 12:18 Hirtshals → 13:25 Ribe</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost hjemme, kort morgentur med hundene i Arendal</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankomst tidlig ettermiddag → god tid til kveldspromenade langs Ribe Å</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 2 ── -->
@@ -407,7 +425,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Mandag 13. juli — Celle</h2><p class="sub">Ribe → Hamburg ⚡ → Celle</p></div>
     <div class="chips"><span class="chip">ca. 430 km</span><span class="chip warn">⚡</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -437,6 +456,20 @@
       <div class="map-wrap"><div id="m2" class="lmap"></div><div class="map-cap">Ribe → Hamburg ⚡ Moorfleet (~225 km) → Celle (~205 km)</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 08:30</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~13:00</span>
+          <span style="color:var(--line)">·</span><span style="font-size:12px;font-weight:600;color:var(--warn)">⚡ Aral Hamburg Moorfleet kl. 10:33 (35 min)</span>
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">08:30 Ribe → 10:33 ⚡ Hamburg Moorfleet (35 min) → 11:08 videre → 13:00 Celle</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost på Hotel Dagmar inkl. Kort tur i Ribe Altstadt med hundene</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Celle ved lunsjtid → ettermiddag i bindingsverks-gamlebyen</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 3 ── -->
@@ -444,7 +477,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Tirsdag 14. juli — Trier</h2><p class="sub">Celle → Kirchheimer Dreieck ⚡ → Trier</p></div>
     <div class="chips"><span class="chip">ca. 500 km</span><span class="chip warn">⚡ Ladestopp</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -473,6 +507,20 @@
       <div class="map-wrap"><div id="m3" class="lmap"></div><div class="map-cap">Celle → Kirchheimer Dreieck ⚡ (~190 km) → Trier (~310 km)</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 08:00</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~13:30</span>
+          <span style="color:var(--line)">·</span><span style="font-size:12px;font-weight:600;color:var(--warn)">⚡ Ionity Kirchheimer Dreieck kl. 09:41 (35 min)</span>
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">08:00 Celle → 09:41 ⚡ Kirchheimer Dreieck (35 min) → 10:16 videre → 13:30 Trier</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Tidlig frokost på hotellet — lang dag, men grei avreise</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankomst tidlig ettermiddag → lang ettermiddag i Trier, Porta Nigra og Mosel-promenade</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 4 ── -->
@@ -480,7 +528,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Onsdag 15. juli — Strasbourg</h2><p class="sub">Trier → Luxembourg → Strasbourg</p></div>
     <div class="chips"><span class="chip">ca. 220 km</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -507,6 +556,20 @@
       <div class="map-wrap"><div id="m4" class="lmap"></div><div class="map-cap">Trier → Luxembourg → Strasbourg. Behagelig kort dag.</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 09:30</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~11:55</span>
+          
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:30 Trier → (via Luxembourg-sentrum, mulighet for rask lunsj) → 11:55 Strasbourg</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> God tid til frokost og morgentur langs Mosel med hundene</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Strasbourg til lunsj → hel ettermiddag og kveld i Petite France</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 5 ── -->
@@ -514,7 +577,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Torsdag 16. juli — Mittelwihr</h2><p class="sub">Strasbourg → Colmar → Mittelwihr</p></div>
     <div class="chips"><span class="chip">ca. 80 km</span><span class="chip">🚲</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -541,6 +605,20 @@
       <div class="map-wrap"><div id="m5" class="lmap"></div><div class="map-cap">Strasbourg → Route du Vin → Mittelwihr</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 10:30</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~12:15</span>
+          
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">10:30 Strasbourg → (Route du Vin via Colmar, Kaysersberg) → 12:15 Mittelwihr</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> God morgen i Strasbourg — frokost, tur i gamlebyen og katedralen</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Mittelwihr ved lunsjtid → resten av dagen fritt på Route du Vin med sykkel</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 6 ── -->
@@ -572,7 +650,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Lørdag 18. juli — Beaune</h2><p class="sub">Mittelwihr → Besançon → Beaune</p></div>
     <div class="chips"><span class="chip">ca. 260 km</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -599,6 +678,20 @@
       <div class="map-wrap"><div id="m7" class="lmap"></div><div class="map-cap">Mittelwihr → Besançon → Beaune. Ca. 260 km.</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 09:30</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~12:00</span>
+          
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:30 Mittelwihr → A36 Besançon → A31 → 12:00 Beaune</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost + avsluttende sykkeltur eller landsby-vandring i Alsace</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Beaune ved lunsjtid → vinsmaking og Hôtel-Dieu om ettermiddagen</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 8 ── -->
@@ -606,7 +699,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Søndag 19. juli — Oyé 🏡</h2><p class="sub">Beaune → Oyé (Saône-et-Loire)</p></div>
     <div class="chips"><span class="chip">ca. 120 km</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px"><div class="info-rows"><div class="info-row"><span class="info-label">Sted</span><span class="info-val">Foreldrehuset i Oyé, 71800</span></div><div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Rolig ankomstdag. Base 19.–26. juli.</span></div></div>
@@ -625,6 +719,20 @@
       <div class="map-wrap"><div id="m8" class="lmap"></div><div class="map-cap">Beaune → Oyé. Siste steg til basen.</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 10:30</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~12:15</span>
+          
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">10:30 Beaune → D981 landevei via Charolles → 12:15 Oyé 🏡</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Slapp morgen i Beaune — frokost, morgentur i vinmarkene med hundene</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Oyé ved lunsjtid → stopp i Charolles for innkjøp (13 km fra Oyé)</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 9 ── -->
@@ -632,7 +740,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Søndag 26. juli — Saint-Émilion</h2><p class="sub">Oyé → Poitiers ⚡ → Saint-Émilion</p></div>
     <div class="chips"><span class="chip">ca. 500 km</span><span class="chip warn">⚡</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -661,6 +770,20 @@
       <div class="map-wrap"><div id="m9" class="lmap"></div><div class="map-cap">Oyé → Poitiers ⚡ (~240 km) → Saint-Émilion (~260 km)</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 08:00</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~13:35</span>
+          <span style="color:var(--line)">·</span><span style="font-size:12px;font-weight:600;color:var(--warn)">⚡ Ionity Poitiers Jaunay-Clan kl. 10:19 (35 min)</span>
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">08:00 Oyé → 10:19 ⚡ Poitiers Jaunay-Clan (35 min) → 10:54 videre → 13:35 Saint-Émilion</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Tidlig frokost — god mulighet for hundepause under ladestroppet i Poitiers (35 min)</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Saint-Émilion tidlig ettermiddag → kveldstur i brosteinsgatene</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 10 ── -->
@@ -693,7 +816,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Tirsdag 28. juli — Amboise</h2><p class="sub">Saint-Émilion → Tours → Amboise</p></div>
     <div class="chips"><span class="chip">ca. 320 km</span><span class="chip">🚲 Loire</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -721,6 +845,20 @@
       <div class="map-wrap"><div id="m11" class="lmap"></div><div class="map-cap">Saint-Émilion → Tours → Amboise. Ca. 320 km.</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 09:00</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~12:30</span>
+          
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Saint-Émilion → A10 nordover via Poitiers/Tours → 12:30 Amboise</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost + morgentur i vinmarkene rundt Saint-Émilion</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Amboise ved lunsjtid → ettermiddag på Loire à Vélo med hundene</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 12 ── -->
@@ -728,7 +866,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Onsdag 29. juli — Honfleur</h2><p class="sub">Amboise → Le Mans → Caen → Honfleur</p></div>
     <div class="chips"><span class="chip">ca. 320 km</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -756,6 +895,20 @@
       <div class="map-wrap"><div id="m12" class="lmap"></div><div class="map-cap">Amboise → Le Mans → Caen → Honfleur. Ca. 320 km.</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 09:00</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~12:10</span>
+          
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Amboise → A85/A28 Le Mans → A13/A29 Caen → 12:10 Honfleur</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost + morgentur langs Loire — elvepromenaden er fantastisk tidlig</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Honfleur til lunsj → hel ettermiddag og kveld ved Vieux Bassin</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 13 ── -->
@@ -763,7 +916,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Torsdag 30. juli — Lübeck</h2><p class="sub">Honfleur → Belgia → Hamburg → Lübeck</p></div>
     <div class="chips"><span class="chip">ca. 650 km</span><span class="chip warn">⚡⚡ Start tidlig!</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -793,6 +947,20 @@
       <div class="map-wrap"><div id="m13" class="lmap"></div><div class="map-cap">Honfleur → Baie de Somme ⚡ → Hamburg ⚡ → Lübeck</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--warn-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--warn)">🚀 Avreise 07:00</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~12:30</span>
+          <span style="color:var(--line)">·</span><span style="font-size:12px;font-weight:600;color:var(--warn)">⚡×2: Baie de Somme 08:31 + Hamburg Moorfleet 11:09 (2×35 min)</span>
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">07:00 Honfleur → 08:31 ⚡ Baie de Somme (35 min) → 09:06 → 11:09 ⚡ Hamburg Moorfleet (35 min) → 11:44 → 12:30 Lübeck</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> ⚠️ TIDLIG START — pakk kvelden før. Rask frokost. Hundene luftes godt ved hvert ladestopp (35 min = god pause)</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankomst Lübeck 12:30 → rolig ettermiddag, Holstentor og Niederegger marcipan</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 14 ── -->
@@ -800,7 +968,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Fredag 31. juli — Aalborg</h2><p class="sub">Lübeck → Padborg ⚡ → Aalborg</p></div>
     <div class="chips"><span class="chip">ca. 430 km</span><span class="chip warn">⚡</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -829,6 +998,20 @@
       <div class="map-wrap"><div id="m14" class="lmap"></div><div class="map-cap">Lübeck → Aabenraa ⚡ (~180 km) → Aalborg (~250 km)</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 08:30</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~13:10</span>
+          <span style="color:var(--line)">·</span><span style="font-size:12px;font-weight:600;color:var(--warn)">⚡ Ionity Aabenraa E45 kl. 10:03 (35 min)</span>
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">08:30 Lübeck → 10:03 ⚡ Aabenraa E45 (35 min) → 10:38 videre → 13:10 Aalborg</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost + morgentur langs Trave-elven i Lübeck</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Aalborg ved lunsjtid → ettermiddag langs Limfjorden</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 15 ── -->
@@ -836,7 +1019,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Lørdag 1. august — Skagen</h2><p class="sub">Aalborg → Skagen</p></div>
     <div class="chips"><span class="chip">ca. 100 km</span><span class="chip">Siste kveld</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
@@ -865,6 +1049,20 @@
       <div class="map-wrap"><div id="m15" class="lmap"></div><div class="map-cap">Aalborg → Skagen. Ca. 100 km – vakker avslutning.</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 10:30</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~11:50</span>
+          
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">10:30 Aalborg → E39 nordover → 11:50 Skagen – Ruths Hotel</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Slapp morgen i Aalborg — frokost på Penny Lane Café, morgentur langs Limfjorden</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Skagen til lunsj → lang, vakker siste sommerkveld ved Grenen</p>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 16 ── -->
@@ -872,7 +1070,8 @@
   <div class="day-head">
     <div class="day-title"><h2>Søndag 2. august — Hjem 🏡</h2><p class="sub">Skagen → Hirtshals → Color Line → Arendal</p></div>
     <div class="chips"><span class="chip">⛴ Ferge</span></div>
-  </div>
+
+      </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px 16px 0"><h3>Ferge og retur</h3></div>
@@ -898,6 +1097,20 @@
       <div class="map-wrap"><div id="m16" class="lmap"></div><div class="map-cap">Skagen → Hirtshals → Color Line → Kristiansand → Arendal</div></div>
     </div>
   </div>
+
+      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 09:00</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~13:45</span>
+          <span style="color:var(--line)">·</span><span style="font-size:12px;font-weight:600;color:var(--warn)">⛴ Color Line 2t 15m</span>
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Skagen → 09:45 Hirtshals havn → 10:35 ombord → 12:50 Kristiansand → 13:45 Arendal 🏡</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost på Ruths + siste tur på Gammel Skagen-stranden med hundene</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Arendal ~13:45 — hjem til kaffe på terrassen!</p>
+        </div>
+      </div>
 </section>
 
 
