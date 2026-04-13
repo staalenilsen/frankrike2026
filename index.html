@@ -272,6 +272,29 @@
     .scenic-map-btn{font-size:12px;font-weight:600;padding:7px 14px;border-radius:999px;
       background:white;color:var(--green);border:1.5px solid var(--green);
       text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+
+    /* ── GOOGLE MAPS PANEL ── */
+    .gm-section{padding:14px 16px 16px}
+    .gm-title{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;
+      letter-spacing:.06em;margin:0 0 10px}
+    .gm-grid{display:grid;gap:8px}
+    .gm-btn{display:flex;align-items:center;gap:10px;padding:12px 14px;
+      border-radius:var(--r-sm);text-decoration:none;border:1.5px solid;transition:filter .15s}
+    .gm-btn:active{filter:brightness(.94)}
+    .gm-btn.primary{background:#e8f4fd;border-color:#1a73e8;color:#1a73e8}
+    .gm-btn.seg{background:white;border-color:#c8e8f0;color:var(--ink)}
+    .gm-btn.scenic{background:var(--green-soft);border-color:var(--green);color:var(--green)}
+    .gm-btn-icon{font-size:20px;flex-shrink:0}
+    .gm-btn-text{flex:1}
+    .gm-btn-label{font-size:13px;font-weight:700;display:block;line-height:1.3}
+    .gm-btn-desc{font-size:11px;color:var(--muted);display:block;margin-top:2px;line-height:1.4}
+    .gm-btn.primary .gm-btn-desc{color:#5b9bd8}
+    .gm-btn.scenic .gm-btn-desc{color:var(--green)}
+    .gm-note{font-size:11px;color:var(--muted);margin-top:10px;padding:8px 10px;
+      background:var(--sun-soft);border-radius:8px;border-left:3px solid var(--sun);line-height:1.5}
+    .gm-divider{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;
+      letter-spacing:.05em;margin:10px 0 6px;padding-top:6px;border-top:1px solid var(--line)}
+    @media(min-width:500px){.gm-grid{grid-template-columns:1fr 1fr}}
   </style>
 </head>
 <body>
@@ -300,6 +323,7 @@
     <button class="nav-btn" onclick="goto('oversikt')">Oversikt</button>
     <button class="nav-btn" onclick="goto('praktisk')">Praktisk</button>
     <button class="nav-btn warn-nav" onclick="goto('ladeplan')">⚡ Lading</button>
+    <button class="nav-btn" onclick="goto('gmaps')" style="background:var(--sky-soft);color:var(--sky)">🗺 Kart</button>
     <button class="nav-btn" onclick="goto('dag1')">12. jul</button>
     <button class="nav-btn" onclick="goto('dag2')">13. jul</button>
     <button class="nav-btn warn-nav" onclick="goto('dag3')">14. jul ⚡</button>
@@ -395,6 +419,152 @@
     <p style="font-size:12px;color:var(--muted);margin-top:10px">Bruk <a href="https://abetterrouteplanner.com" target="_blank">abetterrouteplanner.com</a> med din bilmodell for nøyaktig planlegging.</p>
   </div>
 </section>
+<!-- ── GOOGLE MAPS KNAPP ── -->
+<section class="sc" id="gmaps">
+  <div class="sc-head">
+    <h2>🗺 Åpne i Google Maps</h2>
+    <p class="sub">Hele ruten, etappevis — uten API-nøkkel. Åpnes direkte i nettleser eller app.</p>
+  </div>
+  <div class="gm-section">
+
+    <!-- Hel tur -->
+    <p class="gm-title">Komplett rute</p>
+    <div class="gm-grid" style="grid-template-columns:1fr">
+      <a class="gm-btn primary" href="https://www.google.com/maps/dir/Arendal,Norway/Ribe,Denmark/Celle,Germany/Trier,Germany/Strasbourg,France/Mittelwihr+68630,France/Beaune,France/Oy%C3%A9+71800,France/Saint-%C3%89milion,France/Amboise,France/Honfleur,France/L%C3%BCbeck,Germany/Aalborg,Denmark/Skagen,Denmark" target="_blank">
+        <span class="gm-btn-icon">🗺</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Se hele turen — alle 14 stopp</span>
+          <span class="gm-btn-desc">Arendal → Ribe → Celle → Trier → Strasbourg → Mittelwihr → Beaune → Oyé → Saint-Émilion → Amboise → Honfleur → Lübeck → Aalborg → Skagen</span>
+        </span>
+        <span style="font-size:16px">↗</span>
+      </a>
+    </div>
+
+    <!-- Etappevis -->
+    <p class="gm-divider">Etappevis med ladestopp</p>
+    <div class="gm-grid">
+      <a class="gm-btn seg" href="https://www.google.com/maps/dir/Arendal,Norway/57.587,9.965/Ribe,Denmark/Celle,Germany/Trier,Germany/Strasbourg,France/Mittelwihr+68630,France/Beaune,France/Oy%C3%A9+71800,France" target="_blank">
+        <span class="gm-btn-icon">✈️</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">→ Utreise</span>
+          <span class="gm-btn-desc">Arendal · Hirtshals · Ribe · Celle · Trier · Strasbourg · Mittelwihr · Beaune · Oyé</span>
+        </span>
+      </a>
+      <a class="gm-btn seg" href="https://www.google.com/maps/dir/Oy%C3%A9+71800,France/45.153,1.530/Saint-%C3%89milion,France/Amboise,France/Honfleur,France" target="_blank">
+        <span class="gm-btn-icon">🇫🇷</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">→ Frankrike-løkken</span>
+          <span class="gm-btn-desc">Oyé · Brive ⚡ · Saint-Émilion · Amboise · Honfleur</span>
+        </span>
+      </a>
+      <a class="gm-btn seg" href="https://www.google.com/maps/dir/Honfleur,France/50.1673,1.7556/L%C3%BCbeck,Germany/Aalborg,Denmark/Skagen,Denmark/Hirtshals,Denmark/Arendal,Norway" target="_blank">
+        <span class="gm-btn-icon">🏠</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">→ Hjemreise</span>
+          <span class="gm-btn-desc">Honfleur · Baie de Somme ⚡ · Lübeck · Aalborg · Skagen · Hirtshals · Arendal</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- Dagsruter med nøyaktige ladestopp -->
+    <p class="gm-divider">Enkeltdager med ladestopp presist markert</p>
+    <div class="gm-grid">
+      <a class="gm-btn seg" href="https://www.google.com/maps/dir/Ribe,Denmark/53.5057,10.0900/Celle,Germany" target="_blank">
+        <span class="gm-btn-icon">2️⃣</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 2: Ribe → Celle</span>
+          <span class="gm-btn-desc">⚡ Aral Hamburg Moorfleet (~225 km)</span>
+        </span>
+      </a>
+      <a class="gm-btn seg" href="https://www.google.com/maps/dir/Celle,Germany/50.8338,9.5708/Trier,Germany" target="_blank">
+        <span class="gm-btn-icon">3️⃣</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 3: Celle → Trier</span>
+          <span class="gm-btn-desc">⚡ Ionity Kirchheimer Dreieck (~195 km)</span>
+        </span>
+      </a>
+      <a class="gm-btn seg" href="https://www.google.com/maps/dir/Oy%C3%A9+71800,France/45.153,1.530/Saint-%C3%89milion,France" target="_blank">
+        <span class="gm-btn-icon">9️⃣</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 9: Oyé → Saint-Émilion</span>
+          <span class="gm-btn-desc">⚡ Tesla Brive-la-Gaillarde A89 (~220 km)</span>
+        </span>
+      </a>
+      <a class="gm-btn seg" href="https://www.google.com/maps/dir/Saint-%C3%89milion,France/44.90,-0.57/46.585,-0.340/Amboise,France" target="_blank">
+        <span class="gm-btn-icon">1️⃣1️⃣</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 11: St-Émilion → Amboise</span>
+          <span class="gm-btn-desc">Via Bordeaux · ⚡ Tesla Poitiers Sud (~190 km)</span>
+        </span>
+      </a>
+      <a class="gm-btn seg" href="https://www.google.com/maps/dir/Honfleur,France/50.1673,1.7556/53.5057,10.0900/L%C3%BCbeck,Germany" target="_blank">
+        <span class="gm-btn-icon">1️⃣3️⃣</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 13: Honfleur → Lübeck</span>
+          <span class="gm-btn-desc">⚡ Baie de Somme + ⚡ Hamburg Moorfleet</span>
+        </span>
+      </a>
+      <a class="gm-btn seg" href="https://www.google.com/maps/dir/L%C3%BCbeck,Germany/55.0651,9.3663/Aalborg,Denmark" target="_blank">
+        <span class="gm-btn-icon">1️⃣4️⃣</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 14: Lübeck → Aalborg</span>
+          <span class="gm-btn-desc">⚡ Ionity Aabenraa E45 (~180 km)</span>
+        </span>
+      </a>
+    </div>
+
+    <!-- Scenic routes -->
+    <p class="gm-divider">🌿 Scenic route-alternativer</p>
+    <div class="gm-grid">
+      <a class="gm-btn scenic" href="https://www.google.com/maps/dir/Trier,Germany/Saarburg,Germany/Mettlach,Germany/Saverne,France/Strasbourg,France" target="_blank">
+        <span class="gm-btn-icon">🌀</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 4: Saar-dalen scenic</span>
+          <span class="gm-btn-desc">Trier · Saarburg · Saarschleife · Saverne-passet · Strasbourg</span>
+        </span>
+      </a>
+      <a class="gm-btn scenic" href="https://www.google.com/maps/dir/Strasbourg,France/Obernai,France/Ribauvillé,France/Riquewihr,France/Mittelwihr+68630,France" target="_blank">
+        <span class="gm-btn-icon">🍇</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 5: Route du Vin scenic</span>
+          <span class="gm-btn-desc">Strasbourg · Obernai · Château Haut-Kœnigsbourg · Ribeauvillé · Riquewihr</span>
+        </span>
+      </a>
+      <a class="gm-btn scenic" href="https://www.google.com/maps/dir/Mittelwihr+68630,France/Colmar,France/Guebwiller,France/Col+de+Bussang,France/Luxeuil-les-Bains,France/Beaune,France" target="_blank">
+        <span class="gm-btn-icon">⛰️</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 7: Ballons des Vosges scenic</span>
+          <span class="gm-btn-desc">Mittelwihr · Colmar · Col de Bussang (727m) · Luxeuil-les-Bains · Beaune</span>
+        </span>
+      </a>
+      <a class="gm-btn scenic" href="https://www.google.com/maps/dir/Beaune,France/Meursault,France/Santenay,France/Autun,France/Oy%C3%A9+71800,France" target="_blank">
+        <span class="gm-btn-icon">🍷</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 8: Route des Grands Crus scenic</span>
+          <span class="gm-btn-desc">Beaune · Meursault · Puligny-Montrachet · Autun · Oyé</span>
+        </span>
+      </a>
+      <a class="gm-btn scenic" href="https://www.google.com/maps/dir/Amboise,France/Blois,France/Le+Mans,France/Vimoutiers,France/Honfleur,France" target="_blank">
+        <span class="gm-btn-icon">🏰</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 12: Loire + Normandie scenic</span>
+          <span class="gm-btn-desc">Amboise · Blois · Le Mans · Camembert · Honfleur</span>
+        </span>
+      </a>
+      <a class="gm-btn scenic" href="https://www.google.com/maps/dir/Aalborg,Denmark/Hirtshals,Denmark/R%C3%A5bjerg+Mile,Denmark/Skagen,Denmark" target="_blank">
+        <span class="gm-btn-icon">🏜️</span>
+        <span class="gm-btn-text">
+          <span class="gm-btn-label">Dag 15: Vestkysten scenic</span>
+          <span class="gm-btn-desc">Aalborg · Hirtshals · Råbjerg Mile · Gammel Skagen</span>
+        </span>
+      </a>
+    </div>
+
+    <p class="gm-note">💡 <strong>Tips:</strong> Google Maps åpner ruten med alle stopp. Trykk «Del» i appen for å sende til telefon. Koordinater (tall) vises som presise pinner for ladestopp. Fergestrekninger (Arendal–Hirtshals) er ikke inkludert — legg inn manuelt om ønskelig.</p>
+  </div>
+</section>
+
+
 
 <!-- ── DAG 1 ── -->
 <section class="sc day" id="dag1">
