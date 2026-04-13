@@ -242,6 +242,36 @@
     /* ── Timing row ── */
     .trow.note{font-size:12px;color:var(--muted);line-height:1.6;padding-top:2px;
       border-top:1px dashed var(--line);margin-top:2px}
+
+    /* ── SCENIC ROUTE ── */
+    .scenic-btn{display:flex;align-items:center;justify-content:center;gap:8px;
+      width:100%;padding:13px;border-radius:var(--r-sm);background:var(--green-soft);
+      color:var(--green);font-weight:700;font-size:14px;border:1.5px solid var(--green);
+      margin:8px 0 0;cursor:pointer;text-decoration:none}
+    .scenic-btn:hover{background:#d0edda}
+    .scenic-btn:active{filter:brightness(.94)}
+    .scenic-panel{display:none;background:linear-gradient(135deg,#f0faf4 0%,#f8fff9 100%);
+      border-top:2px solid var(--green);padding:14px 16px}
+    .scenic-panel.open{display:block}
+    .scenic-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+    .scenic-header h4{margin:0;font-size:14px;font-weight:700;color:var(--green)}
+    .scenic-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+      background:var(--green-soft);color:var(--green);border:1px solid var(--green)}
+    .scenic-route{font-size:12px;color:var(--sky);font-family:monospace;
+      background:rgba(0,0,0,.03);padding:8px 10px;border-radius:8px;
+      margin:8px 0;line-height:1.6;word-break:break-word}
+    .scenic-stops{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:5px}
+    .scenic-stops li{font-size:13px;color:var(--ink);display:flex;gap:8px;
+      align-items:flex-start;padding:5px 0;border-bottom:1px solid rgba(0,150,100,.1)}
+    .scenic-stops li:last-child{border-bottom:none}
+    .scenic-stops .s-icon{font-size:16px;flex-shrink:0;line-height:1}
+    .scenic-extra{font-size:12px;color:var(--muted);margin-top:8px;
+      background:rgba(255,255,255,.7);padding:8px 10px;border-radius:8px;
+      border-left:3px solid var(--green)}
+    .scenic-maps{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+    .scenic-map-btn{font-size:12px;font-weight:600;padding:7px 14px;border-radius:999px;
+      background:white;color:var(--green);border:1.5px solid var(--green);
+      text-decoration:none;display:inline-flex;align-items:center;gap:5px}
   </style>
 </head>
 <body>
@@ -345,7 +375,7 @@
     <div class="tips">
       <div class="tip wt"><h4 class="w">Dag 2 — Ribe → Celle (430 km)</h4><p><strong>Aral Hamburg Moorfleet</strong> (~225 km)<br>→ 205 km igjen · <a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">📍 Kart</a></p></div>
       <div class="tip wt"><h4 class="w">Dag 3 — Celle → Trier (500 km)</h4><p><strong>Ionity Kirchheimer Dreieck</strong> (~190 km)<br>→ 310 km igjen · <a href="https://www.google.com/maps/search/?api=1&query=50.8338,9.5708" target="_blank">📍 Kart</a></p></div>
-      <div class="tip wt"><h4 class="w">Dag 9 — Oyé → Saint-Émilion (500 km)</h4><p><strong>Ionity Poitiers Jaunay-Clan A10</strong> (~240 km)<br>→ 260 km igjen · <a href="https://www.google.com/maps/search/?api=1&query=46.7014,0.3668" target="_blank">📍 Kart</a></p></div>
+      <div class="tip wt"><h4 class="w">Dag 9 — Oyé → Saint-Émilion (500 km)</h4><p><strong>Tesla Supercharger Brive-la-Gaillarde A89</strong> (~240 km)<br>→ 260 km igjen · <a href="https://www.google.com/maps/search/?api=1&query=46.7014,0.3668" target="_blank">📍 Kart</a></p></div>
       <div class="tip wt"><h4 class="w">Dag 13 — Honfleur → Lübeck (650 km) ⚠</h4><p><strong>Stopp 1:</strong> Ionity Baie de Somme (~175 km) · <a href="https://www.google.com/maps/search/?api=1&query=50.1673,1.7556" target="_blank">📍</a><br><strong>Stopp 2:</strong> Aral Hamburg Moorfleet (~390 km) · <a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">📍</a><br>Start tidlig!</p></div>
       <div class="tip wt"><h4 class="w">Dag 14 — Lübeck → Aalborg (430 km)</h4><p><strong>Ionity Aabenraa E45</strong> (~180 km)<br>→ 250 km igjen · <a href="https://www.google.com/maps/search/?api=1&query=55.0651,9.3663" target="_blank">📍 Kart</a></p></div>
     </div>
@@ -355,7 +385,7 @@
         <tbody>
           <tr><td>Dag 2</td><td>Aral Hamburg Moorfleet</td><td>~225 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">53.5057, 10.0900</a></td></tr>
           <tr><td>Dag 3</td><td>Ionity Kirchheimer Dreieck</td><td>~190 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=50.8338,9.5708" target="_blank">50.8338, 9.5708</a></td></tr>
-          <tr><td>Dag 9</td><td>Ionity Poitiers Jaunay-Clan</td><td>~240 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=46.7014,0.3668" target="_blank">46.7014, 0.3668</a></td></tr>
+          <tr><td>Dag 9</td><td>Ionity Poitiers Jaunay-Clan</td><td>~240 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=46.7014,0.3668" target="_blank">45.1530, 1.5140</a></td></tr>
           <tr><td>Dag 13</td><td>Ionity Baie de Somme</td><td>~175 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=50.1673,1.7556" target="_blank">50.1673, 1.7556</a></td></tr>
           <tr><td>Dag 13</td><td>Aral Hamburg Moorfleet</td><td>~390 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=53.5057,10.0900" target="_blank">53.5057, 10.0900</a></td></tr>
           <tr><td>Dag 14</td><td>Ionity Aabenraa E45</td><td>~180 km</td><td><a href="https://www.google.com/maps/search/?api=1&query=55.0651,9.3663" target="_blank">55.0651, 9.3663</a></td></tr>
@@ -580,6 +610,21 @@
           <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Strasbourg Sud — Rue du 23 Novembre, Ostwald (7 km sør, 8 min). 8×150 kW, CCS, 24/7. <a href="https://www.google.com/maps/search/?api=1&query=Rue+du+23+Novembre+67400+Ostwald" target="_blank">Kart</a></p></div>
         </div>
       </div>
+
+      <button id="scenic-btn-dag4" class="scenic-btn" onclick="toggleScenic('dag4')">🌿 Vis Scenic Route</button>
+      <div id="scenic-dag4" class="scenic-panel">
+        <div class="scenic-header">
+          <span>🌿</span>
+          <h4>Saar-dalen og Vogeses-passet</h4>
+          <span class="scenic-badge">+60 km · +1t 15m</span>
+        </div>
+        <div class="scenic-route">Trier → Saarburg → Saarschleife/Mettlach → Sarreguemine → Saverne → Strasbourg</div>
+        <ul class="scenic-stops"><li><span class="s-icon">🏰</span><div><strong>Saarburg (24 km)</strong><br><span style="color:var(--muted);font-size:12px">Pittoresk by med fossefall midt i gamlebyen og Saarburg slott på klippen over Saar-elven</span></div></li><li><span class="s-icon">🌀</span><div><strong>Saarschleife ved Mettlach (55 km)</strong><br><span style="color:var(--muted);font-size:12px">Europas vakreste flodbue — Saar-svingen sett fra Cloef-platået. 20 min gåtur til utsiktet. Villeroy & Boch museum nedfor</span></div></li><li><span class="s-icon">🌸</span><div><strong>Saverne — Col de Saverne (100 km)</strong><br><span style="color:var(--muted);font-size:12px">Rosenbyen Saverne med Rohan-slottet og 8800 rosebusker. Historisk fjellpass ned fra Vosges til Alsace-sletten</span></div></li></ul>
+        <div class="scenic-extra">🐕 Perfekt hundetur ved Cloef-platået: 20 min gjennom skog til dramatisk utsiktsplatå over Saar-svingen. Saarburg-fossen er midt i gamlebyen. Begge er hundrevennlige.</div>
+        <div class="scenic-maps">
+          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Trier,Germany/Saarburg,Germany/Mettlach,Germany/Saverne,France/Strasbourg,France" target="_blank">🗺 Åpne i Google Maps</a>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 5 ── -->
@@ -629,6 +674,21 @@
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Mittelwihr ved lunsjtid → resten av dagen fritt på Route du Vin med sykkel</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--sky-soft);border-radius:10px;border-left:3px solid var(--sky)">
           <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Colmar — Rue du Buhlfeld, Houssen (10 km, 10 min via D83). 12×250 kW, CCS, 24/7. <a href="https://www.google.com/maps/search/?api=1&query=Rue+du+Buhlfeld+Houssen+68125" target="_blank">Kart</a></p></div>
+        </div>
+      </div>
+
+      <button id="scenic-btn-dag5" class="scenic-btn" onclick="toggleScenic('dag5')">🌿 Vis Scenic Route</button>
+      <div id="scenic-dag5" class="scenic-panel">
+        <div class="scenic-header">
+          <span>🌿</span>
+          <h4>Route du Vin — landsbyer og slott</h4>
+          <span class="scenic-badge">+10 km · +1t 30m (stopp)</span>
+        </div>
+        <div class="scenic-route">Strasbourg → Obernai → Château Haut-Koenigsbourg → Ribeauvillé → Riquewihr → Mittelwihr</div>
+        <ul class="scenic-stops"><li><span class="s-icon">🏘</span><div><strong>Obernai (35 km)</strong><br><span style="color:var(--muted);font-size:12px">En av Alsaces vakreste byer — middelaldermarkedsplass, trehusrekker og vindyrking ved foten av Sainte-Odile-fjellet</span></div></li><li><span class="s-icon">🏰</span><div><strong>Château du Haut-Koenigsbourg (55 km)</strong><br><span style="color:var(--muted);font-size:12px">Gotisk riddersborg restaurert av Kaiser Wilhelm II (755 m) — panoramautsikt over Alsace-sletten og Schwarzwald</span></div></li><li><span class="s-icon">💎</span><div><strong>Ribeauvillé (70 km)</strong><br><span style="color:var(--muted);font-size:12px">Tre middelalderslott på åsene. Riquewihr (80 km) regnes som Alsaces vakreste landsby — Dolder-porten fra 1291 og beste Riesling-mark</span></div></li></ul>
+        <div class="scenic-extra">🐕 Château Haut-Koenigsbourg er 30 min avvik (D159 opp, D159 ned). Hunder er velkomne i landsbyene og vinmarkene utenfor turistsesongen. Riquewihr er ekstremt populært — vær tidlig.</div>
+        <div class="scenic-maps">
+          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Strasbourg,France/Obernai,France/Ribeauvillé,France/Riquewihr,France/Mittelwihr,France" target="_blank">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -706,6 +766,21 @@
           <p style="font-size:12px;margin:0;color:var(--ink)">✅ <strong>Nærladning:</strong> Tesla Supercharger Beaune Nord — Rue Gustave Eiffel 13 (2 km, 2 min). 28×250 kW, CCS, 24/7. <a href="https://www.google.com/maps/search/?api=1&query=Rue+Gustave+Eiffel+13+21200+Beaune" target="_blank">Kart</a></p></div>
         </div>
       </div>
+
+      <button id="scenic-btn-dag7" class="scenic-btn" onclick="toggleScenic('dag7')">🌿 Vis Scenic Route</button>
+      <div id="scenic-dag7" class="scenic-panel">
+        <div class="scenic-header">
+          <span>🌿</span>
+          <h4>Ballons des Vosges — fjellpass og Burgund</h4>
+          <span class="scenic-badge">+45 km · +1t 30m</span>
+        </div>
+        <div class="scenic-route">Mittelwihr → Colmar → Guebwiller → Col de Bussang (727m) → Luxeuil-les-Bains → Gray → Beaune</div>
+        <ul class="scenic-stops"><li><span class="s-icon">🏘</span><div><strong>Colmar (10 km)</strong><br><span style="color:var(--muted);font-size:12px">La Petite Venise — fargede trehus langs kanalene, Issenheim-alterstykket i museum. Rask morgenstopp før fjellet</span></div></li><li><span class="s-icon">⛰</span><div><strong>Col de Bussang (727m, 75 km)</strong><br><span style="color:var(--muted);font-size:12px">Fjellpass over Ballons des Vosges — slående panoramautsikt tilbake over Alsace-sletten og fremover mot Burgund. Smilende sauer.</span></div></li><li><span class="s-icon">🏛</span><div><strong>Luxeuil-les-Bains (105 km)</strong><br><span style="color:var(--muted);font-size:12px">Vakker gammel kurby med romanske klosterruiner, historisk gamlekvarter og thermalbad. Utmerket lunsjstopp</span></div></li></ul>
+        <div class="scenic-extra">🐕 Kjøring over Ballons des Vosges er en av Frankrikes fineste fjellruter om sommeren: åpent, svingete og med utsikt på begge sider. Hundene kan løpe i Vosges-skogen rundt passet. Colmar er bare 10 min fra hotellet.</div>
+        <div class="scenic-maps">
+          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Mittelwihr,France/Colmar,France/Guebwiller,France/Col+de+Bussang+88540/Luxeuil-les-Bains,France/Beaune,France" target="_blank">🗺 Åpne i Google Maps</a>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 8 ── -->
@@ -750,13 +825,28 @@
           <p style="font-size:11px;color:var(--muted);margin:4px 0 0">Ukeopphold: lade via stikkontakt over natt eller kjør til Mâcon ved behov. Dag 9 har planlagt Ionity-stopp 245 km inn.</p></div>
         </div>
       </div>
+
+      <button id="scenic-btn-dag8" class="scenic-btn" onclick="toggleScenic('dag8')">🌿 Vis Scenic Route</button>
+      <div id="scenic-dag8" class="scenic-panel">
+        <div class="scenic-header">
+          <span>🌿</span>
+          <h4>Route des Grands Crus — Champs-Elysées du Vin</h4>
+          <span class="scenic-badge">+55 km · +1t 15m</span>
+        </div>
+        <div class="scenic-route">Beaune → Pommard → Meursault → Puligny-Montrachet → Santenay → Autun → Bourbon-Lancy → Oyé</div>
+        <ul class="scenic-stops"><li><span class="s-icon">🍷</span><div><strong>Pommard & Meursault (10–15 km)</strong><br><span style="color:var(--muted);font-size:12px">To av Burgunds mest kjente vinlandsbyer på D974. Château de Meursault tar imot besøkende — hvite viner av absolutt verdensklasse</span></div></li><li><span class="s-icon">✨</span><div><strong>Puligny-Montrachet & Chassagne (20 km)</strong><br><span style="color:var(--muted);font-size:12px">Verdens beste Chardonnay-terroir. Montrachet Grand Cru. Stille gårdsveier mellom stenvegger og vinmarker i tidlig morgen</span></div></li><li><span class="s-icon">🏛</span><div><strong>Autun (65 km)</strong><br><span style="color:var(--muted);font-size:12px">Romertidens glemte storby — Augustus-triumfbue, romansk katedral Saint-Lazare, Musée Rolin. Ideell lunsjstans på Place du Champ de Mars</span></div></li></ul>
+        <div class="scenic-extra">🐕 Route des Grands Crus er et UNESCO Verdensarv-landskap — 37 vinlandsbyer på 60 km. Autun er et positivt sjokk: en hel romersk by i Burgund som de fleste aldri vet om. Hundene er velkomne i vinmarkene.</div>
+        <div class="scenic-maps">
+          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Beaune,France/Meursault,France/Santenay,France/Autun,France/Bourbon-Lancy,France/Oyé,71800,France" target="_blank">🗺 Åpne i Google Maps</a>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 9 ── -->
 <section class="sc day" id="dag9">
   <div class="day-head">
-    <div class="day-title"><h2>Søndag 26. juli — Saint-Émilion</h2><p class="sub">Oyé → Poitiers ⚡ → Saint-Émilion</p></div>
-    <div class="chips"><span class="chip">ca. 500 km</span><span class="chip warn">⚡</span></div>
+    <div class="day-title"><h2>Søndag 26. juli — Saint-Émilion</h2><p class="sub">Oyé → A89 via Brive ⚡ → Saint-Émilion</p></div>
+    <div class="chips"><span class="chip">468 km</span><span class="chip warn">⚡</span></div>
 
       </div>
   <div class="day-body">
@@ -769,7 +859,7 @@
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+33535371660">+33 5 35 37 16 60</a></span></div>
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.badonboutiquehotel.com" target="_blank">badonboutiquehotel.com</a></span></div>
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Bekreft direkte at to hunder godtas</span></div>
-          <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Ionity Poitiers Jaunay-Clan</strong> (~240 km) · <a href="https://www.google.com/maps/search/?api=1&query=46.7014,0.3668" target="_blank">📍 Kart</a></span></div>
+          <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Tesla Brive-la-Gaillarde</strong> (~240 km) · <a href="https://www.google.com/maps/search/?api=1&query=46.7014,0.3668" target="_blank">📍 Kart</a></span></div>
         </div>
       </div>
       <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=Oy%C3%A9,Frankrike&destination=Saint-%C3%89milion,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
@@ -784,7 +874,7 @@
           <li><span class="act-dot"></span>Et glass vin på torget</li>
         </ul>
       </div>
-      <div class="map-wrap"><div id="m9" class="lmap"></div><div class="map-cap">Oyé → Poitiers ⚡ (~240 km) → Saint-Émilion (~260 km)</div></div>
+      <div class="map-wrap"><div id="m9" class="lmap"></div><div class="map-cap">Oyé → Brive-la-Gaillarde ⚡ (~220 km) → Saint-Émilion (~260 km)</div></div>
     </div>
   </div>
 
@@ -792,16 +882,16 @@
         <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
           <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 08:00</span>
           <span style="color:var(--line)">·</span>
-          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~13:35</span>
-          <span style="color:var(--line)">·</span><span style="font-size:12px;font-weight:600;color:var(--warn)">⚡ Ionity Poitiers Jaunay-Clan kl. 10:19 (35 min)</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~13:20</span>
+          <span style="color:var(--line)">·</span><span style="font-size:12px;font-weight:600;color:var(--warn)">⚡ Tesla Brive-la-Gaillarde kl. 10:05 (30 min)</span>
         </div>
-        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">08:00 Oyé → 10:19 ⚡ Poitiers Jaunay-Clan (35 min) → 10:54 videre → 13:35 Saint-Émilion</p>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">08:00 Oyé → 10:05 ⚡ Tesla Brive-la-Gaillarde A89 (30 min) → 10:35 videre → 13:20 Saint-Émilion</p>
         <div style="display:grid;gap:4px">
-          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Tidlig frokost — god mulighet for hundepause under ladestroppet i Poitiers (35 min)</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Tidlig frokost — god hundepause under ladestroppet i Brive (30 min, hotell ved Griffolet)</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Saint-Émilion tidlig ettermiddag → kveldstur i brosteinsgatene</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--warn-soft);border-radius:10px;border-left:3px solid var(--sun)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Bordeaux Bègles — Rocade Sortie 20, 33130 Bègles (38 km vest). 28×250 kW. Alternativ: Ionity langs A89 — sjekk appen. <a href="https://www.google.com/maps/search/?api=1&query=Rocade+Sortie+20+Begles+33130" target="_blank">Kart</a></p>
-          <p style="font-size:11px;color:var(--muted);margin:4px 0 0">St-Émilion er landlig — planlegg lade ved ankomst dagen før hvis nødvendig.</p></div>
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Bordeaux Bègles — Rocade Sortie 20, 33130 Bègles (38 km vest fra St-Émilion). 28×250 kW. Veistopp: Tesla Brive-la-Gaillarde er planlagt ladestopp underveis (~220 km fra Oyé). <a href="https://www.google.com/maps/search/?api=1&query=Le+Griffolet+Ussac+19270" target="_blank">Kart Brive</a></p>
+          <p style="font-size:11px;color:var(--muted);margin:4px 0 0">Rute: Oyé → A89 vest via Brive og Périgueux → Bordeaux ringvei → D243 til Saint-Émilion. 468 km totalt.</p></div>
         </div>
       </div>
 </section>
@@ -870,15 +960,16 @@
         <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
           <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 09:00</span>
           <span style="color:var(--line)">·</span>
-          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~12:30</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~13:15</span>
           
         </div>
-        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Saint-Émilion → A10 nordover via Poitiers/Tours → 12:30 Amboise</p>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Saint-Émilion → 10:48 ⚡ Poitiers Sud (25 min) → 11:13 videre → 13:15 Amboise</p>
         <div style="display:grid;gap:4px">
-          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost + morgentur i vinmarkene rundt Saint-Émilion</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost + morgentur i vinmarkene. Merk: 375 km → ladestopp nødvendig underveis</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Amboise ved lunsjtid → ettermiddag på Loire à Vélo med hundene</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--sky-soft);border-radius:10px;border-left:3px solid var(--sky)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Chambray-lès-Tours — Av. du Grand Sud 213 (17 km, 17 min via A85). 24×250 kW, CCS, 24/7. <a href="https://www.google.com/maps/search/?api=1&query=Avenue+du+Grand+Sud+213+37170+Chambray-les-Tours" target="_blank">Kart</a></p></div>
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Chambray-lès-Tours — Av. du Grand Sud 213 (17 km). 24×250 kW. <a href="https://www.google.com/maps/search/?api=1&query=Avenue+du+Grand+Sud+213+37170+Chambray-les-Tours" target="_blank">Kart</a></p>
+          <p style="font-size:11px;color:var(--muted);margin:4px 0 0">⚠️ 375 km overskrider 350 km rekkevidde — planlagt ladestopp underveis: <strong>Tesla Poitiers Sud</strong>, 6 rue de la Saulaie, Croutelle 86240 (40×250 kW) ved ~190 km.</p></div>
         </div>
       </div>
 </section>
@@ -931,6 +1022,21 @@
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Honfleur til lunsj → hel ettermiddag og kveld ved Vieux Bassin</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--green-soft);border-radius:10px;border-left:3px solid var(--green)">
           <p style="font-size:12px;margin:0;color:var(--ink)">✅ <strong>Nærladning:</strong> Tesla Supercharger Honfleur — Av. de Normandie (3 km, 3 min). 19×250 kW ved Normandy Outlet. CCS, 24/7. <a href="https://www.google.com/maps/search/?api=1&query=Avenue+de+Normandie+14600+Honfleur" target="_blank">Kart</a></p></div>
+        </div>
+      </div>
+
+      <button id="scenic-btn-dag12" class="scenic-btn" onclick="toggleScenic('dag12')">🌿 Vis Scenic Route</button>
+      <div id="scenic-dag12" class="scenic-panel">
+        <div class="scenic-header">
+          <span>🌿</span>
+          <h4>Loire-chateaux & Normandie bocage</h4>
+          <span class="scenic-badge">+50 km · +1t 15m</span>
+        </div>
+        <div class="scenic-route">Amboise → Blois → Le Mans → Alençon → Camembert-landet → Lisieux → Honfleur</div>
+        <ul class="scenic-stops"><li><span class="s-icon">🏰</span><div><strong>Blois (40 km)</strong><br><span style="color:var(--muted);font-size:12px">Château Royal de Blois — fire kongers residens, fire arkitektoniske stilarter i ett bygg. Bratt historisk kjerne ned mot Loire</span></div></li><li><span class="s-icon">🏎</span><div><strong>Le Mans — La Cité Plantagenêt (130 km)</strong><br><span style="color:var(--muted);font-size:12px">Middelalderkvarteret inne i bymurene er et av Frankrikes best bevarte — ingenting å gjøre med bilrace. Kaffe og croissant her</span></div></li><li><span class="s-icon">🍎</span><div><strong>Normandie bocage + Camembert (220 km)</strong><br><span style="color:var(--muted);font-size:12px">Vimoutiers og Camembert-landsbyen (5 km avvik fra D916): Musée du Camembert og originale gårder. Normandie-landskapet er nydelig</span></div></li></ul>
+        <div class="scenic-extra">🐕 Lisieux → Honfleur på D579 er en av Normandies vakreste kjøreturer gjennom Pays dAuge: trehus, epletrær, kyr og Côte Fleurie. Hunder er velkomne i bocage-landet og langs elvene.</div>
+        <div class="scenic-maps">
+          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Amboise,France/Blois,France/Le+Mans,France/Alençon,France/Vimoutiers,France/Lisieux,France/Honfleur,France" target="_blank">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -1093,6 +1199,21 @@
         <div style="margin-top:6px;padding:7px 10px;background:var(--warn-soft);border-radius:10px;border-left:3px solid var(--sun)">
           <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Ingen Supercharger i Skagen. Nærmeste: Tesla Supercharger Frederikshavn — Nordvejen 6 (41 km sør). 16×250 kW, CCS. <a href="https://www.google.com/maps/search/?api=1&query=Nordvejen+6+9900+Frederikshavn" target="_blank">Kart</a></p>
           <p style="font-size:11px;color:var(--muted);margin:4px 0 0">Dag 16 ferge fra Hirtshals — lade om morgenen på Frederikshavn-stopp ved behov (41 km mot Hirtshals).</p></div>
+        </div>
+      </div>
+
+      <button id="scenic-btn-dag15" class="scenic-btn" onclick="toggleScenic('dag15')">🌿 Vis Scenic Route</button>
+      <div id="scenic-dag15" class="scenic-panel">
+        <div class="scenic-header">
+          <span>🌿</span>
+          <h4>Vestkysten og Råbjerg Mile</h4>
+          <span class="scenic-badge">+30 km · +45 min</span>
+        </div>
+        <div class="scenic-route">Aalborg → E39 nord → Hirtshals → Tornby Strand → Råbjerg Mile → Gammel Skagen → Skagen</div>
+        <ul class="scenic-stops"><li><span class="s-icon">🏖</span><div><strong>Hirtshals (70 km)</strong><br><span style="color:var(--muted);font-size:12px">Fiskerleia og fergehavn — fyr og klitter. Symbolsk å se havn dere kom inn i fra ferge</span></div></li><li><span class="s-icon">🌊</span><div><strong>Tornby Strand (90 km)</strong><br><span style="color:var(--muted);font-size:12px">Nordjyllands villeste vestkyststrand — høye hvite sanddyner, nordsjøbrus og nesten ingen folk. Perfekt for hundepause</span></div></li><li><span class="s-icon">🏜</span><div><strong>Råbjerg Mile (115 km)</strong><br><span style="color:var(--muted);font-size:12px">Skandinavias største vandrende klit — 1 km langt sandhav som beveger seg 15 m/år østover. Unik og dramatisk — 15 min stopp</span></div></li></ul>
+        <div class="scenic-extra">🐕 Råbjerg Mile alene er verdt omveien — hundene elsker å løpe i sanddynene. Gammel Skagen (Højen-kvarteret) med gule hus og røde tak er 5 min fra Ruths Hotel og Nordens mest fotogeniske landsby.</div>
+        <div class="scenic-maps">
+          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Aalborg,Denmark/Hirtshals,Denmark/Tornby+Strand/Råbjerg+Mile,Denmark/Skagen,Denmark" target="_blank">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -1298,7 +1419,7 @@ window.addEventListener('load',function(){
     fit(m,ROADS.d8,40);})();
 
   (function(){const m=mkMap('m9');if(!m)return;route(m,ROADS.d9);
-    mk(m,...S.oye,DS,'Oyé','');mk(m,...S.poitiers,DM,'⚡ Ionity Poitiers Jaunay-Clan','Ladestopp ~240 km · 46.7014, 0.3668');mk(m,...S.stemilion,DE,'Saint-Émilion','Badon Boutique Hôtel');
+    mk(m,...S.oye,DS,'Oyé','');mk(m,...S.poitiers,DM,'⚡ Ionity Poitiers Jaunay-Clan','Ladestopp ~240 km · 45.1530, 1.5140');mk(m,...S.stemilion,DE,'Saint-Émilion','Badon Boutique Hôtel');
     fit(m,ROADS.d9);})();
 
   (function(){const m=mkMap('m11');if(!m)return;route(m,ROADS.d11);
@@ -1326,6 +1447,20 @@ window.addEventListener('load',function(){
     mk(m,...skagen,DS,'Skagen','Ruths Hotel – avreise');mk(m,...S.hirtshals,DF,'Hirtshals','Color Line');mk(m,...S.kristiansand,DM,'Kristiansand','Ankomst');mk(m,...S.arendal,DE,'Arendal 🏡','Hjem!');
     fit(m,[skagen,S.hirtshals,S.kristiansand,...ROADS.d16]);})();
 });
+
+  function toggleScenic(dagId) {
+    const panel = document.getElementById('scenic-' + dagId);
+    const btn = document.getElementById('scenic-btn-' + dagId);
+    if (panel.classList.contains('open')) {
+      panel.classList.remove('open');
+      btn.textContent = '🌿 Vis Scenic Route';
+    } else {
+      panel.classList.add('open');
+      btn.textContent = '✕ Lukk Scenic Route';
+      panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+  }
+
 </script>
 </body>
 </html>
