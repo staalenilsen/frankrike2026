@@ -315,9 +315,9 @@
           <tr><td><a href="#dag10" class="day-link">Man 27. jul</a></td><td>Saint-Émilion ✅</td><td>0</td></tr>
           <tr><td><a href="#dag11" class="day-link">Tir 28. jul</a></td><td>Amboise</td><td>320</td></tr>
           <tr><td><a href="#dag12" class="day-link">Ons 29. jul</a></td><td>Honfleur</td><td>320</td></tr>
-          <tr class="wr"><td><a href="#dag13" class="day-link">Tor 30. jul</a></td><td>Lübeck</td><td>650 ⚡⚡</td></tr>
-          <tr class="wr"><td><a href="#dag14" class="day-link">Fre 31. jul</a></td><td>Aalborg</td><td>430 ⚡</td></tr>
-          <tr><td><a href="#dag15" class="day-link">Lør 1. aug</a></td><td>Skagen</td><td>100</td></tr>
+          <tr class="wr"><td><a href="#dag13" class="day-link">Tor 30. jul</a></td><td>Utrecht</td><td>~400</td></tr>
+          <tr class="wr"><td><a href="#dag14" class="day-link">Fre 31. jul</a></td><td>Lübeck</td><td>~450 ⚡</td></tr>
+          <tr><td><a href="#dag15" class="day-link">Lør 1. aug</a></td><td>Aalborg</td><td>425</td></tr>
           <tr><td><a href="#dag16" class="day-link">Søn 2. aug</a></td><td>Arendal 🏡</td><td>⛴ 12:15</td></tr>
         </tbody>
       </table>
@@ -381,7 +381,7 @@
          target="_blank">
         <span>🗺</span>
         <span><strong>Hele turen</strong> — alle 14 stopp<br>
-        <span style="font-size:11px;font-weight:400;color:var(--sky)">Arendal → Ribe → Celle → Trier → Strasbourg → Mittelwihr → Beaune → Oyé → Saint-Émilion → Amboise → Honfleur → Lübeck → Aalborg → Skagen</span></span>
+        <span style="font-size:11px;font-weight:400;color:var(--sky)">Arendal → Ribe → Celle → Trier → Strasbourg → Mittelwihr → Beaune → Oyé → Saint-Émilion → Amboise → Honfleur → Utrecht → Lübeck → Aalborg</span></span>
       </a>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
@@ -401,7 +401,7 @@
            href="#" data-route="hjemreise"
            target="_blank">
           <span>🏠</span>
-          <span><strong>→ Hjemreise</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Honfleur · Baie de Somme ⚡ · Lübeck · Aalborg · Skagen · Hirtshals · (ferge 12:15) · Arendal</span></span>
+          <span><strong>→ Hjemreise</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Honfleur · Belgia · Utrecht · Lübeck · Aalborg · Hirtshals · (ferge 12:15) · Arendal</span></span>
         </a>
       </div>
     </div>
@@ -1004,15 +1004,18 @@
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
       <div style="padding:0 16px 0">
         <div class="info-rows">
-          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">La Ferme Saint-Siméon</span></div>
-          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">20 rue Adolphe Marais, 14600 Honfleur</span></div>
+          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Réglisse et Pain d'Épices &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
+          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">61 Rue Haute, 14600 Honfleur <a href="#" data-place="dag12" style="font-size:11px">📍 Kart</a></span></div>
+          <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Gratis privat parkering ✔️</span></div>
+          <div class="info-row"><span class="info-label">Hunder</span><span class="info-val">🐶 Hjertelig velkomne · €10 tillegg per hund per opphold · kun 1 hund per rom</span></div>
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+33231817800">+33 2 31 81 78 00</a></span></div>
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.fermesaintsimeon.fr" target="_blank">fermesaintsimeon.fr</a></span></div>
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Ring og avklar to hunder og lading</span></div>
         </div>
       </div>
       <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag12r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/honfleur.html" target="_blank">🗺 Utforsk Honfleur — restauranter &amp; opplevelser</a></div>
+        <a class="detail-link" href="detail_pages/honfleur.html" target="_blank">🗺 Utforsk Honfleur — restauranter &amp; opplevelser</a>
+        <button class="booking-btn" onclick="document.getElementById('modal-reglisse').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button></div>
     </div>
     <div class="day-right">
       <div style="padding:16px 16px 0"><h3>Middag &amp; opplevelser</h3></div>
@@ -1061,234 +1064,163 @@
 
 <!-- ── DAG 13 ── -->
 <section class="sc day" id="dag13">
-  <div class="day-head">
-    <div class="day-title"><h2>Torsdag 30. juli — Lübeck</h2><p class="sub">Honfleur → Belgia → Hamburg → Lübeck</p></div>
-    <div class="chips"><span class="chip">ca. 650 km</span><span class="chip warn">⚡⚡ Start tidlig!</span></div>
-
-      </div>
+  <div class="day-header" onclick="toggleDay('dag13')">
+    <div class="day-title"><h2>Torsdag 30. juli — Utrecht 🇳🇱</h2><p class="sub">Honfleur → Belgia → Utrecht · Nederlandsk kanalby</p></div>
+    <div class="chips"><span class="chip">~400 km</span><span class="chip">~4t 30m</span><span class="chip">Nederland</span></div>
+    <span class="chevron">▼</span>
+  </div>
   <div class="day-body">
     <div class="day-left">
-      <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
-      <div style="padding:0 16px 0">
-        <div class="info-rows">
-          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Park Inn by Radisson Lübeck</span></div>
-          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">Willy Brandt Allee 1–5, 23554 Lübeck</span></div>
-          <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+4945115040">+49 451 1504 0</a></span></div>
-          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.radissonhotels.com" target="_blank">radissonhotels.com</a></span></div>
-          <div class="info-row"><span class="info-label warn">⚡ Stopp 1</span><span class="info-val warn"><strong>Ionity Baie de Somme</strong> (~175 km) · <a href="#" data-place="baidesomme" target="_blank">📍 Kart</a></span></div>
-          <div class="info-row"><span class="info-label warn">⚡ Stopp 2</span><span class="info-val warn"><strong>Aral Hamburg Moorfleet</strong> (~390 km) · <a href="#" data-place="moorfleet" target="_blank">📍 Kart</a></span></div>
-        </div>
+      <div style="padding:16px"><div class="info-rows">
+        <div class="info-row"><span class="info-label">Hotell</span><span class="info-val"><strong>Grand Hotel Karel V</strong> ★★★★★</span></div>
+        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag13">Geertebolwerk 1, 3511 XA Utrecht <a href="#" data-place="dag13" style="font-size:11px">📍 Kart</a></span></div>
+        <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Eget p-anlegg på hotellet · ⚡ EV-lader på tomten · €35/døgn</span></div>
+        <div class="info-row"><span class="info-label">Hunder</span><span class="info-val">🐶 Velkommen · begrensede rom · book på forhånd · €50/hund/natt</span></div>
+        <div class="info-row"><span class="info-label">Rute</span><span class="info-val">A29 → Antwerpen → Gent → Amsterdam ring → Utrecht</span></div>
+        <div class="info-row"><span class="info-label">Lading</span><span class="info-val">Ingen nødvendig (~400 km innen rekkevidde fra Honfleur)</span></div>
+      </div></div>
+      <div style="padding:0 16px 16px">
+        <a class="route-btn" href="#" data-route="dag13r" target="_blank">→ Kjørerute Google Maps</a>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag13r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/lubeck.html" target="_blank">🗺 Utforsk Lübeck — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
-      <div style="padding:16px 16px 0"><h3>Middag &amp; opplevelser</h3></div>
-      <div style="padding:0 16px">
-        <ul class="act-list">
-          <li><span class="act-dot"></span>Schiffergesellschaft – <strong>bekreft hundvennlig bord</strong></li>
-          <li><span class="act-dot"></span>Kort tur i gamlebyen</li>
-          <li><span class="act-dot"></span>Smak marcipan</li>
-          <li><span class="act-dot"></span>Prioriter hvile!</li>
-        </ul>
+      <div style="padding:12px 16px 0">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+          <span style="font-size:12px;font-weight:600;color:var(--sky)">Utrecht — kanalby og universitetsby</span>
+        </div>
+        <p style="font-size:12px;font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Honfleur → Brüssel ring → 13:30 Utrecht</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">🌅 <strong>Ettermiddag:</strong> Vandring langs de to-etasjes kanalene langs Oudegracht (unikt i Europa) — 10 min gange fra hotellet. Klatre Domkirketårnet for panoramautsikt.</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🍽 <strong>Kveld:</strong> Brasserie Goeie Louisa på hotellet serverer 7 dager i uken i den eldste klosterkjøkkenet i Nederland. Eller spis langs Oudegracht med hundene.</p>
+          <p style="font-size:11px;color:var(--muted);margin:4px 0 0">🐕 Karel V er et tidligere 1300-talls kloster og militærsykehus — 10 000 m² hageanlegg, basseng og spa. Hunder må bestilles på forhånd (€50/natt). Ring hotellet: +31 30 233 7555</p>
+        </div>
       </div>
-      <div class="map-wrap"><div id="m13" class="lmap"></div><div class="map-cap">Honfleur → Baie de Somme ⚡ → Hamburg ⚡ → Lübeck</div></div>
+      <div class="map-wrap"><div id="m13" class="lmap"></div><div class="map-cap">Honfleur → Belgia → Utrecht (~400 km)</div></div>
     </div>
   </div>
-
-      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--warn-soft),#fff)">
-        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
-          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--warn)">🚀 Avreise 07:00</span>
-          <span style="color:var(--line)">·</span>
-          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~12:30</span>
-          <span style="color:var(--line)">·</span><span style="font-size:12px;font-weight:600;color:var(--warn)">⚡×2: Baie de Somme 08:31 + Hamburg Moorfleet 11:09 (2×35 min)</span>
-        </div>
-        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">07:00 Honfleur → 08:31 ⚡ Baie de Somme (35 min) → 09:06 → 11:09 ⚡ Hamburg Moorfleet (35 min) → 11:44 → 12:30 Lübeck</p>
-        <div style="display:grid;gap:4px">
-          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> ⚠️ TIDLIG START — pakk kvelden før. Rask frokost. Hundene luftes godt ved hvert ladestopp (35 min = god pause)</p>
-          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankomst Lübeck 12:30 → rolig ettermiddag, Holstentor og Niederegger marcipan</p>
-        <div style="margin-top:6px;padding:7px 10px;background:var(--green-soft);border-radius:10px;border-left:3px solid var(--green)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">✅ <strong>Nærladning:</strong> Tesla Supercharger Lübeck — Stockelsdorfer Str. 1 (4 km, 5 min). 8×250 kW, CCS, 24/7. <a href="#" data-place="dag13" target="_blank">Kart</a></p>
-          <p style="font-size:11px;color:var(--muted);margin:4px 0 0">⚠️ Dag 14 starter 07:00 — lade her <em>kvelden før</em> for å unngå forsinkelse!</p></div>
-        </div>
-      </div>
 </section>
 
 <!-- ── DAG 14 ── -->
 <section class="sc day" id="dag14">
-  <div class="day-head">
-    <div class="day-title"><h2>Fredag 31. juli — Aalborg</h2><p class="sub">Lübeck → Padborg ⚡ → Aalborg</p></div>
-    <div class="chips"><span class="chip">ca. 430 km</span><span class="chip warn">⚡</span></div>
-
-      </div>
+  <div class="day-header" onclick="toggleDay('dag14')">
+    <div class="day-title"><h2>Fredag 31. juli — Lübeck</h2><p class="sub">Utrecht → Hamburg ⚡ → Lübeck</p></div>
+    <div class="chips"><span class="chip">~450 km</span><span class="chip">~4t 30m</span><span class="chip warn">⚡ Aral Moorfleet</span></div>
+    <span class="chevron">▼</span>
+  </div>
   <div class="day-body">
     <div class="day-left">
-      <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
-      <div style="padding:0 16px 0">
-        <div class="info-rows">
-          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Scandic Aalborg City</span></div>
-          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">Europa Plads 1, 9000 Aalborg</span></div>
-          <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+4570125151">+45 70 12 51 51</a></span></div>
-          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.scandichotels.com" target="_blank">scandichotels.com</a></span></div>
-          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Book hundvennlig rom</span></div>
-          <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Ionity Aabenraa E45</strong> (~180 km) · <a href="#" data-place="aabenraa" target="_blank">📍 Kart</a></span></div>
-        </div>
+      <div style="padding:16px"><div class="info-rows">
+        <div class="info-row"><span class="info-label">Hotell</span><span class="info-val" data-show-name data-place="dag14">Park Inn by Radisson Lübeck</span></div>
+        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag14">Willy-Brandt-Allee 1–5, 23554 Lübeck <a href="#" data-place="dag14" style="font-size:11px">📍 Kart</a></span></div>
+        <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Aral Hamburg-Moorfleet</strong> (~340 km) · <a href="#" data-place="moorfleet" target="_blank">📍 Kart</a></span></div>
+      </div></div>
+      <div style="padding:0 16px 16px">
+        <a class="route-btn" href="#" data-route="dag14r" target="_blank">→ Kjørerute Google Maps</a>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag14r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/aalborg.html" target="_blank">🗺 Utforsk Aalborg — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
-      <div style="padding:16px 16px 0"><h3>Middag &amp; opplevelser</h3></div>
-      <div style="padding:0 16px">
-        <ul class="act-list">
-          <li><span class="act-dot"></span>Restaurant Provence ved havnen</li>
-          <li><span class="act-dot"></span>Kveldstur ved havnefronten</li>
-          <li><span class="act-dot"></span>Lad bilen godt – i morgen Skagen</li>
-        </ul>
+      <div style="padding:12px 16px 0">
+        <p style="font-size:12px;font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Utrecht → 11:30 ⚡ Aral Hamburg-Moorfleet (30 min) → 12:00 videre → 13:30 Lübeck</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">🌅 <strong>Ettermiddag:</strong> Lübeck gamlebyen er UNESCO-verdensarv — kjente Holstentor-porten, Marktplatz og marzipan-butikker.</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🍽 <strong>Kveld:</strong> Middag i gamlebyen. Lübeck er kjent for sin Niederegger marzipan og gode fiskerestauranter.</p>
+        </div>
       </div>
-      <div class="map-wrap"><div id="m14" class="lmap"></div><div class="map-cap">Lübeck → Aabenraa ⚡ (~180 km) → Aalborg (~250 km)</div></div>
+      <div class="map-wrap"><div id="m14" class="lmap"></div><div class="map-cap">Utrecht → Hamburg ⚡ → Lübeck (~450 km)</div></div>
     </div>
   </div>
-
-      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
-        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
-          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 08:30</span>
-          <span style="color:var(--line)">·</span>
-          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~13:10</span>
-          <span style="color:var(--line)">·</span><span style="font-size:12px;font-weight:600;color:var(--warn)">⚡ Ionity Aabenraa E45 kl. 10:03 (35 min)</span>
-        </div>
-        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">08:30 Lübeck → 10:03 ⚡ Aabenraa E45 (35 min) → 10:38 videre → 13:10 Aalborg</p>
-        <div style="display:grid;gap:4px">
-          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost + morgentur langs Trave-elven i Lübeck</p>
-          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Aalborg ved lunsjtid → ettermiddag langs Limfjorden</p>
-        <div style="margin-top:6px;padding:7px 10px;background:var(--sky-soft);border-radius:10px;border-left:3px solid var(--sky)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Aalborg — Hobrovej 452, 9200 Aalborg (6 km sør, 7 min). 16×250 kW. Tesla-butikk på stedet. <a href="#" data-place="dag14" target="_blank">Kart</a></p></div>
-        </div>
-      </div>
 </section>
 
 <!-- ── DAG 15 ── -->
 <section class="sc day" id="dag15">
-  <div class="day-head">
-    <div class="day-title"><h2>Lørdag 1. august — Skagen</h2><p class="sub">Aalborg → Skagen</p></div>
-    <div class="chips"><span class="chip">ca. 100 km</span><span class="chip">Siste kveld</span></div>
-
-      </div>
+  <div class="day-header" onclick="toggleDay('dag15')">
+    <div class="day-title"><h2>Lørdag 1. august — Aalborg</h2><p class="sub">Lübeck → Padborg ⚡ → Aalborg</p></div>
+    <div class="chips"><span class="chip">~425 km</span><span class="chip">~4t</span><span class="chip warn">⚡ IONITY Aabenraa</span></div>
+    <span class="chevron">▼</span>
+  </div>
   <div class="day-body">
     <div class="day-left">
-      <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
-      <div style="padding:0 16px 0">
-        <div class="info-rows">
-          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Ruths Hotel ⭐⭐⭐⭐⭐</span></div>
-          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">Hans Ruths Vej 1, 9990 Skagen<br><a href="#" data-place="dag15" target="_blank">Åpne i kart</a></span></div>
-          <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+4598441124">+45 9844 1124</a></span></div>
-          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.ruths.dk" target="_blank">ruths.dk</a></span></div>
-          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Hunder DKK 300/opphold. Mat- og vannskål inkl. Gratis parkering. Bekreft to hunder.</span></div>
-        </div>
+      <div style="padding:16px"><div class="info-rows">
+        <div class="info-row"><span class="info-label">Hotell</span><span class="info-val" data-show-name data-place="dag15">Scandic Aalborg City</span></div>
+        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag15">Europa Plads 1, 9000 Aalborg <a href="#" data-place="dag15" style="font-size:11px">📍 Kart</a></span></div>
+        <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>IONITY Aabenraa</strong> (~200 km) · <a href="#" data-place="aabenraa" target="_blank">📍 Kart</a></span></div>
+      </div></div>
+      <div style="padding:0 16px 16px">
+        <a class="route-btn" href="#" data-route="dag15r" target="_blank">→ Kjørerute Google Maps</a>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag15r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/skagen.html" target="_blank">🗺 Utforsk Skagen — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
-      <div style="padding:16px 16px 0"><h3>Middag &amp; opplevelser</h3></div>
-      <div style="padding:0 16px">
-        <ul class="act-list">
-          <li><span class="act-dot"></span>Ruths Brasserie – be om uteplass</li>
-          <li><span class="act-dot"></span>Strand ved Gammel Skagen</li>
-          <li><span class="act-dot"></span>Grenen – der Skagerrak møter Nordsjøen</li>
-          <li><span class="act-dot"></span>Spa og basseng på hotellet</li>
-        </ul>
+      <div style="padding:12px 16px 0">
+        <p style="font-size:12px;font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Lübeck → E47 nord → 10:45 ⚡ IONITY Aabenraa (25 min) → 11:10 videre → 13:00 Aalborg</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">🌅 <strong>Ettermiddag:</strong> Aalborg sentrum langs Limfjorden — rolig avslutning på reisen, god mat og hyggelig bysentrum.</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🍽 <strong>Kveld:</strong> Tidlig middag og pakking for ferjen neste morgen.</p>
+        </div>
       </div>
-      <div class="map-wrap"><div id="m15" class="lmap"></div><div class="map-cap">Aalborg → Skagen. Ca. 100 km – vakker avslutning.</div></div>
+      <div class="map-wrap"><div id="m15" class="lmap"></div><div class="map-cap">Lübeck → Aabenraa ⚡ → Aalborg (~425 km)</div></div>
     </div>
   </div>
-
-      <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
-        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
-          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 10:30</span>
-          <span style="color:var(--line)">·</span>
-          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~11:50</span>
-          
-        </div>
-        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">10:30 Aalborg → E39 nordover → 11:50 Skagen – Ruths Hotel</p>
-        <div style="display:grid;gap:4px">
-          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Slapp morgen i Aalborg — frokost på Penny Lane Café, morgentur langs Limfjorden</p>
-          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Skagen til lunsj → lang, vakker siste sommerkveld ved Grenen</p>
-        <div style="margin-top:6px;padding:7px 10px;background:var(--warn-soft);border-radius:10px;border-left:3px solid var(--sun)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Ingen Supercharger i Skagen. Nærmeste: Tesla Supercharger Frederikshavn — Nordvejen 6 (41 km sør). 16×250 kW, CCS. <a href="#" data-place="aabenraa" target="_blank">Kart</a></p>
-          <p style="font-size:11px;color:var(--muted);margin:4px 0 0">Dag 16 ferge fra Hirtshals — lade om morgenen på Frederikshavn-stopp ved behov (41 km mot Hirtshals).</p></div>
-        </div>
-      </div>
-
-      <button id="scenic-btn-dag15" class="scenic-btn" onclick="toggleScenic('dag15')">🌿 Vis Scenic Route</button>
-      <div id="scenic-dag15" class="scenic-panel">
-        <div class="scenic-header">
-          <span>🌿</span>
-          <h4>Vestkysten og Råbjerg Mile</h4>
-          <span class="scenic-badge">+30 km · +45 min</span>
-        </div>
-        <div class="scenic-route">Aalborg → E39 nord → Hirtshals → Tornby Strand → Råbjerg Mile → Gammel Skagen → Skagen</div>
-        <ul class="scenic-stops"><li><span class="s-icon">🏖</span><div><strong>Hirtshals (70 km)</strong><br><span style="color:var(--muted);font-size:12px">Fiskerleia og fergehavn — fyr og klitter. Symbolsk å se havn dere kom inn i fra ferge</span></div></li><li><span class="s-icon">🌊</span><div><strong>Tornby Strand (90 km)</strong><br><span style="color:var(--muted);font-size:12px">Nordjyllands villeste vestkyststrand — høye hvite sanddyner, nordsjøbrus og nesten ingen folk. Perfekt for hundepause</span></div></li><li><span class="s-icon">🏜</span><div><strong>Råbjerg Mile (115 km)</strong><br><span style="color:var(--muted);font-size:12px">Skandinavias største vandrende klit — 1 km langt sandhav som beveger seg 15 m/år østover. Unik og dramatisk — 15 min stopp</span></div></li></ul>
-        <div class="scenic-extra">🐕 Råbjerg Mile alene er verdt omveien — hundene elsker å løpe i sanddynene. Gammel Skagen (Højen-kvarteret) med gule hus og røde tak er 5 min fra Ruths Hotel og Nordens mest fotogeniske landsby.</div>
-        <div class="scenic-maps">
-          <a class="scenic-map-btn" href="#" data-route="dag15s" target="_blank">🗺 Åpne i Google Maps</a>
-        </div>
-      </div>
 </section>
 
 <!-- ── DAG 16 ── -->
 <section class="sc day" id="dag16">
-  <div class="day-head">
-    <div class="day-title"><h2>Søndag 2. august — Hjem 🏡</h2><p class="sub">Skagen → Hirtshals → Color Line 12:15 → Kristiansand → Arendal</p></div>
-    <div class="chips"><span class="chip">⛴ Ferge</span></div>
+  <div class="day-header" onclick="toggleDay('dag16')">
+    <div class="day-title"><h2>Søndag 2. august — Hjem 🏡</h2><p class="sub">Aalborg → Hirtshals → Color Line 12:15 → Kristiansand → Arendal</p></div>
+    <div class="chips"><span class="chip">~135 km bil</span><span class="chip">⛴ ferge 12:15</span><span class="chip">🏡 ~16:25 Arendal</span></div>
+    <span class="chevron">▼</span>
   </div>
   <div class="day-body">
     <div class="day-left">
-      <div style="padding:16px 16px 0"><h3>Ferge og retur</h3></div>
-      <div style="padding:0 16px 0">
-        <div class="info-rows">
-          <div class="info-row"><span class="info-label">Ferge</span><span class="info-val">Color Line, Hirtshals – Kristiansand</span></div>
-          <div class="info-row"><span class="info-label">Avgang</span><span class="info-val"><strong>12:15</strong> fra Hirtshals · Ankomst <strong>15:30</strong> Kristiansand</span></div>
-          <div class="info-row"><span class="info-label">Innsjekk</span><span class="info-val">Senest 11:30 på Hirtshals havn · Avreise Skagen ~10:30</span></div>
-          <div class="info-row"><span class="info-label">Hunder</span><span class="info-val"><strong>Ikke tillatt i lugar</strong> – bil på bildekk eller husdyrbås. Kjæledyrpass og papirer medbringes.</span></div>
-          <div class="info-row"><span class="info-label">Etterpå</span><span class="info-val">Ca. 80 km Kristiansand → Arendal, ~55 min</span></div>
-        </div>
+      <div style="padding:16px"><div class="info-rows">
+        <div class="info-row"><span class="info-label">Avgang</span><span class="info-val">10:15 fra hotellet — god margin til fergen</span></div>
+        <div class="info-row"><span class="info-label">Ferge</span><span class="info-val">Color Line Hirtshals 12:15 → Kristiansand 15:30</span></div>
+        <div class="info-row"><span class="info-label">Ankomst</span><span class="info-val">🏡 Arendal ca. 16:25</span></div>
+      </div></div>
+      <div style="padding:0 16px 16px">
+        <a class="route-btn" href="#" data-route="dag16r" target="_blank">→ Kjørerute Google Maps</a>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.colorline.no" target="_blank">→ Color Line billetter</a></div>
     </div>
     <div class="day-right">
-      <div style="padding:16px 16px 0"><h3>Hjem igjen</h3></div>
-      <div style="padding:0 16px">
-        <ul class="act-list">
-          <li><span class="act-dot"></span>Frokost på Ruths Hotel + siste tur på Gammel Skagen-stranden</li>
-          <li><span class="act-dot"></span>75 km Skagen → Hirtshals havn (innsjekk senest 11:30)</li>
-          <li><span class="act-dot"></span>3t 15m ferge over Skagerrak — nyt utsikten!</li>
-          <li><span class="act-dot"></span>Hundene trenger godt stopp etter fergen i Kristiansand</li>
-          <li><span class="act-dot"></span>22 dager · 7 land · utallige minner 🥂</li>
-        </ul>
+      <div style="padding:12px 16px 0">
+        <p style="font-size:12px;font-family:monospace;margin:0 0 6px;line-height:1.5">10:15 Aalborg → E39 → 11:45 Hirtshals innsjekk → 12:15 Color Line avgang → 15:30 Kristiansand → 16:25 Arendal 🏡</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">⛴ Aalborg → Hirtshals er ca. 100 km, ca. 1t. God tid til innsjekk og ferge.</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🏁 Totalt reiselengde siden 12. juli: ~5 000 km og 3 uker i Europa!</p>
+        </div>
       </div>
-      <div class="map-wrap"><div id="m16" class="lmap"></div><div class="map-cap">Skagen → Hirtshals → Color Line → Kristiansand → Arendal</div></div>
-    </div>
-  </div>
-
-  <div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
-    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
-      <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 10:30</span>
-      <span style="color:var(--line)">·</span>
-      <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:600;color:var(--warn)">⛴ Color Line 12:15 → 15:30</span>
-      <span style="color:var(--line)">·</span>
-      <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~16:25</span>
-    </div>
-    <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">10:30 Skagen → 11:20 Hirtshals havn (innsjekk) → 12:15 ombord → 15:30 Kristiansand → 16:25 Arendal 🏡</p>
-    <div style="display:grid;gap:4px">
-      <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> God tid til frokost og avslappet morgenstemning i Skagen — fergen går sent nok</p>
-      <p style="font-size:12px;color:var(--muted);margin:0">🏡 <strong>Kveld:</strong> Ankommer Arendal ~16:25 — kaffe på terrassen etter 22 dager på veien!</p>
+      <div class="map-wrap"><div id="m16" class="lmap"></div><div class="map-cap">Aalborg → Hirtshals ⛴ → Kristiansand → Arendal</div></div>
     </div>
   </div>
 </section>
 
 
 <!-- ── MODAL DAGMAR ── -->
+<div class="modal-overlay" id="modal-reglisse" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-reglisse').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">R&eacute;glisse et Pain d&#x27;E&#x301;pices</p>
+    <p class="modal-sub">61 Rue Haute, 14600 Honfleur &middot; +33 2 31 87 84 80</p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5575.716.061 &middot; PIN: 4182</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>La Transatlantique &mdash; 2. etg.</td><td>29.07 kl. 16:30&ndash;19:00</td><td>30.07 kl. 09:00&ndash;11:00</td><td>&euro;126</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>Frokost &times; 2</td><td>Inkludert</td></tr>
+        <tr><td>Byskatt (2 gjester &times; 1 natt)</td><td>ca. NOK 20</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;127,76 &asymp; NOK 1.423</span></div>
+    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Parkering:</strong> Gratis offentlig parkering i n&aelig;rheten &mdash; ingen forh&aring;ndsreservasjon n&oslash;dvendig. Gratisparkering ved Naturospace (5 min gange).</div>
+    <div class="modal-warn">&#x1F436; <strong>Hunder:</strong> Velkommen! &euro;10 tillegg per hund per opphold &mdash; betales ved avreise. Kun 1 hund per rom &mdash; kontakt hotellet om begge hundene.</div>
+    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk 16:30&ndash;19:00. Utsjekk 09:00&ndash;11:00. Kontakt hotellet ved sen ankomst.</p></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis avbestilling til <strong>14. juli 2026 kl. 23:59</strong>. Etter 15. juli: gebyr p&aring; &euro;126. Datoene kan ikke endres.</p></div>
+    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; Bekreftet p&aring; e-post: ijensen@q3p.no</p></div>
+  </div>
+</div>
 <div class="modal-overlay" id="modal-dagmar" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
     <span class="modal-handle"></span>
@@ -1369,9 +1301,9 @@ const ROADS={
   d9:[[46.373,4.325],[46.15,4.00],[45.91,3.77],[45.68,3.52],[45.40,3.12],[45.167,1.483],[45.18,0.72],[45.10,0.14],[44.894,-0.155],[44.97,-0.14],[45.052,-0.143]],
   d11:[[45.052,-0.143],[44.97,-0.14],[44.894,-0.155],[44.90,-0.57],[45.65,-0.14],[45.92,0.16],[46.35,0.48],[46.53,0.29],[47.21,0.62],[47.39,0.69],[47.413,0.989]],
   d12:[[47.413,0.989],[47.80,0.75],[47.995,0.193],[48.43,0.10],[48.73,-0.36],[49.18,-0.36],[49.33,0.00],[49.419,0.233]],
-  d13:[[49.419,0.233],[50.17,1.76],[50.45,2.22],[50.85,3.10],[51.05,3.72],[52.52,9.90],[53.55,9.99],[53.866,10.686]],
-  d14:[[53.866,10.686],[54.25,9.93],[55.07,9.37],[55.50,9.47],[55.80,9.89],[56.16,10.21],[56.61,10.03],[57.048,9.918]],
-  d15:[[57.048,9.918],[57.276,9.942],[57.441,10.537],[57.600,10.520],[57.721,10.578]],
+  d13:[[49.419,0.233],[50.40,1.80],[50.85,2.35],[51.20,3.22],[51.50,4.47],[52.093,5.121]],
+  d14:[[52.093,5.121],[53.00,6.50],[53.30,8.60],[53.5057,10.09],[53.70,10.30],[53.866,10.686]],
+  d15:[[53.866,10.686],[54.50,9.80],[55.0651,9.3663],[55.60,9.55],[56.10,9.70],[57.048,9.918]],
   d16:[[58.147,7.996],[58.24,8.26],[58.37,8.55],[58.461,8.772]]
 };
 // ══ DATAMODELL — Endre hotell/adresse HER. Alle kart og pin-lenker oppdateres automatisk. ══
@@ -1387,14 +1319,14 @@ const PLACES = {
   dag8:  { lat:46.373,  lon:4.325,   name:"Oyé 🏡 Foreldrehuset", address:"5 La Croix, 71800 Oyé",                           mapsQ:"5+La+Croix+71800+Oy%C3%A9+France" },
   dag9:  { lat:45.052,  lon:-0.143,  name:"Hos venn ✅",               address:"5 La Pradelle, Rue de Mérigot, 33230 Maransin",   mapsQ:"5+La+Pradelle+Rue+de+M%C3%A9rigot+33230+Maransin+France" },
   dag11: { lat:47.413,  lon:0.989,   name:"La Maison Rabelais",           address:"8 rue Rabelais, 37400 Amboise",                   mapsQ:"8+rue+Rabelais+37400+Amboise+France" },
-  dag12: { lat:49.419,  lon:0.233,   name:"La Ferme Saint-Siméon",   address:"20 rue Adolphe Marais, 14600 Honfleur",           mapsQ:"20+rue+Adolphe+Marais+14600+Honfleur+France" },
-  dag13: { lat:53.866,  lon:10.686,  name:"Park Inn by Radisson Lübeck",address:"Willy-Brandt-Allee 1–5, 23554 Lübeck",  mapsQ:"Willy-Brandt-Allee+1+23554+Lubeck+Germany" },
-  dag14: { lat:57.048,  lon:9.918,   name:"Scandic Aalborg City",         address:"Europa Plads 1, 9000 Aalborg",                    mapsQ:"Europa+Plads+1+9000+Aalborg+Denmark" },
-  dag15: { lat:57.742,  lon:10.578,  name:"Ruths Hotel",                  address:"Hans Ruths Vej 1, 9990 Skagen",                   mapsQ:"Hans+Ruths+Vej+1+9990+Skagen+Denmark" },
+  dag12: { lat:49.4229, lon:0.2311,  name:"Réglisse et Pain d'Épices", address:"61 Rue Haute, 14600 Honfleur",                    mapsQ:"61+Rue+Haute+14600+Honfleur+France" },
+  dag13: { lat:52.093,  lon:5.121,   name:"Grand Hotel Karel V",           address:"Geertebolwerk 1, 3511 XA Utrecht",                mapsQ:"Geertebolwerk+1+3511+XA+Utrecht+Netherlands" },
+  dag14: { lat:53.866,  lon:10.686,  name:"Park Inn by Radisson Lübeck",address:"Willy-Brandt-Allee 1–5, 23554 Lübeck",  mapsQ:"Willy-Brandt-Allee+1+23554+Lubeck+Germany" },
+  dag15: { lat:57.048,  lon:9.918,   name:"Scandic Aalborg City",         address:"Europa Plads 1, 9000 Aalborg",                    mapsQ:"Europa+Plads+1+9000+Aalborg+Denmark" },
   // LADESTOPP — mapsQ bruker adresse for presist treff i Google Maps
   brive:      { lat:45.1672, lon:1.4830,  name:"Tesla Brive-la-Gaillarde",    address:"Le Griffolet, 19270 Ussac",               mapsQ:"Le+Griffolet+19270+Ussac+France" },
   poitiers:   { lat:46.5285, lon:0.2868,  name:"Tesla Poitiers Sud",          address:"6 rue de la Saulaie, 86240 Croutelle",    mapsQ:"6+rue+de+la+Saulaie+86240+Croutelle+France" },
-  moorfleet:  { lat:53.5057, lon:10.0900, name:"Aral Hamburg-Moorfleet",      address:"Amandus-Stubbe-Straße+6+22113+Hamburg",   mapsQ:"Amandus-Stubbe-Stra%C3%9Fe+6+22113+Hamburg+Germany" },
+  moorfleet:  { lat:53.5057, lon:10.0900, name:"Aral Hamburg-Moorfleet",      address:"Amandus-Stubbe-Straße 6, 22113 Hamburg",   mapsQ:"Amandus-Stubbe-Stra%C3%9Fe+6+22113+Hamburg+Germany" },
   kirchheim:  { lat:50.8383, lon:9.5750,  name:"IONITY Kirchheimer Dreieck",  address:"Industriestr. 7, 36275 Kirchheim",        mapsQ:"Industriestrasse+7+36275+Kirchheim+Hessen+Germany" },
   baidesomme: { lat:50.1673, lon:1.7556,  name:"IONITY Baie de Somme",        address:"Aire de la Baie de Somme, A16, 80970",    mapsQ:"Aire+de+la+Baie+de+Somme+A16+Sailly-Flibeaucourt+80970+France" },
   aabenraa:   { lat:55.0651, lon:9.3663,  name:"IONITY Aabenraa",             address:"Egevej 6, 6200 Aabenraa",                mapsQ:"Egevej+6+6200+Aabenraa+Denmark" },
@@ -1430,7 +1362,7 @@ const ROUTES = {
   },
   hjemreise: {
     label: 'Hjemreise',
-    stops: ['dag12', 'Abbeville,France', 'dag13', 'dag14', 'dag15', 'Hirtshals,Denmark', 'Arendal,Norway']
+    stops: ['dag12', 'Belgium', 'dag13', 'dag14', 'dag15', 'Hirtshals,Denmark', 'Arendal,Norway']
   },
   // Daglige ruter
   dag1r:  { stops: ['Arendal,Norway',        'dag1'] },
@@ -1443,9 +1375,10 @@ const ROUTES = {
   dag9r:  { stops: ['dag8',  'brive',        'dag9'] },
   dag11r: { stops: ['dag9',  'Bordeaux,France', 'poitiers', 'dag11'] },
   dag12r: { stops: ['dag11',                 'dag12'] },
-  dag13r: { stops: ['dag12', 'baidesomme', 'Hamburg,Germany', 'dag13'] },
-  dag14r: { stops: ['dag13', 'aabenraa',    'dag14'] },
-  dag15r: { stops: ['dag14',                'dag15'] },
+  dag13r: { stops: ['dag12', 'Belgium', 'dag13'] },
+  dag14r: { stops: ['dag13', 'moorfleet', 'dag14'] },
+  dag15r: { stops: ['dag14', 'aabenraa',  'dag15'] },
+  dag16r: { stops: ['dag15', 'Hirtshals,Denmark'] },  // Aalborg → Hirtshals
 
   // Sceniske alternativer
   dag4s:  { stops: ['dag3', 'Saarburg,Germany', 'Mettlach,Germany', 'Saverne,France', 'dag4'] },
@@ -1453,8 +1386,7 @@ const ROUTES = {
   dag7s:  { stops: ['dag5', 'Colmar,France', 'Guebwiller,France', 'Col+de+Bussang+88540', 'Luxeuil-les-Bains,France', 'dag7'] },
   dag8s:  { stops: ['dag7', 'Meursault,France', 'Santenay,France', 'Autun,France', 'Bourbon-Lancy,France', 'dag8'] },
   dag12s: { stops: ['dag11', 'Blois,France', 'Le+Mans,France', 'Vimoutiers,France', 'Lisieux,France', 'dag12'] },
-  dag14r: { stops: ['dag13', 'aabenraa', 'dag14'] },
-  dag15s: { stops: ['dag14', 'Hirtshals,Denmark', 'Tornby+Strand', 'Råbjerg+Mile,Denmark', 'dag15'] },
+  dag15s: { stops: ['dag14', 'Kolding,Denmark', 'Vejle,Denmark', 'dag15'] }, // scenic alternativ via Vejle fjord
 };
 
 // Bygg en Google Maps dir/-URL fra en liste med PLACES-nøkler og rå waypoints
@@ -1493,7 +1425,7 @@ const S={
   brive:[45.1672,1.4830],perigueux:[45.185,0.721],angouleme:[45.649,0.158],
   stemilion:[44.894,-0.155],
   maransin:[45.052,-0.143],amboise:[47.413,0.989],lemans:[47.995,0.193],
-  caen:[49.183,-0.356],honfleur:[49.419,0.233],baidesomme:[50.1673,1.7556],
+  caen:[49.183,-0.356],honfleur:[49.4229,0.2311],baidesomme:[50.1673,1.7556],
   lubeck:[53.866,10.686],aarhus:[56.162,10.203],aalborg:[57.048,9.918],
   frederikshavn:[57.441,10.537],skagen:[57.7417,10.5921],padborg:[55.0651,9.3663]
 };
@@ -1513,8 +1445,8 @@ window.addEventListener('load',function(){
      [S.strasbourg,DM,'Strasbourg','Dag 4'],[S.mittelwihr,DM,'Mittelwihr','Dag 5–6'],
      [S.beaune,DM,'Beaune','Dag 7'],[S.oye,DB,'Oyé ★','5 La Croix · Base 19.–26. jul'],
      [S.maransin,DM,'Maransin','Dag 9–10 · Hos venn ✅ · 5 La Pradelle'],[S.amboise,DM,'Amboise','Dag 11'],
-     [S.honfleur,DM,'Honfleur','Dag 12'],[S.lubeck,DM,'Lübeck','Dag 13'],
-     [S.aalborg,DM,'Aalborg','Dag 14'],[S.skagen,DE,'Skagen','Dag 15 – Ruths Hotel']
+     [S.honfleur,DM,'Honfleur','Dag 12 – Réglisse et Pain d'Épices'],[S.lubeck,DM,'Lübeck','Dag 13'],
+     [S.aalborg,DE,'Aalborg','Dag 15 – Scandic Aalborg City'],[S.utrecht,DM,'Utrecht','Dag 13 – Grand Hotel Karel V']
     ].forEach(([pos,ic,lbl,note])=>mk(ov,pos[0],pos[1],ic,lbl,note));
     fit(ov,[...out,...lp,...ret,S.arendal]);
   })();
@@ -1556,24 +1488,22 @@ window.addEventListener('load',function(){
     fit(m,ROADS.d11);})();
 
   (function(){const m=mkMap('m12');if(!m)return;route(m,ROADS.d12);
-    mk(m,...S.amboise,DS,'Amboise','');mk(m,...S.lemans,DM,'Le Mans','');mk(m,...S.caen,DM,'Caen','');mk(m,...S.honfleur,DE,'Honfleur','La Ferme Saint-Siméon · 20 rue Adolphe Marais, 14600');
+    mk(m,...S.amboise,DS,'Amboise','');mk(m,...S.lemans,DM,'Le Mans','');mk(m,...S.honfleur,DE,'Honfleur','Réglisse et Pain d'Épices · 61 Rue Haute');mk(m,...S.honfleur,DE,'Honfleur','Réglisse et Pain d'Épices · 61 Rue Haute');mk(m,...S.caen,DM,'Caen','');mk(m,...S.honfleur,DE,'Honfleur','Réglisse et Pain d'Épices · 61 Rue Haute');
     fit(m,ROADS.d12);})();
 
   (function(){const m=mkMap('m13');if(!m)return;route(m,ROADS.d13);
-    mk(m,...S.honfleur,DS,'Honfleur','');mk(m,...S.baidesomme,DM,'⚡ Ionity Baie de Somme','Ladestopp 1 – ~175 km');mk(m,...S.moorfleet,DM,'⚡ Aral Hamburg Moorfleet','Ladestopp 2 – ~390 km');mk(m,...S.lubeck,DE,'Lübeck','Park Inn Radisson · Willy-Brandt-Allee 1–5, 23554');
+    mk(m,...S.honfleur,DS,'Honfleur','');mk(m,...S.utrecht,DE,'Utrecht 🇳🇱','Grand Hotel Karel V ★★★★★ · Geertebolwerk 1');mk(m,...S.lubeck,DE,'Lübeck','Park Inn Radisson · Willy-Brandt-Allee 1–5, 23554');
     fit(m,ROADS.d13);})();
 
   (function(){const m=mkMap('m14');if(!m)return;route(m,ROADS.d14);
-    mk(m,...S.lubeck,DS,'Lübeck','');mk(m,...S.padborg,DM,'⚡ Ionity Aabenraa','Ladestopp ~180 km');mk(m,...S.aarhus,DM,'Aarhus','');mk(m,...S.aalborg,DE,'Aalborg','Scandic Aalborg City · Europa Plads 1, 9000');
+    mk(m,...S.utrecht,DS,'Utrecht','');mk(m,...S.moorfleet,DM,'⚡ Aral Moorfleet','Hamburg-Moorfleet · 340 km');mk(m,...S.lubeck,DE,'Lübeck','Park Inn Radisson · Willy-Brandt-Allee');mk(m,...S.lubeck,DE,'Lübeck','Park Inn Radisson · Willy-Brandt-Allee');
     fit(m,ROADS.d14);})();
 
-  (function(){const m=mkMap('m15');if(!m)return;
-    route(m,ROADS.d15);mk(m,...S.aalborg,DS,'Aalborg','');mk(m,...S.frederikshavn,DM,'Frederikshavn','E45 nordende → sving nordvest');mk(m,...S.skagen,DE,'Skagen','Ruths Hotel · Hans Ruths Vej 1, 9990 Skagen');fit(m,ROADS.d15,32);})();
+  (function(){const m=mkMap('m15');if(!m)return;route(m,ROADS.d15);
+    mk(m,...S.lubeck,DS,'Lübeck','');mk(m,...S.padborg,DM,'⚡ IONITY Aabenraa','Egevej 6, 6200 Aabenraa');mk(m,...S.aalborg,DE,'Aalborg','Scandic Aalborg City · Europa Plads 1');mk(m,...S.aalborg,DE,'Aalborg','Scandic Aalborg City · Europa Plads 1');fit(m,ROADS.d15,32);})();
 
-  (function(){const m=mkMap('m16');if(!m)return;
-    const skagen=S.skagen;
-    route(m,[skagen,[57.600,10.520],[57.441,10.537],[57.462,9.979],S.hirtshals]);ferry(m,[S.hirtshals,S.kristiansand]);route(m,ROADS.d16);
-    mk(m,...skagen,DS,'Skagen','Ruths Hotel – avreise 10:30');mk(m,...S.hirtshals,DF,'Hirtshals','Color Line 12:15 → 15:30');mk(m,...S.kristiansand,DM,'Kristiansand','Ankomst 15:30 → videre til Arendal');mk(m,...S.arendal,DE,'Arendal 🏡','Ankomst ~16:25 🏡');
+  (function(){const m=mkMap('m16');if(!m)return;route(m,ROADS.m16);
+    mk(m,...S.aalborg,DS,'Aalborg','');mk(m,...S.hirtshals,DE,'Hirtshals ⛴','Color Line 12:15 → Kristiansand');
     fit(m,[skagen,S.hirtshals,S.kristiansand,...ROADS.d16]);})();
 });
 
