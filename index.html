@@ -377,7 +377,7 @@
 
     <div style="display:grid;gap:8px">
       <a class="route-btn" style="justify-content:flex-start;gap:10px;font-size:14px"
-         href="https://www.google.com/maps/dir/Arendal,Norway/Ribe,Denmark/Celle,Germany/Trier,Germany/Strasbourg,France/Mittelwihr+68630,France/Beaune,France/Oy%C3%A9+71800,France/5+La+Pradelle,+Rue+de+M%C3%A9rigot,+33230+Maransin,+France/Amboise,France/Honfleur,France/L%C3%BCbeck,Germany/Aalborg,Denmark/Skagen,Denmark"
+         href="#" data-route="heletur"
          target="_blank">
         <span>🗺</span>
         <span><strong>Hele turen</strong> — alle 14 stopp<br>
@@ -386,19 +386,19 @@
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
         <a class="route-btn" style="justify-content:flex-start;gap:8px;font-size:13px;padding:10px 12px"
-           href="https://www.google.com/maps/dir/Arendal,Norway/Hirtshals,Denmark/Ribe,Denmark/Celle,Germany/Trier,Germany/Strasbourg,France/Mittelwihr+68630,France/Beaune,France/Oy%C3%A9+71800,France"
+           href="#" data-route="utreise"
            target="_blank">
           <span>✈️</span>
           <span><strong>→ Utreise</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Arendal · Hirtshals · Ribe · Celle · Trier · Strasbourg · Mittelwihr · Beaune · Oyé</span></span>
         </a>
         <a class="route-btn" style="justify-content:flex-start;gap:8px;font-size:13px;padding:10px 12px"
-           href="https://www.google.com/maps/dir/Oy%C3%A9+71800,France/Brive-la-Gaillarde,France/5+La+Pradelle,+Rue+de+M%C3%A9rigot,+33230+Maransin,+France/Amboise,France/Honfleur,France"
+           href="#" data-route="frankrike"
            target="_blank">
           <span>🇫🇷</span>
           <span><strong>→ Frankrike-løkken</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Oyé · Brive ⚡ · Saint-Émilion · Amboise · Honfleur</span></span>
         </a>
         <a class="route-btn" style="justify-content:flex-start;gap:8px;font-size:13px;padding:10px 12px"
-           href="https://www.google.com/maps/dir/Honfleur,France/Abbeville,France/L%C3%BCbeck,Germany/Aalborg,Denmark/Skagen,Denmark/Hirtshals,Denmark/Arendal,Norway"
+           href="#" data-route="hjemreise"
            target="_blank">
           <span>🏠</span>
           <span><strong>→ Hjemreise</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Honfleur · Baie de Somme ⚡ · Lübeck · Aalborg · Skagen · Hirtshals · (ferge 12:15) · Arendal</span></span>
@@ -436,7 +436,7 @@
         </div>
       </div>
       <div style="padding:0 16px 16px">
-        <a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=Arendal,Norge&destination=Ribe,Danmark&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+        <a class="route-btn" href="#" data-route="dag1r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/ribe.html" target="_blank">🗺 Utforsk Ribe — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-dagmar').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button>
       </div>
@@ -493,7 +493,7 @@
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Aral Hamburg Moorfleet</strong> (~225 km fra Ribe) · <a href="#" data-place="moorfleet" target="_blank">📍 Kart</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/Ribe,Denmark/Hamburg,Germany/Celle,Germany" target="_blank">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag2r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/celle.html" target="_blank">🗺 Utforsk Celle — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -546,7 +546,7 @@
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Ionity Kirchheimer Dreieck</strong> (~190 km) · <a href="#" data-place="kirchheim" target="_blank">📍 Kart</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/Celle,Germany/50.8338,9.5708/Trier,Germany" target="_blank">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag3r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/trier.html" target="_blank">🗺 Utforsk Trier — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -599,7 +599,7 @@
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Avklar hunderegler og parkering direkte</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=Trier,Tyskland&destination=Strasbourg,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag4r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/strasbourg.html" target="_blank">🗺 Utforsk Strasbourg — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -642,7 +642,7 @@
         <ul class="scenic-stops"><li><span class="s-icon">🏰</span><div><strong>Saarburg (24 km)</strong><br><span style="color:var(--muted);font-size:12px">Pittoresk by med fossefall midt i gamlebyen og Saarburg slott på klippen over Saar-elven</span></div></li><li><span class="s-icon">🌀</span><div><strong>Saarschleife ved Mettlach (55 km)</strong><br><span style="color:var(--muted);font-size:12px">Europas vakreste flodbue — Saar-svingen sett fra Cloef-platået. 20 min gåtur til utsiktet. Villeroy & Boch museum nedfor</span></div></li><li><span class="s-icon">🌸</span><div><strong>Saverne — Col de Saverne (100 km)</strong><br><span style="color:var(--muted);font-size:12px">Rosenbyen Saverne med Rohan-slottet og 8800 rosebusker. Historisk fjellpass ned fra Vosges til Alsace-sletten</span></div></li></ul>
         <div class="scenic-extra">🐕 Perfekt hundetur ved Cloef-platået: 20 min gjennom skog til dramatisk utsiktsplatå over Saar-svingen. Saarburg-fossen er midt i gamlebyen. Begge er hundrevennlige.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Trier,Germany/Saarburg,Germany/Mettlach,Germany/Saverne,France/Strasbourg,France" target="_blank">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag4s" target="_blank">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -665,7 +665,7 @@
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.hotelmittelwihr.fr" target="_blank">hotelmittelwihr.fr</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=Strasbourg,Frankrike&destination=Mittelwihr,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag5r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/alsace.html" target="_blank">🗺 Utforsk Alsace — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -708,7 +708,7 @@
         <ul class="scenic-stops"><li><span class="s-icon">🏘</span><div><strong>Obernai (35 km)</strong><br><span style="color:var(--muted);font-size:12px">En av Alsaces vakreste byer — middelaldermarkedsplass, trehusrekker og vindyrking ved foten av Sainte-Odile-fjellet</span></div></li><li><span class="s-icon">🏰</span><div><strong>Château du Haut-Koenigsbourg (55 km)</strong><br><span style="color:var(--muted);font-size:12px">Gotisk riddersborg restaurert av Kaiser Wilhelm II (755 m) — panoramautsikt over Alsace-sletten og Schwarzwald</span></div></li><li><span class="s-icon">💎</span><div><strong>Ribeauvillé (70 km)</strong><br><span style="color:var(--muted);font-size:12px">Tre middelalderslott på åsene. Riquewihr (80 km) regnes som Alsaces vakreste landsby — Dolder-porten fra 1291 og beste Riesling-mark</span></div></li></ul>
         <div class="scenic-extra">🐕 Château Haut-Koenigsbourg er 30 min avvik (D159 opp, D159 ned). Hunder er velkomne i landsbyene og vinmarkene utenfor turistsesongen. Riquewihr er ekstremt populært — vær tidlig.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Strasbourg,France/Obernai,France/Ribeauvillé,France/Riquewihr,France/Mittelwihr,France" target="_blank">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag5s" target="_blank">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -755,7 +755,7 @@
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Parkering, hunder og lading tilgjengelig</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=Mittelwihr,Frankrike&destination=Beaune,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag7r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/beaune.html" target="_blank">🗺 Utforsk Beaune — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -798,7 +798,7 @@
         <ul class="scenic-stops"><li><span class="s-icon">🏘</span><div><strong>Colmar (10 km)</strong><br><span style="color:var(--muted);font-size:12px">La Petite Venise — fargede trehus langs kanalene, Issenheim-alterstykket i museum. Rask morgenstopp før fjellet</span></div></li><li><span class="s-icon">⛰</span><div><strong>Col de Bussang (727m, 75 km)</strong><br><span style="color:var(--muted);font-size:12px">Fjellpass over Ballons des Vosges — slående panoramautsikt tilbake over Alsace-sletten og fremover mot Burgund. Smilende sauer.</span></div></li><li><span class="s-icon">🏛</span><div><strong>Luxeuil-les-Bains (105 km)</strong><br><span style="color:var(--muted);font-size:12px">Vakker gammel kurby med romanske klosterruiner, historisk gamlekvarter og thermalbad. Utmerket lunsjstopp</span></div></li></ul>
         <div class="scenic-extra">🐕 Kjøring over Ballons des Vosges er en av Frankrikes fineste fjellruter om sommeren: åpent, svingete og med utsikt på begge sider. Hundene kan løpe i Vosges-skogen rundt passet. Colmar er bare 10 min fra hotellet.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Mittelwihr,France/Colmar,France/Guebwiller,France/Col+de+Bussang+88540/Luxeuil-les-Bains,France/Beaune,France" target="_blank">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag7s" target="_blank">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -813,7 +813,7 @@
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px"><div class="info-rows"><div class="info-row"><span class="info-label">Sted</span><span class="info-val">Oyé 🏡 — Foreldrehuset</span></div><div class="info-row"><span class="info-label">Adresse</span><span class="info-val">5 La Croix, 71800 Oyé <a href="#" data-place="dag8" target="_blank" style="font-size:11px">📍 Kart</a></span></div><div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Rolig ankomstdag. Base 19.–26. juli.</span></div></div>
-      <a class="route-btn" href="https://www.google.com/maps/dir/Beaune,France/5+La+Croix+71800+Oy%C3%A9+France" target="_blank">→ Kjørerute Google Maps</a>
+      <a class="route-btn" href="#" data-route="dag8r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/oye.html" target="_blank">🗺 Utforsk Oyé-uken — gjøreliste &amp; begivenheter</a></div>
     </div>
     <div class="day-right">
@@ -857,7 +857,7 @@
         <ul class="scenic-stops"><li><span class="s-icon">🍷</span><div><strong>Pommard & Meursault (10–15 km)</strong><br><span style="color:var(--muted);font-size:12px">To av Burgunds mest kjente vinlandsbyer på D974. Château de Meursault tar imot besøkende — hvite viner av absolutt verdensklasse</span></div></li><li><span class="s-icon">✨</span><div><strong>Puligny-Montrachet & Chassagne (20 km)</strong><br><span style="color:var(--muted);font-size:12px">Verdens beste Chardonnay-terroir. Montrachet Grand Cru. Stille gårdsveier mellom stenvegger og vinmarker i tidlig morgen</span></div></li><li><span class="s-icon">🏛</span><div><strong>Autun (65 km)</strong><br><span style="color:var(--muted);font-size:12px">Romertidens glemte storby — Augustus-triumfbue, romansk katedral Saint-Lazare, Musée Rolin. Ideell lunsjstans på Place du Champ de Mars</span></div></li></ul>
         <div class="scenic-extra">🐕 Route des Grands Crus er et UNESCO Verdensarv-landskap — 37 vinlandsbyer på 60 km. Autun er et positivt sjokk: en hel romersk by i Burgund som de fleste aldri vet om. Hundene er velkomne i vinmarkene.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Beaune,France/Meursault,France/Santenay,France/Autun,France/Bourbon-Lancy,France/Oyé,71800,France" target="_blank">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag8s" target="_blank">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -879,7 +879,7 @@
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Tesla Brive-la-Gaillarde</strong> (~220 km) · <a href="#" data-place="brive" target="_blank">📍 Kart</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/Oy%C3%A9+71800,France/Brive-la-Gaillarde,France/5+La+Pradelle,+Rue+de+M%C3%A9rigot,+33230+Maransin,+France" target="_blank">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag9r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/stemilion.html" target="_blank">🗺 Utforsk Saint-Émilion — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -958,7 +958,7 @@
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Parkering, lading og hunder mot tillegg</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/5+La+Pradelle,+Rue+de+M%C3%A9rigot,+33230+Maransin,+France/Bordeaux,France/Poitiers,France/Amboise,France" target="_blank">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag11r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/amboise.html" target="_blank">🗺 Utforsk Amboise — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -1011,7 +1011,7 @@
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Ring og avklar to hunder og lading</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=Amboise,Frankrike&destination=Honfleur,Frankrike&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag12r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/honfleur.html" target="_blank">🗺 Utforsk Honfleur — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -1054,7 +1054,7 @@
         <ul class="scenic-stops"><li><span class="s-icon">🏰</span><div><strong>Blois (40 km)</strong><br><span style="color:var(--muted);font-size:12px">Château Royal de Blois — fire kongers residens, fire arkitektoniske stilarter i ett bygg. Bratt historisk kjerne ned mot Loire</span></div></li><li><span class="s-icon">🏎</span><div><strong>Le Mans — La Cité Plantagenêt (130 km)</strong><br><span style="color:var(--muted);font-size:12px">Middelalderkvarteret inne i bymurene er et av Frankrikes best bevarte — ingenting å gjøre med bilrace. Kaffe og croissant her</span></div></li><li><span class="s-icon">🍎</span><div><strong>Normandie bocage + Camembert (220 km)</strong><br><span style="color:var(--muted);font-size:12px">Vimoutiers og Camembert-landsbyen (5 km avvik fra D916): Musée du Camembert og originale gårder. Normandie-landskapet er nydelig</span></div></li></ul>
         <div class="scenic-extra">🐕 Lisieux → Honfleur på D579 er en av Normandies vakreste kjøreturer gjennom Pays dAuge: trehus, epletrær, kyr og Côte Fleurie. Hunder er velkomne i bocage-landet og langs elvene.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Amboise,France/Blois,France/Le+Mans,France/Alençon,France/Vimoutiers,France/Lisieux,France/Honfleur,France" target="_blank">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag12s" target="_blank">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -1079,7 +1079,7 @@
           <div class="info-row"><span class="info-label warn">⚡ Stopp 2</span><span class="info-val warn"><strong>Aral Hamburg Moorfleet</strong> (~390 km) · <a href="#" data-place="moorfleet" target="_blank">📍 Kart</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/Honfleur,France/Abbeville,France/Hamburg,Germany/Lübeck,Germany" target="_blank">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag13r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/lubeck.html" target="_blank">🗺 Utforsk Lübeck — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -1134,7 +1134,7 @@
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Ionity Aabenraa E45</strong> (~180 km) · <a href="#" data-place="aabenraa" target="_blank">📍 Kart</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/Lübeck,Germany/Aabenraa,Denmark/Aalborg,Denmark" target="_blank">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag14r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/aalborg.html" target="_blank">🗺 Utforsk Aalborg — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -1186,7 +1186,7 @@
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Hunder DKK 300/opphold. Mat- og vannskål inkl. Gratis parkering. Bekreft to hunder.</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="https://www.google.com/maps/dir/?api=1&origin=Aalborg,9000,Danmark&destination=Hans+Ruths+Vej+1,+9990+Skagen,+Danmark&travelmode=driving" target="_blank">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag15r" target="_blank">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/skagen.html" target="_blank">🗺 Utforsk Skagen — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -1231,7 +1231,7 @@
         <ul class="scenic-stops"><li><span class="s-icon">🏖</span><div><strong>Hirtshals (70 km)</strong><br><span style="color:var(--muted);font-size:12px">Fiskerleia og fergehavn — fyr og klitter. Symbolsk å se havn dere kom inn i fra ferge</span></div></li><li><span class="s-icon">🌊</span><div><strong>Tornby Strand (90 km)</strong><br><span style="color:var(--muted);font-size:12px">Nordjyllands villeste vestkyststrand — høye hvite sanddyner, nordsjøbrus og nesten ingen folk. Perfekt for hundepause</span></div></li><li><span class="s-icon">🏜</span><div><strong>Råbjerg Mile (115 km)</strong><br><span style="color:var(--muted);font-size:12px">Skandinavias største vandrende klit — 1 km langt sandhav som beveger seg 15 m/år østover. Unik og dramatisk — 15 min stopp</span></div></li></ul>
         <div class="scenic-extra">🐕 Råbjerg Mile alene er verdt omveien — hundene elsker å løpe i sanddynene. Gammel Skagen (Højen-kvarteret) med gule hus og røde tak er 5 min fra Ruths Hotel og Nordens mest fotogeniske landsby.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="https://www.google.com/maps/dir/Aalborg,Denmark/Hirtshals,Denmark/Tornby+Strand/Råbjerg+Mile,Denmark/Skagen,Denmark" target="_blank">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag15s" target="_blank">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -1412,6 +1412,73 @@ document.addEventListener("DOMContentLoaded",function(){
   document.querySelectorAll("[data-show-address]").forEach(function(el){
     var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.address;
   });
+
+// ── RUTE-DEFINISJONER — bygges fra PLACES-datamodellen ───────────────────────
+// Hvert element er enten en PLACES-nøkkel (henter adresse) eller en rå streng.
+const ROUTES = {
+  heletur: {
+    label: 'Hele turen',
+    stops: ['Arendal,Norway', 'dag1', 'dag2', 'dag3', 'dag4', 'dag5', 'dag7', 'dag8', 'dag9', 'dag11', 'dag12', 'dag13', 'dag14', 'dag15']
+  },
+  utreise: {
+    label: 'Utreise',
+    stops: ['Arendal,Norway', 'Hirtshals,Denmark', 'dag1', 'dag2', 'dag3', 'dag4', 'dag5', 'dag7', 'dag8']
+  },
+  frankrike: {
+    label: 'Frankrike-løkken',
+    stops: ['dag8', 'brive', 'dag9', 'dag11', 'dag12']
+  },
+  hjemreise: {
+    label: 'Hjemreise',
+    stops: ['dag12', 'Abbeville,France', 'dag13', 'dag14', 'dag15', 'Hirtshals,Denmark', 'Arendal,Norway']
+  },
+  // Daglige ruter
+  dag1r:  { stops: ['Arendal,Norway',        'dag1'] },
+  dag2r:  { stops: ['dag1',                  'dag2'] },
+  dag3r:  { stops: ['dag2',  'kirchheim',    'dag3'] },
+  dag4r:  { stops: ['dag3',                  'dag4'] },
+  dag5r:  { stops: ['dag4',                  'dag5'] },
+  dag7r:  { stops: ['dag5',                  'dag7'] },
+  dag8r:  { stops: ['dag7',                  'dag8'] },
+  dag9r:  { stops: ['dag8',  'brive',        'dag9'] },
+  dag11r: { stops: ['dag9',  'Bordeaux,France', 'poitiers', 'dag11'] },
+  dag12r: { stops: ['dag11',                 'dag12'] },
+  dag13r: { stops: ['dag12', 'baidesomme', 'Hamburg,Germany', 'dag13'] },
+  dag14r: { stops: ['dag13', 'aabenraa',    'dag14'] },
+  dag15r: { stops: ['dag14',                'dag15'] },
+
+  // Sceniske alternativer
+  dag4s:  { stops: ['dag3', 'Saarburg,Germany', 'Mettlach,Germany', 'Saverne,France', 'dag4'] },
+  dag5s:  { stops: ['dag4', 'Obernai,France', 'Riquewihr,France', 'dag5'] },
+  dag7s:  { stops: ['dag5', 'Colmar,France', 'Guebwiller,France', 'Col+de+Bussang+88540', 'Luxeuil-les-Bains,France', 'dag7'] },
+  dag8s:  { stops: ['dag7', 'Meursault,France', 'Santenay,France', 'Autun,France', 'Bourbon-Lancy,France', 'dag8'] },
+  dag12s: { stops: ['dag11', 'Blois,France', 'Le+Mans,France', 'Vimoutiers,France', 'Lisieux,France', 'dag12'] },
+  dag14r: { stops: ['dag13', 'aabenraa', 'dag14'] },
+  dag15s: { stops: ['dag14', 'Hirtshals,Denmark', 'Tornby+Strand', 'Råbjerg+Mile,Denmark', 'dag15'] },
+};
+
+// Bygg en Google Maps dir/-URL fra en liste med PLACES-nøkler og rå waypoints
+function buildRouteURL(stops) {
+  var parts = stops.map(function(s) {
+    var p = PLACES[s];
+    if (p) {
+      // Bruk mapsQ fra PLACES — presist adressetreff
+      return p.mapsQ;
+    }
+    // Rå waypoint: behold som-er (allerede URL-vennlig med + og komma)
+    return s;
+  });
+  return 'https://www.google.com/maps/dir/' + parts.join('/');
+}
+
+// Klikk-delegering for rute-lenker
+document.addEventListener('click', function(e) {
+  var a = e.target.closest('a[data-route]'); if (!a) return;
+  var key = a.getAttribute('data-route');
+  var route = ROUTES[key]; if (!route) return;
+  e.preventDefault();
+  window.open(buildRouteURL(route.stops), '_blank');
+});
   document.querySelectorAll("[data-show-name]").forEach(function(el){
     var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.name;
   });
