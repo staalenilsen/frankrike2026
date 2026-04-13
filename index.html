@@ -315,8 +315,8 @@
           <tr><td><a href="#dag10" class="day-link">Man 27. jul</a></td><td>Saint-Émilion ✅</td><td>0</td></tr>
           <tr><td><a href="#dag11" class="day-link">Tir 28. jul</a></td><td>Amboise</td><td>320</td></tr>
           <tr><td><a href="#dag12" class="day-link">Ons 29. jul</a></td><td>Honfleur<span class="booked-badge">✓ Booket</span></td><td>320</td></tr>
-          <tr class="wr"><td><a href="#dag13" class="day-link">Tor 30. jul</a></td><td>Utrecht</td><td>~400</td></tr>
-          <tr class="wr"><td><a href="#dag14" class="day-link">Fre 31. jul</a></td><td>Lübeck</td><td>~450 ⚡</td></tr>
+          <tr class="wr"><td><a href="#dag13" class="day-link">Tor 30. jul</a></td><td>Utrecht<span class="booked-badge">✓ Booket</span></td><td>~400</td></tr>
+          <tr class="wr"><td><a href="#dag14" class="day-link">Fre 31. jul</a></td><td>Lübeck<span class="booked-badge">✓ Booket</span></td><td>~450 ⚡</td></tr>
           <tr><td><a href="#dag15" class="day-link">Lør 1. aug</a></td><td>Aalborg</td><td>425</td></tr>
           <tr><td><a href="#dag16" class="day-link">Søn 2. aug</a></td><td>Arendal 🏡</td><td>⛴ 12:15</td></tr>
         </tbody>
@@ -1077,7 +1077,7 @@
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px"><div class="info-rows">
-        <div class="info-row"><span class="info-label">Hotell</span><span class="info-val"><strong>Grand Hotel Karel V</strong> ★★★★★</span></div>
+        <div class="info-row"><span class="info-label">Hotell</span><span class="info-val"><strong>Grand Hotel Karel V</strong> ★★★★★ &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
         <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag13">Geertebolwerk 1, 3511 XA Utrecht <a href="javascript:void(0)" data-place="dag13" style="font-size:11px">📍 Kart</a></span></div>
         <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Eget p-anlegg på hotellet · ⚡ EV-lader på tomten · €35/døgn</span></div>
         <div class="info-row"><span class="info-label">Hunder</span><span class="info-val">🐶 Velkommen · begrensede rom · book på forhånd · €50/hund/natt</span></div>
@@ -1086,6 +1086,7 @@
       </div></div>
       <div style="padding:0 16px 16px">
         <a class="route-btn" href="javascript:void(0)" data-route="dag13r" target="_blank">→ Kjørerute Google Maps</a>
+        <button class="booking-btn" onclick="document.getElementById('modal-karelv').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
       </div>
     </div>
     <div class="day-right">
@@ -1103,6 +1104,20 @@
       <div class="map-wrap"><div id="m13" class="lmap"></div><div class="map-cap">Honfleur → Belgia → Utrecht (~400 km)</div></div>
     </div>
   </div>
+<div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 09:00</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~15:30</span>
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Honfleur → A13 Pont de Normandie → A16 Belgia → A27 → 15:30 Utrecht</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost ved Vieux Bassin og avreise over Pont de Normandie</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Sjekk inn på Karel V og utforsk Oudegracht med hundene</p>
+        <div style="margin-top:6px;padding:7px 10px;background:var(--green-soft);border-radius:10px;border-left:3px solid var(--green)">
+          <p style="font-size:12px;margin:0;color:var(--ink)">✅ <strong>Rekkevidde OK:</strong> ~400 km — innen rekkevidde uten ladestopp fra Honfleur til Utrecht.</p></div>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 14 ── -->
@@ -1115,12 +1130,18 @@
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px"><div class="info-rows">
-        <div class="info-row"><span class="info-label">Hotell</span><span class="info-val" data-show-name data-place="dag14">Park Inn by Radisson Lübeck</span></div>
-        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag14">Willy-Brandt-Allee 1–5, 23554 Lübeck <a href="javascript:void(0)" data-place="dag14" style="font-size:11px">📍 Kart</a></span></div>
+        <div class="info-row"><span class="info-label">Hotell</span><span class="info-val" data-show-name data-place="dag14">LIHO - einfach Lübeck &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
+        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag14">Lindenstr. 1A, 23558 Lübeck <a href="javascript:void(0)" data-place="dag14" style="font-size:11px">📍 Kart</a></span></div>
         <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Aral Hamburg-Moorfleet</strong> (~340 km) · <a href="javascript:void(0)" data-place="moorfleet" target="_blank">📍 Kart</a></span></div>
+      
+        <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+49451872100">+49 451 872100</a></span></div>
+        <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.liho-hotels.de" target="_blank">liho-hotels.de</a></span></div>
+        <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Gratis gate-P utenfor · Garasje €20/dag (forhåndsbest.) · maks 5m/1,85m høyde</span></div>
+        <div class="info-row"><span class="info-label">Hunder</span><span class="info-val">🐶 Hundevennlig ✅ · MÅ registreres på forhånd · spesielle hunderom</span></div>
       </div></div>
       <div style="padding:0 16px 16px">
         <a class="route-btn" href="javascript:void(0)" data-route="dag14r" target="_blank">→ Kjørerute Google Maps</a>
+        <button class="booking-btn" onclick="document.getElementById('modal-liho').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
       </div>
     </div>
     <div class="day-right">
@@ -1134,6 +1155,20 @@
       <div class="map-wrap"><div id="m14" class="lmap"></div><div class="map-cap">Utrecht → Hamburg ⚡ → Lübeck (~450 km)</div></div>
     </div>
   </div>
+<div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 09:00</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~16:00</span>
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Utrecht → A1 Bremen → ⚡ Hamburg Moorfleet → A1 → 16:00 Lübeck</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost på Karel V og avreise via tyske motorveier</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Lübeck — Holstentor og middelaldersentrum venter</p>
+        <div style="margin-top:6px;padding:7px 10px;background:var(--amber-soft,#fff8e1);border-radius:10px;border-left:3px solid var(--amber,#f59e0b)">
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Ladestopp:</strong> Aral pulse Hamburg-Moorfleet — Amandus-Stubbe-Straße 6, 22113 Hamburg (~225 km). 150–350 kW, 24/7. <a href="javascript:void(0)" data-place="moorfleet" target="_blank">Kart</a></p></div>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 15 ── -->
@@ -1165,6 +1200,20 @@
       <div class="map-wrap"><div id="m15" class="lmap"></div><div class="map-cap">Lübeck → Aabenraa ⚡ → Aalborg (~425 km)</div></div>
     </div>
   </div>
+<div style="border-top:1px solid var(--line);padding:12px 16px;background:linear-gradient(to right,var(--sky-soft),#fff)">
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px">
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--sky)">🚀 Avreise 09:00</span>
+          <span style="color:var(--line)">·</span>
+          <span style="display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--green)">🏁 Ankomst ~15:30</span>
+        </div>
+        <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Lübeck → A1 Flensburg → ⚡ Aabenraa → E45 Kolding → 15:30 Aalborg</p>
+        <div style="display:grid;gap:4px">
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Over Storebælt-brua og inn i Danmark — grensen ved Padborg</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Siste hotellnatt — middag ved Limfjorden i Aalborg</p>
+        <div style="margin-top:6px;padding:7px 10px;background:var(--amber-soft,#fff8e1);border-radius:10px;border-left:3px solid var(--amber,#f59e0b)">
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Ladestopp:</strong> IONITY Aabenraa — Egevej 6, 6200 Aabenraa (~180 km). 350 kW, 24/7. <a href="javascript:void(0)" data-place="aabenraa" target="_blank">Kart</a></p></div>
+        </div>
+      </div>
 </section>
 
 <!-- ── DAG 16 ── -->
@@ -1282,6 +1331,60 @@
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
     <div class="modal-sec"><h4>&#x1F4AC; Bekreftelse fra Th&eacute;o (front desk)</h4><p style="font-size:12px;line-height:1.6;font-style:italic">&laquo;I confirm we accept dogs in our hotel for your stay. A special kit is prepared with pillows, water and dog's food &mdash; extra of &euro;20 per animal. Concerning parking, I confirm you will have a parking place with an electric charge &mdash; extra of &euro;20 per vehicle.&raquo;</p><p style="font-size:11px;color:var(--muted);margin-top:4px">&mdash; Th&eacute;o, Front desk Hotel Henry</p></div>
   </div>
+<div class="modal-overlay" id="modal-karelv" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-karelv').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">Grand Hotel Karel V</p>
+    <p class="modal-sub">Geertebolwerk 1, 3511 XA Utrecht &middot; +31 30 233 7555</p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6502.659.566 &middot; PIN: 7708</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>Dobbeltrom Comfort</td><td>30.07 fra kl. 15:00</td><td>31.07 til kl. 11:00</td><td>&euro;237,10</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>M&aring;ltider</td><td>Ikke inkludert</td></tr>
+        <tr><td>Parkering</td><td>&euro;35/dag &mdash; forhåndsreservasjon ikke mulig</td></tr>
+        <tr><td>MVA (21%) + byskatt (10%)</td><td>Inkludert i prisen</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;237,10 &asymp; NOK 2.641</span></div>
+    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Parkering:</strong> &euro;35/dag &mdash; forhåndsreservasjon er <strong>ikke mulig</strong>. F&oslash;rst til m&oslash;lla ved ankomst.</div>
+    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Betaling:</strong> Ingen forskuddsbetaling &mdash; betales under oppholdet.</div>
+    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fra kl. 15:00 torsdag 30. juli. Utsjekk til kl. 11:00 fredag 31. juli.</p></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>28. juli 2026 kl. 23:59</strong>. Fra 29. juli 2026: gebyr &euro;219. Datoene kan ikke endres.</p></div>
+    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
+  </div>
+<div class="modal-overlay" id="modal-liho" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-liho').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">LIHO &mdash; einfach L&uuml;beck</p>
+    <p class="modal-sub">Lindenstr. 1A, 23558 L&uuml;beck &middot; +49 451 872100</p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5741.610.224 &middot; PIN: 4732</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>Lite dobbeltrom (151&ndash;180 cm seng)</td><td>31.07 kl. 15:00&ndash;00:00</td><td>01.08 kl. 07:00&ndash;11:00</td><td>&euro;173</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>M&aring;ltider</td><td>Ikke inkludert</td></tr>
+        <tr><td>Gate-parkering utenfor</td><td>Gratis</td></tr>
+        <tr><td>Garasje (forhåndsbestill)</td><td>&euro;20/dag &middot; maks 5m/1,85m/2,6t</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;173 &asymp; NOK 1.927</span></div>
+    <div class="modal-warn">&#x1F436; <strong>Hunder:</strong> Hundevennlig &mdash; <strong>m&aring; registreres p&aring; forh&aring;nd</strong> da hotellet har spesielle hunderom. Ring +49 451 872100.</div>
+    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Parkering garasje:</strong> Forhåndsreservasjon n&oslash;dvendig &middot; maks <strong>5 m</strong> lengde, <strong>1,85 m</strong> h&oslash;yde, 2,6 t vekt.</div>
+    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fredag 31. juli kl. 15:00&ndash;00:00. Utsjekk l&oslash;rdag 1. august kl. 07:00&ndash;11:00.</p></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>27. juli 2026 kl. 23:59</strong>. Fra 28. juli 2026: <strong>ingen refusjon</strong> (fullt bel&oslash;p).</p></div>
+    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
+  </div>
+</div>
+</div>
 </div>
 </div>
 <div class="modal-overlay" id="modal-dagmar" onclick="if(event.target===this)this.classList.remove('open')">
@@ -1383,8 +1486,8 @@ const PLACES = {
   dag9:  { lat:45.052,  lon:-0.143,  name:"Hos venn ✅",               address:"5 La Pradelle, Rue de Mérigot, 33230 Maransin",   mapsQ:"5+La+Pradelle+Rue+de+M%C3%A9rigot+33230+Maransin+France" },
   dag11: { lat:47.413,  lon:0.989,   name:"La Maison Rabelais",           address:"8 rue Rabelais, 37400 Amboise",                   mapsQ:"8+rue+Rabelais+37400+Amboise+France" },
   dag12: { lat:49.4229, lon:0.2311,  name:"Réglisse et Pain d'Épices", address:"61 Rue Haute, 14600 Honfleur",                    mapsQ:"61+Rue+Haute+14600+Honfleur+France" },
-  dag13: { lat:52.093,  lon:5.121,   name:"Grand Hotel Karel V",           address:"Geertebolwerk 1, 3511 XA Utrecht",                mapsQ:"Geertebolwerk+1+3511+XA+Utrecht+Netherlands" },
-  dag14: { lat:53.866,  lon:10.686,  name:"Park Inn by Radisson Lübeck",address:"Willy-Brandt-Allee 1–5, 23554 Lübeck",  mapsQ:"Willy-Brandt-Allee+1+23554+Lubeck+Germany" },
+  dag13: { lat:52.0876, lon:5.1252,  name:"Grand Hotel Karel V",         address:"Geertebolwerk 1, 3511 XA Utrecht",               mapsQ:"Geertebolwerk+1+3511+XA+Utrecht+Netherlands" },
+  dag14: { lat:53.8660, lon:10.6727, name:"LIHO - einfach Lübeck",     address:"Lindenstr. 1A, 23558 Lübeck",               mapsQ:"Lindenstrasse+1A+23558+Lubeck+Germany" },
   dag15: { lat:57.048,  lon:9.918,   name:"Scandic Aalborg City",         address:"Europa Plads 1, 9000 Aalborg",                    mapsQ:"Europa+Plads+1+9000+Aalborg+Denmark" },
   // LADESTOPP — mapsQ bruker adresse for presist treff i Google Maps
   brive:      { lat:45.1672, lon:1.4830,  name:"Tesla Brive-la-Gaillarde",    address:"Le Griffolet, 19270 Ussac",               mapsQ:"Le+Griffolet+19270+Ussac+France" },
@@ -1406,10 +1509,14 @@ document.addEventListener("click",function(e){
   if(!w||w.closed||typeof w.closed==="undefined"){window.location.href=url;}
 });
 // Sett tekst for data-show-address / data-show-name (kjøres etter DOM)
-document.addEventListener("DOMContentLoaded",function(){
+document.document.addEventListener("DOMContentLoaded",function(){
   document.querySelectorAll("[data-show-address]").forEach(function(el){
     var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.address;
   });
+  document.querySelectorAll("[data-show-name]").forEach(function(el){
+    var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.name;
+  });
+});
 
 // ── RUTE-DEFINISJONER — bygges fra PLACES-datamodellen ───────────────────────
 // Hvert element er enten en PLACES-nøkkel (henter adresse) eller en rå streng.
@@ -1477,15 +1584,19 @@ document.addEventListener('click', function(e) {
   e.preventDefault();
   e.stopPropagation();
   var url = buildRouteURL(route.stops);
-  var w = window.open(url, '_blank');
-  if (!w || w.closed || typeof w.closed === 'undefined') {
-    // Popup blokkert — naviger i samme fane
-    window.location.href = url;
-  }
-});
-  document.querySelectorAll("[data-show-name]").forEach(function(el){
-    var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.name;
-  });
+  // Sett href og åpne — unngår popup-blokkering
+  a.href = url;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  a.removeAttribute('onclick');
+  // Trigger navigasjon via midlertidig lenke-klikk
+  var tmp = document.createElement('a');
+  tmp.href = url;
+  tmp.target = '_blank';
+  tmp.rel = 'noopener noreferrer';
+  document.body.appendChild(tmp);
+  tmp.click();
+  document.body.removeChild(tmp);
 });
 const S={
   arendal:[58.461,8.772],kristiansand:[58.147,7.996],hirtshals:[57.587,9.965],
@@ -1498,7 +1609,7 @@ const S={
   stemilion:[44.894,-0.155],
   maransin:[45.052,-0.143],amboise:[47.413,0.989],lemans:[47.995,0.193],
   caen:[49.183,-0.356],honfleur:[49.4229,0.2311],baidesomme:[50.1673,1.7556],
-  lubeck:[53.866,10.686],aarhus:[56.162,10.203],aalborg:[57.048,9.918],
+  lubeck:[53.8660,10.6727],aarhus:[56.162,10.203],aalborg:[57.048,9.918],
   frederikshavn:[57.441,10.537],skagen:[57.7417,10.5921],padborg:[55.0651,9.3663]
 };
 
