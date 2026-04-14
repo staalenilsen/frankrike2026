@@ -107,7 +107,7 @@
     /* ── TWO-PANEL (PC) ── */
     @media(min-width:700px){
       main{padding:16px 20px 80px;max-width:900px;margin:0 auto}
-      .day-body{display:none}.day-body.open{display:grid;grid-template-columns:1.1fr .9fr;gap:0}
+      .day-body{display:grid;grid-template-columns:1.1fr .9fr;gap:0}
       .day-left{border-right:1px solid var(--line)}
       .day-left,.day-right{padding:16px}
       .lmap{height:260px}
@@ -376,7 +376,7 @@
     <div style="display:grid;gap:8px">
       <a class="route-btn" style="justify-content:flex-start;gap:10px;font-size:14px"
          href="#" data-route="heletur"
-         onclick="var r=ROUTES['heletur'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">
+         onclick="var r=ROUTES['heletur'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">
         <span>🗺</span>
         <span><strong>Hele turen</strong> — alle 14 stopp<br>
         <span style="font-size:11px;font-weight:400;color:var(--sky)">Arendal → Ribe → Celle → Trier → Strasbourg → Mittelwihr → Beaune → Oyé → Saint-Émilion → Amboise → Honfleur → Utrecht → Lübeck → Aalborg</span></span>
@@ -385,19 +385,19 @@
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
         <a class="route-btn" style="justify-content:flex-start;gap:8px;font-size:13px;padding:10px 12px"
            href="#" data-route="utreise"
-           onclick="var r=ROUTES['utreise'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">
+           onclick="var r=ROUTES['utreise'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">
           <span>✈️</span>
           <span><strong>→ Utreise</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Arendal · Hirtshals · Ribe · Celle · Trier · Strasbourg · Mittelwihr · Beaune · Oyé</span></span>
         </a>
         <a class="route-btn" style="justify-content:flex-start;gap:8px;font-size:13px;padding:10px 12px"
            href="#" data-route="frankrike"
-           onclick="var r=ROUTES['frankrike'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">
+           onclick="var r=ROUTES['frankrike'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">
           <span>🇫🇷</span>
           <span><strong>→ Frankrike-løkken</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Oyé · Brive ⚡ · Saint-Émilion · Amboise · Honfleur</span></span>
         </a>
         <a class="route-btn" style="justify-content:flex-start;gap:8px;font-size:13px;padding:10px 12px"
            href="#" data-route="hjemreise"
-           onclick="var r=ROUTES['hjemreise'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">
+           onclick="var r=ROUTES['hjemreise'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">
           <span>🏠</span>
           <span><strong>→ Hjemreise</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Honfleur · Belgia · Utrecht · Lübeck · Aalborg · Hirtshals · (ferge 12:15) · Arendal</span></span>
         </a>
@@ -434,7 +434,7 @@
         </div>
       </div>
       <div style="padding:0 16px 16px">
-        <a class="route-btn" href="#" data-route="dag1r" onclick="var r=ROUTES['dag1r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="route-btn" href="#" data-route="dag1r" onclick="var r=ROUTES['dag1r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/ribe.html">🗺 Utforsk Ribe — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-dagmar').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button>
       </div>
@@ -491,7 +491,7 @@
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Aral Hamburg Moorfleet</strong> (~225 km fra Ribe) · <a href="#" data-place="moorfleet" onclick="var p=PLACES['moorfleet'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag2r" onclick="var r=ROUTES['dag2r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag2r" onclick="var r=ROUTES['dag2r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/celle.html">🗺 Utforsk Celle — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -544,7 +544,7 @@
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Ionity Kirchheimer Dreieck</strong> (~190 km) · <a href="#" data-place="kirchheim" onclick="var p=PLACES['kirchheim'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag3r" onclick="var r=ROUTES['dag3r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag3r" onclick="var r=ROUTES['dag3r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/trier.html">🗺 Utforsk Trier — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -597,7 +597,7 @@
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Avklar parkering direkte</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag4r" onclick="var r=ROUTES['dag4r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag4r" onclick="var r=ROUTES['dag4r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/strasbourg.html">🗺 Utforsk Strasbourg — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -640,7 +640,7 @@
         <ul class="scenic-stops"><li><span class="s-icon">🏰</span><div><strong>Saarburg (24 km)</strong><br><span style="color:var(--muted);font-size:12px">Pittoresk by med fossefall midt i gamlebyen og Saarburg slott på klippen over Saar-elven</span></div></li><li><span class="s-icon">🌀</span><div><strong>Saarschleife ved Mettlach (55 km)</strong><br><span style="color:var(--muted);font-size:12px">Europas vakreste flodbue — Saar-svingen sett fra Cloef-platået. 20 min gåtur til utsiktet. Villeroy & Boch museum nedfor</span></div></li><li><span class="s-icon">🌸</span><div><strong>Saverne — Col de Saverne (100 km)</strong><br><span style="color:var(--muted);font-size:12px">Rosenbyen Saverne med Rohan-slottet og 8800 rosebusker. Historisk fjellpass ned fra Vosges til Alsace-sletten</span></div></li></ul>
         <div class="scenic-extra">🚴 Saarburg: Spektakulær foss midt i gamlebyen — gå ned via trapper. En skjult perle i Rhinland-Pfalz.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="#" data-route="dag4s" onclick="var r=ROUTES['dag4s'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag4s" onclick="var r=ROUTES['dag4s'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -663,7 +663,7 @@
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.hotelmittelwihr.fr" target="_blank">hotelmittelwihr.fr</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag5r" onclick="var r=ROUTES['dag5r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag5r" onclick="var r=ROUTES['dag5r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/alsace.html">🗺 Utforsk Alsace — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-mittelwihr').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button></div>
     </div>
@@ -707,7 +707,7 @@
         <ul class="scenic-stops"><li><span class="s-icon">🏘</span><div><strong>Obernai (35 km)</strong><br><span style="color:var(--muted);font-size:12px">En av Alsaces vakreste byer — middelaldermarkedsplass, trehusrekker og vindyrking ved foten av Sainte-Odile-fjellet</span></div></li><li><span class="s-icon">🏰</span><div><strong>Château du Haut-Koenigsbourg (55 km)</strong><br><span style="color:var(--muted);font-size:12px">Gotisk riddersborg restaurert av Kaiser Wilhelm II (755 m) — panoramautsikt over Alsace-sletten og Schwarzwald</span></div></li><li><span class="s-icon">💎</span><div><strong>Ribeauvillé (70 km)</strong><br><span style="color:var(--muted);font-size:12px">Tre middelalderslott på åsene. Riquewihr (80 km) regnes som Alsaces vakreste landsby — Dolder-porten fra 1291 og beste Riesling-mark</span></div></li></ul>
         <div class="scenic-extra">🚴 Château Haut-Koenigsbourg: 30 min avvik (D159). Et av Alsaces mest imponerende middelalderslott med panoramautsikt over Rhinsletten og Schwarzwald.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="#" data-route="dag5s" onclick="var r=ROUTES['dag5s'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag5s" onclick="var r=ROUTES['dag5s'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -756,7 +756,7 @@
           <div class="info-row"><span class="info-label">Parkering + EV</span><span class="info-val">⚡ Dedikert plass med EV-lader bekreftet ✅ · €20/kjøretøy</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag7r" onclick="var r=ROUTES['dag7r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag7r" onclick="var r=ROUTES['dag7r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/beaune.html">🗺 Utforsk Beaune — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-henry2').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button></div>
     </div>
@@ -800,7 +800,7 @@
         <ul class="scenic-stops"><li><span class="s-icon">🏘</span><div><strong>Colmar (10 km)</strong><br><span style="color:var(--muted);font-size:12px">La Petite Venise — fargede trehus langs kanalene, Issenheim-alterstykket i museum. Rask morgenstopp før fjellet</span></div></li><li><span class="s-icon">⛰</span><div><strong>Col de Bussang (727m, 75 km)</strong><br><span style="color:var(--muted);font-size:12px">Fjellpass over Ballons des Vosges — slående panoramautsikt tilbake over Alsace-sletten og fremover mot Burgund. Smilende sauer.</span></div></li><li><span class="s-icon">🏛</span><div><strong>Luxeuil-les-Bains (105 km)</strong><br><span style="color:var(--muted);font-size:12px">Vakker gammel kurby med romanske klosterruiner, historisk gamlekvarter og thermalbad. Utmerket lunsjstopp</span></div></li></ul>
         <div class="scenic-extra">🚴 Col de Bussang er et klassisk sykkelpas. Sykkel opp fra parkeringen for panoramautsikt over Alsace og Schwarzwald.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="#" data-route="dag7s" onclick="var r=ROUTES['dag7s'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag7s" onclick="var r=ROUTES['dag7s'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -815,7 +815,7 @@
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px"><div class="info-rows"><div class="info-row"><span class="info-label">Sted</span><span class="info-val">Oyé 🏡 — Foreldrehuset</span></div><div class="info-row"><span class="info-label">Adresse</span><span class="info-val">5 La Croix, 71800 Oyé <a href="#" data-place="dag8" target="_blank" style="font-size:11px" onclick="var p=PLACES['dag8'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div><div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Rolig ankomstdag. Base 19.–26. juli.</span></div></div>
-      <a class="route-btn" href="#" data-route="dag8r" onclick="var r=ROUTES['dag8r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+      <a class="route-btn" href="#" data-route="dag8r" onclick="var r=ROUTES['dag8r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/oye.html">🗺 Utforsk Oyé-uken — gjøreliste &amp; begivenheter</a></div>
     </div>
     <div class="day-right">
@@ -859,7 +859,7 @@
         <ul class="scenic-stops"><li><span class="s-icon">🍷</span><div><strong>Pommard & Meursault (10–15 km)</strong><br><span style="color:var(--muted);font-size:12px">To av Burgunds mest kjente vinlandsbyer på D974. Château de Meursault tar imot besøkende — hvite viner av absolutt verdensklasse</span></div></li><li><span class="s-icon">✨</span><div><strong>Puligny-Montrachet & Chassagne (20 km)</strong><br><span style="color:var(--muted);font-size:12px">Verdens beste Chardonnay-terroir. Montrachet Grand Cru. Stille gårdsveier mellom stenvegger og vinmarker i tidlig morgen</span></div></li><li><span class="s-icon">🏛</span><div><strong>Autun (65 km)</strong><br><span style="color:var(--muted);font-size:12px">Romertidens glemte storby — Augustus-triumfbue, romansk katedral Saint-Lazare, Musée Rolin. Ideell lunsjstans på Place du Champ de Mars</span></div></li></ul>
         <div class="scenic-extra">🚴 Route des Grands Crus: Sykkel gjennom UNESCO-vinmarkene fra Meursault til Santenay. Flat, vakker og med direkteadgang til prestisjevinhus som selger glass fra €5.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="#" data-route="dag8s" onclick="var r=ROUTES['dag8s'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag8s" onclick="var r=ROUTES['dag8s'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -881,7 +881,7 @@
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Tesla Brive-la-Gaillarde</strong> (~220 km) · <a href="#" data-place="brive" onclick="var p=PLACES['brive'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag9r" onclick="var r=ROUTES['dag9r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag9r" onclick="var r=ROUTES['dag9r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/stemilion.html">🗺 Utforsk Saint-Émilion — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -960,7 +960,7 @@
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Parkering og lading mot tillegg</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag11r" onclick="var r=ROUTES['dag11r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag11r" onclick="var r=ROUTES['dag11r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/amboise.html">🗺 Utforsk Amboise — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -1014,7 +1014,7 @@
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Ring og avklar parkering og lading</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag12r" onclick="var r=ROUTES['dag12r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag12r" onclick="var r=ROUTES['dag12r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <a class="detail-link" href="detail_pages/honfleur.html">🗺 Utforsk Honfleur — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-reglisse').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button></div>
     </div>
@@ -1058,7 +1058,7 @@
         <ul class="scenic-stops"><li><span class="s-icon">🏰</span><div><strong>Blois (40 km)</strong><br><span style="color:var(--muted);font-size:12px">Château Royal de Blois — fire kongers residens, fire arkitektoniske stilarter i ett bygg. Bratt historisk kjerne ned mot Loire</span></div></li><li><span class="s-icon">🏎</span><div><strong>Le Mans — La Cité Plantagenêt (130 km)</strong><br><span style="color:var(--muted);font-size:12px">Middelalderkvarteret inne i bymurene er et av Frankrikes best bevarte — ingenting å gjøre med bilrace. Kaffe og croissant her</span></div></li><li><span class="s-icon">🍎</span><div><strong>Normandie bocage + Camembert (220 km)</strong><br><span style="color:var(--muted);font-size:12px">Vimoutiers og Camembert-landsbyen (5 km avvik fra D916): Musée du Camembert og originale gårder. Normandie-landskapet er nydelig</span></div></li></ul>
         <div class="scenic-extra">🚴 D579 via Lisieux og Pays d'Auge: trehus, epletrær, kyr og Côte Fleurie. Sluttseksjonen på D280 mot Honfleur er spektakulær med utsikt over Seineestuaret.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="#" data-route="dag12s" onclick="var r=ROUTES['dag12s'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag12s" onclick="var r=ROUTES['dag12s'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -1080,7 +1080,7 @@
         <div class="info-row"><span class="info-label">Lading</span><span class="info-val">Ingen nødvendig (~400 km innen rekkevidde fra Honfleur)</span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <a class="route-btn" href="#" data-route="dag13r" onclick="var r=ROUTES['dag13r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="route-btn" href="#" data-route="dag13r" onclick="var r=ROUTES['dag13r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <button class="booking-btn" onclick="document.getElementById('modal-karelv').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
       </div>
     </div>
@@ -1133,7 +1133,7 @@
         <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Gratis gate-P utenfor · Garasje €20/dag (forhåndsbest.) · maks 5m/1,85m høyde</span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <a class="route-btn" href="#" data-route="dag14r" onclick="var r=ROUTES['dag14r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="route-btn" href="#" data-route="dag14r" onclick="var r=ROUTES['dag14r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
         <button class="booking-btn" onclick="document.getElementById('modal-liho').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
       </div>
     </div>
@@ -1179,7 +1179,7 @@
         <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>IONITY Aabenraa</strong> (~200 km) · <a href="#" data-place="aabenraa" onclick="var p=PLACES['aabenraa'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <a class="route-btn" href="#" data-route="dag15r" onclick="var r=ROUTES['dag15r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="route-btn" href="#" data-route="dag15r" onclick="var r=ROUTES['dag15r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
       </div>
     </div>
     <div class="day-right">
@@ -1224,7 +1224,7 @@
         <div class="info-row"><span class="info-label">Ankomst</span><span class="info-val">🏡 Arendal ca. 16:25</span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <a class="route-btn" href="#" data-route="dag16r" onclick="var r=ROUTES['dag16r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="route-btn" href="#" data-route="dag16r" onclick="var r=ROUTES['dag16r'];if(r){var u=buildRouteURL(r.stops);window.location.href=u;}return false;">→ Kjørerute Google Maps</a>
       </div>
     </div>
     <div class="day-right">
@@ -1412,22 +1412,9 @@
 <script>
 
 function toggleDay(id) {
-  var body = document.getElementById(id).querySelector('.day-body');
-  if (!body) return;
-  var isOpen = body.classList.contains('open');
-  body.classList.toggle('open');
-  // Leaflet: invalider kart etter åpning
-  if (!isOpen) {
-    setTimeout(function() {
-      if (window._leafletMaps) {
-        var dagEl = document.getElementById(id);
-        dagEl.querySelectorAll('.lmap').forEach(function(el) {
-          var m = window._leafletMaps[el.id];
-          if (m) m.invalidateSize();
-        });
-      }
-    }, 100);
-  }
+  // Scroll til seksjonen
+  var el = document.getElementById(id);
+  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
 
@@ -1455,6 +1442,8 @@ function mkMap(id,h){
   el.style.height=(h||220)+'px';
   const m=L.map(el,{zoomControl:true,scrollWheelZoom:false});
   L.tileLayer(TILE,{attribution:ATTR,maxZoom:19}).addTo(m);
+  if(!window._leafletMaps)window._leafletMaps={};
+  window._leafletMaps[id]=m;
   return m;
 }
 function mk(m,lat,lng,ic,lbl,note){
@@ -1480,6 +1469,8 @@ const ROADS={
   d14:[[52.093,5.121],[53.00,6.50],[53.30,8.60],[53.5057,10.09],[53.70,10.30],[53.866,10.686]],
   d15:[[53.866,10.686],[54.50,9.80],[55.0651,9.3663],[55.60,9.55],[56.10,9.70],[57.048,9.918]],
   d16:[[58.147,7.996],[58.24,8.26],[58.37,8.55],[58.461,8.772]]
+,
+  m16:[[57.048,9.918],[57.587,9.965]]
 };
 // ══ DATAMODELL — Endre hotell/adresse HER. Alle kart og pin-lenker oppdateres automatisk. ══
 // Bytt hotell: endre name, address og mapsQuery for aktuell dag-nøkkel.
@@ -1494,7 +1485,7 @@ const PLACES = {
   dag8:  { lat:46.373,  lon:4.325,   name:"Oyé 🏡 Foreldrehuset", address:"5 La Croix, 71800 Oyé",                           mapsQ:"5+La+Croix+71800+Oy%C3%A9+France" },
   dag9:  { lat:45.052,  lon:-0.143,  name:"Hos venn ✅",               address:"5 La Pradelle, Rue de Mérigot, 33230 Maransin",   mapsQ:"5+La+Pradelle+Rue+de+M%C3%A9rigot+33230+Maransin+France" },
   dag11: { lat:47.413,  lon:0.989,   name:"La Maison Rabelais",           address:"8 rue Rabelais, 37400 Amboise",                   mapsQ:"8+rue+Rabelais+37400+Amboise+France" },
-  dag12: { lat:49.4229, lon:0.2311,  name:"Réglisse et Pain d'Épices", address:"61 Rue Haute, 14600 Honfleur",                    mapsQ:"61+Rue+Haute+14600+Honfleur+France" },
+  dag12: { lat:49.4229, lon:0.2311,  name:"Réglisse et Pain d\'Épices", address:"61 Rue Haute, 14600 Honfleur",                    mapsQ:"61+Rue+Haute+14600+Honfleur+France" },
   dag13: { lat:52.0876, lon:5.1252,  name:"Grand Hotel Karel V",         address:"Geertebolwerk 1, 3511 XA Utrecht",               mapsQ:"Geertebolwerk+1+3511+XA+Utrecht+Netherlands" },
   dag14: { lat:53.8660, lon:10.6727, name:"LIHO - einfach Lübeck",     address:"Lindenstr. 1A, 23558 Lübeck",               mapsQ:"Lindenstrasse+1A+23558+Lubeck+Germany" },
   dag15: { lat:57.048,  lon:9.918,   name:"Scandic Aalborg City",         address:"Europa Plads 1, 9000 Aalborg",                    mapsQ:"Europa+Plads+1+9000+Aalborg+Denmark" },
@@ -1506,6 +1497,82 @@ const PLACES = {
   baidesomme: { lat:50.1673, lon:1.7556,  name:"IONITY Baie de Somme",        address:"Aire de la Baie de Somme, A16, 80970",    mapsQ:"Aire+de+la+Baie+de+Somme+A16+Sailly-Flibeaucourt+80970+France" },
   aabenraa:   { lat:55.0651, lon:9.3663,  name:"IONITY Aabenraa",             address:"Egevej 6, 6200 Aabenraa",                mapsQ:"Egevej+6+6200+Aabenraa+Denmark" },
 };
+
+const S = {
+  arendal:      [58.461,8.772],
+  kristiansand: [58.147,7.996],
+  hirtshals:    [57.587,9.965],
+  ribe:         [55.332,8.773],
+  flensburg:    [54.792,9.434],
+  hamburg:      [53.550,9.993],
+  celle:        [52.615,10.082],
+  kassel:       [51.313,9.481],
+  frankfurt:    [50.110,8.682],
+  trier:        [49.749,6.637],
+  luxembourg:   [49.612,6.132],
+  strasbourg:   [48.573,7.752],
+  colmar:       [48.081,7.358],
+  mittelwihr:   [48.127,7.357],
+  besancon:     [47.237,6.023],
+  beaune:       [47.025,4.836],
+  oye:          [46.373,4.325],
+  poitiers:     [46.581,0.340],
+  stemilion:    [44.894,-0.155],
+  amboise:      [47.413,0.989],
+  lemans:       [47.995,0.193],
+  caen:         [49.183,-0.356],
+  honfleur:     [49.4229,0.2311],
+  baidesomme:   [50.186,1.624],
+  lubeck:       [53.866,10.686],
+  aarhus:       [56.162,10.203],
+  aalborg:      [57.048,9.918],
+  maransin:     [44.978,-0.272],
+  moorfleet:       [53.5057,10.09],
+  kirchheim:       [50.8338,9.5708],
+  brive:       [45.167,1.483],
+  aabenraa:       [55.0651,9.3663],
+  utrecht:       [52.0876,5.1252],
+  padborg:       [54.806,9.36],
+  skagen:       [57.7417,10.5921],
+  frederikshavn:       [57.441,10.537],
+  angouleme:   [45.649, 0.156],
+};
+
+const ROUTES = {
+  heletur:   { label: 'Hele turen', stops: ['Arendal,Norway','dag1','dag2','dag3','dag4','dag5','dag7','dag8','dag9','dag11','dag12','dag13','dag14','dag15'] },
+  utreise:   { label: 'Utreise',    stops: ['Arendal,Norway','Hirtshals,Denmark','dag1','dag2','dag3','dag4','dag5','dag7','dag8'] },
+  frankrike: { label: 'Frankrike',  stops: ['dag8','brive','dag9','dag11','dag12'] },
+  hjemreise: { label: 'Hjemreise', stops: ['dag12','Belgium','dag13','dag14','dag15','Hirtshals,Denmark','Arendal,Norway'] },
+  dag1r:  { stops: ['Arendal,Norway','dag1'] },
+  dag2r:  { stops: ['dag1','moorfleet','dag2'] },
+  dag3r:  { stops: ['dag2','kirchheim','dag3'] },
+  dag4r:  { stops: ['dag3','dag4'] },
+  dag5r:  { stops: ['dag4','dag5'] },
+  dag7r:  { stops: ['dag5','dag7'] },
+  dag8r:  { stops: ['dag7','dag8'] },
+  dag9r:  { stops: ['dag8','brive','dag9'] },
+  dag11r: { stops: ['dag9','Bordeaux,France','poitiers','dag11'] },
+  dag12r: { stops: ['dag11','dag12'] },
+  dag13r: { stops: ['dag12','Belgium','dag13'] },
+  dag14r: { stops: ['dag13','moorfleet','dag14'] },
+  dag15r: { stops: ['dag14','aabenraa','dag15'] },
+  dag16r: { stops: ['dag15','Hirtshals,Denmark'] },
+  dag4s:  { stops: ['dag3','Saarburg,Germany','Mettlach,Germany','Saverne,France','dag4'] },
+  dag5s:  { stops: ['dag4','Obernai,France','Riquewihr,France','dag5'] },
+  dag7s:  { stops: ['dag5','Colmar,France','Guebwiller,France','Col+de+Bussang+88540','Luxeuil-les-Bains,France','dag7'] },
+  dag8s:  { stops: ['dag7','Meursault,France','Santenay,France','Autun,France','Bourbon-Lancy,France','dag8'] },
+  dag12s: { stops: ['dag11','Blois,France','Le+Mans,France','Vimoutiers,France','Lisieux,France','dag12'] },
+};
+
+function buildRouteURL(stops) {
+  var parts = stops.map(function(s) {
+    var p = PLACES[s];
+    if (p) return p.mapsQ;
+    return s;
+  });
+  return 'https://www.google.com/maps/dir/' + parts.join('/');
+}
+
 function mapsPin(key){var p=PLACES[key];return p?"https://www.google.com/maps/search/?api=1&query="+p.mapsQ:"#";}
 // Klikk-delegering: alltid hent URL fra PLACES ved klikk (ikke avhengig av load-timing)
 document.addEventListener("click",function(e){
@@ -1515,7 +1582,7 @@ document.addEventListener("click",function(e){
   window.location.href="https://www.google.com/maps/search/?api=1&query="+p.mapsQ;
 });
 // Sett tekst for data-show-address / data-show-name (kjøres etter DOM)
-document.document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded",function(){
   document.querySelectorAll("[data-show-address]").forEach(function(el){
     var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.address;
   });
@@ -1523,89 +1590,8 @@ document.document.addEventListener("DOMContentLoaded",function(){
     var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.name;
   });
 
-  // Åpne første dag som standard
-  document.querySelectorAll('[data-default-open="true"] .day-body').forEach(function(b){
-    b.classList.add('open');
-  });
-
-});
-
-// ── RUTE-DEFINISJONER — bygges fra PLACES-datamodellen ───────────────────────
-// Hvert element er enten en PLACES-nøkkel (henter adresse) eller en rå streng.
-const ROUTES = {
-  heletur: {
-    label: 'Hele turen',
-    stops: ['Arendal,Norway', 'dag1', 'dag2', 'dag3', 'dag4', 'dag5', 'dag7', 'dag8', 'dag9', 'dag11', 'dag12', 'dag13', 'dag14', 'dag15']
-  },
-  utreise: {
-    label: 'Utreise',
-    stops: ['Arendal,Norway', 'Hirtshals,Denmark', 'dag1', 'dag2', 'dag3', 'dag4', 'dag5', 'dag7', 'dag8']
-  },
-  frankrike: {
-    label: 'Frankrike-løkken',
-    stops: ['dag8', 'brive', 'dag9', 'dag11', 'dag12']
-  },
-  hjemreise: {
-    label: 'Hjemreise',
-    stops: ['dag12', 'Belgium', 'dag13', 'dag14', 'dag15', 'Hirtshals,Denmark', 'Arendal,Norway']
-  },
-  // Daglige ruter
-  dag1r:  { stops: ['Arendal,Norway',        'dag1'] },
-  dag2r:  { stops: ['dag1',                  'dag2'] },
-  dag3r:  { stops: ['dag2',  'kirchheim',    'dag3'] },
-  dag4r:  { stops: ['dag3',                  'dag4'] },
-  dag5r:  { stops: ['dag4',                  'dag5'] },
-  dag7r:  { stops: ['dag5',                  'dag7'] },
-  dag8r:  { stops: ['dag7',                  'dag8'] },
-  dag9r:  { stops: ['dag8',  'brive',        'dag9'] },
-  dag11r: { stops: ['dag9',  'Bordeaux,France', 'poitiers', 'dag11'] },
-  dag12r: { stops: ['dag11',                 'dag12'] },
-  dag13r: { stops: ['dag12', 'Belgium', 'dag13'] },
-  dag14r: { stops: ['dag13', 'moorfleet', 'dag14'] },
-  dag15r: { stops: ['dag14', 'aabenraa',  'dag15'] },
-  dag16r: { stops: ['dag15', 'Hirtshals,Denmark'] },  // Aalborg → Hirtshals
-
-  // Sceniske alternativer
-  dag4s:  { stops: ['dag3', 'Saarburg,Germany', 'Mettlach,Germany', 'Saverne,France', 'dag4'] },
-  dag5s:  { stops: ['dag4', 'Obernai,France', 'Riquewihr,France', 'dag5'] },
-  dag7s:  { stops: ['dag5', 'Colmar,France', 'Guebwiller,France', 'Col+de+Bussang+88540', 'Luxeuil-les-Bains,France', 'dag7'] },
-  dag8s:  { stops: ['dag7', 'Meursault,France', 'Santenay,France', 'Autun,France', 'Bourbon-Lancy,France', 'dag8'] },
-  dag12s: { stops: ['dag11', 'Blois,France', 'Le+Mans,France', 'Vimoutiers,France', 'Lisieux,France', 'dag12'] },
-  dag15s: { stops: ['dag14', 'Kolding,Denmark', 'Vejle,Denmark', 'dag15'] }, // scenic alternativ via Vejle fjord
-};
-
-// Bygg en Google Maps dir/-URL fra en liste med PLACES-nøkler og rå waypoints
-function buildRouteURL(stops) {
-  var parts = stops.map(function(s) {
-    var p = PLACES[s];
-    if (p) {
-      // Bruk mapsQ fra PLACES — presist adressetreff
-      return p.mapsQ;
-    }
-    // Rå waypoint: behold som-er (allerede URL-vennlig med + og komma)
-    return s;
-  });
-  return 'https://www.google.com/maps/dir/' + parts.join('/');
-}
-
-
-const S={
-  arendal:[58.461,8.772],kristiansand:[58.147,7.996],hirtshals:[57.587,9.965],
-  ribe:[55.332,8.773],flensburg:[54.792,9.434],hamburg:[53.550,9.993],celle:[52.615,10.082],
-  moorfleet:[53.5057,10.0900],kirchheim:[50.8338,9.5708],frankfurt:[50.110,8.682],
-  trier:[49.749,6.637],luxembourg:[49.612,6.132],strasbourg:[48.573,7.752],
-  colmar:[48.081,7.358],mittelwihr:[48.127,7.357],besancon:[47.237,6.023],
-  beaune:[47.021,4.836],oye:[46.373,4.325],poitiers:[46.5285,0.2868],
-  brive:[45.1672,1.4830],perigueux:[45.185,0.721],angouleme:[45.649,0.158],
-  stemilion:[44.894,-0.155],
-  maransin:[45.052,-0.143],amboise:[47.413,0.989],lemans:[47.995,0.193],
-  caen:[49.183,-0.356],honfleur:[49.4229,0.2311],baidesomme:[50.1673,1.7556],
-  lubeck:[53.8660,10.6727],aarhus:[56.162,10.203],aalborg:[57.048,9.918],
-  frederikshavn:[57.441,10.537],skagen:[57.7417,10.5921],padborg:[55.0651,9.3663]
-};
-
-window.addEventListener('load',function(){
-  // Overview
+  // Kart: vent til DOM er rendert
+  setTimeout(function(){
   (function(){
     const ov=mkMap('map-overview',document.documentElement.clientWidth<600?300:440);
     if(!ov)return;
@@ -1619,7 +1605,7 @@ window.addEventListener('load',function(){
      [S.strasbourg,DM,'Strasbourg','Dag 4'],[S.mittelwihr,DM,'Mittelwihr','Dag 5–6'],
      [S.beaune,DM,'Beaune','Dag 7'],[S.oye,DB,'Oyé ★','5 La Croix · Base 19.–26. jul'],
      [S.maransin,DM,'Maransin','Dag 9–10 · Hos venn ✅ · 5 La Pradelle'],[S.amboise,DM,'Amboise','Dag 11'],
-     [S.honfleur,DM,'Honfleur','Dag 12 – Réglisse et Pain d'Épices'],[S.lubeck,DM,'Lübeck','Dag 13'],
+     [S.honfleur,DM,'Honfleur','Dag 12 – Réglisse et Pain d\'Épices'],[S.lubeck,DM,'Lübeck','Dag 13'],
      [S.aalborg,DE,'Aalborg','Dag 15 – Scandic Aalborg City'],[S.utrecht,DM,'Utrecht','Dag 13 – Grand Hotel Karel V']
     ].forEach(([pos,ic,lbl,note])=>mk(ov,pos[0],pos[1],ic,lbl,note));
     fit(ov,[...out,...lp,...ret,S.arendal]);
@@ -1662,7 +1648,7 @@ window.addEventListener('load',function(){
     fit(m,ROADS.d11);})();
 
   (function(){const m=mkMap('m12');if(!m)return;route(m,ROADS.d12);
-    mk(m,...S.amboise,DS,'Amboise','');mk(m,...S.lemans,DM,'Le Mans','');mk(m,...S.honfleur,DE,'Honfleur','Réglisse et Pain d'Épices · 61 Rue Haute');mk(m,...S.honfleur,DE,'Honfleur','Réglisse et Pain d'Épices · 61 Rue Haute');mk(m,...S.caen,DM,'Caen','');mk(m,...S.honfleur,DE,'Honfleur','Réglisse et Pain d'Épices · 61 Rue Haute');
+    mk(m,...S.amboise,DS,'Amboise','');mk(m,...S.lemans,DM,'Le Mans','');mk(m,...S.honfleur,DE,'Honfleur','Réglisse et Pain d\'Épices · 61 Rue Haute');mk(m,...S.honfleur,DE,'Honfleur','Réglisse et Pain d\'Épices · 61 Rue Haute');mk(m,...S.caen,DM,'Caen','');mk(m,...S.honfleur,DE,'Honfleur','Réglisse et Pain d\'Épices · 61 Rue Haute');
     fit(m,ROADS.d12);})();
 
   (function(){const m=mkMap('m13');if(!m)return;route(m,ROADS.d13);
@@ -1678,10 +1664,9 @@ window.addEventListener('load',function(){
 
   (function(){const m=mkMap('m16');if(!m)return;route(m,ROADS.m16);
     mk(m,...S.aalborg,DS,'Aalborg','');mk(m,...S.hirtshals,DE,'Hirtshals ⛴','Color Line 12:15 → Kristiansand');
-    fit(m,[skagen,S.hirtshals,S.kristiansand,...ROADS.d16]);})();
-});
-
-  function toggleScenic(dagId) {
+    fit(m,[S.skagen,S.hirtshals,S.kristiansand,...ROADS.d16]);})();
+  }, 200);
+});function toggleScenic(dagId) {
     const panel = document.getElementById('scenic-' + dagId);
     const btn = document.getElementById('scenic-btn-' + dagId);
     if (panel.classList.contains('open')) {
@@ -1694,6 +1679,3 @@ window.addEventListener('load',function(){
     }
   }
 
-</script>
-</body>
-</html>
