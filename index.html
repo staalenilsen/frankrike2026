@@ -107,7 +107,7 @@
     /* ── TWO-PANEL (PC) ── */
     @media(min-width:700px){
       main{padding:16px 20px 80px;max-width:900px;margin:0 auto}
-      .day-body{display:grid;grid-template-columns:1.1fr .9fr;gap:0}
+      .day-body{display:none}.day-body.open{display:grid;grid-template-columns:1.1fr .9fr;gap:0}
       .day-left{border-right:1px solid var(--line)}
       .day-left,.day-right{padding:16px}
       .lmap{height:260px}
@@ -276,10 +276,10 @@
 <header class="hero">
   <p class="eyebrow">Reisebok • Sommeren 2026</p>
   <h1>Roadtrip til Frankrike</h1>
-  <p class="lead">Arendal → Oyé og hjem igjen. To hunder, sykler og elbil.</p>
+  <p class="lead">Arendal → Oyé og hjem igjen. To sykler og elbil.</p>
   <div class="hero-pills">
     <span class="hero-pill">12. juli – 2. august</span>
-    <span class="hero-pill">2 personer + 2 hunder</span>
+    <span class="hero-pill">2 personer + 2 sykler</span>
     <span class="hero-pill">Elbil 350 km rekkevidde</span>
   </div>
   <div class="hero-actions">
@@ -334,10 +334,8 @@
   <div class="sc-head"><h2>Praktisk</h2></div>
   <div class="sc-body">
     <div class="tips">
-      <div class="tip"><h4>🐕 Hunder</h4><p>Bekreft to hunder direkte med alle hotell. Spør om tillegg og om hundene kan være alene kortvarig. Elbilen kan holde AC på under lading.</p></div>
       <div class="tip wt"><h4 class="w">⚡ Elbil</h4><p>350 km reell rekkevidde ved motorveikjøring. 5 av 13 dager krever ladestopp. Bruk <a href="https://abetterrouteplanner.com" target="_blank">ABRP</a> for finjustering.</p></div>
-      <div class="tip"><h4>⛴ Color Line — hunder</h4><p>Hunder er <strong>ikke tillatt i lugar</strong> — opphold i bil på bildekk eller husdyrbås. Bestill hundeplass med billetten. Ha kjæledyrpass klart.</p></div>
-      <div class="tip"><h4>🚲 Sykler</h4><p>Høydepunkter: Alsace vinrute fra Mittelwihr og Loire à Vélo ved Amboise. Begge flate, hundrevennlige og trafikkseparerte.</p></div>
+      <div class="tip"><h4>🚲 Sykler</h4><p>Høydepunkter: Alsace vinrute fra Mittelwihr og Loire à Vélo ved Amboise. Begge flate, sykkel- og gangvennlige og trafikkseparerte.</p></div>
     </div>
   </div>
 </section>
@@ -347,22 +345,22 @@
   <div class="sc-head"><h2>⚡ Ladeplan</h2><p class="sub">5 etapper over 350 km. Start alltid fulladet.</p></div>
   <div class="sc-body">
     <div class="tips">
-      <div class="tip wt"><h4 class="w">Dag 2 — Ribe → Celle (430 km)</h4><p><strong>Aral Hamburg Moorfleet</strong> (~225 km)<br>→ 205 km igjen · <a href="javascript:void(0)" data-place="moorfleet" target="_blank">📍 Kart</a></p></div>
-      <div class="tip wt"><h4 class="w">Dag 3 — Celle → Trier (500 km)</h4><p><strong>Ionity Kirchheimer Dreieck</strong> (~190 km)<br>→ 310 km igjen · <a href="javascript:void(0)" data-place="kirchheim" target="_blank">📍 Kart</a></p></div>
-      <div class="tip wt"><h4 class="w">Dag 9 — Oyé → Saint-Émilion (468 km, A89)</h4><p><strong>Tesla Supercharger Brive-la-Gaillarde A89</strong> (~240 km)<br>→ 260 km igjen · <a href="javascript:void(0)" data-place="brive" target="_blank">📍 Kart</a></p></div>
-      <div class="tip wt"><h4 class="w">Dag 13 — Honfleur → Lübeck (650 km) ⚠</h4><p><strong>Stopp 1:</strong> Ionity Baie de Somme (~175 km) · <a href="javascript:void(0)" data-place="baidesomme" target="_blank">📍</a><br><strong>Stopp 2:</strong> Aral Hamburg Moorfleet (~390 km) · <a href="javascript:void(0)" data-place="moorfleet" target="_blank">📍</a><br>Start tidlig!</p></div>
-      <div class="tip wt"><h4 class="w">Dag 14 — Lübeck → Aalborg (430 km)</h4><p><strong>Ionity Aabenraa E45</strong> (~180 km)<br>→ 250 km igjen · <a href="javascript:void(0)" data-place="aabenraa" target="_blank">📍 Kart</a></p></div>
+      <div class="tip wt"><h4 class="w">Dag 2 — Ribe → Celle (430 km)</h4><p><strong>Aral Hamburg Moorfleet</strong> (~225 km)<br>→ 205 km igjen · <a href="#" data-place="moorfleet" onclick="var p=PLACES['moorfleet'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></p></div>
+      <div class="tip wt"><h4 class="w">Dag 3 — Celle → Trier (500 km)</h4><p><strong>Ionity Kirchheimer Dreieck</strong> (~190 km)<br>→ 310 km igjen · <a href="#" data-place="kirchheim" onclick="var p=PLACES['kirchheim'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></p></div>
+      <div class="tip wt"><h4 class="w">Dag 9 — Oyé → Saint-Émilion (468 km, A89)</h4><p><strong>Tesla Supercharger Brive-la-Gaillarde A89</strong> (~240 km)<br>→ 260 km igjen · <a href="#" data-place="brive" onclick="var p=PLACES['brive'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></p></div>
+      <div class="tip wt"><h4 class="w">Dag 13 — Honfleur → Lübeck (650 km) ⚠</h4><p><strong>Stopp 1:</strong> Ionity Baie de Somme (~175 km) · <a href="#" data-place="baidesomme" onclick="var p=PLACES['baidesomme'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍</a><br><strong>Stopp 2:</strong> Aral Hamburg Moorfleet (~390 km) · <a href="#" data-place="moorfleet" onclick="var p=PLACES['moorfleet'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍</a><br>Start tidlig!</p></div>
+      <div class="tip wt"><h4 class="w">Dag 14 — Lübeck → Aalborg (430 km)</h4><p><strong>Ionity Aabenraa E45</strong> (~180 km)<br>→ 250 km igjen · <a href="#" data-place="aabenraa" onclick="var p=PLACES['aabenraa'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></p></div>
     </div>
     <div class="ctable-wrap">
       <table class="ctable">
         <thead><tr><th>Dag</th><th>Stasjon</th><th>Km fra start</th><th>Koordinater</th></tr></thead>
         <tbody>
-          <tr><td>Dag 2</td><td>Aral Hamburg Moorfleet</td><td>~225 km</td><td><a href="javascript:void(0)" data-place="moorfleet" target="_blank">53.5057, 10.0900</a></td></tr>
-          <tr><td>Dag 3</td><td>Ionity Kirchheimer Dreieck</td><td>~190 km</td><td><a href="javascript:void(0)" data-place="kirchheim" target="_blank">50.8338, 9.5708</a></td></tr>
-          <tr><td>Dag 9</td><td>Tesla Brive-la-Gaillarde (A89)</td><td>~220 km</td><td><a href="javascript:void(0)" data-place="brive" target="_blank">Kart</a></td></tr>
-          <tr><td>Dag 13</td><td>Ionity Baie de Somme</td><td>~175 km</td><td><a href="javascript:void(0)" data-place="baidesomme" target="_blank">50.1673, 1.7556</a></td></tr>
-          <tr><td>Dag 13</td><td>Aral Hamburg Moorfleet</td><td>~390 km</td><td><a href="javascript:void(0)" data-place="moorfleet" target="_blank">53.5057, 10.0900</a></td></tr>
-          <tr><td>Dag 14</td><td>Ionity Aabenraa E45</td><td>~180 km</td><td><a href="javascript:void(0)" data-place="aabenraa" target="_blank">55.0651, 9.3663</a></td></tr>
+          <tr><td>Dag 2</td><td>Aral Hamburg Moorfleet</td><td>~225 km</td><td><a href="#" data-place="moorfleet" onclick="var p=PLACES['moorfleet'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">53.5057, 10.0900</a></td></tr>
+          <tr><td>Dag 3</td><td>Ionity Kirchheimer Dreieck</td><td>~190 km</td><td><a href="#" data-place="kirchheim" onclick="var p=PLACES['kirchheim'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">50.8338, 9.5708</a></td></tr>
+          <tr><td>Dag 9</td><td>Tesla Brive-la-Gaillarde (A89)</td><td>~220 km</td><td><a href="#" data-place="brive" onclick="var p=PLACES['brive'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Kart</a></td></tr>
+          <tr><td>Dag 13</td><td>Ionity Baie de Somme</td><td>~175 km</td><td><a href="#" data-place="baidesomme" onclick="var p=PLACES['baidesomme'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">50.1673, 1.7556</a></td></tr>
+          <tr><td>Dag 13</td><td>Aral Hamburg Moorfleet</td><td>~390 km</td><td><a href="#" data-place="moorfleet" onclick="var p=PLACES['moorfleet'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">53.5057, 10.0900</a></td></tr>
+          <tr><td>Dag 14</td><td>Ionity Aabenraa E45</td><td>~180 km</td><td><a href="#" data-place="aabenraa" onclick="var p=PLACES['aabenraa'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">55.0651, 9.3663</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -377,8 +375,8 @@
 
     <div style="display:grid;gap:8px">
       <a class="route-btn" style="justify-content:flex-start;gap:10px;font-size:14px"
-         href="javascript:void(0)" data-route="heletur"
-         target="_blank">
+         href="#" data-route="heletur"
+         onclick="var r=ROUTES['heletur'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">
         <span>🗺</span>
         <span><strong>Hele turen</strong> — alle 14 stopp<br>
         <span style="font-size:11px;font-weight:400;color:var(--sky)">Arendal → Ribe → Celle → Trier → Strasbourg → Mittelwihr → Beaune → Oyé → Saint-Émilion → Amboise → Honfleur → Utrecht → Lübeck → Aalborg</span></span>
@@ -386,20 +384,20 @@
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
         <a class="route-btn" style="justify-content:flex-start;gap:8px;font-size:13px;padding:10px 12px"
-           href="javascript:void(0)" data-route="utreise"
-           target="_blank">
+           href="#" data-route="utreise"
+           onclick="var r=ROUTES['utreise'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">
           <span>✈️</span>
           <span><strong>→ Utreise</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Arendal · Hirtshals · Ribe · Celle · Trier · Strasbourg · Mittelwihr · Beaune · Oyé</span></span>
         </a>
         <a class="route-btn" style="justify-content:flex-start;gap:8px;font-size:13px;padding:10px 12px"
-           href="javascript:void(0)" data-route="frankrike"
-           target="_blank">
+           href="#" data-route="frankrike"
+           onclick="var r=ROUTES['frankrike'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">
           <span>🇫🇷</span>
           <span><strong>→ Frankrike-løkken</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Oyé · Brive ⚡ · Saint-Émilion · Amboise · Honfleur</span></span>
         </a>
         <a class="route-btn" style="justify-content:flex-start;gap:8px;font-size:13px;padding:10px 12px"
-           href="javascript:void(0)" data-route="hjemreise"
-           target="_blank">
+           href="#" data-route="hjemreise"
+           onclick="var r=ROUTES['hjemreise'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">
           <span>🏠</span>
           <span><strong>→ Hjemreise</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Honfleur · Belgia · Utrecht · Lübeck · Aalborg · Hirtshals · (ferge 12:15) · Arendal</span></span>
         </a>
@@ -428,16 +426,16 @@
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
       <div style="padding:0 16px 0">
         <div class="info-rows">
-          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Hotel Dagmar</span></div>
-          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">Torvet 1, 6760 Ribe<br><a href="javascript:void(0)" data-place="dag1" target="_blank">Åpne i kart</a></span></div>
+          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Hotel Dagmar &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
+          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">Torvet 1, 6760 Ribe<br><a href="#" data-place="dag1" onclick="var p=PLACES['dag1'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Åpne i kart</a></span></div>
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+4575420033">+45 7542 0033</a></span></div>
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.hoteldagmar.dk" target="_blank">hoteldagmar.dk</a></span></div>
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Privat parkering 50 m fra hotellet (DKK 200, forhåndsbestilt)</span></div>
         </div>
       </div>
       <div style="padding:0 16px 16px">
-        <a class="route-btn" href="javascript:void(0)" data-route="dag1r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/ribe.html" target="_blank">🗺 Utforsk Ribe — restauranter &amp; opplevelser</a>
+        <a class="route-btn" href="#" data-route="dag1r" onclick="var r=ROUTES['dag1r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="detail-link" href="detail_pages/ribe.html">🗺 Utforsk Ribe — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-dagmar').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button>
       </div>
     </div>
@@ -464,7 +462,7 @@
         </div>
         <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">08:30 Arendal → 09:18 Kristiansand havn → 10:03 ombord → 12:18 Hirtshals → 13:25 Ribe</p>
         <div style="display:grid;gap:4px">
-          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost hjemme, kort morgentur med hundene i Arendal</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost hjemme, morgentur i Arendal</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankomst tidlig ettermiddag → god tid til kveldspromenade langs Ribe Å</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--warn-soft);border-radius:10px;border-left:3px solid var(--sun)">
           <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Kolding — Skovvangen 42 (40 km sør, <em>på vei mot Hamburg</em>). 40×250 kW. <a href="https://www.google.com/maps/search/?api=1&query=Skovvangen+42+6000+Kolding" target="_blank">Kart</a></p>
@@ -489,12 +487,12 @@
           <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">Hannoversche Str. 55/56, 29221 Celle</span></div>
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+4951412010">+49 5141 2010</a></span></div>
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.althoffcollection.com" target="_blank">althoffcollection.com</a></span></div>
-          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Bekreft hunder, parkering og lading direkte</span></div>
-          <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Aral Hamburg Moorfleet</strong> (~225 km fra Ribe) · <a href="javascript:void(0)" data-place="moorfleet" target="_blank">📍 Kart</a></span></div>
+          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Bekreft parkering og lading direkte</span></div>
+          <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Aral Hamburg Moorfleet</strong> (~225 km fra Ribe) · <a href="#" data-place="moorfleet" onclick="var p=PLACES['moorfleet'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="javascript:void(0)" data-route="dag2r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/celle.html" target="_blank">🗺 Utforsk Celle — restauranter &amp; opplevelser</a></div>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag2r" onclick="var r=ROUTES['dag2r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="detail-link" href="detail_pages/celle.html">🗺 Utforsk Celle — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
       <div style="padding:16px 16px 0"><h3>Middag &amp; opplevelser</h3></div>
@@ -519,10 +517,10 @@
         </div>
         <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">08:30 Ribe → 10:33 ⚡ Hamburg Moorfleet (35 min) → 11:08 videre → 13:00 Celle</p>
         <div style="display:grid;gap:4px">
-          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost på Hotel Dagmar inkl. Kort tur i Ribe Altstadt med hundene</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost på Hotel Dagmar inkl. Kort tur i Ribe Altstadt</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Celle ved lunsjtid → ettermiddag i bindingsverks-gamlebyen</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--green-soft);border-radius:10px;border-left:3px solid var(--green)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">✅ <strong>Nærladning:</strong> Tesla Destination Charger <em>på Althoff Hotel Fürstenhof</em> — Hannoversche Str. 55-56. AC 22 kW over natten. Nærmeste HPC-alternativ: Tesla Supercharger Hannover-Isernhagen (20×250 kW, 50 km vest). <a href="javascript:void(0)" data-place="dag2" target="_blank">Kart</a></p></div>
+          <p style="font-size:12px;margin:0;color:var(--ink)">✅ <strong>Nærladning:</strong> Tesla Destination Charger <em>på Althoff Hotel Fürstenhof</em> — Hannoversche Str. 55-56. AC 22 kW over natten. Nærmeste HPC-alternativ: Tesla Supercharger Hannover-Isernhagen (20×250 kW, 50 km vest). <a href="#" data-place="dag2" onclick="var p=PLACES['dag2'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Kart</a></p></div>
         </div>
       </div>
 </section>
@@ -543,11 +541,11 @@
           <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">Dasbachstraße 12, 54292 Trier</span></div>
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+4965114440">+49 651 14440</a></span></div>
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.nellsparkhotel.de" target="_blank">nellsparkhotel.de</a></span></div>
-          <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Ionity Kirchheimer Dreieck</strong> (~190 km) · <a href="javascript:void(0)" data-place="kirchheim" target="_blank">📍 Kart</a></span></div>
+          <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Ionity Kirchheimer Dreieck</strong> (~190 km) · <a href="#" data-place="kirchheim" onclick="var p=PLACES['kirchheim'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="javascript:void(0)" data-route="dag3r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/trier.html" target="_blank">🗺 Utforsk Trier — restauranter &amp; opplevelser</a></div>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag3r" onclick="var r=ROUTES['dag3r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="detail-link" href="detail_pages/trier.html">🗺 Utforsk Trier — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
       <div style="padding:16px 16px 0"><h3>Middag &amp; opplevelser</h3></div>
@@ -575,7 +573,7 @@
           <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Tidlig frokost på hotellet — lang dag, men grei avreise</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankomst tidlig ettermiddag → lang ettermiddag i Trier, Porta Nigra og Mosel-promenade</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--warn-soft);border-radius:10px;border-left:3px solid var(--sun)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Ingen Supercharger i Trier. Nærmeste HPC: Ionity/EnBW langs A64 motorvei — sjekk Chargemap appen. Alternativ: Saarbrücken Supercharger (Wolfseck 4, 75 km). <a href="javascript:void(0)" data-place="dag3" target="_blank">Søk på kart</a></p>
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Ingen Supercharger i Trier. Nærmeste HPC: Ionity/EnBW langs A64 motorvei — sjekk Chargemap appen. Alternativ: Saarbrücken Supercharger (Wolfseck 4, 75 km). <a href="#" data-place="dag3" onclick="var p=PLACES['dag3'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Søk på kart</a></p>
           <p style="font-size:11px;color:var(--muted);margin:4px 0 0">Anbefaling: lade via hotell-AC over natten, eller bruk Chargemap for HPC ved avkjøring fra A64/A1.</p></div>
         </div>
       </div>
@@ -596,11 +594,11 @@
           <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Sofitel Strasbourg Grande Île</span></div>
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+33388154900">+33 3 88 15 49 00</a></span></div>
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.sofitel.accor.com" target="_blank">sofitel.accor.com</a></span></div>
-          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Avklar hunderegler og parkering direkte</span></div>
+          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Avklar parkering direkte</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="javascript:void(0)" data-route="dag4r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/strasbourg.html" target="_blank">🗺 Utforsk Strasbourg — restauranter &amp; opplevelser</a></div>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag4r" onclick="var r=ROUTES['dag4r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="detail-link" href="detail_pages/strasbourg.html">🗺 Utforsk Strasbourg — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
       <div style="padding:16px 16px 0"><h3>Middag &amp; opplevelser</h3></div>
@@ -624,10 +622,10 @@
         </div>
         <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:30 Trier → (via Luxembourg-sentrum, mulighet for rask lunsj) → 11:55 Strasbourg</p>
         <div style="display:grid;gap:4px">
-          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> God tid til frokost og morgentur langs Mosel med hundene</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> God tid til frokost og morgentur langs Mosel</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Strasbourg til lunsj → hel ettermiddag og kveld i Petite France</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--sky-soft);border-radius:10px;border-left:3px solid var(--sky)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Strasbourg Sud — Rue du 23 Novembre, Ostwald (7 km sør, 8 min). 8×150 kW, CCS, 24/7. <a href="javascript:void(0)" data-place="dag4" target="_blank">Kart</a></p></div>
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Strasbourg Sud — Rue du 23 Novembre, Ostwald (7 km sør, 8 min). 8×150 kW, CCS, 24/7. <a href="#" data-place="dag4" onclick="var p=PLACES['dag4'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Kart</a></p></div>
         </div>
       </div>
 
@@ -640,9 +638,9 @@
         </div>
         <div class="scenic-route">Trier → Saarburg → Saarschleife/Mettlach → Sarreguemine → Saverne → Strasbourg</div>
         <ul class="scenic-stops"><li><span class="s-icon">🏰</span><div><strong>Saarburg (24 km)</strong><br><span style="color:var(--muted);font-size:12px">Pittoresk by med fossefall midt i gamlebyen og Saarburg slott på klippen over Saar-elven</span></div></li><li><span class="s-icon">🌀</span><div><strong>Saarschleife ved Mettlach (55 km)</strong><br><span style="color:var(--muted);font-size:12px">Europas vakreste flodbue — Saar-svingen sett fra Cloef-platået. 20 min gåtur til utsiktet. Villeroy & Boch museum nedfor</span></div></li><li><span class="s-icon">🌸</span><div><strong>Saverne — Col de Saverne (100 km)</strong><br><span style="color:var(--muted);font-size:12px">Rosenbyen Saverne med Rohan-slottet og 8800 rosebusker. Historisk fjellpass ned fra Vosges til Alsace-sletten</span></div></li></ul>
-        <div class="scenic-extra">🐕 Perfekt hundetur ved Cloef-platået: 20 min gjennom skog til dramatisk utsiktsplatå over Saar-svingen. Saarburg-fossen er midt i gamlebyen. Begge er hundrevennlige.</div>
+        <div class="scenic-extra">🚴 Saarburg: Spektakulær foss midt i gamlebyen — gå ned via trapper. En skjult perle i Rhinland-Pfalz.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="javascript:void(0)" data-route="dag4s" target="_blank">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag4s" onclick="var r=ROUTES['dag4s'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -665,8 +663,8 @@
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.hotelmittelwihr.fr" target="_blank">hotelmittelwihr.fr</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="javascript:void(0)" data-route="dag5r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/alsace.html" target="_blank">🗺 Utforsk Alsace — restauranter &amp; opplevelser</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag5r" onclick="var r=ROUTES['dag5r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="detail-link" href="detail_pages/alsace.html">🗺 Utforsk Alsace — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-mittelwihr').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button></div>
     </div>
     <div class="day-right">
@@ -694,7 +692,7 @@
           <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> God morgen i Strasbourg — frokost, tur i gamlebyen og katedralen</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Mittelwihr ved lunsjtid → resten av dagen fritt på Route du Vin med sykkel</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--sky-soft);border-radius:10px;border-left:3px solid var(--sky)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Colmar — Rue du Buhlfeld, Houssen (10 km, 10 min via D83). 12×250 kW, CCS, 24/7. <a href="javascript:void(0)" data-place="dag5" target="_blank">Kart</a></p></div>
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Colmar — Rue du Buhlfeld, Houssen (10 km, 10 min via D83). 12×250 kW, CCS, 24/7. <a href="#" data-place="dag5" onclick="var p=PLACES['dag5'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Kart</a></p></div>
         </div>
       </div>
 
@@ -707,9 +705,9 @@
         </div>
         <div class="scenic-route">Strasbourg → Obernai → Château Haut-Koenigsbourg → Ribeauvillé → Riquewihr → Mittelwihr</div>
         <ul class="scenic-stops"><li><span class="s-icon">🏘</span><div><strong>Obernai (35 km)</strong><br><span style="color:var(--muted);font-size:12px">En av Alsaces vakreste byer — middelaldermarkedsplass, trehusrekker og vindyrking ved foten av Sainte-Odile-fjellet</span></div></li><li><span class="s-icon">🏰</span><div><strong>Château du Haut-Koenigsbourg (55 km)</strong><br><span style="color:var(--muted);font-size:12px">Gotisk riddersborg restaurert av Kaiser Wilhelm II (755 m) — panoramautsikt over Alsace-sletten og Schwarzwald</span></div></li><li><span class="s-icon">💎</span><div><strong>Ribeauvillé (70 km)</strong><br><span style="color:var(--muted);font-size:12px">Tre middelalderslott på åsene. Riquewihr (80 km) regnes som Alsaces vakreste landsby — Dolder-porten fra 1291 og beste Riesling-mark</span></div></li></ul>
-        <div class="scenic-extra">🐕 Château Haut-Koenigsbourg er 30 min avvik (D159 opp, D159 ned). Hunder er velkomne i landsbyene og vinmarkene utenfor turistsesongen. Riquewihr er ekstremt populært — vær tidlig.</div>
+        <div class="scenic-extra">🚴 Château Haut-Koenigsbourg: 30 min avvik (D159). Et av Alsaces mest imponerende middelalderslott med panoramautsikt over Rhinsletten og Schwarzwald.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="javascript:void(0)" data-route="dag5s" target="_blank">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag5s" onclick="var r=ROUTES['dag5s'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -722,7 +720,7 @@
   </div>
   <div class="day-body">
     <div class="day-left">
-      <div style="padding:16px"><div class="info-rows"><div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Hôtel Le Mittelwihr (samme rom)</span></div><div class="info-row"><span class="info-label">Tips</span><span class="info-val">Alsace er flatt og perfekt med hunder og sykler</span></div></div></div>
+      <div style="padding:16px"><div class="info-rows"><div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Hôtel Le Mittelwihr (samme rom)</span></div><div class="info-row"><span class="info-label">Tips</span><span class="info-val">Alsace er flatt og perfekt for sykling — Route des Vins er klassisk</span></div></div></div>
     </div>
     <div class="day-right">
       <div style="padding:16px 16px 0"><h3>Dagens program</h3></div>
@@ -732,7 +730,7 @@
           <li><span class="act-dot"></span>Pause i Riquewihr – uterestaurant</li>
           <li><span class="act-dot"></span>Hold kvelden uplanlagt</li>
         </ul>
-        <a class="detail-link" href="detail_pages/alsace.html" target="_blank">🗺 Utforsk Alsace — restauranter &amp; sykkelturer</a>
+        <a class="detail-link" href="detail_pages/alsace.html">🗺 Utforsk Alsace — restauranter &amp; sykkelturer</a>
       </div>
     </div>
   </div>
@@ -753,14 +751,13 @@
           <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Hôtel Henry II Beaune Centre &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+33380228384">+33 3 80 22 83 84</a></span></div>
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.hotelhenryiibeaune.com" target="_blank">all.accor.com</a></span></div>
-          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">12-14 Faubourg Saint Nicolas, 21200 Beaune <a href="javascript:void(0)" data-place="dag7" style="font-size:11px">📍 Kart</a></span></div>
+          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">12-14 Faubourg Saint Nicolas, 21200 Beaune <a href="#" data-place="dag7" style="font-size:11px" onclick="var p=PLACES['dag7'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
           <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Underjordisk garasje €20/døgn · maks 1,9 m høyde · forhåndsbestill</span></div>
           <div class="info-row"><span class="info-label">Parkering + EV</span><span class="info-val">⚡ Dedikert plass med EV-lader bekreftet ✅ · €20/kjøretøy</span></div>
-          <div class="info-row"><span class="info-label">Hunder</span><span class="info-val">🐶 Bekreftet ✅ · €20/hund (2 hunder = €40) · pute, vann og mat inkl.</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="javascript:void(0)" data-route="dag7r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/beaune.html" target="_blank">🗺 Utforsk Beaune — restauranter &amp; opplevelser</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag7r" onclick="var r=ROUTES['dag7r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="detail-link" href="detail_pages/beaune.html">🗺 Utforsk Beaune — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-henry2').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button></div>
     </div>
     <div class="day-right">
@@ -788,7 +785,7 @@
           <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost + avsluttende sykkeltur eller landsby-vandring i Alsace</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Beaune ved lunsjtid → vinsmaking og Hôtel-Dieu om ettermiddagen</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--green-soft);border-radius:10px;border-left:3px solid var(--green)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">✅ <strong>Nærladning:</strong> Tesla Supercharger Beaune Nord — Rue Gustave Eiffel 13 (2 km, 2 min). 28×250 kW, CCS, 24/7. <a href="javascript:void(0)" data-place="dag7" target="_blank">Kart</a></p></div>
+          <p style="font-size:12px;margin:0;color:var(--ink)">✅ <strong>Nærladning:</strong> Tesla Supercharger Beaune Nord — Rue Gustave Eiffel 13 (2 km, 2 min). 28×250 kW, CCS, 24/7. <a href="#" data-place="dag7" onclick="var p=PLACES['dag7'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Kart</a></p></div>
         </div>
       </div>
 
@@ -801,9 +798,9 @@
         </div>
         <div class="scenic-route">Mittelwihr → Colmar → Guebwiller → Col de Bussang (727m) → Luxeuil-les-Bains → Gray → Beaune</div>
         <ul class="scenic-stops"><li><span class="s-icon">🏘</span><div><strong>Colmar (10 km)</strong><br><span style="color:var(--muted);font-size:12px">La Petite Venise — fargede trehus langs kanalene, Issenheim-alterstykket i museum. Rask morgenstopp før fjellet</span></div></li><li><span class="s-icon">⛰</span><div><strong>Col de Bussang (727m, 75 km)</strong><br><span style="color:var(--muted);font-size:12px">Fjellpass over Ballons des Vosges — slående panoramautsikt tilbake over Alsace-sletten og fremover mot Burgund. Smilende sauer.</span></div></li><li><span class="s-icon">🏛</span><div><strong>Luxeuil-les-Bains (105 km)</strong><br><span style="color:var(--muted);font-size:12px">Vakker gammel kurby med romanske klosterruiner, historisk gamlekvarter og thermalbad. Utmerket lunsjstopp</span></div></li></ul>
-        <div class="scenic-extra">🐕 Kjøring over Ballons des Vosges er en av Frankrikes fineste fjellruter om sommeren: åpent, svingete og med utsikt på begge sider. Hundene kan løpe i Vosges-skogen rundt passet. Colmar er bare 10 min fra hotellet.</div>
+        <div class="scenic-extra">🚴 Col de Bussang er et klassisk sykkelpas. Sykkel opp fra parkeringen for panoramautsikt over Alsace og Schwarzwald.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="javascript:void(0)" data-route="dag7s" target="_blank">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag7s" onclick="var r=ROUTES['dag7s'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -817,16 +814,16 @@
       </div>
   <div class="day-body">
     <div class="day-left">
-      <div style="padding:16px"><div class="info-rows"><div class="info-row"><span class="info-label">Sted</span><span class="info-val">Oyé 🏡 — Foreldrehuset</span></div><div class="info-row"><span class="info-label">Adresse</span><span class="info-val">5 La Croix, 71800 Oyé <a href="javascript:void(0)" data-place="dag8" target="_blank" style="font-size:11px">📍 Kart</a></span></div><div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Rolig ankomstdag. Base 19.–26. juli.</span></div></div>
-      <a class="route-btn" href="javascript:void(0)" data-route="dag8r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/oye.html" target="_blank">🗺 Utforsk Oyé-uken — gjøreliste &amp; begivenheter</a></div>
+      <div style="padding:16px"><div class="info-rows"><div class="info-row"><span class="info-label">Sted</span><span class="info-val">Oyé 🏡 — Foreldrehuset</span></div><div class="info-row"><span class="info-label">Adresse</span><span class="info-val">5 La Croix, 71800 Oyé <a href="#" data-place="dag8" target="_blank" style="font-size:11px" onclick="var p=PLACES['dag8'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div><div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Rolig ankomstdag. Base 19.–26. juli.</span></div></div>
+      <a class="route-btn" href="#" data-route="dag8r" onclick="var r=ROUTES['dag8r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="detail-link" href="detail_pages/oye.html">🗺 Utforsk Oyé-uken — gjøreliste &amp; begivenheter</a></div>
     </div>
     <div class="day-right">
       <div style="padding:16px 16px 0"><h3>Første dag</h3></div>
       <div style="padding:0 16px 16px">
         <ul class="act-list">
           <li><span class="act-dot"></span>Handle inn og lag middag hjemme</li>
-          <li><span class="act-dot"></span>Pakk ut sykler og hundeutstyr</li>
+          <li><span class="act-dot"></span>Pakk ut sykler</li>
           <li><span class="act-dot"></span>Planlegg dagene frem til 26. juli</li>
         </ul>
       </div>
@@ -843,7 +840,7 @@
         </div>
         <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">10:30 Beaune → D981 landevei via Charolles → 12:15 Oyé 🏡</p>
         <div style="display:grid;gap:4px">
-          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Slapp morgen i Beaune — frokost, morgentur i vinmarkene med hundene</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Slapp morgen i Beaune — frokost, morgentur i vinmarkene</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Oyé ved lunsjtid → stopp i Charolles for innkjøp (13 km fra Oyé)</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--warn-soft);border-radius:10px;border-left:3px solid var(--sun)">
           <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Ingen Supercharger nær Oyé. Nærmeste: Tesla Supercharger Mâcon/Sancé (50 km øst via A6). Sjekk Chargemap for HPC ved Paray-le-Monial (18 km). <a href="https://www.google.com/maps/search/?api=1&query=Tesla+supercharger+Macon+Sance+71000" target="_blank">Kart</a></p>
@@ -860,9 +857,9 @@
         </div>
         <div class="scenic-route">Beaune → Pommard → Meursault → Puligny-Montrachet → Santenay → Autun → Bourbon-Lancy → Oyé</div>
         <ul class="scenic-stops"><li><span class="s-icon">🍷</span><div><strong>Pommard & Meursault (10–15 km)</strong><br><span style="color:var(--muted);font-size:12px">To av Burgunds mest kjente vinlandsbyer på D974. Château de Meursault tar imot besøkende — hvite viner av absolutt verdensklasse</span></div></li><li><span class="s-icon">✨</span><div><strong>Puligny-Montrachet & Chassagne (20 km)</strong><br><span style="color:var(--muted);font-size:12px">Verdens beste Chardonnay-terroir. Montrachet Grand Cru. Stille gårdsveier mellom stenvegger og vinmarker i tidlig morgen</span></div></li><li><span class="s-icon">🏛</span><div><strong>Autun (65 km)</strong><br><span style="color:var(--muted);font-size:12px">Romertidens glemte storby — Augustus-triumfbue, romansk katedral Saint-Lazare, Musée Rolin. Ideell lunsjstans på Place du Champ de Mars</span></div></li></ul>
-        <div class="scenic-extra">🐕 Route des Grands Crus er et UNESCO Verdensarv-landskap — 37 vinlandsbyer på 60 km. Autun er et positivt sjokk: en hel romersk by i Burgund som de fleste aldri vet om. Hundene er velkomne i vinmarkene.</div>
+        <div class="scenic-extra">🚴 Route des Grands Crus: Sykkel gjennom UNESCO-vinmarkene fra Meursault til Santenay. Flat, vakker og med direkteadgang til prestisjevinhus som selger glass fra €5.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="javascript:void(0)" data-route="dag8s" target="_blank">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag8s" onclick="var r=ROUTES['dag8s'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -879,13 +876,13 @@
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
       <div style="padding:0 16px 0">
         <div class="info-rows">
-          <div class="info-row"><span class="info-label" style="color:var(--green)">✅ Overnatting</span><span class="info-val" style="font-weight:700;color:var(--green)">Hos venn — bekreftet begge netter</span></div><div class="info-row"><span class="info-label">Adresse</span><span class="info-val">5 La Pradelle, Rue de Mérigot, 33230 Maransin <a href="javascript:void(0)" data-place="dag9" target="_blank" style="font-size:11px">📍 Kart</a></span></div>
-          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">5 La Pradelle, Rue de Mérigot, 33230 Maransin <a href="javascript:void(0)" data-place="dag9" target="_blank" style="font-size:11px">📍 Kart</a></span></div>
-          <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Tesla Brive-la-Gaillarde</strong> (~220 km) · <a href="javascript:void(0)" data-place="brive" target="_blank">📍 Kart</a></span></div>
+          <div class="info-row"><span class="info-label" style="color:var(--green)">✅ Overnatting</span><span class="info-val" style="font-weight:700;color:var(--green)">Hos venn — bekreftet begge netter</span></div><div class="info-row"><span class="info-label">Adresse</span><span class="info-val">5 La Pradelle, Rue de Mérigot, 33230 Maransin <a href="#" data-place="dag9" target="_blank" style="font-size:11px" onclick="var p=PLACES['dag9'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
+          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">5 La Pradelle, Rue de Mérigot, 33230 Maransin <a href="#" data-place="dag9" target="_blank" style="font-size:11px" onclick="var p=PLACES['dag9'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
+          <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Tesla Brive-la-Gaillarde</strong> (~220 km) · <a href="#" data-place="brive" onclick="var p=PLACES['brive'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="javascript:void(0)" data-route="dag9r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/stemilion.html" target="_blank">🗺 Utforsk Saint-Émilion — restauranter &amp; opplevelser</a></div>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag9r" onclick="var r=ROUTES['dag9r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="detail-link" href="detail_pages/stemilion.html">🗺 Utforsk Saint-Émilion — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
       <div style="padding:16px 16px 0"><h3>Middag &amp; opplevelser</h3></div>
@@ -909,10 +906,10 @@
         </div>
         <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">08:00 Oyé → 10:05 ⚡ Tesla Brive-la-Gaillarde A89 (30 min) → 10:35 videre → 13:20 Saint-Émilion</p>
         <div style="display:grid;gap:4px">
-          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Tidlig frokost — god hundepause under ladestroppet i Brive (30 min, hotell ved Griffolet)</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Tidlig frokost — god pause under ladestroppet i Brive (30 min, hotell ved Griffolet)</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Saint-Émilion tidlig ettermiddag → kveldstur i brosteinsgatene</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--warn-soft);border-radius:10px;border-left:3px solid var(--sun)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Bordeaux Bègles — Rocade Sortie 20, 33130 Bègles (38 km vest fra St-Émilion). 28×250 kW. Veistopp: Tesla Brive-la-Gaillarde er planlagt ladestopp underveis (~220 km fra Oyé). <a href="javascript:void(0)" data-place="brive" target="_blank">Kart Brive</a></p>
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Bordeaux Bègles — Rocade Sortie 20, 33130 Bègles (38 km vest fra St-Émilion). 28×250 kW. Veistopp: Tesla Brive-la-Gaillarde er planlagt ladestopp underveis (~220 km fra Oyé). <a href="#" data-place="brive" onclick="var p=PLACES['brive'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Kart Brive</a></p>
           <p style="font-size:11px;color:var(--muted);margin:4px 0 0">Rute: Oyé → A89 vest via Brive og Périgueux → Bordeaux ringvei → D243 til Saint-Émilion. 468 km totalt.</p></div>
         </div>
       </div>
@@ -927,9 +924,9 @@
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px"><div class="info-rows"><div class="info-row"><span class="info-label" style="color:var(--green)">✅ Overnatting</span><span class="info-val" style="font-weight:700;color:var(--green)">Hos venn — bekreftet begge netter</span></div>
-          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">5 La Pradelle, Rue de Mérigot, 33230 Maransin <a href="javascript:void(0)" data-place="dag9" target="_blank" style="font-size:11px">📍 Kart</a></span></div></div>
-      <a class="route-btn" href="javascript:void(0)" data-place="dag9" target="_blank">📍 Maransin — vertens adresse</a>
-        <a class="detail-link" href="detail_pages/stemilion.html" target="_blank">🗺 Utforsk Saint-Émilion — restauranter &amp; opplevelser</a></div>
+          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">5 La Pradelle, Rue de Mérigot, 33230 Maransin <a href="#" data-place="dag9" target="_blank" style="font-size:11px" onclick="var p=PLACES['dag9'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div></div>
+      <a class="route-btn" href="#" data-place="dag9" onclick="var p=PLACES['dag9'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Maransin — vertens adresse</a>
+        <a class="detail-link" href="detail_pages/stemilion.html">🗺 Utforsk Saint-Émilion — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
       <div style="padding:16px 16px 0"><h3>Program</h3></div>
@@ -960,11 +957,11 @@
           <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">8 rue Rabelais, 37400 Amboise</span></div>
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+33219003100">+33 2 19 00 31 00</a></span></div>
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.maisonrabelais.com" target="_blank">maisonrabelais.com</a></span></div>
-          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Parkering, lading og hunder mot tillegg</span></div>
+          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Parkering og lading mot tillegg</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="javascript:void(0)" data-route="dag11r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/amboise.html" target="_blank">🗺 Utforsk Amboise — restauranter &amp; opplevelser</a></div>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag11r" onclick="var r=ROUTES['dag11r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="detail-link" href="detail_pages/amboise.html">🗺 Utforsk Amboise — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
       <div style="padding:16px 16px 0"><h3>Middag &amp; opplevelser</h3></div>
@@ -972,7 +969,7 @@
         <ul class="act-list">
           <li><span class="act-dot"></span>L'Épicerie Amboise – uformelt</li>
           <li><span class="act-dot"></span>Kveldstur langs Loire</li>
-          <li><span class="act-dot"></span>Loire à Vélo – trafikkseparert og hundrevennlig</li>
+          <li><span class="act-dot"></span>Loire à Vélo – trafikkseparert og flatt</li>
         </ul>
       </div>
       <div class="map-wrap"><div id="m11" class="lmap"></div><div class="map-cap">Saint-Émilion → Tours → Amboise. Ca. 320 km.</div></div>
@@ -989,10 +986,10 @@
         <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Maransin → 09:15 Libourne/A10 → 10:48 ⚡ Poitiers Sud (25 min) → 11:13 videre → 13:15 Amboise</p>
         <div style="display:grid;gap:4px">
           <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost + morgentur i vinmarkene. Merk: 375 km → ladestopp nødvendig underveis</p>
-          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Amboise ved lunsjtid → ettermiddag på Loire à Vélo med hundene</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Amboise ved lunsjtid → ettermiddag på Loire à Vélo</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--sky-soft);border-radius:10px;border-left:3px solid var(--sky)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Chambray-lès-Tours — Av. du Grand Sud 213 (17 km). 24×250 kW. <a href="javascript:void(0)" data-place="dag11" target="_blank">Kart</a></p>
-          <p style="font-size:11px;color:var(--muted);margin:4px 0 0">⚠️ 375 km overskrider 350 km rekkevidde — planlagt ladestopp underveis: <strong>Tesla Poitiers Sud</strong>, 6 rue de la Saulaie, Croutelle 86240 (40×250 kW) ved ~190 km. <a href="javascript:void(0)" data-place="poitiers" target="_blank" style="font-size:11px">📍 Kart</a></p></div>
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Chambray-lès-Tours — Av. du Grand Sud 213 (17 km). 24×250 kW. <a href="#" data-place="dag11" onclick="var p=PLACES['dag11'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Kart</a></p>
+          <p style="font-size:11px;color:var(--muted);margin:4px 0 0">⚠️ 375 km overskrider 350 km rekkevidde — planlagt ladestopp underveis: <strong>Tesla Poitiers Sud</strong>, 6 rue de la Saulaie, Croutelle 86240 (40×250 kW) ved ~190 km. <a href="#" data-place="poitiers" target="_blank" style="font-size:11px" onclick="var p=PLACES['poitiers'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></p></div>
         </div>
       </div>
 </section>
@@ -1010,23 +1007,22 @@
       <div style="padding:0 16px 0">
         <div class="info-rows">
           <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Réglisse et Pain d'Épices &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
-          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">61 Rue Haute, 14600 Honfleur <a href="javascript:void(0)" data-place="dag12" style="font-size:11px">📍 Kart</a></span></div>
+          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">61 Rue Haute, 14600 Honfleur <a href="#" data-place="dag12" style="font-size:11px" onclick="var p=PLACES['dag12'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
           <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Gratis privat parkering ✔️</span></div>
-          <div class="info-row"><span class="info-label">Hunder</span><span class="info-val">🐶 Hjertelig velkomne · €10 tillegg per hund per opphold · kun 1 hund per rom</span></div>
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+33231817800">+33 2 31 81 78 00</a></span></div>
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.fermesaintsimeon.fr" target="_blank">fermesaintsimeon.fr</a></span></div>
-          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Ring og avklar to hunder og lading</span></div>
+          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Ring og avklar parkering og lading</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><a class="route-btn" href="javascript:void(0)" data-route="dag12r" target="_blank">→ Kjørerute Google Maps</a>
-        <a class="detail-link" href="detail_pages/honfleur.html" target="_blank">🗺 Utforsk Honfleur — restauranter &amp; opplevelser</a>
+      <div style="padding:0 16px 16px"><a class="route-btn" href="#" data-route="dag12r" onclick="var r=ROUTES['dag12r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
+        <a class="detail-link" href="detail_pages/honfleur.html">🗺 Utforsk Honfleur — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-reglisse').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button></div>
     </div>
     <div class="day-right">
       <div style="padding:16px 16px 0"><h3>Middag &amp; opplevelser</h3></div>
       <div style="padding:0 16px">
         <ul class="act-list">
-          <li><span class="act-dot"></span>Le Vieux Honfleur – terrasse med hundene</li>
+          <li><span class="act-dot"></span>Le Vieux Honfleur – terrasse ved havnen</li>
           <li><span class="act-dot"></span>Havnen på kvelden</li>
           <li><span class="act-dot"></span>En av turens fineste kvelder</li>
         </ul>
@@ -1047,7 +1043,7 @@
           <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost + morgentur langs Loire — elvepromenaden er fantastisk tidlig</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Honfleur til lunsj → hel ettermiddag og kveld ved Vieux Bassin</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--green-soft);border-radius:10px;border-left:3px solid var(--green)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">✅ <strong>Nærladning:</strong> Tesla Supercharger Honfleur — Av. de Normandie (3 km, 3 min). 19×250 kW ved Normandy Outlet. CCS, 24/7. <a href="javascript:void(0)" data-place="dag12" target="_blank">Kart</a></p></div>
+          <p style="font-size:12px;margin:0;color:var(--ink)">✅ <strong>Nærladning:</strong> Tesla Supercharger Honfleur — Av. de Normandie (3 km, 3 min). 19×250 kW ved Normandy Outlet. CCS, 24/7. <a href="#" data-place="dag12" onclick="var p=PLACES['dag12'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Kart</a></p></div>
         </div>
       </div>
 
@@ -1060,9 +1056,9 @@
         </div>
         <div class="scenic-route">Amboise → Blois → Le Mans → Alençon → Camembert-landet → Lisieux → Honfleur</div>
         <ul class="scenic-stops"><li><span class="s-icon">🏰</span><div><strong>Blois (40 km)</strong><br><span style="color:var(--muted);font-size:12px">Château Royal de Blois — fire kongers residens, fire arkitektoniske stilarter i ett bygg. Bratt historisk kjerne ned mot Loire</span></div></li><li><span class="s-icon">🏎</span><div><strong>Le Mans — La Cité Plantagenêt (130 km)</strong><br><span style="color:var(--muted);font-size:12px">Middelalderkvarteret inne i bymurene er et av Frankrikes best bevarte — ingenting å gjøre med bilrace. Kaffe og croissant her</span></div></li><li><span class="s-icon">🍎</span><div><strong>Normandie bocage + Camembert (220 km)</strong><br><span style="color:var(--muted);font-size:12px">Vimoutiers og Camembert-landsbyen (5 km avvik fra D916): Musée du Camembert og originale gårder. Normandie-landskapet er nydelig</span></div></li></ul>
-        <div class="scenic-extra">🐕 Lisieux → Honfleur på D579 er en av Normandies vakreste kjøreturer gjennom Pays dAuge: trehus, epletrær, kyr og Côte Fleurie. Hunder er velkomne i bocage-landet og langs elvene.</div>
+        <div class="scenic-extra">🚴 D579 via Lisieux og Pays d'Auge: trehus, epletrær, kyr og Côte Fleurie. Sluttseksjonen på D280 mot Honfleur er spektakulær med utsikt over Seineestuaret.</div>
         <div class="scenic-maps">
-          <a class="scenic-map-btn" href="javascript:void(0)" data-route="dag12s" target="_blank">🗺 Åpne i Google Maps</a>
+          <a class="scenic-map-btn" href="#" data-route="dag12s" onclick="var r=ROUTES['dag12s'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">🗺 Åpne i Google Maps</a>
         </div>
       </div>
 </section>
@@ -1078,14 +1074,13 @@
     <div class="day-left">
       <div style="padding:16px"><div class="info-rows">
         <div class="info-row"><span class="info-label">Hotell</span><span class="info-val"><strong>Grand Hotel Karel V</strong> ★★★★★ &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
-        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag13">Geertebolwerk 1, 3511 XA Utrecht <a href="javascript:void(0)" data-place="dag13" style="font-size:11px">📍 Kart</a></span></div>
+        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag13">Geertebolwerk 1, 3511 XA Utrecht <a href="#" data-place="dag13" style="font-size:11px" onclick="var p=PLACES['dag13'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
         <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Eget p-anlegg på hotellet · ⚡ EV-lader på tomten · €35/døgn</span></div>
-        <div class="info-row"><span class="info-label">Hunder</span><span class="info-val">🐶 Velkommen · begrensede rom · book på forhånd · €50/hund/natt</span></div>
         <div class="info-row"><span class="info-label">Rute</span><span class="info-val">A29 → Antwerpen → Gent → Amsterdam ring → Utrecht</span></div>
         <div class="info-row"><span class="info-label">Lading</span><span class="info-val">Ingen nødvendig (~400 km innen rekkevidde fra Honfleur)</span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <a class="route-btn" href="javascript:void(0)" data-route="dag13r" target="_blank">→ Kjørerute Google Maps</a>
+        <a class="route-btn" href="#" data-route="dag13r" onclick="var r=ROUTES['dag13r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
         <button class="booking-btn" onclick="document.getElementById('modal-karelv').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
       </div>
     </div>
@@ -1097,8 +1092,7 @@
         <p style="font-size:12px;font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Honfleur → Brüssel ring → 13:30 Utrecht</p>
         <div style="display:grid;gap:4px">
           <p style="font-size:12px;color:var(--muted);margin:0">🌅 <strong>Ettermiddag:</strong> Vandring langs de to-etasjes kanalene langs Oudegracht (unikt i Europa) — 10 min gange fra hotellet. Klatre Domkirketårnet for panoramautsikt.</p>
-          <p style="font-size:12px;color:var(--muted);margin:0">🍽 <strong>Kveld:</strong> Brasserie Goeie Louisa på hotellet serverer 7 dager i uken i den eldste klosterkjøkkenet i Nederland. Eller spis langs Oudegracht med hundene.</p>
-          <p style="font-size:11px;color:var(--muted);margin:4px 0 0">🐕 Karel V er et tidligere 1300-talls kloster og militærsykehus — 10 000 m² hageanlegg, basseng og spa. Hunder må bestilles på forhånd (€50/natt). Ring hotellet: +31 30 233 7555</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🍽 <strong>Kveld:</strong> Brasserie Goeie Louisa på hotellet serverer 7 dager i uken i den eldste klosterkjøkkenet i Nederland. Eller spis langs Oudegracht.</p>
         </div>
       </div>
       <div class="map-wrap"><div id="m13" class="lmap"></div><div class="map-cap">Honfleur → Belgia → Utrecht (~400 km)</div></div>
@@ -1113,7 +1107,7 @@
         <p style="font-size:12px;color:var(--sky);font-family:monospace;margin:0 0 6px;line-height:1.5">09:00 Honfleur → A13 Pont de Normandie → A16 Belgia → A27 → 15:30 Utrecht</p>
         <div style="display:grid;gap:4px">
           <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost ved Vieux Bassin og avreise over Pont de Normandie</p>
-          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Sjekk inn på Karel V og utforsk Oudegracht med hundene</p>
+          <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Sjekk inn på Karel V og utforsk Oudegracht</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--green-soft);border-radius:10px;border-left:3px solid var(--green)">
           <p style="font-size:12px;margin:0;color:var(--ink)">✅ <strong>Rekkevidde OK:</strong> ~400 km — innen rekkevidde uten ladestopp fra Honfleur til Utrecht.</p></div>
         </div>
@@ -1131,16 +1125,15 @@
     <div class="day-left">
       <div style="padding:16px"><div class="info-rows">
         <div class="info-row"><span class="info-label">Hotell</span><span class="info-val" data-show-name data-place="dag14">LIHO - einfach Lübeck &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
-        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag14">Lindenstr. 1A, 23558 Lübeck <a href="javascript:void(0)" data-place="dag14" style="font-size:11px">📍 Kart</a></span></div>
-        <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Aral Hamburg-Moorfleet</strong> (~340 km) · <a href="javascript:void(0)" data-place="moorfleet" target="_blank">📍 Kart</a></span></div>
+        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag14">Lindenstr. 1A, 23558 Lübeck <a href="#" data-place="dag14" style="font-size:11px" onclick="var p=PLACES['dag14'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
+        <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Aral Hamburg-Moorfleet</strong> (~340 km) · <a href="#" data-place="moorfleet" onclick="var p=PLACES['moorfleet'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
       
         <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+49451872100">+49 451 872100</a></span></div>
         <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.liho-hotels.de" target="_blank">liho-hotels.de</a></span></div>
         <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Gratis gate-P utenfor · Garasje €20/dag (forhåndsbest.) · maks 5m/1,85m høyde</span></div>
-        <div class="info-row"><span class="info-label">Hunder</span><span class="info-val">🐶 Hundevennlig ✅ · MÅ registreres på forhånd · spesielle hunderom</span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <a class="route-btn" href="javascript:void(0)" data-route="dag14r" target="_blank">→ Kjørerute Google Maps</a>
+        <a class="route-btn" href="#" data-route="dag14r" onclick="var r=ROUTES['dag14r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
         <button class="booking-btn" onclick="document.getElementById('modal-liho').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
       </div>
     </div>
@@ -1166,7 +1159,7 @@
           <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Frokost på Karel V og avreise via tyske motorveier</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Lübeck — Holstentor og middelaldersentrum venter</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--amber-soft,#fff8e1);border-radius:10px;border-left:3px solid var(--amber,#f59e0b)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Ladestopp:</strong> Aral pulse Hamburg-Moorfleet — Amandus-Stubbe-Straße 6, 22113 Hamburg (~225 km). 150–350 kW, 24/7. <a href="javascript:void(0)" data-place="moorfleet" target="_blank">Kart</a></p></div>
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Ladestopp:</strong> Aral pulse Hamburg-Moorfleet — Amandus-Stubbe-Straße 6, 22113 Hamburg (~225 km). 150–350 kW, 24/7. <a href="#" data-place="moorfleet" onclick="var p=PLACES['moorfleet'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Kart</a></p></div>
         </div>
       </div>
 </section>
@@ -1182,11 +1175,11 @@
     <div class="day-left">
       <div style="padding:16px"><div class="info-rows">
         <div class="info-row"><span class="info-label">Hotell</span><span class="info-val" data-show-name data-place="dag15">Scandic Aalborg City</span></div>
-        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag15">Europa Plads 1, 9000 Aalborg <a href="javascript:void(0)" data-place="dag15" style="font-size:11px">📍 Kart</a></span></div>
-        <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>IONITY Aabenraa</strong> (~200 km) · <a href="javascript:void(0)" data-place="aabenraa" target="_blank">📍 Kart</a></span></div>
+        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag15">Europa Plads 1, 9000 Aalborg <a href="#" data-place="dag15" style="font-size:11px" onclick="var p=PLACES['dag15'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
+        <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>IONITY Aabenraa</strong> (~200 km) · <a href="#" data-place="aabenraa" onclick="var p=PLACES['aabenraa'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">📍 Kart</a></span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <a class="route-btn" href="javascript:void(0)" data-route="dag15r" target="_blank">→ Kjørerute Google Maps</a>
+        <a class="route-btn" href="#" data-route="dag15r" onclick="var r=ROUTES['dag15r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
       </div>
     </div>
     <div class="day-right">
@@ -1211,7 +1204,7 @@
           <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> Over Storebælt-brua og inn i Danmark — grensen ved Padborg</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Siste hotellnatt — middag ved Limfjorden i Aalborg</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--amber-soft,#fff8e1);border-radius:10px;border-left:3px solid var(--amber,#f59e0b)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Ladestopp:</strong> IONITY Aabenraa — Egevej 6, 6200 Aabenraa (~180 km). 350 kW, 24/7. <a href="javascript:void(0)" data-place="aabenraa" target="_blank">Kart</a></p></div>
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Ladestopp:</strong> IONITY Aabenraa — Egevej 6, 6200 Aabenraa (~180 km). 350 kW, 24/7. <a href="#" data-place="aabenraa" onclick="var p=PLACES['aabenraa'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}return false;">Kart</a></p></div>
         </div>
       </div>
 </section>
@@ -1231,7 +1224,7 @@
         <div class="info-row"><span class="info-label">Ankomst</span><span class="info-val">🏡 Arendal ca. 16:25</span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <a class="route-btn" href="javascript:void(0)" data-route="dag16r" target="_blank">→ Kjørerute Google Maps</a>
+        <a class="route-btn" href="#" data-route="dag16r" onclick="var r=ROUTES['dag16r'];if(r){var u=buildRouteURL(r.stops);window.open(u,'_blank');}return false;">→ Kjørerute Google Maps</a>
       </div>
     </div>
     <div class="day-right">
@@ -1269,7 +1262,6 @@
     </table>
     <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;127,76 &asymp; NOK 1.423</span></div>
     <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Parkering:</strong> Gratis offentlig parkering i n&aelig;rheten &mdash; ingen forh&aring;ndsreservasjon n&oslash;dvendig. Gratisparkering ved Naturospace (5 min gange).</div>
-    <div class="modal-warn">&#x1F436; <strong>Hunder:</strong> Velkommen! &euro;10 tillegg per hund per opphold &mdash; betales ved avreise. Kun 1 hund per rom &mdash; kontakt hotellet om begge hundene.</div>
     <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk 16:30&ndash;19:00. Utsjekk 09:00&ndash;11:00. Kontakt hotellet ved sen ankomst.</p></div>
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis avbestilling til <strong>14. juli 2026 kl. 23:59</strong>. Etter 15. juli: gebyr p&aring; &euro;126. Datoene kan ikke endres.</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; Bekreftet p&aring; e-post: ijensen@q3p.no</p></div>
@@ -1291,14 +1283,13 @@
       <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
       <tbody>
         <tr><td>Frokost</td><td>Ikke inkludert</td></tr>
-        <tr><td>&#x1F436; Hunder (2 stk)</td><td>&euro;20 per dyr &mdash; totalt &euro;40 &middot; pute, vann og mat inkludert</td></tr>
         <tr><td>&#x26A1; Parkering + EV-lading</td><td>&euro;20 per kj&oslash;ret&oslash;y (bekreftet av hotellet)</td></tr>
         <tr><td>Byskatt (2 gjester &times; 1 natt)</td><td>ca. NOK 64</td></tr>
       </tbody>
     </table>
     <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;158,81 &asymp; NOK 1.769</span></div>
     <div class="modal-warn">&#x2705; <strong>Parkering + EV bekreftet av Th&eacute;o:</strong> Dedikert plass med elbillader er reservert for dere &mdash; &euro;20 per kj&oslash;ret&oslash;y. Maks takh&oslash;yde <strong>1,9 m</strong>.</div>
-    <div class="modal-warn">&#x2705; <strong>Hunder bekreftet av Th&eacute;o:</strong> Begge hunder er velkomne! Hotellet gj&oslash;r klar spesialpakke med pute, vann og hundemat. &euro;20 per dyr &mdash; totalt &euro;40 for 2 hunder.</div>
+    
     <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Betaling:</strong> Ingen forskuddsbetaling &mdash; betales under oppholdet.</div>
     <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fra 16:00 (maks 00:00). Utsjekk 06:00&ndash;12:00. Meld ankomsttid p&aring; forh&aring;nd.</p></div>
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>18. juli 2026 kl. 16:00</strong>. Etter: gebyr &euro;153,09. Datoene kan ikke endres.</p></div>
@@ -1377,7 +1368,7 @@
       </tbody>
     </table>
     <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;173 &asymp; NOK 1.927</span></div>
-    <div class="modal-warn">&#x1F436; <strong>Hunder:</strong> Hundevennlig &mdash; <strong>m&aring; registreres p&aring; forh&aring;nd</strong> da hotellet har spesielle hunderom. Ring +49 451 872100.</div>
+    
     <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Parkering garasje:</strong> Forhåndsreservasjon n&oslash;dvendig &middot; maks <strong>5 m</strong> lengde, <strong>1,85 m</strong> h&oslash;yde, 2,6 t vekt.</div>
     <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fredag 31. juli kl. 15:00&ndash;00:00. Utsjekk l&oslash;rdag 1. august kl. 07:00&ndash;11:00.</p></div>
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>27. juli 2026 kl. 23:59</strong>. Fra 28. juli 2026: <strong>ingen refusjon</strong> (fullt bel&oslash;p).</p></div>
@@ -1402,7 +1393,6 @@
       <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
       <tbody>
         <tr><td>Frokost × 2</td><td>Inkludert</td></tr>
-        <tr><td>Husdyr (1 hund)</td><td>DKK 200</td></tr>
         <tr><td>Privat parkering</td><td>DKK 200</td></tr>
       </tbody>
     </table>
@@ -1420,6 +1410,25 @@
 </footer>
 
 <script>
+
+function toggleDay(id) {
+  var body = document.getElementById(id).querySelector('.day-body');
+  if (!body) return;
+  var isOpen = body.classList.contains('open');
+  body.classList.toggle('open');
+  // Leaflet: invalider kart etter åpning
+  if (!isOpen) {
+    setTimeout(function() {
+      if (window._leafletMaps) {
+        var dagEl = document.getElementById(id);
+        dagEl.querySelectorAll('.lmap').forEach(function(el) {
+          var m = window._leafletMaps[el.id];
+          if (m) m.invalidateSize();
+        });
+      }
+    }, 100);
+  }
+}
 
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -1513,17 +1522,12 @@ document.document.addEventListener("DOMContentLoaded",function(){
   document.querySelectorAll("[data-show-name]").forEach(function(el){
     var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.name;
   });
-  // Pre-fill href på alle kart- og rutelenker — fungerer som vanlige lenker
-  document.querySelectorAll("a[data-place]").forEach(function(a){
-    var key=a.getAttribute("data-place"),p=PLACES[key];if(!p)return;
-    a.href="https://www.google.com/maps/search/?api=1&query="+p.mapsQ;
-    a.target="_blank";a.rel="noopener noreferrer";
+
+  // Åpne første dag som standard
+  document.querySelectorAll('[data-default-open="true"] .day-body').forEach(function(b){
+    b.classList.add('open');
   });
-  document.querySelectorAll("a[data-route]").forEach(function(a){
-    var key=a.getAttribute("data-route"),r=ROUTES[key];if(!r)return;
-    a.href=buildRouteURL(r.stops);
-    a.target="_blank";a.rel="noopener noreferrer";
-  });
+
 });
 
 // ── RUTE-DEFINISJONER — bygges fra PLACES-datamodellen ───────────────────────
@@ -1584,15 +1588,7 @@ function buildRouteURL(stops) {
   return 'https://www.google.com/maps/dir/' + parts.join('/');
 }
 
-// Klikk-delegering for rute-lenker (fallback)
-document.addEventListener('click', function(e) {
-  var a = e.target.closest('a[data-route]'); if (!a) return;
-  if (a.href && a.href !== window.location.href && !a.href.includes('void')) return;
-  var key = a.getAttribute('data-route');
-  var route = ROUTES[key]; if (!route) return;
-  e.preventDefault();
-  window.location.href = buildRouteURL(route.stops);
-});
+
 const S={
   arendal:[58.461,8.772],kristiansand:[58.147,7.996],hirtshals:[57.587,9.965],
   ribe:[55.332,8.773],flensburg:[54.792,9.434],hamburg:[53.550,9.993],celle:[52.615,10.082],
