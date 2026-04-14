@@ -310,7 +310,7 @@
           <tr><td><a href="#dag8" class="day-link">Søn 19. jul</a></td><td>Oyé 🏡</td><td>120</td></tr>
           <tr class="wr"><td><a href="#dag9" class="day-link">Søn 26. jul</a></td><td>Saint-Émilion ✅</td><td>468 ⚡</td></tr>
           <tr><td><a href="#dag10" class="day-link">Man 27. jul</a></td><td>Saint-Émilion ✅</td><td>0</td></tr>
-          <tr><td><a href="#dag11" class="day-link">Tir 28. jul</a></td><td>Amboise</td><td>320</td></tr>
+          <tr><td><a href="#dag11" class="day-link">Tir 28. jul</a></td><td>Amboise<span class="booked-badge">&#x2713; Booket</span></td><td>320</td></tr>
           <tr><td><a href="#dag12" class="day-link">Ons 29. jul</a></td><td>Honfleur<span class="booked-badge">✓ Booket</span></td><td>320</td></tr>
           <tr class="wr"><td><a href="#dag13" class="day-link">Tor 30. jul</a></td><td>Utrecht<span class="booked-badge">✓ Booket</span></td><td>~400</td></tr>
           <tr class="wr"><td><a href="#dag14" class="day-link">Fre 31. jul</a></td><td>Lübeck<span class="booked-badge">✓ Booket</span></td><td>~450 ⚡</td></tr>
@@ -942,14 +942,15 @@
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
       <div style="padding:0 16px 0">
         <div class="info-rows">
-          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">La Maison Rabelais</span></div>
+          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">La Maison Rabelais &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
           <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">8 rue Rabelais, 37400 Amboise</span></div>
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+33219003100">+33 2 19 00 31 00</a></span></div>
-          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.maisonrabelais.com" target="_blank">maisonrabelais.com</a></span></div>
-          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Parkering og lading mot tillegg</span></div>
+          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.maisonrabelais.fr" target="_blank">maisonrabelais.fr</a></span></div>
+          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Parkering €15 inkl. · Kjæledyrtillegg €30 · Byskat €5,10</span></div>
         </div>
       </div>
       <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag11r'];if(r){window.location.href=buildRouteURL(r.stops);}">→ Kjørerute Google Maps</button>
+        <button class="booking-btn" onclick="document.getElementById('modal-amboise').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
         <a class="detail-link" href="detail_pages/amboise.html">🗺 Utforsk Amboise — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -1363,6 +1364,33 @@
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>27. juli 2026 kl. 23:59</strong>. Fra 28. juli 2026: <strong>ingen refusjon</strong> (fullt bel&oslash;p).</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
   </div>
+<div class="modal-overlay" id="modal-amboise" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-amboise').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">La Maison Rabelais &mdash; Amboise</p>
+    <p class="modal-sub">8 Rue Rabelais, 37400 Amboise &middot; +33 2 19 00 31 00</p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; direkte e-post booking &middot; Kontakt: Quentin</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th></tr></thead>
+      <tbody><tr><td>Classic rom (uten frokost)</td><td>28. juli 2026</td><td>29. juli 2026</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Kostnad</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>Rom</td><td>&euro;197,00</td></tr>
+        <tr><td>Byskat</td><td>&euro;5,10</td></tr>
+        <tr><td>Kj&aelig;ledyr</td><td>&euro;30,00</td></tr>
+        <tr><td>Parkering</td><td>&euro;15,00</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt</span><span>&euro;247,10</span></div>
+    <div class="modal-sec"><h4>Kontakt</h4>
+    <p>Quentin &mdash; Resepsjonist &middot; <a href="tel:+33219003100">+33 2 19 00 31 00</a> &middot; <a href="mailto:info@maisonrabelais.com">info@maisonrabelais.com</a></p>
+    <p><a href="https://www.maisonrabelais.fr" target="_blank">maisonrabelais.fr</a></p></div>
+    <div class="modal-warn">&#x26A0;&#xFE0F; Ingen booking.com-bekreftelsesnummer &mdash; direkte e-postbooking. Ta vare p&aring; e-posten fra Quentin som dokumentasjon ved innsjekk.</div>
+  </div>
+</div>
 </div>
 </div>
 </div>
