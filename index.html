@@ -1503,10 +1503,7 @@ document.addEventListener("click",function(e){
   var a=e.target.closest("a[data-place]");if(!a)return;
   var key=a.getAttribute("data-place"),p=PLACES[key];if(!p)return;
   e.preventDefault();
-  e.stopPropagation();
-  var url="https://www.google.com/maps/search/?api=1&query="+p.mapsQ;
-  var w=window.open(url,"_blank");
-  if(!w||w.closed||typeof w.closed==="undefined"){window.location.href=url;}
+  window.location.href="https://www.google.com/maps/search/?api=1&query="+p.mapsQ;
 });
 // Sett tekst for data-show-address / data-show-name (kjøres etter DOM)
 document.document.addEventListener("DOMContentLoaded",function(){
@@ -1515,6 +1512,17 @@ document.document.addEventListener("DOMContentLoaded",function(){
   });
   document.querySelectorAll("[data-show-name]").forEach(function(el){
     var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.name;
+  });
+  // Pre-fill href på alle kart- og rutelenker — fungerer som vanlige lenker
+  document.querySelectorAll("a[data-place]").forEach(function(a){
+    var key=a.getAttribute("data-place"),p=PLACES[key];if(!p)return;
+    a.href="https://www.google.com/maps/search/?api=1&query="+p.mapsQ;
+    a.target="_blank";a.rel="noopener noreferrer";
+  });
+  document.querySelectorAll("a[data-route]").forEach(function(a){
+    var key=a.getAttribute("data-route"),r=ROUTES[key];if(!r)return;
+    a.href=buildRouteURL(r.stops);
+    a.target="_blank";a.rel="noopener noreferrer";
   });
 });
 
@@ -1576,27 +1584,14 @@ function buildRouteURL(stops) {
   return 'https://www.google.com/maps/dir/' + parts.join('/');
 }
 
-// Klikk-delegering for rute-lenker
+// Klikk-delegering for rute-lenker (fallback)
 document.addEventListener('click', function(e) {
   var a = e.target.closest('a[data-route]'); if (!a) return;
+  if (a.href && a.href !== window.location.href && !a.href.includes('void')) return;
   var key = a.getAttribute('data-route');
   var route = ROUTES[key]; if (!route) return;
   e.preventDefault();
-  e.stopPropagation();
-  var url = buildRouteURL(route.stops);
-  // Sett href og åpne — unngår popup-blokkering
-  a.href = url;
-  a.target = '_blank';
-  a.rel = 'noopener noreferrer';
-  a.removeAttribute('onclick');
-  // Trigger navigasjon via midlertidig lenke-klikk
-  var tmp = document.createElement('a');
-  tmp.href = url;
-  tmp.target = '_blank';
-  tmp.rel = 'noopener noreferrer';
-  document.body.appendChild(tmp);
-  tmp.click();
-  document.body.removeChild(tmp);
+  window.location.href = buildRouteURL(route.stops);
 });
 const S={
   arendal:[58.461,8.772],kristiansand:[58.147,7.996],hirtshals:[57.587,9.965],
