@@ -1068,11 +1068,14 @@
         <div class="info-row"><span class="info-label">Hotell</span><span class="info-val"><strong>Grand Hotel Karel V</strong> ★★★★★ &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
         <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag13">Geertebolwerk 1, 3511 XA Utrecht <button style="font-size:11px" onclick="var p=PLACES['dag13'];if(p){window.location.href='https://www.google.com/maps/search/?api=1&query='+p.mapsQ;}">📍 Kart</button></span></div>
         <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Eget p-anlegg på hotellet · ⚡ EV-lader på tomten · €35/døgn</span></div>
+          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.karelv.nl" target="_blank">karelv.nl</a></span></div>
         <div class="info-row"><span class="info-label">Rute</span><span class="info-val">A29 → Antwerpen → Gent → Amsterdam ring → Utrecht</span></div>
         <div class="info-row"><span class="info-label">Lading</span><span class="info-val">Ingen nødvendig (~400 km innen rekkevidde fra Honfleur)</span></div>
       </div></div>
       <div style="padding:0 16px 16px">
         <button class="route-btn" onclick="var r=ROUTES['dag13r'];if(r){window.location.href=buildRouteURL(r.stops);}">→ Kjørerute Google Maps</button>
+        
+        <a class="detail-link" href="detail_pages/utrecht.html">🗺️ Utforsk Utrecht — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-karelv').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
       </div>
     </div>
@@ -1126,6 +1129,8 @@
       </div></div>
       <div style="padding:0 16px 16px">
         <button class="route-btn" onclick="var r=ROUTES['dag14r'];if(r){window.location.href=buildRouteURL(r.stops);}">→ Kjørerute Google Maps</button>
+        
+        <a class="detail-link" href="detail_pages/lubeck.html">🗺️ Utforsk Lübeck — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-liho').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
       </div>
     </div>
@@ -1159,7 +1164,7 @@
 <!-- ── DAG 15 ── -->
 <section class="sc day" id="dag15">
   <div class="day-header" onclick="toggleDay('dag15')">
-    <div class="day-title"><h2>Lørdag 1. august — Borup</h2><p class="sub">Lübeck → Padborg ⚡ → Borup (ved Aalborg)</p></div>
+    <div class="day-title"><h2>Lørdag 1. august — Koppes Mølle B&amp;B</h2><p class="sub">Lübeck → Padborg ⚡ → Borup/Nibe (Vesthimmerland)</p></div>
     <div class="chips"><span class="chip">~425 km</span><span class="chip">~4t</span><span class="chip warn">⚡ IONITY Aabenraa</span></div>
     <span class="chevron">▼</span>
   </div>
@@ -1232,176 +1237,6 @@
     </div>
   </div>
 </section>
-
-
-<!-- ── MODAL DAGMAR ── -->
-<div class="modal-overlay" id="modal-reglisse" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-reglisse').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">R&eacute;glisse et Pain d&#x27;E&#x301;pices</p>
-    <p class="modal-sub">61 Rue Haute, 14600 Honfleur &middot; +33 2 31 87 84 80</p>
-    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5575.716.061 &middot; PIN: 4182</div>
-    <table class="mtable">
-      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
-      <tbody><tr><td>La Transatlantique &mdash; 2. etg.</td><td>29.07 kl. 16:30&ndash;19:00</td><td>30.07 kl. 09:00&ndash;11:00</td><td>&euro;126</td></tr></tbody>
-    </table>
-    <table class="mtable">
-      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
-      <tbody>
-        <tr><td>Frokost &times; 2</td><td>Inkludert</td></tr>
-        <tr><td>Byskatt (2 gjester &times; 1 natt)</td><td>ca. NOK 20</td></tr>
-      </tbody>
-    </table>
-    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;127,76 &asymp; NOK 1.423</span></div>
-    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Parkering:</strong> Gratis offentlig parkering i n&aelig;rheten &mdash; ingen forh&aring;ndsreservasjon n&oslash;dvendig. Gratisparkering ved Naturospace (5 min gange).</div>
-    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk 16:30&ndash;19:00. Utsjekk 09:00&ndash;11:00. Kontakt hotellet ved sen ankomst.</p></div>
-    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis avbestilling til <strong>14. juli 2026 kl. 23:59</strong>. Etter 15. juli: gebyr p&aring; &euro;126. Datoene kan ikke endres.</p></div>
-    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; Bekreftet p&aring; e-post: ijensen@q3p.no</p></div>
-    <div class="modal-sec"><h4>&#x1F4AC; Velkomstbrev fra Fr&eacute;d&eacute;ric</h4><p style="font-size:12px;line-height:1.6"><strong>Innsjekk:</strong> Personlig 16:30&ndash;18:30 &middot; Self check-in 18:30&ndash;00:00 (instruksjoner sendes p&aring; e-post).<br><strong>Utsjekk:</strong> 09:00&ndash;11:00.<br><strong>Kontakt Fr&eacute;d&eacute;ric:</strong> <a href="tel:+33681603080">+33 6 81 60 30 80</a><br><br><strong>Frokost:</strong> Typisk fransk frokost 08:30&ndash;10:30 i felles frokoststue.<br><br><strong>&#x1F17F;&#xFE0F; Parkering:</strong> Gratis p&aring; <em>Parking du Naturospace</em>, Boulevard Charles V &mdash; 5 min gange. Rask av-/p&aring;lasting i Rue Haute er mulig (obs: gategrunn p&aring; hverdager og helger p&aring;ske&ndash;september). Adressen er nr. 61 Rue Haute, p&aring; venstre side i en liten smug rett overfor nr. 64 (etter restauranten &laquo;Gambetta&raquo;).<br><br><strong>&#x1F374; Restauranttips fra Frederic:</strong> L'Absinthe &middot; Le Lingot &middot; L'Endroit &middot; L'Envie &middot; Le Bistro du Port &middot; Le Petit Mareyeur.<br><br><strong>Betaling:</strong> P&aring; stedet ved avreise &mdash; kredittkort eller kontant.<br><strong>Nettsted:</strong> <a href="https://www.rpe-chambres-honfleur.fr" target="_blank">rpe-chambres-honfleur.fr</a></p></div>
-  </div>
-</div>
-<div class="modal-overlay" id="modal-henry2" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-henry2').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">H&ocirc;tel Henry II Beaune Centre</p>
-    <p class="modal-sub">12&ndash;14 Rue du Faubourg Saint Nicolas, 21200 Beaune &middot; +33 3 80 22 83 84</p>
-    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6502.640.090 &middot; PIN: 5493</div>
-    <table class="mtable">
-      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
-      <tbody><tr><td>Dobbeltrom Standard &mdash; 1. etg.</td><td>18.07 kl. 16:00&ndash;00:00</td><td>19.07 kl. 06:00&ndash;12:00</td><td>&euro;153,09</td></tr></tbody>
-    </table>
-    <table class="mtable">
-      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
-      <tbody>
-        <tr><td>Frokost</td><td>Ikke inkludert</td></tr>
-        <tr><td>&#x26A1; Parkering + EV-lading</td><td>&euro;20 per kj&oslash;ret&oslash;y (bekreftet av hotellet)</td></tr>
-        <tr><td>Byskatt (2 gjester &times; 1 natt)</td><td>ca. NOK 64</td></tr>
-      </tbody>
-    </table>
-    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;158,81 &asymp; NOK 1.769</span></div>
-    <div class="modal-warn">&#x2705; <strong>Parkering + EV bekreftet av Th&eacute;o:</strong> Dedikert plass med elbillader er reservert for dere &mdash; &euro;20 per kj&oslash;ret&oslash;y. Maks takh&oslash;yde <strong>1,9 m</strong>.</div>
-    
-    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Betaling:</strong> Ingen forskuddsbetaling &mdash; betales under oppholdet.</div>
-    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fra 16:00 (maks 00:00). Utsjekk 06:00&ndash;12:00. Meld ankomsttid p&aring; forh&aring;nd.</p></div>
-    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>18. juli 2026 kl. 16:00</strong>. Etter: gebyr &euro;153,09. Datoene kan ikke endres.</p></div>
-    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
-  </div>
-</div>
-<div class="modal-overlay" id="modal-mittelwihr" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-mittelwihr').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">H&ocirc;tel Le Mittelwihr</p>
-    <p class="modal-sub">19 Route du Vin, 68630 Mittelwihr &middot; +33 3 89 49 09 90</p>
-    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6182.780.798 &middot; PIN: 7360</div>
-    <table class="mtable">
-      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Netter</th><th>Pris</th></tr></thead>
-      <tbody><tr><td>Dobbeltrom &mdash; 1. etg.</td><td>16.07 kl. 15:00&ndash;21:00</td><td>18.07 kl. 07:30&ndash;11:00</td><td>2</td><td>&euro;207</td></tr></tbody>
-    </table>
-    <table class="mtable">
-      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
-      <tbody>
-        <tr><td>M&aring;ltider</td><td>Ikke inkludert</td></tr>
-        <tr><td>Parkering</td><td>Gratis offentlig &mdash; ingen reservasjon</td></tr>
-        <tr><td>Sen ankomst (etter 21:00)</td><td>&euro;25 tillegg</td></tr>
-      </tbody>
-    </table>
-    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;207 &asymp; NOK 2.306</span></div>
-    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Sen ankomst:</strong> &euro;25 tillegg ved ankomst etter innsjekktid. Alle sene ankomster m&aring; bekreftes av hotellet p&aring; forh&aring;nd.</div>
-    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk torsdag 16. juli kl. 15:00&ndash;21:00. Utsjekk l&oslash;rdag 18. juli kl. 07:30&ndash;11:00. Meld ankomsttid p&aring; forh&aring;nd.</p></div>
-    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>13. juli 2026 kl. 23:59</strong>. Fra 14. juli 2026: <strong>ingen refusjon</strong> (fullt bel&oslash;p belastes).</p></div>
-    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
-    <div class="modal-sec"><h4>&#x1F4AC; Bekreftelse fra Th&eacute;o (front desk)</h4><p style="font-size:12px;line-height:1.6;font-style:italic">&laquo;I confirm we accept dogs in our hotel for your stay. A special kit is prepared with pillows, water and dog's food &mdash; extra of &euro;20 per animal. Concerning parking, I confirm you will have a parking place with an electric charge &mdash; extra of &euro;20 per vehicle.&raquo;</p><p style="font-size:11px;color:var(--muted);margin-top:4px">&mdash; Th&eacute;o, Front desk Hotel Henry</p></div>
-  </div>
-<div class="modal-overlay" id="modal-karelv" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-karelv').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">Grand Hotel Karel V</p>
-    <p class="modal-sub">Geertebolwerk 1, 3511 XA Utrecht &middot; +31 30 233 7555</p>
-    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6502.659.566 &middot; PIN: 7708</div>
-    <table class="mtable">
-      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
-      <tbody><tr><td>Dobbeltrom Comfort</td><td>30.07 fra kl. 15:00</td><td>31.07 til kl. 11:00</td><td>&euro;237,10</td></tr></tbody>
-    </table>
-    <table class="mtable">
-      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
-      <tbody>
-        <tr><td>M&aring;ltider</td><td>Ikke inkludert</td></tr>
-        <tr><td>Parkering</td><td>&euro;35/dag &mdash; forhåndsreservasjon ikke mulig</td></tr>
-        <tr><td>MVA (21%) + byskatt (10%)</td><td>Inkludert i prisen</td></tr>
-      </tbody>
-    </table>
-    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;237,10 &asymp; NOK 2.641</span></div>
-    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Parkering:</strong> &euro;35/dag &mdash; forhåndsreservasjon er <strong>ikke mulig</strong>. F&oslash;rst til m&oslash;lla ved ankomst.</div>
-    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Betaling:</strong> Ingen forskuddsbetaling &mdash; betales under oppholdet.</div>
-    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fra kl. 15:00 torsdag 30. juli. Utsjekk til kl. 11:00 fredag 31. juli.</p></div>
-    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>28. juli 2026 kl. 23:59</strong>. Fra 29. juli 2026: gebyr &euro;219. Datoene kan ikke endres.</p></div>
-    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
-  </div>
-<div class="modal-overlay" id="modal-liho" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-liho').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">LIHO &mdash; einfach L&uuml;beck</p>
-    <p class="modal-sub">Lindenstr. 1A, 23558 L&uuml;beck &middot; +49 451 872100</p>
-    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5741.610.224 &middot; PIN: 4732</div>
-    <table class="mtable">
-      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
-      <tbody><tr><td>Lite dobbeltrom (151&ndash;180 cm seng)</td><td>31.07 kl. 15:00&ndash;00:00</td><td>01.08 kl. 07:00&ndash;11:00</td><td>&euro;173</td></tr></tbody>
-    </table>
-    <table class="mtable">
-      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
-      <tbody>
-        <tr><td>M&aring;ltider</td><td>Ikke inkludert</td></tr>
-        <tr><td>Gate-parkering utenfor</td><td>Gratis</td></tr>
-        <tr><td>Garasje (forhåndsbestill)</td><td>&euro;20/dag &middot; maks 5m/1,85m/2,6t</td></tr>
-      </tbody>
-    </table>
-    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;173 &asymp; NOK 1.927</span></div>
-    
-    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Parkering garasje:</strong> Forhåndsreservasjon n&oslash;dvendig &middot; maks <strong>5 m</strong> lengde, <strong>1,85 m</strong> h&oslash;yde, 2,6 t vekt.</div>
-    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fredag 31. juli kl. 15:00&ndash;00:00. Utsjekk l&oslash;rdag 1. august kl. 07:00&ndash;11:00.</p></div>
-    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>27. juli 2026 kl. 23:59</strong>. Fra 28. juli 2026: <strong>ingen refusjon</strong> (fullt bel&oslash;p).</p></div>
-    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-<div class="modal-overlay" id="modal-dagmar" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-dagmar').classList.remove('open')">✕</button>
-    <p class="modal-logo">Hotel Dagmar</p>
-    <p class="modal-sub">Torvet 1, 6760 Ribe · +45 75 42 00 33 · info@hoteldagmar.dk</p>
-    <div class="modal-badge">✓ Bekreftet — Res.nr. 3126411</div>
-    <table class="mtable">
-      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
-      <tbody><tr><td>Standard Twin</td><td>12.07</td><td>13.07</td><td>DKK 1.545</td></tr></tbody>
-    </table>
-    <table class="mtable">
-      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
-      <tbody>
-        <tr><td>Frokost × 2</td><td>Inkludert</td></tr>
-        <tr><td>Privat parkering</td><td>DKK 200</td></tr>
-      </tbody>
-    </table>
-    <div class="modal-total"><span>Totalt inkl. mva.</span><span>DKK 1.945</span></div>
-    <div class="modal-warn">⚠️ <strong>Parkering:</strong> Ingen parkering på tomten. Laste av foran hotellet, deretter privat plass 50 m unna (forhåndsbestilt). Gratis P-north: Saltgade 21 · P-south: Tøndervej.</div>
-    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fra 15:00. Ankommer etter 16:00? Ring på forhånd. Utsjekk senest 11:00.</p></div>
-    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til og med 2 dager før. Kun skriftlig til info@hoteldagmar.dk</p></div>
-    <div class="modal-sec"><h4>Kontakt</h4><p><a href="tel:+4575420033">+45 75 42 00 33</a> · <a href="mailto:info@hoteldagmar.dk">info@hoteldagmar.dk</a></p></div>
-  </div>
-</div>
-
-<footer class="footer">
-  <p>Reisebok – Frankrike sommeren 2026</p>
-  <p>Kart © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>-bidragsytere · Oppdatert april 2026</p>
-</footer>
-
 <script>
 // DEBUG
 console.log('Script lastet');
@@ -1473,8 +1308,8 @@ const ROADS={
 const PLACES = {
   // OVERNATTINGER
   dag1:  { lat:55.332,  lon:8.773,   name:"Hotel Dagmar",                 address:"Torvet 1, 6760 Ribe",                             mapsQ:"Torvet+1+6760+Ribe+Denmark" },
-  dag2:  { lat:52.615,  lon:10.082,  name:"Althoff Hotel Fürstenhof",     address:"Hannoversche Str. 55/56, 29221 Celle",             mapsQ:"Hannoversche+Strasse+55+29221+Celle+Germany" },
-  dag3:  { lat:49.749,  lon:6.637,   name:"Nells Park Hotel",             address:"Dasbachstraße 12, 54292 Trier",                   mapsQ:"Dasbachstrasse+12+54292+Trier+Germany" },
+  dag2:  { lat:52.6247,  lon:10.0798,  name:"Althoff Hotel Fürstenhof",     address:"Hannoversche Str. 55/56, 29221 Celle",             mapsQ:"Hannoversche+Strasse+55+29221+Celle+Germany" },
+  dag3:  { lat:49.7673,  lon:6.6415,   name:"Nells Park Hotel",             address:"Dasbachstraße 12, 54292 Trier",                   mapsQ:"Dasbachstrasse+12+54292+Trier+Germany" },
   dag4:  { lat:48.583,  lon:7.745,   name:"Sofitel Strasbourg Grande Île",address:"4 Place Saint-Pierre-le-Jeune, 67000 Strasbourg", mapsQ:"4+Place+Saint-Pierre-le-Jeune+67000+Strasbourg+France" },
   dag5:  { lat:48.127,  lon:7.357,   name:"Hôtel Le Mittelwihr",         address:"19 Route du Vin, 68630 Mittelwihr",               mapsQ:"19+Route+du+Vin+68630+Mittelwihr+France" },
   dag7:  { lat:47.021,  lon:4.836,   name:"Hôtel Henry II Beaune Centre",address:"12-14 Faubourg Saint Nicolas, 21200 Beaune",     mapsQ:"12-14+Faubourg+Saint+Nicolas+21200+Beaune+France" },
@@ -1484,7 +1319,7 @@ const PLACES = {
   dag12: { lat:49.4229, lon:0.2311,  name:"Réglisse et Pain d\'Épices", address:"61 Rue Haute, 14600 Honfleur",                    mapsQ:"61+Rue+Haute+14600+Honfleur+France" },
   dag13: { lat:52.0876, lon:5.1252,  name:"Grand Hotel Karel V",         address:"Geertebolwerk 1, 3511 XA Utrecht",               mapsQ:"Geertebolwerk+1+3511+XA+Utrecht+Netherlands" },
   dag14: { lat:53.8660, lon:10.6727, name:"LIHO - einfach Lübeck",     address:"Lindenstr. 1A, 23558 Lübeck",               mapsQ:"Lindenstrasse+1A+23558+Lubeck+Germany" },
-  dag15: { lat:57.048,  lon:9.918,   name:"Koppes Mølle B&B",              address:"Halkærvej 100, 9240 Borup",                       mapsQ:"Haelkaervej+100+9240+Borup+Denmark" },
+  dag15: { lat:56.970,  lon:9.558,   name:"Koppes Mølle B&B",              address:"Halkærvej 100, 9240 Borup (ved Nibe)",            mapsQ:"Halkzrvej+100+9240+Borup+Denmark" },
   // LADESTOPP — mapsQ bruker adresse for presist treff i Google Maps
   brive:      { lat:45.1672, lon:1.4830,  name:"Tesla Brive-la-Gaillarde",    address:"Le Griffolet, 19270 Ussac",               mapsQ:"Le+Griffolet+19270+Ussac+France" },
   poitiers:   { lat:46.5285, lon:0.2868,  name:"Tesla Poitiers Sud",          address:"6 rue de la Saulaie, 86240 Croutelle",    mapsQ:"6+rue+de+la+Saulaie+86240+Croutelle+France" },
@@ -1532,6 +1367,7 @@ const S = {
   skagen:       [57.7417,10.5921],
   frederikshavn:       [57.441,10.537],
   angouleme:   [45.649, 0.156],
+  borup:        [56.970,  9.558],
 };
 
 const ROUTES = {
@@ -1678,6 +1514,180 @@ document.addEventListener("DOMContentLoaded",function(){
 </script>
 
 
+
+<!-- ── MODAL DAGMAR ── -->
+<div class="modal-overlay" id="modal-reglisse" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-reglisse').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">R&eacute;glisse et Pain d&#x27;E&#x301;pices</p>
+    <p class="modal-sub">61 Rue Haute, 14600 Honfleur &middot; +33 2 31 87 84 80</p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5575.716.061</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>La Transatlantique &mdash; 2. etg.</td><td>29.07 kl. 16:30&ndash;19:00</td><td>30.07 kl. 09:00&ndash;11:00</td><td>&euro;126</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>Frokost &times; 2</td><td>Inkludert</td></tr>
+        <tr><td>Byskatt (2 gjester &times; 1 natt)</td><td>ca. NOK 20</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;127,76 &asymp; NOK 1.423</span></div>
+    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Parkering:</strong> Gratis offentlig parkering i n&aelig;rheten &mdash; ingen forh&aring;ndsreservasjon n&oslash;dvendig. Gratisparkering ved Naturospace (5 min gange).</div>
+    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk 16:30&ndash;19:00. Utsjekk 09:00&ndash;11:00. Kontakt hotellet ved sen ankomst.</p></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis avbestilling til <strong>14. juli 2026 kl. 23:59</strong>. Etter 15. juli: gebyr p&aring; &euro;126. Datoene kan ikke endres.</p></div>
+    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; Bekreftet p&aring; e-post: ijensen@q3p.no</p></div>
+    <div class="modal-sec"><h4>&#x1F4AC; Velkomstbrev fra Fr&eacute;d&eacute;ric</h4><p style="font-size:12px;line-height:1.6"><strong>Innsjekk:</strong> Personlig 16:30&ndash;18:30 &middot; Self check-in 18:30&ndash;00:00 (instruksjoner sendes p&aring; e-post).<br><strong>Utsjekk:</strong> 09:00&ndash;11:00.<br><strong>Kontakt Fr&eacute;d&eacute;ric:</strong> <a href="tel:+33681603080">+33 6 81 60 30 80</a><br><br><strong>Frokost:</strong> Typisk fransk frokost 08:30&ndash;10:30 i felles frokoststue.<br><br><strong>&#x1F17F;&#xFE0F; Parkering:</strong> Gratis p&aring; <em>Parking du Naturospace</em>, Boulevard Charles V &mdash; 5 min gange. Rask av-/p&aring;lasting i Rue Haute er mulig (obs: gategrunn p&aring; hverdager og helger p&aring;ske&ndash;september). Adressen er nr. 61 Rue Haute, p&aring; venstre side i en liten smug rett overfor nr. 64 (etter restauranten &laquo;Gambetta&raquo;).<br><br><strong>&#x1F374; Restauranttips fra Frederic:</strong> L'Absinthe &middot; Le Lingot &middot; L'Endroit &middot; L'Envie &middot; Le Bistro du Port &middot; Le Petit Mareyeur.<br><br><strong>Betaling:</strong> P&aring; stedet ved avreise &mdash; kredittkort eller kontant.<br><strong>Nettsted:</strong> <a href="https://www.rpe-chambres-honfleur.fr" target="_blank">rpe-chambres-honfleur.fr</a></p></div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-henry2" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-henry2').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">H&ocirc;tel Henry II Beaune Centre</p>
+    <p class="modal-sub">12&ndash;14 Rue du Faubourg Saint Nicolas, 21200 Beaune &middot; +33 3 80 22 83 84</p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6502.640.090</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>Dobbeltrom Standard &mdash; 1. etg.</td><td>18.07 kl. 16:00&ndash;00:00</td><td>19.07 kl. 06:00&ndash;12:00</td><td>&euro;153,09</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>Frokost</td><td>Ikke inkludert</td></tr>
+        <tr><td>&#x26A1; Parkering + EV-lading</td><td>&euro;20 per kj&oslash;ret&oslash;y (bekreftet av hotellet)</td></tr>
+        <tr><td>Byskatt (2 gjester &times; 1 natt)</td><td>ca. NOK 64</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;158,81 &asymp; NOK 1.769</span></div>
+    <div class="modal-warn">&#x2705; <strong>Parkering + EV bekreftet av Th&eacute;o:</strong> Dedikert plass med elbillader er reservert for dere &mdash; &euro;20 per kj&oslash;ret&oslash;y. Maks takh&oslash;yde <strong>1,9 m</strong>.</div>
+    
+    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Betaling:</strong> Ingen forskuddsbetaling &mdash; betales under oppholdet.</div>
+    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fra 16:00 (maks 00:00). Utsjekk 06:00&ndash;12:00. Meld ankomsttid p&aring; forh&aring;nd.</p></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>18. juli 2026 kl. 16:00</strong>. Etter: gebyr &euro;153,09. Datoene kan ikke endres.</p></div>
+    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-mittelwihr" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-mittelwihr').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">H&ocirc;tel Le Mittelwihr</p>
+    <p class="modal-sub">19 Route du Vin, 68630 Mittelwihr &middot; +33 3 89 49 09 90</p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6182.780.798</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Netter</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>Dobbeltrom &mdash; 1. etg.</td><td>16.07 kl. 15:00&ndash;21:00</td><td>18.07 kl. 07:30&ndash;11:00</td><td>2</td><td>&euro;207</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>M&aring;ltider</td><td>Ikke inkludert</td></tr>
+        <tr><td>Parkering</td><td>Gratis offentlig &mdash; ingen reservasjon</td></tr>
+        <tr><td>Sen ankomst (etter 21:00)</td><td>&euro;25 tillegg</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;207 &asymp; NOK 2.306</span></div>
+    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Sen ankomst:</strong> &euro;25 tillegg ved ankomst etter innsjekktid. Alle sene ankomster m&aring; bekreftes av hotellet p&aring; forh&aring;nd.</div>
+    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk torsdag 16. juli kl. 15:00&ndash;21:00. Utsjekk l&oslash;rdag 18. juli kl. 07:30&ndash;11:00. Meld ankomsttid p&aring; forh&aring;nd.</p></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>13. juli 2026 kl. 23:59</strong>. Fra 14. juli 2026: <strong>ingen refusjon</strong> (fullt bel&oslash;p belastes).</p></div>
+    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
+    <div class="modal-sec"><h4>&#x1F4AC; Bekreftelse fra Th&eacute;o (front desk)</h4><p style="font-size:12px;line-height:1.6;font-style:italic">&laquo;I confirm we accept dogs in our hotel for your stay. A special kit is prepared with pillows, water and dog's food &mdash; extra of &euro;20 per animal. Concerning parking, I confirm you will have a parking place with an electric charge &mdash; extra of &euro;20 per vehicle.&raquo;</p><p style="font-size:11px;color:var(--muted);margin-top:4px">&mdash; Th&eacute;o, Front desk Hotel Henry</p></div>
+  </div>
+<div class="modal-overlay" id="modal-karelv" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-karelv').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">Grand Hotel Karel V</p>
+    <p class="modal-sub">Geertebolwerk 1, 3511 XA Utrecht &middot; +31 30 233 7555 &middot; <a href="https://www.karelv.nl" target="_blank">karelv.nl</a></p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6502.659.566</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>Dobbeltrom Comfort</td><td>30.07 fra kl. 15:00</td><td>31.07 til kl. 11:00</td><td>&euro;237,10</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>M&aring;ltider</td><td>Ikke inkludert</td></tr>
+        <tr><td>Parkering</td><td>&euro;35/dag &mdash; forhåndsreservasjon ikke mulig</td></tr>
+        <tr><td>MVA (21%) + byskatt (10%)</td><td>Inkludert i prisen</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;237,10 &asymp; NOK 2.641</span></div>
+    <div class="modal-sec"><h4>Adresse</h4><p>Geertebolwerk 1, 3511 XA Utrecht &middot; <button onclick="window.location.href='https://www.google.com/maps/search/?api=1&query=Geertebolwerk+1+3511+XA+Utrecht+Netherlands'">📍 Kart</button></p></div>
+
+    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Parkering:</strong> &euro;35/dag &mdash; forhåndsreservasjon er <strong>ikke mulig</strong>. F&oslash;rst til m&oslash;lla ved ankomst.</div>
+    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Betaling:</strong> Ingen forskuddsbetaling &mdash; betales under oppholdet.</div>
+    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fra kl. 15:00 torsdag 30. juli. Utsjekk til kl. 11:00 fredag 31. juli.</p></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>28. juli 2026 kl. 23:59</strong>. Fra 29. juli 2026: gebyr &euro;219. Datoene kan ikke endres.</p></div>
+    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
+  </div>
+<div class="modal-overlay" id="modal-liho" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-liho').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">LIHO &mdash; einfach L&uuml;beck</p>
+    <p class="modal-sub">Lindenstr. 1A, 23558 L&uuml;beck &middot; +49 451 872100</p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5741.610.224</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>Lite dobbeltrom (151&ndash;180 cm seng)</td><td>31.07 kl. 15:00&ndash;00:00</td><td>01.08 kl. 07:00&ndash;11:00</td><td>&euro;173</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>M&aring;ltider</td><td>Ikke inkludert</td></tr>
+        <tr><td>Gate-parkering utenfor</td><td>Gratis</td></tr>
+        <tr><td>Garasje (forhåndsbestill)</td><td>&euro;20/dag &middot; maks 5m/1,85m/2,6t</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt inkl. mva.</span><span>&euro;173 &asymp; NOK 1.927</span></div>
+    
+    <div class="modal-warn">&#x26A0;&#xFE0F; <strong>Parkering garasje:</strong> Forhåndsreservasjon n&oslash;dvendig &middot; maks <strong>5 m</strong> lengde, <strong>1,85 m</strong> h&oslash;yde, 2,6 t vekt.</div>
+    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fredag 31. juli kl. 15:00&ndash;00:00. Utsjekk l&oslash;rdag 1. august kl. 07:00&ndash;11:00.</p></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>27. juli 2026 kl. 23:59</strong>. Fra 28. juli 2026: <strong>ingen refusjon</strong> (fullt bel&oslash;p).</p></div>
+    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="modal-dagmar" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-dagmar').classList.remove('open')">✕</button>
+    <p class="modal-logo">Hotel Dagmar</p>
+    <p class="modal-sub">Torvet 1, 6760 Ribe · +45 75 42 00 33 · info@hoteldagmar.dk</p>
+    <div class="modal-badge">✓ Bekreftet — Res.nr. 3126411</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>Standard Twin</td><td>12.07</td><td>13.07</td><td>DKK 1.545</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Tillegg</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>Frokost × 2</td><td>Inkludert</td></tr>
+        <tr><td>Privat parkering</td><td>DKK 200</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt inkl. mva.</span><span>DKK 1.945</span></div>
+    <div class="modal-warn">⚠️ <strong>Parkering:</strong> Ingen parkering på tomten. Laste av foran hotellet, deretter privat plass 50 m unna (forhåndsbestilt). Gratis P-north: Saltgade 21 · P-south: Tøndervej.</div>
+    <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fra 15:00. Ankommer etter 16:00? Ring på forhånd. Utsjekk senest 11:00.</p></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til og med 2 dager før. Kun skriftlig til info@hoteldagmar.dk</p></div>
+    <div class="modal-sec"><h4>Kontakt</h4><p><a href="tel:+4575420033">+45 75 42 00 33</a> · <a href="mailto:info@hoteldagmar.dk">info@hoteldagmar.dk</a></p></div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>Reisebok – Frankrike sommeren 2026</p>
+  <p>Kart © <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>-bidragsytere · Oppdatert april 2026</p>
+</footer>
+
+
+
+
 <div class="modal-overlay" id="modal-amboise" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
     <span class="modal-handle"></span>
@@ -1712,7 +1722,7 @@ document.addEventListener("DOMContentLoaded",function(){
     <button class="modal-close" onclick="document.getElementById('modal-furstenhof').classList.remove('open')">&#x2715;</button>
     <p class="modal-logo">Althoff Hotel F&uuml;rstenhof &mdash; Celle</p>
     <p class="modal-sub">Hannoversche Str. 55/56, 29221 Celle &middot; +49 5141 201140</p>
-    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5694452013 &middot; PIN: 9373</div>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5694452013</div>
     <table class="mtable">
       <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
       <tbody><tr><td>Refugium Double Room</td><td>13. jul kl. 15:00</td><td>14. jul kl. 11:00</td><td>&euro;151,47</td></tr></tbody>
@@ -1738,7 +1748,7 @@ document.addEventListener("DOMContentLoaded",function(){
     <button class="modal-close" onclick="document.getElementById('modal-nells').classList.remove('open')">&#x2715;</button>
     <p class="modal-logo">Nells Park Hotel &mdash; Trier</p>
     <p class="modal-sub">Dasbachstr. 12, 54292 Trier &middot; +49 651 14440</p>
-    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5986039170 &middot; PIN: 7354</div>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5986039170</div>
     <table class="mtable">
       <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
       <tbody><tr><td>Business Relax Double Room</td><td>14. jul kl. 15:00&ndash;22:00</td><td>15. jul kl. 07:00&ndash;12:00</td><td>&euro;146,60</td></tr></tbody>
@@ -1764,7 +1774,7 @@ document.addEventListener("DOMContentLoaded",function(){
     <button class="modal-close" onclick="document.getElementById('modal-koppes').classList.remove('open')">&#x2715;</button>
     <p class="modal-logo">Koppes M&oslash;lle B&amp;B &mdash; Borup</p>
     <p class="modal-sub">Halk&aelig;rvej 100, 9240 Borup, Danmark &middot; +45 25 67 35 04</p>
-    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6000718885 &middot; PIN: 2141</div>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6000718885</div>
     <table class="mtable">
       <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
       <tbody><tr><td>Double Room m/bad &ndash; 1. etg. (trapp)</td><td>1. aug kl. 16:00&ndash;21:00</td><td>2. aug kl. 07:00&ndash;11:00</td><td>DKK 900</td></tr></tbody>
