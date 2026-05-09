@@ -1,155 +1,86 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-<meta charset="UTF-8"/>
+<!DOCTYPE html><html lang="no"><head><meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Honfleur, Frankrike – Reisebok 2026</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<style>
-:root{
-  --ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;
-  --accent:#e07b1f;--accent-soft:#fef0e0;
-  --sky:#0097c4;--sky-soft:#e0f4fb;
-  --warn:#d4950a;--warn-soft:#fff8e1;
-  --green:#1e9654;--green-soft:#e4f7ec;
-  --sun:#f5c842;--sun-soft:#fffbea;
-  --r:18px
-}
+<title>Honfleur</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><style>
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;--accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;--warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e4f7ec;--r:18px}
 *{box-sizing:border-box}html{font-size:16px}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
 a{color:var(--sky)}
-.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px}
 .back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}
-.topbar h1{margin:0;font-size:16px;font-weight:700;flex:1}
+.topbar h1{margin:0;font-size:17px;font-weight:700}
 .hero-map{height:240px;width:100%}
 .content{padding:16px;max-width:760px;margin:0 auto}
 .section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
 h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
-.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--sky-soft);color:var(--sky);margin:0 4px 4px 0}
-.tag.g{background:#eaf5ee;color:#2d7a4f}
-.tag.b{background:#e6f0fb;color:#185fa5}
-.tag.w{background:#fdf3e1;color:#c17f24}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
+.tag.green{background:#eaf5ee;color:#2d7a4f}
 .place{border-bottom:1px solid var(--line);padding:12px 0}
 .place:last-child{border-bottom:none;padding-bottom:0}
-.place-title{font-size:15px;font-weight:700;margin:0 0 3px;display:flex;align-items:center;gap:8px}
-.stars{font-size:12px;color:#c17f24}
+.place-title{font-size:15px;font-weight:700;margin:0 0 4px}
 .place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
-.place-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.plink{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none;display:inline-block}
-.plink.m{background:#e6f0fb;color:#185fa5}
-.plink.g{background:#eaf5ee;color:#2d7a4f}
-.info-row{display:flex;gap:8px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}
+.place-links{display:flex;gap:8px;flex-wrap:wrap}
+.plink{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none}
+.plink.map{background:#e6f0fb;color:#185fa5}
+.info-row{display:flex;gap:8px;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line)}
 .info-row:last-child{border-bottom:none}
-.lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
-.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
-.img-ph{background:var(--accent-soft);border-radius:10px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:28px}
-@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:320px}}
-</style>
-</head>
-<body>
-<div class="topbar">
-  <a class="back" href="../">← Tilbake</a>
-  <h1>Honfleur, Frankrike</h1>
-</div>
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:300px}}
+</style></head><body>
+<div class="topbar"><a class="back" href="../">← Reisebok</a><h1>Honfleur, Normandie</h1></div>
 <div id="map" class="hero-map"></div>
 <div class="content">
-
-<div class="section">
-  <h2>Om Honfleur</h2>
-  <p style="font-size:14px;color:var(--muted);margin:0 0 10px">Honfleur er en av Normandies vakreste og mest pittoreske havnebyer. Det sjarmerende Vieux Bassin (Gamlemhavnen) med høye, smale bolighus i pastell-farger er et ikonisk syn. Byen var inspirasjonskilde for impressionistene – Boudin, Monet og Courbet malte alle her. Sjømat av ypperste kvalitet, normannisk mat og calvados er uunngåelig.</p>
-  <div><span class="tag">Impressionisme</span><span class="tag">Gammel havn</span><span class="tag">Normannisk sjømat</span><span class="tag g">Hunder velkomne</span></div>
+<div class="section"><h2>Om Honfleur</h2>
+<p style="font-size:14px;color:var(--muted);margin:0 0 10px">En av Frankrikes vakreste havnebyer — Normandies «malerbyen» som inspirerte Monet, Boudin og Courbet. Den fargerike gamle havnen Vieux Bassin, trekirken Sainte-Catherine og utsikten fra Mont-Joli gjør Honfleur til en av turens høydepunkter.</p>
+<div><span class="tag">Malerby</span><span class="tag">Vieux Bassin</span><span class="tag">Impressionisme</span><span class="tag">Pont de Normandie</span></div></div>
+<div class="section"><h2>🚶 Gåturer & attraksjoner</h2>
+<div class="place"><p class="place-title">Vieux Bassin — den gamle havnen</p>
+<p class="place-desc">Honfleurs vakre gamle havn er selve symbolet på byen — tre-etasjes skifer­fasader og fargerike fiskebåter speiler seg i vannet. Perfekt for en rolig kveldstur. Restauranter og kafeer langs hele kaien. Vakrest tidlig morgen eller solnedgang.</p>
+<div><span class="tag">Gratis</span><span class="tag">Ikonisk</span><span class="tag">Kveldstur</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Vieux+Bassin+Honfleur" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Église Sainte-Catherine — trekirken</p>
+<p class="place-desc">Frankrikes største trebygde kirke — bygget av skips­tømmermenn etter Hundreårskrigen på 1400-tallet. Taket ligner et skip vendt opp ned. Gratis og åpent. En helt unik og vakker kirke som er verdt ethvert besøk.</p>
+<div><span class="tag">Gratis</span><span class="tag">Størst trebygde kirke i Frankrike</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Eglise+Sainte-Catherine+Honfleur" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Musée Eugène Boudin</p>
+<p class="place-desc">Kunstmuseum dedikert til Boudin — Honfleurs egne maler og Monets lærer. ~100 verk av Boudin pluss Monet, Courbet og andre impressionister som malte Honfleur. Inngang ~€8. Steng tirsdag.</p>
+<div><span class="tag">Impressionisme</span><span class="tag">~€8</span><span class="tag">Stengt tirsdag</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Musée+Eugène+Boudin+Honfleur" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Panorama Mont-Joli og Notre-Dame de Grâce</p>
+<p class="place-desc">Gang 25 min opp til kapellet Notre-Dame de Grâce på Côte de Grâce — fantastisk utsikt over Honfleur, Seine-munningen og Pont de Normandie. Gratis. Tar deg litt tid, men absolutt verdt det for panoramaet.</p>
+<div><span class="tag">Gratis</span><span class="tag">Panoramautsikt</span><span class="tag">25 min gange</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Chapelle+Notre-Dame+de+Grace+Honfleur" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">🚲 Sykkel langs Pont de Normandie</p>
+<p class="place-desc">Sykkler dere over det imponerende Pont de Normandie — verdens lengste hengebru for syklister — er det gratis! Fantastisk utsikt over Seine-munningen. Ruten langs kaien sørover er også vakker for en rolig ~10 km tur.</p>
+<div><span class="tag green">Sykkeltur ~10 km</span><span class="tag">Gratis over brua</span><span class="tag">Pont de Normandie</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Pont+de+Normandie" target="_blank">📍 Kart</a></div></div>
 </div>
-
-<div class="section">
-  <h2>🍽 Restauranter</h2>
-  <div class="place">
-    <p class="place-title">Le Vieux Honfleur <span class="stars">★★★★</span></p>
-    <p class="place-desc">Klassisk Honfleur-restaurant rett ved Vieux Bassin med utsikt mot havnen. Retter som muslinger i hvitvinssaus, scallops og fersk normannisk fisk. Terrassen er perfekt med hundene. Rimelig priset for beliggenhet og kvalitet. Populær – bestill bord på forhånd for terrasse.</p>
-    <div><span class="tag">Havneutsikt</span><span class="tag g">Terrasse – hunder ok</span><span class="tag">Sjømat</span></div>
-    <div class="place-links">
-      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Le+Vieux+Honfleur" target="_blank">📍 Kart</a>
-    </div>
-  </div>
-  <div class="place">
-    <p class="place-title">Âtre <span class="stars">★★★★★</span></p>
-    <p class="place-desc">Høyest rangert restaurant i Honfleur på TheFork (9,1/10). Kreativ normannisk mat i vakre omgivelser. Uteservering og eksplisitt hundrevennlig. Balansert og delikat mat – et høydepunkt. Bestill bord i god tid.</p>
-    <div><span class="tag">Topprangert</span><span class="tag g">Hundrevennlig</span><span class="tag">Kreativ normannisk</span></div>
-    <div class="place-links">
-      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Restaurant+Âtre+Honfleur" target="_blank">📍 Kart</a>
-    </div>
-  </div>
-  <div class="place">
-    <p class="place-title">La Serre Aux Fleurs</p>
-    <p class="place-desc">Fantastisk rangert (9,9/10 TheFork). Sjarmerende setting og utmerket mat. Åpent søndag. Populær – reservasjon nødvendig. Hundrevennlig. Spesiell atmosfære som gjester beskriver som "magisk".</p>
-    <div><span class="tag">9.9/10 TheFork</span><span class="tag g">Hundrevennlig</span></div>
-    <div class="place-links">
-      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=La+Serre+Aux+Fleurs+Honfleur" target="_blank">📍 Kart</a>
-    </div>
-  </div>
-  <div class="place">
-    <p class="place-title">The Cottage / Le Cottage</p>
-    <p class="place-desc">Anbefalt av Honfleurs turistkontor som spesifikt hundrevennlig restaurant. Typiske regionale retter med varm hundevelkomst. Vannskål settes automatisk frem. Hjemmekoselig atmosfære.</p>
-    <div><span class="tag g">Anbefalt av turistkontoret</span><span class="tag">Regionalt kjøkken</span></div>
-    <div class="place-links">
-      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Le+Cottage+Honfleur" target="_blank">📍 Kart</a>
-    </div>
-  </div>
-  <div class="place">
-    <p class="place-title">Huitre Brûlée</p>
-    <p class="place-desc">Liten, nesten hemmelig edelstein – 8 rue Brûlée. Spesialiserer seg på brente østers og sjømat. Kun et dusin bord. Rangert "A" av gjester. Smak normanniske østers på den beste måten.</p>
-    <div><span class="tag">Sjelden perle</span><span class="tag">Normanniske østers</span></div>
-    <div class="place-links">
-      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Huitre+Brûlée+Honfleur" target="_blank">📍 Kart</a>
-    </div>
-  </div>
+<div class="section"><h2>🍽 Restauranter & kafeer</h2>
+<div class="place"><p class="place-title">Le Vieux Honfleur</p>
+<p class="place-desc">Klassisk Norman­disk sjømat­restaurant ved havnen med terrasse. Fisk, skaldyr og Calvados-saus. En av de mest anbefalte stedene ved Vieux Bassin. Reservasjon anbefalt om kvelden.</p>
+<div><span class="tag">Sjømat</span><span class="tag">Havne­terrasse</span><span class="tag">Reservasjon</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Le+Vieux+Honfleur+restaurant" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Sa.Qua.Na (Alexandre Bourdas)</p>
+<p class="place-desc">To Michelin-stjerner — Honfleurs beste restaurant. Kreativ mat med fokus på lokale raw­materialer og sjømat. Reservasjon langt i forveien. Om dere vil ha en virkelig minne­verdig kveld.</p>
+<div><span class="tag">★★ Michelin</span><span class="tag">Kreativt kjøkken</span><span class="tag">Reservasjon lenge før</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=SaQuaNa+Honfleur" target="_blank">📍 Kart</a></div></div>
 </div>
-
-<div class="section">
-  <h2>🐾 Opplevelser med hund</h2>
-  <div class="place">
-    <p class="place-title">Vieux Bassin – kveldstur</p>
-    <p class="place-desc">Gå rundt den gamle havnen i kveldslyset og se de sjarmerende høye husene med refleksjonene i vannet. Absolutt et av Frankrikes vakreste tablåer. Hunder tillatt overalt ute. Markedet på Sainte-Catherine-plassen er levende og hundrevennlig.</p>
-    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Vieux+Bassin+Honfleur" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Cruise på Seinmunningen</p>
-    <p class="place-desc">Noen rederier tilbyr cruiser på Seinmunningen med mulighet for å ha med hund. Kan se sel og sjeldne fugler. Kontakt turistkontoret for aktuelle avganger juli 2026.</p>
-    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Honfleur+turistkontor" target="_blank">📍 Turistkontor</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Plage du Butin</p>
-    <p class="place-desc">Stranden like vest for Honfleur er tidlig morgen/kveld et perfekt sted for hundetur i sanden. Flott utsikt mot Pont de Normandie, den spektakulære hengebroen.</p>
-    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Plage+du+Butin+Honfleur" target="_blank">📍 Kart</a></div>
-  </div>
-</div>
-
-<div class="section">
-  <h2>ℹ️ Praktisk</h2>
-  <div class="info-row"><span class="lbl">Hunder</span><span>Honfleur er svært hundrevennlig. De fleste restauranter med uteservering ønsker hunder velkomne.</span></div>
-  <div class="info-row"><span class="lbl">Varme</span><span>Juli er varmt – ha alltid vann til hundene. La Ferme Saint-Siméon har kjølige parkomgivelser.</span></div>
-  <div class="info-row"><span class="lbl">Marked</span><span>Torsdags- og lørdagsmarked på Ste-Catherine-plassen. Perfekt for lokale oster og charcuterie.</span></div>
+<div class="section"><h2>ℹ️ Praktisk</h2>
+<div class="info-row"><span class="label">Parkering</span><span>Hotellet har privat parkering (avklar på forhånd). Parking Bassin du Centre ved Quai de la Tour er det mest sentrale.</span></div>
+<div class="info-row"><span class="label">Tips</span><span>Kom til Vieux Bassin tidlig morgen (07–09) før turistene — helt magisk. Kveldstur langs havnen er et must.</span></div>
+<div class="info-row"><span class="label">Sykkel</span><span>E-sykkel­utleie fra turistkontoret (€25–35/dag). Pont de Normandie er gratis for syklister og gående.</span></div>
 </div>
 </div>
 <script>
 delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
-  iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-  shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'
-});
+L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});
 const m=L.map('map',{scrollWheelZoom:false});
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
-const places=[
-  [49.4178,0.2331,'La Ferme Saint-Siméon','Overnatting'],
-  [49.4187,0.2322,'Vieux Bassin','Gammel havn – ikonisk'],
-  [49.4188,0.2328,'Le Vieux Honfleur','Havneutsikt, hunder ok'],
-  [49.4173,0.2340,'Âtre','Topprangert, hundrevennlig'],
-  [49.4188,0.2336,'Huitre Brûlée','8 rue Brûlée – sjømat-perle'],
-  [49.4170,0.2282,'Plage du Butin','Strand med utsikt Pont de Normandie'],
-];
-places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
-m.setView([49.4185,0.233],14);
-</script>
-</body>
-</html>
+const places=[  [49.4229,0.2311,"Réglisse et Pain d'Épices",'Overnatting'],
+  [49.4187,0.2325,'Vieux Bassin','Den gamle havnen'],
+  [49.4195,0.2323,'Église Sainte-Catherine','Trebygd kirke'],
+  [49.421,0.234,'Musée Boudin','Impressionisme'],
+  [49.43,0.222,'Mont-Joli panorama','Utsikt over Honfleur'],];
+places.forEach(([lat,lng,name,note])=>{L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${name}</strong><br><small>${note}</small>`);});
+m.setView([49.4229,0.2311],14);
+</script></body></html>

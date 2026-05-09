@@ -3,94 +3,116 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Strasbourg, Frankrike – Reisebok 2026</title>
+<title>Strasbourg – Reisebok</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
-:root{
-  --ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;
-  --accent:#e07b1f;--accent-soft:#fef0e0;
-  --sky:#0097c4;--sky-soft:#e0f4fb;
-  --warn:#d4950a;--warn-soft:#fff8e1;
-  --green:#1e9654;--green-soft:#e4f7ec;
-  --sun:#f5c842;--sun-soft:#fffbea;
-  --r:18px
-}
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;--accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;--warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e4f7ec;--r:18px}
 *{box-sizing:border-box}html{font-size:16px}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}a{color:var(--sky)}
-.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
-.back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}.topbar h1{margin:0;font-size:16px;font-weight:700;flex:1}
-.hero-map{height:240px;width:100%}.content{padding:16px;max-width:760px;margin:0 auto}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--sky)}
+.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px}
+.back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}
+.topbar h1{margin:0;font-size:17px;font-weight:700}
+.hero-map{height:240px;width:100%}
+.content{padding:16px;max-width:760px;margin:0 auto}
 .section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
 h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
-.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--sky-soft);color:var(--sky);margin:0 4px 4px 0}
-.tag.g{background:#eaf5ee;color:#2d7a4f}.tag.b{background:#e6f0fb;color:#185fa5}.tag.w{background:#fdf3e1;color:#c17f24}
-.place{border-bottom:1px solid var(--line);padding:12px 0}.place:last-child{border-bottom:none;padding-bottom:0}
-.place-title{font-size:15px;font-weight:700;margin:0 0 3px;color:#0d2e45}
-.stars{font-size:12px;color:#c17f24;margin-left:6px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
+.tag.green{background:#eaf5ee;color:#2d7a4f}.tag.blue{background:#e6f0fb;color:#185fa5}
+.place{border-bottom:1px solid var(--line);padding:12px 0}
+.place:last-child{border-bottom:none;padding-bottom:0}
+.place-title{font-size:15px;font-weight:700;margin:0 0 4px}
 .place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
-.place-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.plink{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--sky-soft);color:var(--sky);text-decoration:none}
-.plink.m{background:#e6f0fb;color:#185fa5}.plink.g{background:#eaf5ee;color:#2d7a4f}
-.info-row{display:flex;gap:8px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}.info-row:last-child{border-bottom:none}
-.lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
-@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:320px}}
+.place-links{display:flex;gap:8px;flex-wrap:wrap}
+.plink{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none}
+.plink.map{background:#e6f0fb;color:#185fa5}
+.info-row{display:flex;gap:8px;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line)}
+.info-row:last-child{border-bottom:none}
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:300px}}
 </style>
 </head>
 <body>
-<div class="topbar"><a class="back" href="../">← Tilbake</a><h1>Strasbourg, Frankrike</h1></div>
+<div class="topbar">
+  <a class="back" href="../">← Reisebok</a>
+  <h1>Strasbourg, Frankrike</h1>
+</div>
 <div id="map" class="hero-map"></div>
 <div class="content">
-
-<div class="section"><h2>Om Strasbourg</h2>
-<p style="font-size:14px;color:var(--muted);margin:0 0 10px">Strasbourg er Alsaces storby og sete for EU-parlamentet. Gamlebyen (Grande Île) er UNESCO-listet og en av Europas vakreste – dominert av den flamboyante gotiske katedralen fra 1439 og det eventyrlige Petite France-kvarteret med halvtimberhus speilet i kanaler. Maten er en fantastisk fusjon av tysk og fransk tradisjon – tarte flambée, choucroute og baeckeoffe er uunngåelige.</p>
-<div><span class="tag">UNESCO Grande Île</span><span class="tag">EU-parlamentet</span><span class="tag">Alsatisk mat</span><span class="tag g">Hundrevennlig</span></div></div>
-
-<div class="section"><h2>🍽 Restauranter</h2>
-<div class="place"><p class="place-title">Au Pont du Corbeau <span class="stars">★★★★</span></p>
-<p class="place-desc">Klassisk winstub ved elven i sentrum – familieeiet i over 30 år. Sjekket duker, trebiskutt og tradisjonelt alsatisk interiør. Hjemmelaget mat fra lokale produsenter: choucroute garnie, presskopf, grillet skinke, fleischkieschle og spätzle. En av byens mest autentiske winstuber. Nabo til det berømte Tanneurs-huset i Petite France.</p>
-<div><span class="tag">Familierestaurant 30 år</span><span class="tag">Klassisk winstub</span><span class="tag">Autentisk alsatisk</span></div>
-<div class="place-links"><a class="plink" href="https://pontducorbeau.fr" target="_blank">🌐 pontducorbeau.fr</a><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Au+Pont+du+Corbeau+Strasbourg" target="_blank">📍 Kart</a></div></div>
-
-<div class="place"><p class="place-title">Brasserie Les Haras <span class="stars">★★★★★</span></p>
-<p class="place-desc">Prisbelønnet brasserie i det tidligere nasjonale stuteriet fra 1700-tallet – en imponerende bygning med spektakulær indre gård. Kvalitets-brasserie med franske klassikere og alsatiske spesialiteter. Sommerkveldene i den indre gården er magiske. En av Strasbourgs mest særpregede restauranter.</p>
-<div><span class="tag">18. århundre stuteri</span><span class="tag">Prisbelønnet</span><span class="tag">Indre gård om sommeren</span></div>
-<div class="place-links"><a class="plink" href="https://les-haras-brasserie.com" target="_blank">🌐 les-haras-brasserie.com</a><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Brasserie+Les+Haras+Strasbourg" target="_blank">📍 Kart</a></div></div>
-
-<div class="place"><p class="place-title">Aux Armes de Strasbourg</p>
-<p class="place-desc">Rustikk brasserie ved Place Gutenberg med sjarmerende terrasse. Tradisjonell alsatisk mat – baeckeoffe og choucroute – og kylling med Riesling. En av de få restauranter som holder åpent etter kl. 14 og serverer til sent. Hyggelig og jovial atmosfære. Hunder tillatt ute.</p>
-<div><span class="tag">Place Gutenberg</span><span class="tag">Åpent sent</span><span class="tag g">Hunder ute</span></div>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Aux+Armes+de+Strasbourg" target="_blank">📍 Kart</a></div></div>
-
-<div class="place"><p class="place-title">Le Tire-Bouchon</p>
-<p class="place-desc">God winstub nær katedralen. Diskret og ekte – ikke en turistfelle. Tradisjonell alsatisk mat: kongelig choucroute, svineskank med munster-ost, laks på surkål. Mange private rom som kan bookes. Anbefalt av lokale.</p>
-<div><span class="tag">Nær katedralen</span><span class="tag">Ekte winstub</span></div>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Le+Tire-Bouchon+Strasbourg" target="_blank">📍 Kart</a></div></div></div>
-
-<div class="section"><h2>🐾 Opplevelser med hund</h2>
-<div class="place"><p class="place-title">Petite France kveldstur</p>
-<p class="place-desc">Det berømmeligste kvarteret i Strasbourg – halvtimberhus, kanaler og broene Ponts Couverts (dekket broer). Kveldslyset reflekteres i kanalene og stemningen er uforglemmelig. Hunder tillatt overalt ute. Gå langs kanalene mot Barrage Vauban for panoramautsikt.</p>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Petite+France+Strasbourg" target="_blank">📍 Kart</a></div></div>
-<div class="place"><p class="place-title">Strasbourg-katedralen</p>
-<p class="place-desc">En av verdens vakreste gotiske katedraler, bygget i rødlig sandstein. Hunder ikke tillatt inne, men plassen foran er enorm og hundrevennlig. Katedralen er synlig fra nesten overalt i gamlebyen.</p>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Cathedrale+Notre+Dame+Strasbourg" target="_blank">📍 Kart</a></div></div>
-<div class="place"><p class="place-title">Parc de l'Orangerie</p>
-<p class="place-desc">Strasbourgs vakreste park (5 min med tram fra sentrum). Stor, flat og perfekt for hundetur. Opprinelig anlagt for Marie-Antoinette. Innsjø, fontener og storcirkel i parken. Friere enn gamlebyen for hundene.</p>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Parc+de+l+Orangerie+Strasbourg" target="_blank">📍 Kart</a></div></div></div>
-
-<div class="section"><h2>ℹ️ Praktisk</h2>
-<div class="info-row"><span class="lbl">Mat</span><span>Prøv tarte flambée (flammkueche) – tynt sprøtt deig med crème fraîche, løk og bacon. Alsaces svar på pizza.</span></div>
-<div class="info-row"><span class="lbl">Vin</span><span>Riesling og Gewürztraminer fra Alsace. Vinbutikkene rundt Place Kléber er gode.</span></div>
-<div class="info-row"><span class="lbl">Hunder</span><span>Strasbourg er hundrevennlig. De fleste uteserveringer godtar hunder.</span></div></div>
+<div class="section">
+  <h2>Om Strasbourg</h2>
+  <p style="font-size:14px;color:var(--muted);margin:0 0 10px">Alsaces vakre hovedstad — halvt fransk, halvt tysk — har Europas vakre gammelbyen Grande Île som UNESCO-verdensarv. Strålende katedraler, kanalene i Petite France og en av Frankrikes mest sykkel­vennlige byer. Her ankommer dere fra Trier.</p>
+  <div><span class="taggreen">UNESCO Grande Île</span><span class="taggreen">Sykkelvennlig by nr.1 i Frankrike</span><span class="tag">Alsatisk mat</span><span class="tag">Europaparla­mentet</span></div>
+</div>
+<div class="section">
+  <h2>🚶 Gåturer &amp; attraksjoner</h2>
+  <div class="place">
+    <p class="place-title">Petite France</p>
+    <p class="place-desc">Den mest pittoreske bydelen i Strasbourg — brosteins­gater, halvtimberhus fra 1500-tallet og kanaler med refleksjoner. Vandre rolig langs kanalene i Rue du Bain-aux-Plantes — Strasbourgs vakreste gate. Morgen og kveld er aller best.</p>
+    <div><span class="tag">Gratis</span><span class="tag">UNESCO</span><span class="tag">Kanalene</span></div>
+    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Petite+France+Strasbourg" target="_blank">📍 Kart</a></div>
+  </div>
+  <div class="place">
+    <p class="place-title">Strasbourg-katedralen (Notre-Dame)</p>
+    <p class="place-desc">En av de mest imponerende gotiske katedralene i Europa — bygget fra 1015 til 1439. Den astronomiske klokken (1843) er særlig berømt og fortsatt i gang. Klatre tårnet (142 m) for spektakulær utsikt over Alsace og Schwarzwald.</p>
+    <div><span class="tag">Gotisk mesterverk</span><span class="tag">Astronomisk klokke</span><span class="tag">Tårnutsikt</span></div>
+    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Cathédrale+Notre-Dame+Strasbourg" target="_blank">📍 Kart</a></div>
+  </div>
+  <div class="place">
+    <p class="place-title">Musée Alsacien</p>
+    <p class="place-desc">Et unikt museum som utforsker Alsaces kultur og tradisjoner gjennom klær og gjenstander fra dagliglivet. Fascinerende for å forstå regionens særegne blanding av fransk og tysk.</p>
+    <div><span class="tag">Museum</span><span class="tag">Alsace-kultur</span></div>
+    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Musée+Alsacien+Strasbourg" target="_blank">📍 Kart</a></div>
+  </div>
+  <div class="place">
+    <p class="place-title">🚲 Sykkel langs kanalene (10–15 km)</p>
+    <p class="place-desc">Strasbourg er Frankrikes mest sykkel­vennlige by med dedikerte sykkelveier overalt. Sykkel fra Petite France langs kanalene til Orangerie-parken og Europaparlamentet (~8 km tur-retur). Flat, skiltet og enkel.</p>
+    <div><span class="tag green">Sykkeltur ~10–15 km</span><span class="tag">Flat</span><span class="tag">Skiltet</span></div>
+    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Parc+de+l+Orangerie+Strasbourg" target="_blank">📍 Orangerie-parken</a></div>
+  </div>
+</div>
+<div class="section">
+  <h2>🍽 Restauranter &amp; kafeer</h2>
+  <div class="place">
+    <p class="place-title">La Corde à Linge</p>
+    <p class="place-desc">Populær restaurant rett ved kanalene i Petite France med uteservering ved vannet. Alsatisk mat — tarte flambée (flammkuchen), choucroute og spesialiteter. Nydelig beliggenhet.</p>
+    <div><span class="tag">Kanalutsikt</span><span class="tag">Alsatisk mat</span><span class="tag">Tarte flambée</span></div>
+    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=La+Corde+à+Linge+Strasbourg" target="_blank">📍 Kart</a></div>
+  </div>
+  <div class="place">
+    <p class="place-title">Maison des Tanneurs</p>
+    <p class="place-desc">Historisk restaurant fra 1572 i Petite France — en av Strasbourgs mest kjente steder. Sjarmerende timberhus, god choucroute og alsatisk kjøkken i autentiske omgivelser.</p>
+    <div><span class="tag">Fra 1572</span><span class="tag">Historisk</span><span class="tag">Choucroute</span></div>
+    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Maison+des+Tanneurs+Strasbourg" target="_blank">📍 Kart</a></div>
+  </div>
+</div>
+<div class="section">
+  <h2>ℹ️ Praktisk</h2>
+  <div class="info-row"><span class="label">Parkering</span><span>Sofitel er midt i sentrum — avklar parkering direkte med hotellet.</span></div>
+  <div class="info-row"><span class="label">Sykkel</span><span>Vélhop-sykkelutleie fra €5/dag. Sykkel er den beste måten å oppleve Strasbourg på.</span></div>
+  <div class="info-row"><span class="label">Tips</span><span>Petite France er vakrest tidlig morgen eller sen kveld. Katedralen er gratis — klatre tårnet for utsikten.</span></div>
+</div>
 </div>
 <script>
 delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+  iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+  shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'
+});
 const m=L.map('map',{scrollWheelZoom:false});
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
-const places=[[48.573,7.752,'Sofitel Grande Île','Overnatting'],[48.581,7.751,'Cathedrale Notre Dame','Gotisk katedrale'],[48.578,7.745,'Petite France','Kanalkvarter – ikonisk'],[48.580,7.746,'Au Pont du Corbeau','Klassisk winstub'],[48.582,7.747,'Brasserie Les Haras','Prisbelønnet brasserie'],[48.592,7.765,'Parc de l'Orangerie','Stor hundevennlig park']];
-places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
-m.setView([48.580,7.750],14);
+const places=[
+  [48.583,7.745,'Sofitel Strasbourg','Overnatting'],
+  [48.58,7.74,'Petite France','Kanalene og halvtimberhus'],
+  [48.582,7.751,'Strasbourg-katedralen','Gotisk mesterverk'],
+  [48.578,7.739,'La Corde à Linge','Kanalutsikt og alsatisk mat'],
+];
+places.forEach(([lat,lng,name,note])=>{
+  L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${name}</strong><br><small>${note}</small>`);
+});
+m.setView([48.583,7.745],14);
 </script>
 </body>
 </html>

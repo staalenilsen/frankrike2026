@@ -1,130 +1,79 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-<meta charset="UTF-8"/>
+<!DOCTYPE html><html lang="no"><head><meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Amboise, Loire – Reisebok 2026</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<style>
-:root{
-  --ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;
-  --accent:#e07b1f;--accent-soft:#fef0e0;
-  --sky:#0097c4;--sky-soft:#e0f4fb;
-  --warn:#d4950a;--warn-soft:#fff8e1;
-  --green:#1e9654;--green-soft:#e4f7ec;
-  --sun:#f5c842;--sun-soft:#fffbea;
-  --r:18px
-}
+<title>Amboise</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><style>
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;--accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;--warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e4f7ec;--r:18px}
 *{box-sizing:border-box}html{font-size:16px}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
 a{color:var(--sky)}
-.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px}
 .back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}
-.topbar h1{margin:0;font-size:16px;font-weight:700;flex:1}
+.topbar h1{margin:0;font-size:17px;font-weight:700}
 .hero-map{height:240px;width:100%}
 .content{padding:16px;max-width:760px;margin:0 auto}
 .section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
 h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
-.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--sky-soft);color:var(--sky);margin:0 4px 4px 0}
-.tag.g{background:#eaf5ee;color:#2d7a4f}
-.tag.b{background:#e6f0fb;color:#185fa5}
-.tag.w{background:#fdf3e1;color:#c17f24}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
+.tag.green{background:#eaf5ee;color:#2d7a4f}
 .place{border-bottom:1px solid var(--line);padding:12px 0}
 .place:last-child{border-bottom:none;padding-bottom:0}
-.place-title{font-size:15px;font-weight:700;margin:0 0 3px;display:flex;align-items:center;gap:8px}
-.stars{font-size:12px;color:#c17f24}
+.place-title{font-size:15px;font-weight:700;margin:0 0 4px}
 .place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
-.place-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.plink{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none;display:inline-block}
-.plink.m{background:#e6f0fb;color:#185fa5}
-.plink.g{background:#eaf5ee;color:#2d7a4f}
-.info-row{display:flex;gap:8px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}
+.place-links{display:flex;gap:8px;flex-wrap:wrap}
+.plink{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none}
+.plink.map{background:#e6f0fb;color:#185fa5}
+.info-row{display:flex;gap:8px;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line)}
 .info-row:last-child{border-bottom:none}
-.lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
-.img-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
-.img-ph{background:var(--accent-soft);border-radius:10px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:28px}
-@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:320px}}
-</style>
-</head>
-<body>
-<div class="topbar">
-  <a class="back" href="../">← Tilbake</a>
-  <h1>Amboise, Loire</h1>
-</div>
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:300px}}
+</style></head><body>
+<div class="topbar"><a class="back" href="../">← Reisebok</a><h1>Amboise, Loiredalen</h1></div>
 <div id="map" class="hero-map"></div>
 <div class="content">
-
-<div class="section">
-  <h2>Om Amboise</h2>
-  <p style="font-size:14px;color:var(--muted);margin:0 0 10px">Amboise er en charmerende Loire-dalbyen der Leonardo da Vinci tilbrakte sine siste år. Det majestetiske Château d'Amboise troner over by og elv. Loire à Vélo er Europas fineste familiepykkelsykkelrute – trafikkseparert og langs elva hele veien. Sjarmerende smørrebrød-kafeer og bistroer fyller de brosteinsbelagte gatene.</p>
-  <div><span class="tag">Leonardo da Vinci</span><span class="tag">Loire à Vélo</span><span class="tag">Château d'Amboise</span><span class="tag g">Sykkel med hund</span></div>
+<div class="section"><h2>Om Amboise</h2>
+<p style="font-size:14px;color:var(--muted);margin:0 0 10px">En av Loiradalens vakreste byer — med det kongelige slottet tronende over elven og Leonardo da Vincis siste hjem bare 500 m unna. Loire à Vélo er en av Europas beste sykkel­ruter og starter rett utenfor hotellet.</p>
+<div><span class="tag">Da Vincis siste hjem</span><span class="tag">Kongeslott</span><span class="tag">Loire à Vélo</span><span class="tag">Renessanse­by</span></div></div>
+<div class="section"><h2>🚶 Gåturer & attraksjoner</h2>
+<div class="place"><p class="place-title">Château du Clos Lucé — Da Vincis siste hjem</p>
+<p class="place-desc">Leonardo da Vinci bodde her fra 1516 til han døde i 1519, invitert av kong Frans I. Nå et fascinerende museum med rekonstruksjoner av hans oppfinnelser og maskineri. Strålende hage med skulpturer. En av turens fineste museumsopplevelser. Plan 2 timer.</p>
+<div><span class="tag">Da Vincis siste hjem</span><span class="tag">Unikt museum</span><span class="tag">Vakker hage</span></div>
+<div class="place-links" style="margin-top:8px">
+<a class="plink" href="https://www.vinci-closluce.com" target="_blank">🌐 vinci-closluce.com</a>
+<a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Château+du+Clos+Lucé+Amboise" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Château Royal d'Amboise</p>
+<p class="place-desc">Det kongelige slottet som dominerer Amboise fra en klippe over Loire. Vakker gotisk og renessanse-arkitektur, imponerende tårn og panorama­utsikt over Loire-dalen. Leonardo da Vinci er begravet i Chapelle Saint-Hubert på slottsplatået.</p>
+<div><span class="tag">Kongeslott</span><span class="tag">Da Vincis grav</span><span class="tag">Panoramautsikt</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Château+Royal+d+Amboise" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">🚲 Loire à Vélo — Chenonceaux (~20 km tur-retur)</p>
+<p class="place-desc">En av Europas beste sykkelruter: flat trafikkseparert stri langs Loire til det magiske Château de Chenonceaux — slottet som spenner over elven Cher. Ruten er nydelig, godt merket og uten bakker. En av turens store sykkelopplevelser.</p>
+<div><span class="tag green">Sykkeltur ~20 km tur-retur</span><span class="tag">Flat</span><span class="tag">Chenonceaux</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Loire+à+Vélo+Amboise+Chenonceaux" target="_blank">📍 Kart</a></div></div>
 </div>
-
-<div class="section">
-  <h2>🍽 Restauranter</h2>
-  <div class="place">
-    <p class="place-title">L'Épicerie <span class="stars">★★★★</span></p>
-    <p class="place-desc">Uformelt og hyggelig bistro i gamlebyen. Enkelt interiør, god kvalitet og rimelige priser. Lokale råvarer og daglige spesialiteter. Populær blant lokale – godt tegn. Terrasse i gatene. Hunder ok ute.</p>
-    <div><span class="tag">Uformelt</span><span class="tag g">Hunder ute</span><span class="tag">Lokale råvarer</span></div>
-    <div class="place-links">
-      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=L+Epicerie+Amboise" target="_blank">📍 Kart</a>
-    </div>
-  </div>
-  <div class="place">
-    <p class="place-title">Chez Bruno</p>
-    <p class="place-desc">Koselig bistro med god Loire-mat – ferskvannsfisk, rillettes de Tours og lokale oster. Enkelt og ekte. Uteservering mot gaten. Rimelig priset.</p>
-    <div><span class="tag">Loire-mat</span><span class="tag">Rillettes</span></div>
-    <div class="place-links">
-      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Chez+Bruno+Amboise" target="_blank">📍 Kart</a>
-    </div>
-  </div>
+<div class="section"><h2>🍽 Restauranter & kafeer</h2>
+<div class="place"><p class="place-title">Restaurant l'Ilôt</p>
+<p class="place-desc">Kreativ og hyggelig restaurant med åpent kjøkken i Amboise sentrum. Google Rating 4.7 — en av byens beste. Inventive gourmet­retter i uformelt miljø. Reservasjon anbefalt.</p>
+<div><span class="tag">Gourmet</span><span class="tag">Åpent kjøkken</span><span class="tag">★★★★★</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Restaurant+l+Ilôt+Amboise" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Kaféer ved Loire</p>
+<p class="place-desc">Amboise har flere hyggelige kafeer langs elvebredden med utsikt mot slottet. Strålende til en lunsj eller en kaffepause etter sykkelturen. Spesielt flott i solnedgangen.</p>
+<div><span class="tag">Elve­utsikt</span><span class="tag">Kafé</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=kafé+Loire+Amboise+terrasse" target="_blank">📍 Kart</a></div></div>
 </div>
-
-<div class="section">
-  <h2>🚲 Loire à Vélo</h2>
-  <div class="place">
-    <p class="place-title">Amboise–Chaumont sykkeltur (20 km t/r)</p>
-    <p class="place-desc">Loire à Vélo er 100% trafikkseparert fra Amboise og begge veier langs elva. Sykkel vestover mot Chaumont-sur-Loire (10 km) der et fantastisk haganlegg ved Loire-elven venter. Flat, asfaltert og hundrevennlig hele veien. Returner langs samme rute eller den andre elvebredd.</p>
-    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/dir/?api=1&origin=Amboise&destination=Chaumont-sur-Loire&travelmode=bicycling" target="_blank">📍 Sykkelrute</a></div>
-  </div>
-</div>
-
-<div class="section">
-  <h2>🐾 Opplevelser</h2>
-  <div class="place">
-    <p class="place-title">Château d'Amboise</p>
-    <p class="place-desc">Imponerende kongeslott over Loire – bebodd av franske konger i 300 år. Hunder ikke tillatt inne. Men uteplatformen med utsikten over Loire og by er helt fantastisk og hunder tillatt der.</p>
-    <div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Château+d+Amboise" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Clos Lucé – Leonardo da Vincis siste hjem</p>
-    <p class="place-desc">Renessanse-slottet der Leonardo da Vinci tilbrakte sine tre siste år (1516-1519) invitert av kong Frans I. Museet viser hans skisser og rekonstruksjoner av oppfinnelsene hans. Hunder i hagen. Bare 500 m fra Château d'Amboise.</p>
-    <div class="place-links">
-      <a class="plink" href="https://www.vinci-closluce.com" target="_blank">🌐 vinci-closluce.com</a>
-      <a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Clos+Lucé+Amboise" target="_blank">📍 Kart</a>
-    </div>
-  </div>
+<div class="section"><h2>ℹ️ Praktisk</h2>
+<div class="info-row"><span class="label">Sykkel</span><span>Loire Bikes i sentrum er det beste sykkelutleiestedet. Loire à Vélo-ruten starter rett fra hotellet.</span></div>
+<div class="info-row"><span class="label">Amboise City Pass</span><span>Inkluderer Clos Lucé, slottet og andre attraksjoner — god verdi om dere vil se flere ting.</span></div>
+<div class="info-row"><span class="label">Tips</span><span>Clos Lucé om morgenen (færre besøkende), slottet om ettermiddagen for best lys over Loire.</span></div>
 </div>
 </div>
 <script>
 delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
-  iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-  shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'
-});
+L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});
 const m=L.map('map',{scrollWheelZoom:false});
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
-const places=[
-  [47.413,0.989,'La Maison Rabelais','Overnatting'],
-  [47.413,0.982,'Château d'Amboise','Kongeslott – Loire-utsikt'],
-  [47.410,0.982,'Clos Lucé','Da Vincis siste hjem'],
-  [47.415,0.988,'L'Épicerie','God uformell bistro'],
-  [47.494,1.181,'Chaumont-sur-Loire','10 km vest på Loire à Vélo'],
-];
-places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
-m.setView([47.413,0.985],14);
-</script>
-</body>
-</html>
+const places=[  [47.413,0.989,'La Maison Rabelais','Overnatting'],
+  [47.41,0.99,'Château du Clos Lucé','Da Vincis siste hjem'],
+  [47.412,0.982,"Château Royal d'Amboise",'Kongeslott — panoramautsikt'],
+  [47.325,1.07,'Chenonceaux','Elves\xadlottet ~10 km sør'],];
+places.forEach(([lat,lng,name,note])=>{L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${name}</strong><br><small>${note}</small>`);});
+m.setView([47.413,0.989],13);
+</script></body></html>

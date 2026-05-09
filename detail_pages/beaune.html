@@ -1,98 +1,80 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-<meta charset="UTF-8"/>
+<!DOCTYPE html><html lang="no"><head><meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Beaune, Burgund – Reisebok 2026</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<style>
-:root{
-  --ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;
-  --accent:#e07b1f;--accent-soft:#fef0e0;
-  --sky:#0097c4;--sky-soft:#e0f4fb;
-  --warn:#d4950a;--warn-soft:#fff8e1;
-  --green:#1e9654;--green-soft:#e4f7ec;
-  --sun:#f5c842;--sun-soft:#fffbea;
-  --r:18px
-}
+<title>Beaune</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><style>
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;--accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;--warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e4f7ec;--r:18px}
 *{box-sizing:border-box}html{font-size:16px}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}a{color:var(--sky)}
-.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
-.back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}.topbar h1{margin:0;font-size:16px;font-weight:700;flex:1}
-.hero-map{height:240px;width:100%}.content{padding:16px;max-width:760px;margin:0 auto}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--sky)}
+.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px}
+.back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}
+.topbar h1{margin:0;font-size:17px;font-weight:700}
+.hero-map{height:240px;width:100%}
+.content{padding:16px;max-width:760px;margin:0 auto}
 .section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
 h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
-.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--sky-soft);color:var(--sky);margin:0 4px 4px 0}
-.tag.g{background:#eaf5ee;color:#2d7a4f}.tag.b{background:#e6f0fb;color:#185fa5}.tag.w{background:#fdf3e1;color:#c17f24}
-.place{border-bottom:1px solid var(--line);padding:12px 0}.place:last-child{border-bottom:none;padding-bottom:0}
-.place-title{font-size:15px;font-weight:700;margin:0 0 3px;color:#0d2e45}
-.stars{font-size:12px;color:#c17f24;margin-left:6px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
+.tag.green{background:#eaf5ee;color:#2d7a4f}
+.place{border-bottom:1px solid var(--line);padding:12px 0}
+.place:last-child{border-bottom:none;padding-bottom:0}
+.place-title{font-size:15px;font-weight:700;margin:0 0 4px}
 .place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
-.place-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.plink{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--sky-soft);color:var(--sky);text-decoration:none}
-.plink.m{background:#e6f0fb;color:#185fa5}.plink.g{background:#eaf5ee;color:#2d7a4f}
-.info-row{display:flex;gap:8px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}.info-row:last-child{border-bottom:none}
-.lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
-@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:320px}}
-</style>
-</head>
-<body>
-<div class="topbar"><a class="back" href="../">← Tilbake</a><h1>Beaune, Burgund</h1></div>
+.place-links{display:flex;gap:8px;flex-wrap:wrap}
+.plink{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none}
+.plink.map{background:#e6f0fb;color:#185fa5}
+.info-row{display:flex;gap:8px;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line)}
+.info-row:last-child{border-bottom:none}
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:300px}}
+</style></head><body>
+<div class="topbar"><a class="back" href="../">← Reisebok</a><h1>Beaune, Burgund</h1></div>
 <div id="map" class="hero-map"></div>
 <div class="content">
-
 <div class="section"><h2>Om Beaune</h2>
-<p style="font-size:14px;color:var(--muted);margin:0 0 10px">Beaune er Burgunds vinhovedstad og en av verdens viktigste mat- og vindestinasjon. Den middelaldervegomgitte gamlebyen er dominert av de fargerike taketplater på Hôtel-Dieu (1443) og omkranset av verdens berømmeligste vinmarker. Pinot Noir fra Côte de Nuits og Chardonnay fra Côte de Beaune er verdensstandarder. Sykling gjennom vinmarkene er en opplevelse for livet.</p>
-<div><span class="tag">Vinhovedstad</span><span class="tag">Hôtel-Dieu 1443</span><span class="tag">Pinot Noir & Chardonnay</span><span class="tag g">Sykkel i vinmarkene</span></div></div>
-
-<div class="section"><h2>🍽 Restauranter</h2>
-<div class="place"><p class="place-title">Maison du Colombier <span class="stars">★★★★★</span></p>
-<p class="place-desc">En av Beaunes beste vinbarer, beskrevet som "the only rival to L'Arche des Vins." Fantastisk vinliste fra Burgundy og Frankrike. Terrassen med utsikt mot Notre-Dame-kirken er uslåelig på en sommerkveld. Mat er enkel og god – charcuterie og osteplanker. Svært populær blant lokale vinbønder.</p>
-<div><span class="tag">Beste vinliste i Beaune</span><span class="tag">Kirke-utsikt</span><span class="tag">Sommerkveldsterrasse</span></div>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Maison+du+Colombier+Beaune" target="_blank">📍 Kart</a></div></div>
-
-<div class="place"><p class="place-title">Le Conty</p>
-<p class="place-desc">Sjarmerende brasserie med en av byens fineste terrasser – åpent og trivelig. Sesongbaserte menyer, klassisk burgundisk mat (escargots, boeuf bourguignon, œufs en meurette). Kokk Laurent Parra fra en lokal gourmetfamilie. God verdi. Eksplisitt hundrevennlig – gjestene nevner at hunder fikk vann og rester.</p>
-<div><span class="tag">Fin terrasse</span><span class="tag g">Eksplisitt hundrevennlig</span><span class="tag">Klassisk Burgund</span></div>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Le+Conty+Beaune" target="_blank">📍 Kart</a></div></div>
-
-<div class="place"><p class="place-title">Le Petit Paradis</p>
-<p class="place-desc">Gjemt på Rue Paradis bak gangstrøket – "excellent menus at various prices with a la carte from fresh produce." Anbefalt av lokale som en skjult perle. Smal og intim, reservér tidlig – kun noen bord og de fylles raskt. Kun åpent til lunsj og tidlig middag noen dager.</p>
-<div><span class="tag">Skjult perle</span><span class="tag">Ferskt og lokalt</span><span class="tag b">Reservasjon essensielt</span></div>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Le+Petit+Paradis+Beaune" target="_blank">📍 Kart</a></div></div>
-
-<div class="place"><p class="place-title">Le Comptoir des Tontons</p>
-<p class="place-desc">Populær bistro med liten dagsmeny som skifter. Elegan men ikke stiv atmosfære. Mange lokale kommer her, og kokk Paquita er kjent for å være konsistent og kreativ. Bra sted for en god middag uten for mye pomp.</p>
-<div><span class="tag">Dagsmenyen</span><span class="tag">Lokalt favoritt</span></div>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Le+Comptoir+des+Tontons+Beaune" target="_blank">📍 Kart</a></div></div></div>
-
-<div class="section"><h2>🚲 Sykkel i vinmarkene</h2>
-<div class="place"><p class="place-title">Côte de Beaune sykkelrute</p>
-<p class="place-desc">Fra Beaune sentrum er det bare 10 minutters sykkeltur til de verdens dyreste vinmarkene – Montrachet, Meursault og Pommard. Asfalterte veier mellom vinrader, flatt terreng og helt stille på morgen/kveld. Hunder på line er standard. En opplevelse utenom det vanlige.</p>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/dir/?api=1&origin=Beaune&destination=Meursault,Frankrike&travelmode=bicycling" target="_blank">📍 Sykkelrute til Meursault</a></div></div>
-<div class="place"><p class="place-title">Vinsmaking – Albert Bichot</p>
-<p class="place-desc">Et av Burgunds store vinhus med besøkssenter i Beaune sentrum. Guidede smakerbolker uten forbestilling. God introduksjon til vinregionen. Andre alternativer: Bouchard Père & Fils og Joseph Drouhin.</p>
-<div class="place-links"><a class="plink" href="https://www.albert-bichot.com" target="_blank">🌐 albert-bichot.com</a><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Albert+Bichot+Beaune" target="_blank">📍 Kart</a></div></div></div>
-
-<div class="section"><h2>🐾 Opplevelser med hund</h2>
-<div class="place"><p class="place-title">Hôtel-Dieu og ramparts-vandring</p>
-<p class="place-desc">Gå rundt de middelalderske byvollene (Ramparts) – rolig, flat og flott med hunder. Hôtel-Dieu fra 1443 med sine fargerike tegltakplater er utenfor på plassen – hunder kan se fasaden. Markedet i gamlebyen på lørdag morgen er hundrevennlig og fantastisk.</p>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Hôtel-Dieu+Beaune" target="_blank">📍 Kart</a></div></div></div>
-
+<p style="font-size:14px;color:var(--muted);margin:0 0 10px">Burgundys vinhovedstad — en levende middelalder­by omgitt av Frankrikes mest prestisjefylte vinmarker. Gå gjennom vinmarkene, sykkel langs Voie des Vignes, og opplev Hospices de Beaune — en av Frankrikes flotteste gotiske bygninger.</p>
+<div><span class="tag">Burgundy vinhovedstad</span><span class="tag">Voie des Vignes</span><span class="tag">Hospices de Beaune</span><span class="tag">Pommard og Meursault</span></div></div>
+<div class="section"><h2>🚶 Gåturer & attraksjoner</h2>
+<div class="place"><p class="place-title">Hospices de Beaune (Hôtel-Dieu)</p>
+<p class="place-desc">En av Frankrikes vakreste gotiske bygninger — middelalder­sykehus fra 1443 med det ikoniske glasur­tilelagte taket i burgundisk mønster. Nå museum. En absolutt «must». Plan inn minst 1,5 time.</p>
+<div><span class="tag">UNESCO-monument</span><span class="tag">Gotisk mesterverk</span><span class="tag">Inngangspenger</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Hospices+de+Beaune" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Cité des Climats et Vins de Bourgogne</p>
+<p class="place-desc">Nytt (2023) interaktivt museum om Burgunds vinkultur og UNESCO-klas­sifiserte «Climats» — de unike vinmarkene. Moderne og imponerende utstillinger. Godt supplement til en vintur i vinmarkene.</p>
+<div><span class="tag">Nytt museum 2023</span><span class="tag">Vin-UNESCO</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Cité+des+Climats+Beaune" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">🚲 Voie des Vignes — Pommard og Meursault (~15 km)</p>
+<p class="place-desc">Beaunes skjønneste sykkelrute: gjennom prestisje-vinmarkene til Pommard, Volnay og Meursault. Mesteparten flat, noen få bakker. Veldig godt merket. Fantastisk natur med steinmurer og Pinot Noir-ranker så langt øyet ser. Ta en vin-smak underveis.</p>
+<div><span class="tag green">Sykkeltur ~15 km</span><span class="tag">Pommard · Volnay · Meursault</span><span class="tag">Lett–middels</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Voie+des+Vignes+Beaune+cycling" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Gamlebyen og Rempartene</p>
+<p class="place-desc">Beaunes middelaldermurer (2,5 km) er delvis bevart og vakker å gå langs. Gamlebyens smale gater med delikatessebutikker, ost­handlere og vin­kjøpmenn gjør en enkel vandring til en gourmet-opplevelse. Lørdag: strålende marked.</p>
+<div><span class="tag">Gratis</span><span class="tag">Gamleby</span><span class="tag">Lørdag-marked</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Beaune+Altstadt+Remparts" target="_blank">📍 Kart</a></div></div>
+</div>
+<div class="section"><h2>🍽 Restauranter & vinbarer</h2>
+<div class="place"><p class="place-title">Caves Madeleine</p>
+<p class="place-desc">Regnes av mange som Beaunes beste restaurant — rustikk, konvivial og med utmerket 3-retters lunsjmeny (~€29). Lokale råvarer og kreative retter. Reservasjon sterkt anbefalt.</p>
+<div><span class="tag">Beste i Beaune</span><span class="tag">Lunsj €29</span><span class="tag">Reservasjon</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Caves+Madeleine+Beaune" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Loiseau des Vignes</p>
+<p class="place-desc">Bistro-avdeling av den legendariske Bernard Loiseau-familien. Mer uformelt enn søster­restauranten, men utmerket mat og vinliste med fokus på Burgund.</p>
+<div><span class="tag">Bistro</span><span class="tag">Bernard Loiseau-familien</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Loiseau+des+Vignes+Beaune" target="_blank">📍 Kart</a></div></div>
+</div>
 <div class="section"><h2>ℹ️ Praktisk</h2>
-<div class="info-row"><span class="lbl">Vin</span><span>Kjøp direkte fra vinbøndene langs Côte de Beaune. Prisene er langt lavere enn i butikk.</span></div>
-<div class="info-row"><span class="lbl">Marked</span><span>Lørdag morgen er Beaunes ukemarked i gamlebyen – frokostvarer, ost og lokal mat av ypperste slag.</span></div>
-<div class="info-row"><span class="lbl">Hunder</span><span>Beaune er hundrevennlig. Vinmarkene er private – hold hunden på line og hold dere til veiene.</span></div></div>
+<div class="info-row"><span class="label">Sykkel</span><span>Sykkelutleie fra Bourgogne Vélo Evasion, rett ved sykkelruten ut til vinmarkene. E-sykkel anbefales for Voie des Vignes.</span></div>
+<div class="info-row"><span class="label">Lørdag</span><span>Strålende marked i sentrum — lokale oster, smør, brød og vin. Ikke gå glipp av det om dere er der lørdag morgen.</span></div>
+</div>
 </div>
 <script>
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});
 const m=L.map('map',{scrollWheelZoom:false});
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
-const places=[[47.025,4.836,'ibis La Ferme aux Vins','Overnatting'],[47.030,4.838,'Hôtel-Dieu','Fargerike middelaldertakplater'],[47.027,4.839,'Maison du Colombier','Beste vinliste – kirke-utsikt'],[47.029,4.836,'Le Conty','Terrasse, hundrevennlig'],[47.028,4.837,'Le Petit Paradis','Skjult perle – reservér'],[46.980,4.832,'Meursault','10 km – verdensklasse hvitvin'],[47.005,4.780,'Pommard','Sykling i vinmarkene']];
-places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
-m.setView([47.027,4.837],13);
-</script>
-</body>
-</html>
+const places=[  [47.021,4.836,'Hôtel Henry II','Overnatting'],
+  [47.02,4.838,'Hospices de Beaune','Gotisk mesterverk'],
+  [47.018,4.839,'Cité des Climats','Nytt vinmuseum 2023'],
+  [47.002,4.799,'Pommard','Vinlandsbytur med sykkel'],];
+places.forEach(([lat,lng,name,note])=>{L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${name}</strong><br><small>${note}</small>`);});
+m.setView([47.021,4.836],13);
+</script></body></html>

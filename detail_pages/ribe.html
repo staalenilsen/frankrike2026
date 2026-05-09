@@ -7,15 +7,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
-:root{
-  --ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;
-  --accent:#e07b1f;--accent-soft:#fef0e0;
-  --sky:#0097c4;--sky-soft:#e0f4fb;
-  --warn:#d4950a;--warn-soft:#fff8e1;
-  --green:#1e9654;--green-soft:#e4f7ec;
-  --sun:#f5c842;--sun-soft:#fffbea;
-  --r:18px
-}
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;--accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;--warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e4f7ec;--r:18px}
 *{box-sizing:border-box}html{font-size:16px}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
 a{color:var(--sky)}
@@ -28,8 +20,7 @@ a{color:var(--sky)}
 h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
 h3{margin:0 0 6px;font-size:14px;font-weight:700}
 .tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
-.tag.green{background:#eaf5ee;color:#2d7a4f}
-.tag.blue{background:#e6f0fb;color:#185fa5}
+.tag.green{background:#eaf5ee;color:#2d7a4f}.tag.blue{background:#e6f0fb;color:#185fa5}
 .place{border-bottom:1px solid var(--line);padding:12px 0}
 .place:last-child{border-bottom:none;padding-bottom:0}
 .place-title{font-size:15px;font-weight:700;margin:0 0 4px}
@@ -54,12 +45,73 @@ h3{margin:0 0 6px;font-size:14px;font-weight:700}
 
 <div class="section">
   <h2>Om Ribe</h2>
-  <p style="font-size:14px;color:var(--muted);margin:0 0 10px">Ribe er Danmarks – og Skandinavias – eldste by, grunnlagt av vikingene rundt år 700 e.Kr. Det kompakte middelalderbyen er enestående bevart med krokete brosteinsgate, halvtimberhus fra 1600-tallet, og en imponerende romansk domkirke som dominerer horisonten over de flate Vadehavsmarskene.</p>
+  <p style="font-size:14px;color:var(--muted);margin:0 0 10px">Skandinavias eldste by, grunnlagt rundt år 700 e.Kr. Det kompakte middelalderbyen er enestående bevart med brosteinsgate, halvtimberhus og en imponerende romansk domkirke. Her ankommer dere etter Color Line-fergen — en perfekt myk start på reisen.</p>
   <div>
-    <span class="tag">Danmarkes eldste by</span>
+    <span class="tag">Skandinavias eldste by</span>
     <span class="tag">UNESCO Vadehavet</span>
     <span class="tag">Viking-historie</span>
-    <span class="tag green">Hundrevennlig</span>
+    <span class="tag green">Kompakt og gåvennlig</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🚶 Gåturer &amp; attraksjoner</h2>
+
+  <div class="place">
+    <p class="place-title">Ribe Domkirke — klatre tårnet</p>
+    <p class="place-desc">Den romanske katedralen fra 1100-tallet er Ribes storstolte landemerke. Klatr det 52 meter høye tårnet for panoramautsikt over byen og Vadehavsmarsken — en av de fineste utsiktene i Danmark. Koster noen kroner, men er absolutt verdt det. Inne: mosaikker av Carl-Henning Pedersen og middelalderfresker.</p>
+    <div><span class="tag">Tårnutsikt</span><span class="tag">Romansk arkitektur</span><span class="tag">Inngangspenger</span></div>
+    <div class="place-links" style="margin-top:8px">
+      <a class="plink" href="https://ribedomkirke.dk" target="_blank">🌐 ribedomkirke.dk</a>
+      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribe+Domkirke" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">HEX! Heksejaktmuseet</p>
+    <p class="place-desc">Et unikt og fascinerende museum om hekseprosessene på 1500- og 1600-tallet. Personlige historier og gode filmer gjør dette til noe særegent. Maren Spliid — Danmarks mest kjente «heks» — ble henrettet her i Ribe. Tar ca. 1–1,5 time. Høyt anbefalt av besøkende.</p>
+    <div><span class="tag">Særegent museum</span><span class="tag">Lokal historie</span><span class="tag">Ca. 1,5 t</span></div>
+    <div class="place-links" style="margin-top:8px">
+      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=HEX+Museum+Witch+Hunt+Ribe" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">Nattvakten — gratis kveldstur</p>
+    <p class="place-desc">En av Ribes mest sjarmerende opplevelser: en gratis guidet tur med Nattvakten gjennom middelalderbyen kl. 20:00 (mai–oktober, juli/aug også kl. 22). Varighet ca. 45 min. Starter foran Weis Stue. Vakten synger og forteller historier om gamlebyen — en perfekt avslutning på kvelden.</p>
+    <div><span class="tag">Gratis</span><span class="tag">Mai–oktober kl 20:00</span><span class="tag">45 min</span></div>
+    <div class="place-links" style="margin-top:8px">
+      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Weis+Stue+Ribe" target="_blank">📍 Start: Weis Stue</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">St. Catharinae Kloster</p>
+    <p class="place-desc">Et av de best bevarte middelalderklosterene i Danmark — stille, fredelig klostertorg som frakter deg tilbake til middelalderen. Gratis å besøke gårdsplassen. Om sommeren holdes konserter her. En skjult perle i Ribe.</p>
+    <div><span class="tag">Gratis</span><span class="tag">Fredfull atmosfære</span><span class="tag">Middelaldergård</span></div>
+    <div class="place-links" style="margin-top:8px">
+      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Sct+Catharinae+Kirke+Ribe" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">🚲 Sykkel til Ribe VikingeCenter (~3 km)</p>
+    <p class="place-desc">En lett og hyggelig sykkeltur på 3 km sørover til den rekonstruerte vikinglandsbyen. Åpent om sommeren med «vikinger» i tradisjonelle roller — markeds­plass, håndverkere og havn fra år 710–980. En av de beste vikingeopplevelsene i Skandinavia. Regn med 2–3 timer.</p>
+    <div><span class="tag green">Sykkeltur 3 km</span><span class="tag">Viking-historie</span><span class="tag">Inngangspenger</span></div>
+    <div class="place-links" style="margin-top:8px">
+      <a class="plink" href="https://ribevikingecenter.dk" target="_blank">🌐 ribevikingecenter.dk</a>
+      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribe+VikingeCenter" target="_blank">📍 Kart</a>
+    </div>
+  </div>
+
+  <div class="place">
+    <p class="place-title">🚲 Vadehavscentret (~5 km)</p>
+    <p class="place-desc">UNESCO-senter for Vadehavet — Nordsøens unike tidevannsnatur. Spennende utstillinger om trekkfugler, sel og tidevannet. Fra senteret kan man ta «Mandøbussen» — en traktorbuss som kjører ut til øya Mandø over havbunnen ved lavvann. En helt spesiell opplevelse.</p>
+    <div><span class="tag green">Sykkeltur 5 km</span><span class="tag">UNESCO</span><span class="tag">Vadehavet</span></div>
+    <div class="place-links" style="margin-top:8px">
+      <a class="plink" href="https://vadehavscentret.dk" target="_blank">🌐 vadehavscentret.dk</a>
+      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Vadehavscentret+Vester+Vedsted" target="_blank">📍 Kart</a>
+    </div>
   </div>
 </div>
 
@@ -67,28 +119,29 @@ h3{margin:0 0 6px;font-size:14px;font-weight:700}
   <h2>🍽 Restauranter &amp; kafeer</h2>
 
   <div class="place">
-    <p class="place-title">Restaurant Sælhunden</p>
-    <p class="place-desc">Koselig restaurantklassiker ved Ribe Å med sjarmerende uteservering rett ved vannet. Hjemmelaget mat med lokale spesialiteter – prøv den lokale "bakskuld" (tørket flyndre) og fersk fisk. Vennlig og personlig service. Bestill bord for kvelden.</p>
-    <div><span class="tag">Uteservering ved elva</span><span class="tag green">Hundrevennlig terrasse</span><span class="tag">Middels pris</span></div>
+    <p class="place-title">Kolvig</p>
+    <p class="place-desc">Fin dining i et gammelt sjømannsskur med utsikt over Ribe Å. Kreative retter med lokale råvarer, imponerende vinliste. En av Ribes beste restauranter. Reservasjon anbefales.</p>
+    <div><span class="tag">Fine dining</span><span class="tag">Havneutsikt</span><span class="tag">Reservasjon</span></div>
     <div class="place-links" style="margin-top:8px">
-      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Restaurant+Sælhunden+Ribe" target="_blank">📍 Kart</a>
+      <a class="plink" href="https://kolvig.dk" target="_blank">🌐 kolvig.dk</a>
+      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Kolvig+Ribe" target="_blank">📍 Kart</a>
     </div>
   </div>
 
   <div class="place">
-    <p class="place-title">Kolvig – by Skovmose</p>
-    <p class="place-desc">Fin dining i et gammelt sjømannsskur med havn-utsikt ved Ribe Å. Spektakulær beliggenhet, imponerende vinliste og kreative retter som marengs-pannekake og braisert kalv. En av Ribes beste restauranter. Reservasjon anbefales på det sterkeste.</p>
-    <div><span class="tag">Fine dining</span><span class="tag">Havneutsikt</span><span class="tag">Utmerket vin</span></div>
+    <p class="place-title">Weis Stue</p>
+    <p class="place-desc">Danmarks eldste vertshus — halvtimberhus fra 1600-tallet, ett av de eldste bevarte i landet. Klassisk dansk mat i historiske omgivelser. Perfekt for et glass og dansk tradisjonskjøkken.</p>
+    <div><span class="tag">Historisk</span><span class="tag">Dansk klassiker</span><span class="tag">Fra 1600-tallet</span></div>
     <div class="place-links" style="margin-top:8px">
-      <a class="plink" href="https://kolvig.dk" target="_blank">🌐 kolvig.dk</a>
-      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Kolvig+by+Skovmose+Ribe" target="_blank">📍 Kart</a>
+      <a class="plink" href="https://www.weisstue.dk" target="_blank">🌐 weisstue.dk</a>
+      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Weis+Stue+Ribe" target="_blank">📍 Kart</a>
     </div>
   </div>
 
   <div class="place">
     <p class="place-title">Restaurant Backhaus</p>
-    <p class="place-desc">Hyggelig sted med flott uteservering bak restauranten. Spesialiserer seg på danske spesialiteter som smørrebrød og varmretter (laks med fløtesaus, svamp-saus). Uformelt og imøtekommende – kan gjerne dukke opp uten reservasjon. God verdi for pengene.</p>
-    <div><span class="tag">Uformelt</span><span class="tag">Dansk mat</span><span class="tag green">Hundrevennlig ute</span><span class="tag">God verdi</span></div>
+    <p class="place-desc">Hyggelig sted med flott uteservering. Smørrebrød og danske varmretter — laks, svampe-saus og godt øl. Uformelt og imøtekommende. God verdi for pengene.</p>
+    <div><span class="tag">Uformelt</span><span class="tag">Dansk mat</span><span class="tag">God verdi</span></div>
     <div class="place-links" style="margin-top:8px">
       <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Restaurant+Backhaus+Ribe" target="_blank">📍 Kart</a>
     </div>
@@ -96,56 +149,19 @@ h3{margin:0 0 6px;font-size:14px;font-weight:700}
 
   <div class="place">
     <p class="place-title">Quedens Gaard – kafé</p>
-    <p class="place-desc">Sjarmerende kafé i en gammel kjøpmannsbolig midt i gamlebyen. Lokal fiskemat, burgere og omeletter i herlige omgivelser. Perfekt for en lunsj eller ettermiddagspause. Hyggelig gårdsplass ute om sommeren.</p>
+    <p class="place-desc">Sjarmerende kafé i en gammel kjøpmannsbolig midt i gamlebyen. Lokal fiskemat, burgere og omeletter. Perfekt for en lunsj-pause i rolige omgivelser med gårdsplass.</p>
     <div><span class="tag">Kafé</span><span class="tag">Gamlebyen</span><span class="tag">Lunsj</span></div>
     <div class="place-links" style="margin-top:8px">
       <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Quedens+Gaard+Ribe" target="_blank">📍 Kart</a>
-    </div>
-  </div>
-
-  <div class="place">
-    <p class="place-title">Weis Stue</p>
-    <p class="place-desc">Danmarks eldste vertshus – et halvtimberhus fra 1600-tallet, ett av de eldste bevarte husene i landet. Klassisk dansk mat i historiske omgivelser. Atmosfæren alene er verdt et besøk. Be om et av bordene mot gaten.</p>
-    <div><span class="tag">Historisk</span><span class="tag">Dansk klassiker</span></div>
-    <div class="place-links" style="margin-top:8px">
-      <a class="plink" href="https://www.weisstue.dk" target="_blank">🌐 weisstue.dk</a>
-      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Weis+Stue+Ribe" target="_blank">📍 Kart</a>
-    </div>
-  </div>
-</div>
-
-<div class="section">
-  <h2>🐾 Opplevelser med hund</h2>
-  <div class="place">
-    <p class="place-title">Ribe Å – kveldstur</p>
-    <p class="place-desc">Elvene rundt Ribe er perfekte for hundetur. Gå langs Ribe Å fra domkirkeplassen og sørover – flat, stille og fantastisk stemningsfull i kveldslyset. Mange benker og grøntareal.</p>
-    <div class="place-links" style="margin-top:8px">
-      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribe+Å+vandrerute" target="_blank">📍 Kart</a>
-    </div>
-  </div>
-  <div class="place">
-    <p class="place-title">Ribe Domkirke og torget</p>
-    <p class="place-desc">Gå rundt den romanske domkirken (grunnlagt 1150-tallet) og Torvet. Spektakulær arkitektur og fantastisk atmosfære. Hunder tillatt på plassen og i parken rundt kirken. Klatrer dere tårnet (52 meter) må hundene vente nede – men utsikten er enestående.</p>
-    <div class="place-links" style="margin-top:8px">
-      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribe+Domkirke" target="_blank">📍 Kart</a>
-      <a class="plink" href="https://ribedomkirke.dk" target="_blank">🌐 ribedomkirke.dk</a>
-    </div>
-  </div>
-  <div class="place">
-    <p class="place-title">Ribe VikingeCenter</p>
-    <p class="place-desc">5 km utenfor byen. Rekonstruert vikinglandsby med levende historieformidling. Åpent om sommeren med "vikinger" i tradisjonelle roller. Hunder tillatt i utearealet. Kafé på stedet.</p>
-    <div class="place-links" style="margin-top:8px">
-      <a class="plink" href="https://ribevikingecenter.dk" target="_blank">🌐 ribevikingecenter.dk</a>
-      <a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribe+VikingeCenter" target="_blank">📍 Kart</a>
     </div>
   </div>
 </div>
 
 <div class="section">
   <h2>ℹ️ Praktisk</h2>
-  <div class="info-row"><span class="label">Parkering</span><span>Ingen parkering på Hotel Dagmar. P-north: Saltgade 21 · P-south: Tøndervej. Privat plass 50 m fra hotellet, DKK 200/natt (forhåndsbestilt).</span></div>
-  <div class="info-row"><span class="label">Hunder</span><span>Meget hundrevennlig by. Alle uteserveringer pleier å ta imot hunder. Be om vannskål.</span></div>
-  <div class="info-row"><span class="label">Sykkel</span><span>Ribe er sykkelflatt. Ribe Å-ruten er fin med hund.</span></div>
+  <div class="info-row"><span class="label">Parkering</span><span>Hotell Dagmar: privat plass 50 m unna, DKK 200/natt (forhåndsbestilt). Saltgade 21 og Tøndervej.</span></div>
+  <div class="info-row"><span class="label">Sykkel</span><span>Ribe er helt flatt. Sykkel langs Ribe Å og ut til VikingeCenter (3 km) og Vadehavscentret (5 km) er enkelt og nydelig.</span></div>
+  <div class="info-row"><span class="label">Tips</span><span>Kom deg opp i domkirkens tårn og se solnedgangen over Vadehavsmarsken. Og ikke gå glipp av Nattvakten kl. 20.</span></div>
 </div>
 
 </div>
@@ -160,16 +176,17 @@ const m=L.map('map',{scrollWheelZoom:false});
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
 const places=[
   [55.3247,8.7735,'Hotel Dagmar','Overnatting'],
-  [55.3243,8.7733,'Ribe Domkirke','UNESCO-middelalder'],
-  [55.3238,8.7695,'Restaurant Sælhunden','Uteservering ved elva'],
-  [55.3252,8.7722,'Kolvig – by Skovmose','Fine dining, havneutsikt'],
+  [55.3243,8.7733,'Ribe Domkirke','Klatre tårnet — panoramautsikt'],
+  [55.3236,8.7709,'HEX! Heksejaktmuseet','Fascinerende særegent museum'],
+  [55.3238,8.7695,'Kolvig','Fine dining, havn-utsikt'],
   [55.3245,8.7730,'Weis Stue','Danmarks eldste vertshus'],
-  [55.3248,8.7736,'Restaurant Backhaus','Uformelt, hundrevennlig'],
+  [55.3252,8.7722,'St. Catharinae Kloster','Fredfull middelalder-torg'],
+  [55.321,8.773,'Ribe VikingeCenter','Vikinglandsby 3 km sør'],
 ];
 places.forEach(([lat,lng,name,note])=>{
   L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${name}</strong><br><small>${note}</small>`);
 });
-m.setView([55.3245,8.773],15);
+m.setView([55.3245,8.773],14);
 </script>
 </body>
 </html>

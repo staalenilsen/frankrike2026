@@ -1,88 +1,88 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-<meta charset="UTF-8"/>
+<!DOCTYPE html><html lang="no"><head><meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Lübeck, Tyskland – Reisebok 2026</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<style>
-:root{
-  --ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;
-  --accent:#e07b1f;--accent-soft:#fef0e0;
-  --sky:#0097c4;--sky-soft:#e0f4fb;
-  --warn:#d4950a;--warn-soft:#fff8e1;
-  --green:#1e9654;--green-soft:#e4f7ec;
-  --sun:#f5c842;--sun-soft:#fffbea;
-  --r:18px
-}
+<title>Lübeck</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><style>
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;--accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;--warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e4f7ec;--r:18px}
 *{box-sizing:border-box}html{font-size:16px}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}a{color:var(--sky)}
-.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
-.back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}.topbar h1{margin:0;font-size:16px;font-weight:700;flex:1}
-.hero-map{height:240px;width:100%}.content{padding:16px;max-width:760px;margin:0 auto}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--sky)}
+.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px}
+.back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}
+.topbar h1{margin:0;font-size:17px;font-weight:700}
+.hero-map{height:240px;width:100%}
+.content{padding:16px;max-width:760px;margin:0 auto}
 .section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
 h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
-.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--sky-soft);color:var(--sky);margin:0 4px 4px 0}
-.tag.g{background:#eaf5ee;color:#2d7a4f}.tag.b{background:#e6f0fb;color:#185fa5}.tag.w{background:#fdf3e1;color:#c17f24}
-.place{border-bottom:1px solid var(--line);padding:12px 0}.place:last-child{border-bottom:none;padding-bottom:0}
-.place-title{font-size:15px;font-weight:700;margin:0 0 3px;color:#0d2e45}
-.stars{font-size:12px;color:#c17f24;margin-left:6px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
+.tag.green{background:#eaf5ee;color:#2d7a4f}
+.place{border-bottom:1px solid var(--line);padding:12px 0}
+.place:last-child{border-bottom:none;padding-bottom:0}
+.place-title{font-size:15px;font-weight:700;margin:0 0 4px}
 .place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
-.place-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-.plink{font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--sky-soft);color:var(--sky);text-decoration:none}
-.plink.m{background:#e6f0fb;color:#185fa5}.plink.g{background:#eaf5ee;color:#2d7a4f}
-.info-row{display:flex;gap:8px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}.info-row:last-child{border-bottom:none}
-.lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
-@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:320px}}
-</style>
-</head>
-<body>
-<div class="topbar"><a class="back" href="../">← Tilbake</a><h1>Lübeck, Tyskland</h1></div>
+.place-links{display:flex;gap:8px;flex-wrap:wrap}
+.plink{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none}
+.plink.map{background:#e6f0fb;color:#185fa5}
+.info-row{display:flex;gap:8px;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line)}
+.info-row:last-child{border-bottom:none}
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:300px}}
+</style></head><body>
+<div class="topbar"><a class="back" href="../">← Reisebok</a><h1>Lübeck, Tyskland</h1></div>
 <div id="map" class="hero-map"></div>
 <div class="content">
-
 <div class="section"><h2>Om Lübeck</h2>
-<p style="font-size:14px;color:var(--muted);margin:0 0 10px">Lübeck er UNESCO-listet (1987) og kjent som "Hanseatenes dronning" – en gang Nord-Europas mektigste handelsby. Gamlebyen er på en øy omgitt av elven Trave. Holstentor (1464) er et av Tysklands mest ikoniske middelalderbyporter. Marcipan fra Lübeck er verdensberømt. Thomas Mann og Willy Brandt vokste opp her. NB: Dag 13 er turens lengste etappe (650 km) – kom tidlig og prioriter hvile.</p>
-<div><span class="tag">UNESCO Verdensarv</span><span class="tag">Holstentor</span><span class="tag">Lübeck marcipan</span><span class="tag w">⚠️ Lang kjøredag – hvil</span></div></div>
-
-<div class="section"><h2>🍽 Restauranter</h2>
-<div class="place"><p class="place-title">Schiffergesellschaft <span class="stars">★★★★</span></p>
-<p class="place-desc">En av Lübecks mest berømmelige restauranter – grundlagt i 1535 som seilernes guild-hall. Imponerende historisk interiør med skipmodeller og gammelt tre. Nordtysk og skandinavisk inspirert mat – fisk, sjømat og lokale spesialiteter. Svært populær – <strong>ring på forhånd og bekreft hundvennlighet.</strong> Lett tilgjengelig fra sentrum.</p>
-<div><span class="tag">Grunnlagt 1535</span><span class="tag">Historisk interiør</span><span class="tag b">Ring – bekreft hunder</span></div>
-<div class="place-links"><a class="plink" href="https://schiffergesellschaft.de" target="_blank">🌐 schiffergesellschaft.de</a><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Schiffergesellschaft+Lübeck" target="_blank">📍 Kart</a></div></div>
-
-<div class="place"><p class="place-title">Brauberger zu Lübeck</p>
-<p class="place-desc">Husbryggeri og restaurant i det historiske sentrum. Eget brygget øl, nordtysk mat – schnitzel, fisk, surkål. Uteservering i sommersesongen. Hyggelig og uformelt – passer godt etter en lang kjøretur som dag 13.</p>
-<div><span class="tag">Husbryggeri</span><span class="tag">Uformelt</span><span class="tag g">Hunder ute</span></div>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Brauberger+Lübeck" target="_blank">📍 Kart</a></div></div>
-
-<div class="place"><p class="place-title">Marcipanbutikker – Niederegger</p>
-<p class="place-desc">Lübecks berømmeligste marcipan siden 1806. Café og butikk på Breite Strasse. Prøv ekte Lübecker Marzipan i kaffen eller som dessert. En obligatorisk Lübeck-opplevelse. Kjøp med hjem.</p>
-<div><span class="tag">Siden 1806</span><span class="tag">Lübeck-marcipan</span></div>
-<div class="place-links"><a class="plink" href="https://www.niederegger.de" target="_blank">🌐 niederegger.de</a><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Niederegger+Lübeck" target="_blank">📍 Kart</a></div></div></div>
-
-<div class="section"><h2>🐾 Opplevelser (kort – lang kjøredag)</h2>
-<div class="place"><p class="place-title">Holstentor og Marienkirche</p>
-<p class="place-desc">Det ikoniske dobbeltårnet Holstentor (1464) er bare noen minutter fra hotellet. Gå langs Traveelven forbi det majestetiske byportene. Marienkirche med de ødelagte klokkene som ligger der de falt under bombing i 1942 er et gripende syn. Hunder tillatt utenfor alle monumentene.</p>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Holstentor+Lübeck" target="_blank">📍 Kart</a></div></div>
-<div class="place"><p class="place-title">Trave-elven-promenade</p>
-<p class="place-desc">Kort, fin tur langs Trave fra hotellet mot Holstentor og sentrum. Flat og hundrevennlig. Perfekt morgentur før den lange dagsetappen hjem til Aalborg.</p>
-<div class="place-links"><a class="plink m" href="https://www.google.com/maps/search/?api=1&query=Trave+Lübeck+promenade" target="_blank">📍 Kart</a></div></div></div>
-
-<div class="section"><h2>ℹ️ Praktisk – prioriter hvile!</h2>
-<div class="info-row"><span class="lbl">Dag 13</span><span>Turens lengste etappe (650 km, 2 ladestopp). Start tidlig fra Honfleur. Ankom Lübeck sent – god middag og tidlig i seng.</span></div>
-<div class="info-row"><span class="lbl">Neste dag</span><span>Dag 14: 430 km til Aalborg (Aabenraa-ladestopp). Morgentur med hundene, tidlig avreise.</span></div>
-<div class="info-row"><span class="lbl">Marcipan</span><span>Kjøp med hjem fra Niederegger – en klassisk gave.</span></div></div>
+<p style="font-size:14px;color:var(--muted);margin:0 0 10px">UNESCO-listede hansebyen Lübeck er en av Nord-Europas vakreste middelalder­byer. Holstentor-porten, sju kirketårn over gamlebyen, Salz­speicher og marzipan — Lübeck er en by som virkelig setter seg fast.</p>
+<div><span class="tag">UNESCO Verdensarv</span><span class="tag">Holstentor</span><span class="tag">Marzipan-by</span><span class="tag">Hanseatiск by</span></div></div>
+<div class="section"><h2>🚶 Gåturer & attraksjoner</h2>
+<div class="place"><p class="place-title">Holstentor og Salzspeicher</p>
+<p class="place-desc">Det ikoniske middelalder­porten fra 1464 — Lübecks symbol. Inngang til gamlebyen. Lille museum inne i tårnene om hansabyens makt og handel. Rett ved siden av: seks dramatiske Salzspeicher (saltlagre) fra 1579–1745 langs elven.</p>
+<div><span class="tag">UNESCO</span><span class="tag">Museum</span><span class="tag">Gratis utsiden</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Holstentor+Lübeck" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">European Hansemuseum</p>
+<p class="place-desc">Verdens største museum dedikert til Hansaforbundet — den mektige handelsforbundet som dominerte Nord-Europa fra 1200-tallet. Imponerende interaktivt museum med RFID-brikke som tilpasser innholdet til din interesser. Plan 2–3 timer.</p>
+<div><span class="tag">Verdensklasse museum</span><span class="tag">Interaktivt</span><span class="tag">RFID-guide</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Europäisches+Hansemuseum+Lübeck" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">An der Obertrave — elvepromenaden</p>
+<p class="place-desc">Lübecks vakreste 720 meter lange promenade langs elven Trave — lined med fantastiske gabled­hus. Sev passasjene mellom husene — de leder til skjulte gårdsplasser. Café­terrasser om sommeren. En av turens roligste og vakreste gåturer.</p>
+<div><span class="tag">Gratis</span><span class="tag">Promenade</span><span class="tag">Skjulte gårdsplasser</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=An+der+Obertrave+Lübeck" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">St. Marien­kirche og utsiktsplattformen (Petrikirche)</p>
+<p class="place-desc">St. Marienkirche (1200-tallet) er hansaarkitekturens mester­verk og forbildet for dusinvis av kirker rundt Øster­sjøen. Like ved: Petrikirche har en heis opp til utsikts­plattform 50 m over gamlebyen — flott panorama uten å klatre trapper.</p>
+<div><span class="tag">Gotisk hansaarkitektur</span><span class="tag">Heis til utsikt</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=St+Marienkirche+Lübeck" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">🚲 Sykkel langs Wakenitz (~14 km)</p>
+<p class="place-desc">En vill og vakker rundtur langs elven Wakenitz nord for gamlebyen — natur­reservat med fugler og urørt natur. Enkel loop på ~14 km. Kontrasten til den historiske gamlebyen er slående.</p>
+<div><span class="tag green">Sykkeltur ~14 km</span><span class="tag">Natur­reservat</span><span class="tag">Fugle­liv</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Wakenitz+Lübeck+sykkelsti" target="_blank">📍 Kart</a></div></div>
+</div>
+<div class="section"><h2>🍽 Restauranter & marzipan</h2>
+<div class="place"><p class="place-title">Niederegger Marzipan-butikken</p>
+<p class="place-desc">Lübeck er marzipan-verdenshovedstaden, og Niederegger (1806) er legendarisk. Kjøp mandelmarzipan og kos dere med en kaffekopp i kaféen i andre etasje. Et must-besøk selv om man ikke er glad i marzipan.</p>
+<div><span class="tag">Siden 1806</span><span class="tag">Kafé 2. etg.</span><span class="tag">Lübeck-tradisjon</span></div>
+<div class="place-links" style="margin-top:8px">
+<a class="plink" href="https://www.niederegger.de" target="_blank">🌐 niederegger.de</a>
+<a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Niederegger+Marzipan+Lübeck" target="_blank">📍 Kart</a></div></div>
+<div class="place"><p class="place-title">Kjøkkenet og gamlebyens restauranter</p>
+<p class="place-desc">Lübeck har gode fiskerestauranter i gamlebyen. Prøv Lübecker Schwalbennester (lokal spesialitet) og fersk Øster­sjøfisk. Rolige restauranter langs Trave-elven er spesielt anbefalte.</p>
+<div><span class="tag">Fisk</span><span class="tag">Hansatradisjon</span></div>
+<div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=restaurant+Lübeck+Altstadt+fisk" target="_blank">📍 Kart</a></div></div>
+</div>
+<div class="section"><h2>ℹ️ Praktisk</h2>
+<div class="info-row"><span class="label">Parkering</span><span>LIHO: Gate-parkering gratis utenfor. Garasje €20/dag maks 5m/1,85m høyde (forhåndsbestill). Gamlebyen er kompakt og lett å gå.</span></div>
+<div class="info-row"><span class="label">Tips</span><span>Gamlebyen er en øy — gå hele perimeteret langs elven for den beste totalopplevelsen. Hansemuseet er verd minst 2 timer.</span></div>
+</div>
 </div>
 <script>
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});
 const m=L.map('map',{scrollWheelZoom:false});
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
-const places=[[53.866,10.686,'Park Inn Radisson','Overnatting'],[53.865,10.682,'Holstentor','Ikonisk middelalder-byport'],[53.869,10.690,'Schiffergesellschaft','Grunnlagt 1535'],[53.867,10.686,'Niederegger','Lübeck marcipan siden 1806'],[53.867,10.686,'Marienkirche','Krig-klokker på gulvet'],[53.864,10.693,'Brauberger zu Lübeck','Husbryggeri, uformelt']];
-places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
-m.setView([53.866,10.687],14);
-</script>
-</body>
-</html>
+const places=[  [53.866,10.686,'LIHO Lübeck','Overnatting'],
+  [53.866,10.68,'Holstentor','Ikonisk middelalder\xadport'],
+  [53.867,10.682,'Salzspeicher','Saltlagre fra 1579'],
+  [53.869,10.685,'St. Marienkirche','Hansaarkitekturens mesterverk'],
+  [53.867,10.687,'Niederegger Marzipan','Siden 1806'],
+  [53.868,10.688,'European Hansemuseum','Verdensklasse museum'],];
+places.forEach(([lat,lng,name,note])=>{L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${name}</strong><br><small>${note}</small>`);});
+m.setView([53.866,10.686],14);
+</script></body></html>
