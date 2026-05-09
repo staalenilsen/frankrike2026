@@ -1418,7 +1418,7 @@ document.addEventListener("click",function(e){
 document.addEventListener("DOMContentLoaded",function(){
   console.log("DOMContentLoaded kjørt, PLACES:", typeof PLACES, "ROUTES:", typeof ROUTES);
   document.querySelectorAll("[data-show-address]").forEach(function(el){
-    var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.address;
+    var p=PLACES[el.getAttribute("data-place")];if(p){var mq=p.mapsQ||encodeURIComponent(p.address);el.innerHTML=p.address+'<br><button style="font-size:11px" '+'onclick="var p2=PLACES[\''+el.getAttribute("data-place")+'\'];if(p2){window.location.href=\'https://www.google.com/maps/search/?api=1&query=\'+p2.mapsQ;}">📍 Åpne i kart</button>';}
   });
   document.querySelectorAll("[data-show-name]").forEach(function(el){
     var p=PLACES[el.getAttribute("data-place")];if(p)el.textContent=p.name;
