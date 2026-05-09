@@ -301,8 +301,8 @@
         <thead><tr><th>Dag</th><th>Stopp</th><th>Km</th></tr></thead>
         <tbody>
           <tr><td><a href="#dag1" class="day-link">Søn 12. jul</a></td><td>Ribe<span class="booked-badge">✓ Booket</span></td><td>220+ferge</td></tr>
-          <tr class="wr"><td><a href="#dag2" class="day-link">Man 13. jul</a></td><td>Celle</td><td>430 ⚡</td></tr>
-          <tr class="wr"><td><a href="#dag3" class="day-link">Tir 14. jul</a></td><td>Trier</td><td>500 ⚡</td></tr>
+          <tr class="wr"><td><a href="#dag2" class="day-link">Man 13. jul</a></td><td>Celle<span class="booked-badge">&#x2713; Booket</span></td><td>430 ⚡</td></tr>
+          <tr class="wr"><td><a href="#dag3" class="day-link">Tir 14. jul</a></td><td>Trier<span class="booked-badge">&#x2713; Booket</span></td><td>500 ⚡</td></tr>
           <tr><td><a href="#dag4" class="day-link">Ons 15. jul</a></td><td>Strasbourg</td><td>220</td></tr>
           <tr><td><a href="#dag5" class="day-link">Tor 16. jul</a></td><td>Mittelwihr<span class="booked-badge">✓ Booket</span></td><td>80</td></tr>
           <tr><td><a href="#dag6" class="day-link">Fre 17. jul</a></td><td>Mittelwihr<span class="booked-badge">✓ Booket</span></td><td>0 🚲</td></tr>
@@ -314,7 +314,7 @@
           <tr><td><a href="#dag12" class="day-link">Ons 29. jul</a></td><td>Honfleur<span class="booked-badge">✓ Booket</span></td><td>320</td></tr>
           <tr class="wr"><td><a href="#dag13" class="day-link">Tor 30. jul</a></td><td>Utrecht<span class="booked-badge">✓ Booket</span></td><td>~400</td></tr>
           <tr class="wr"><td><a href="#dag14" class="day-link">Fre 31. jul</a></td><td>Lübeck<span class="booked-badge">✓ Booket</span></td><td>~450 ⚡</td></tr>
-          <tr><td><a href="#dag15" class="day-link">Lør 1. aug</a></td><td>Aalborg</td><td>425</td></tr>
+          <tr><td><a href="#dag15" class="day-link">Lør 1. aug</a></td><td>Koppes Mølle B&amp;B, Borup<span class="booked-badge">&#x2713; Booket</span></td><td>425</td></tr>
           <tr><td><a href="#dag16" class="day-link">Søn 2. aug</a></td><td>Arendal 🏡</td><td>⛴ 12:15</td></tr>
         </tbody>
       </table>
@@ -472,15 +472,16 @@
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
       <div style="padding:0 16px 0">
         <div class="info-rows">
-          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Althoff Hotel Fürstenhof Celle</span></div>
+          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Althoff Hotel Fürstenhof Celle &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
           <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">Hannoversche Str. 55/56, 29221 Celle</span></div>
-          <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+4951412010">+49 5141 2010</a></span></div>
-          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.althoffcollection.com" target="_blank">althoffcollection.com</a></span></div>
-          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Bekreft parkering og lading direkte</span></div>
+          <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+495141201140">+49 5141 201140</a></span></div>
+          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://althoffhotels.com" target="_blank">althoffhotels.com</a></span></div>
+          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Frokost €32/pers · Middag €60/pers (ikke inkl.)</span></div>
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Aral Hamburg Moorfleet</strong> (~225 km fra Ribe) · <button onclick="var p=PLACES['moorfleet'];if(p){window.location.href='https://www.google.com/maps/search/?api=1&query='+p.mapsQ;}">📍 Kart</button></span></div>
         </div>
       </div>
       <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag2r'];if(r){window.location.href=buildRouteURL(r.stops);}">→ Kjørerute Google Maps</button>
+        <button class="booking-btn" onclick="document.getElementById('modal-furstenhof').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
         <a class="detail-link" href="detail_pages/celle.html">🗺 Utforsk Celle — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -526,14 +527,15 @@
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
       <div style="padding:0 16px 0">
         <div class="info-rows">
-          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Nells Park Hotel</span></div>
+          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Nells Park Hotel &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
           <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">Dasbachstraße 12, 54292 Trier</span></div>
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+4965114440">+49 651 14440</a></span></div>
-          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.nellsparkhotel.de" target="_blank">nellsparkhotel.de</a></span></div>
+          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://nellsparkhotel.de" target="_blank">nellsparkhotel.de</a></span></div>
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Ionity Kirchheimer Dreieck</strong> (~190 km) · <button onclick="var p=PLACES['kirchheim'];if(p){window.location.href='https://www.google.com/maps/search/?api=1&query='+p.mapsQ;}">📍 Kart</button></span></div>
         </div>
       </div>
       <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag3r'];if(r){window.location.href=buildRouteURL(r.stops);}">→ Kjørerute Google Maps</button>
+        <button class="booking-btn" onclick="document.getElementById('modal-nells').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
         <a class="detail-link" href="detail_pages/trier.html">🗺 Utforsk Trier — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -1157,19 +1159,20 @@
 <!-- ── DAG 15 ── -->
 <section class="sc day" id="dag15">
   <div class="day-header" onclick="toggleDay('dag15')">
-    <div class="day-title"><h2>Lørdag 1. august — Aalborg</h2><p class="sub">Lübeck → Padborg ⚡ → Aalborg</p></div>
+    <div class="day-title"><h2>Lørdag 1. august — Borup</h2><p class="sub">Lübeck → Padborg ⚡ → Borup (ved Aalborg)</p></div>
     <div class="chips"><span class="chip">~425 km</span><span class="chip">~4t</span><span class="chip warn">⚡ IONITY Aabenraa</span></div>
     <span class="chevron">▼</span>
   </div>
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px"><div class="info-rows">
-        <div class="info-row"><span class="info-label">Hotell</span><span class="info-val" data-show-name data-place="dag15">Scandic Aalborg City</span></div>
-        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag15">Europa Plads 1, 9000 Aalborg <button style="font-size:11px" onclick="var p=PLACES['dag15'];if(p){window.location.href='https://www.google.com/maps/search/?api=1&query='+p.mapsQ;}">📍 Kart</button></span></div>
+        <div class="info-row"><span class="info-label">Hotell</span><span class="info-val" data-show-name data-place="dag15">Koppes Mølle B&amp;B &nbsp;<span style="background:#2e7d32;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:600">&#x2713; BOOKET</span></span></div>
+        <div class="info-row"><span class="info-label">Adresse</span><span class="info-val" data-show-address data-place="dag15">Halkærvej 100, 9240 Borup <button style="font-size:11px" onclick="var p=PLACES['dag15'];if(p){window.location.href='https://www.google.com/maps/search/?api=1&query='+p.mapsQ;}">📍 Kart</button></span></div>
         <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>IONITY Aabenraa</strong> (~200 km) · <button onclick="var p=PLACES['aabenraa'];if(p){window.location.href='https://www.google.com/maps/search/?api=1&query='+p.mapsQ;}">📍 Kart</button></span></div>
       </div></div>
       <div style="padding:0 16px 16px">
         <button class="route-btn" onclick="var r=ROUTES['dag15r'];if(r){window.location.href=buildRouteURL(r.stops);}">→ Kjørerute Google Maps</button>
+        <button class="booking-btn" onclick="document.getElementById('modal-koppes').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
       </div>
     </div>
     <div class="day-right">
@@ -1481,7 +1484,7 @@ const PLACES = {
   dag12: { lat:49.4229, lon:0.2311,  name:"Réglisse et Pain d\'Épices", address:"61 Rue Haute, 14600 Honfleur",                    mapsQ:"61+Rue+Haute+14600+Honfleur+France" },
   dag13: { lat:52.0876, lon:5.1252,  name:"Grand Hotel Karel V",         address:"Geertebolwerk 1, 3511 XA Utrecht",               mapsQ:"Geertebolwerk+1+3511+XA+Utrecht+Netherlands" },
   dag14: { lat:53.8660, lon:10.6727, name:"LIHO - einfach Lübeck",     address:"Lindenstr. 1A, 23558 Lübeck",               mapsQ:"Lindenstrasse+1A+23558+Lubeck+Germany" },
-  dag15: { lat:57.048,  lon:9.918,   name:"Scandic Aalborg City",         address:"Europa Plads 1, 9000 Aalborg",                    mapsQ:"Europa+Plads+1+9000+Aalborg+Denmark" },
+  dag15: { lat:57.048,  lon:9.918,   name:"Koppes Mølle B&B",              address:"Halkærvej 100, 9240 Borup",                       mapsQ:"Haelkaervej+100+9240+Borup+Denmark" },
   // LADESTOPP — mapsQ bruker adresse for presist treff i Google Maps
   brive:      { lat:45.1672, lon:1.4830,  name:"Tesla Brive-la-Gaillarde",    address:"Le Griffolet, 19270 Ussac",               mapsQ:"Le+Griffolet+19270+Ussac+France" },
   poitiers:   { lat:46.5285, lon:0.2868,  name:"Tesla Poitiers Sud",          address:"6 rue de la Saulaie, 86240 Croutelle",    mapsQ:"6+rue+de+la+Saulaie+86240+Croutelle+France" },
@@ -1700,6 +1703,84 @@ document.addEventListener("DOMContentLoaded",function(){
     <p>Quentin &mdash; Resepsjonist &middot; <a href="tel:+33219003100">+33 2 19 00 31 00</a> &middot; <a href="mailto:info@maisonrabelais.com">info@maisonrabelais.com</a></p>
     <p><a href="https://www.maisonrabelais.fr" target="_blank">maisonrabelais.fr</a></p></div>
     <div class="modal-warn">&#x26A0;&#xFE0F; Ingen booking.com-bekreftelsesnummer &mdash; direkte e-postbooking. Ta vare p&aring; e-posten fra Quentin som dokumentasjon ved innsjekk.</div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-furstenhof" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-furstenhof').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">Althoff Hotel F&uuml;rstenhof &mdash; Celle</p>
+    <p class="modal-sub">Hannoversche Str. 55/56, 29221 Celle &middot; +49 5141 201140</p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5694452013 &middot; PIN: 9373</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>Refugium Double Room</td><td>13. jul kl. 15:00</td><td>14. jul kl. 11:00</td><td>&euro;151,47</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Kostnad</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>Rom</td><td>&euro;141,56</td></tr>
+        <tr><td>MVA</td><td>&euro;9,91</td></tr>
+        <tr><td>Frokost (tillegg)</td><td>&euro;32 per person per natt</td></tr>
+        <tr><td>Middag (tillegg)</td><td>&euro;60 per person per natt</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt (rom)</span><span>&euro;151,47</span></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>11. juli 2026 kl. 23:59</strong>. Fra 12. juli: <strong>&euro;136,32</strong>.</p></div>
+    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne</p></div>
+    <div class="modal-warn">&#x26A0;&#xFE0F; Ingen forskuddsbetaling, men depositum kan reserveres p&aring; kortet. Oppgi forventet ankomsttid p&aring; forh&aring;nd.</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-nells" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-nells').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">Nells Park Hotel &mdash; Trier</p>
+    <p class="modal-sub">Dasbachstr. 12, 54292 Trier &middot; +49 651 14440</p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5986039170 &middot; PIN: 7354</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>Business Relax Double Room</td><td>14. jul kl. 15:00&ndash;22:00</td><td>15. jul kl. 07:00&ndash;12:00</td><td>&euro;146,60</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Kostnad</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>Rom</td><td>&euro;132,06</td></tr>
+        <tr><td>MVA</td><td>&euro;9,24</td></tr>
+        <tr><td>Byskat</td><td>&euro;5,30</td></tr>
+        <tr><td>Frokost (tillegg)</td><td>&euro;15,50 per person per natt</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt inkl. byskat</span><span>&euro;146,60</span></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>14. juli 2026 kl. 18:00</strong>. Etter dette: <strong>&euro;141,30</strong> (hele totalprisen).</p></div>
+    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne</p></div>
+    <div class="modal-warn">&#x26A0;&#xFE0F; Smal avbestillingsfrist: gratis kun frem til kl. 18:00 p&aring; selve innsjekkingsdagen (14. juli).</div>
+  </div>
+</div>
+<div class="modal-overlay" id="modal-koppes" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <span class="modal-handle"></span>
+    <button class="modal-close" onclick="document.getElementById('modal-koppes').classList.remove('open')">&#x2715;</button>
+    <p class="modal-logo">Koppes M&oslash;lle B&amp;B &mdash; Borup</p>
+    <p class="modal-sub">Halk&aelig;rvej 100, 9240 Borup, Danmark &middot; +45 25 67 35 04</p>
+    <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6000718885 &middot; PIN: 2141</div>
+    <table class="mtable">
+      <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+      <tbody><tr><td>Double Room m/bad &ndash; 1. etg. (trapp)</td><td>1. aug kl. 16:00&ndash;21:00</td><td>2. aug kl. 07:00&ndash;11:00</td><td>DKK 900</td></tr></tbody>
+    </table>
+    <table class="mtable">
+      <thead><tr><th>Kostnad</th><th>Pris</th></tr></thead>
+      <tbody>
+        <tr><td>Rom</td><td>DKK 720</td></tr>
+        <tr><td>MVA</td><td>DKK 180</td></tr>
+        <tr><td>Frokost (tillegg)</td><td>DKK 135 per person per natt</td></tr>
+      </tbody>
+    </table>
+    <div class="modal-total"><span>Totalt inkl. MVA</span><span>DKK 900</span></div>
+    <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>24. juli 2026 kl. 23:59</strong>. Fra 25. juli: <strong>DKK 900</strong> (hele beløpet).</p></div>
+    <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne</p></div>
+    <div class="modal-warn">&#x26A0;&#xFE0F; Liten B&amp;B &mdash; meld fra om forventet ankomsttid p&aring; forh&aring;nd. Ingen utdrikningslag/grupper.</div>
   </div>
 </div>
 </body>
