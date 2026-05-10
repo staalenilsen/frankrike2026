@@ -29,7 +29,7 @@ h3{margin:10px 0 4px;font-size:14px;font-weight:700;color:var(--ink)}
 .place{border-bottom:1px solid var(--line);padding:14px 0}
 .place:last-child{border-bottom:none;padding-bottom:0}
 .place-inner{display:flex;gap:12px;align-items:flex-start}
-.place-img{width:90px;height:70px;object-fit:cover;border-radius:10px;flex-shrink:0;background:#ddd}
+.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px}.place-img-wrap img{width:100%;height:100%;object-fit:cover}
 .place-body{flex:1;min-width:0}
 .place-title{font-size:15px;font-weight:700;margin:0 0 3px}
 .place-meta{font-size:11px;font-weight:600;color:var(--sky);margin:0 0 4px;display:flex;gap:8px;flex-wrap:wrap}
@@ -54,7 +54,7 @@ h3{margin:10px 0 4px;font-size:14px;font-weight:700;color:var(--ink)}
 .ticket-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;
   padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-left:6px}
 
-@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}.place-img{width:110px;height:82px}}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px}.place-img-wrap img{width:100%;height:100%;object-fit:cover}}
 </style>
 </head>
 <body>
@@ -65,7 +65,7 @@ h3{margin:10px 0 4px;font-size:14px;font-weight:700;color:var(--ink)}
 <div id="map" class="hero-map"></div>
 <div class="content"><div class="section"><p style="font-size:14px;color:var(--muted);margin:0 0 10px">Skandinavias eldste by — grunnlagt av vikingene rundt år 700 e.Kr. Den kompakte middelalderbyen er enestående bevart med brosteinsgate, halvtimberhus fra 1600-tallet og en imponerende romansk domkirke. Her ankommer dere kvelden etter Color Line-fergen.</p><div><span class="tag">Skandinavias eldste by</span><span class="tag green">UNESCO Vadehavet</span><span class="tag">Vikinghistorie</span><span class="tag">Kompakt og gåvennlig</span></div></div><div class="section"><h2>🏛️ Attraksjoner & gåturer</h2><div class="place">
   <div class="place-inner">
-    <img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Ribe_Domkirke_-_facade.jpg/640px-Ribe_Domkirke_-_facade.jpg" alt="Ribe Domkirke — klatre tårnet" onerror="this.style.display='none'">
+    <div class="place-img-wrap" data-wiki="Ribe Cathedral">⛪</div>
     <div class="place-body">
       <p class="place-title">Ribe Domkirke — klatre tårnet</p>
       <div class="place-meta"><span>📍 Torvet, Ribe</span><span>⏱ 1–2 timer</span><span>💶 ~DKK 30 voksne</span></div>
@@ -76,7 +76,7 @@ h3{margin:10px 0 4px;font-size:14px;font-weight:700;color:var(--ink)}
   </div>
 </div><div class="place">
   <div class="place-inner">
-    <img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Ribe_-_Witch_Museum.jpg/640px-Ribe_-_Witch_Museum.jpg" alt="HEX! Museum of Witch Hunt" onerror="this.style.display='none'">
+    <div class="place-img-wrap" data-wiki="Ribe, Denmark">🏛️</div>
     <div class="place-body">
       <p class="place-title">HEX! Museum of Witch Hunt</p>
       <div class="place-meta"><span>📍 Skt. Nicolaj Gade 10</span><span>⏱ 1–1,5 timer</span><span>💶 ~DKK 85 voksne</span></div>
@@ -87,7 +87,7 @@ h3{margin:10px 0 4px;font-size:14px;font-weight:700;color:var(--ink)}
   </div>
 </div><div class="place">
   <div class="place-inner">
-    <img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Ribe_natvaegter.jpg/640px-Ribe_natvaegter.jpg" alt="Nattvakten — gratis kveldstur" onerror="this.style.display='none'">
+    <div class="place-img-wrap" data-wiki="Ribe, Denmark">🏛️</div>
     <div class="place-body">
       <p class="place-title">Nattvakten — gratis kveldstur</p>
       <div class="place-meta"><span>📍 Start: Weis Stue, Torvet</span><span>⏱ 45 min</span><span>💶 Gratis</span></div>
@@ -98,7 +98,7 @@ h3{margin:10px 0 4px;font-size:14px;font-weight:700;color:var(--ink)}
   </div>
 </div><div class="place">
   <div class="place-inner">
-    <img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Ribe_catharine_cloister.jpg/640px-Ribe_catharine_cloister.jpg" alt="St. Catharinae Kloster" onerror="this.style.display='none'">
+    <div class="place-img-wrap">🏛️</div>
     <div class="place-body">
       <p class="place-title">St. Catharinae Kloster</p>
       <div class="place-meta"><span>📍 Skt. Catharinæ Plads</span><span>⏱ 20–30 min</span><span>💶 Liten avgift</span></div>
@@ -109,7 +109,7 @@ h3{margin:10px 0 4px;font-size:14px;font-weight:700;color:var(--ink)}
   </div>
 </div><div class="place">
   <div class="place-inner">
-    <img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Ribe_Vikings_Center.jpg/640px-Ribe_Vikings_Center.jpg" alt="🚲 Ribe VikingeCenter (~3 km tur-retur)" onerror="this.style.display='none'">
+    <div class="place-img-wrap">🏛️</div>
     <div class="place-body">
       <p class="place-title">🚲 Ribe VikingeCenter (~3 km tur-retur)</p>
       <div class="place-meta"><span>📍 Lustrupvej 4, Ribe</span><span>⏱ 2–3 timer</span><span>💶 ~DKK 175 voksne</span></div>
@@ -120,7 +120,7 @@ h3{margin:10px 0 4px;font-size:14px;font-weight:700;color:var(--ink)}
   </div>
 </div><div class="place">
   <div class="place-inner">
-    <img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Ribe_Wadden_Sea.jpg/640px-Ribe_Wadden_Sea.jpg" alt="🚲 Vadehavscentret — UNESCO (~5 km)" onerror="this.style.display='none'">
+    <div class="place-img-wrap">🏛️</div>
     <div class="place-body">
       <p class="place-title">🚲 Vadehavscentret — UNESCO (~5 km)</p>
       <div class="place-meta"><span>📍 Okholmvej 5, Vester Vedsted</span><span>⏱ 1,5–2 timer</span><span>💶 ~DKK 125 voksne</span></div>
@@ -164,6 +164,17 @@ h3{margin:10px 0 4px;font-size:14px;font-weight:700;color:var(--ink)}
   </div>
 </div></div><div class="section"><h2>ℹ️ Praktisk info</h2><div class="info-row"><span class="label">Parkering</span><span>Hotel Dagmar: privat plass ~50 m unna, DKK 200/natt (forhåndsbestilt). Offentlig: Saltgade 21 og Tøndervej.</span></div><div class="info-row"><span class="label">Sykkel</span><span>Ribe er helt flatt — perfekt for sykkel. Ribe Å-ruten og veien til VikingeCenter (3 km) og Vadehavscentret (5 km) er enkel og nydelig.</span></div><div class="info-row"><span class="label">Tips</span><span>Nattvakten starter foran Weis Stue kl. 20:00 (mai–okt). Kom deg opp i domkirketårnet for solnedgangen over Vadehavsmarsken.</span></div><div class="info-row"><span class="label">VisitRibe</span><span>Turistkontoret ved Torvet har gratis sykkelkart og Mandøbuss-info.</span></div></div></div>
 <script>
+
+// Last bilder via Wikipedia REST API
+document.querySelectorAll('[data-wiki]').forEach(wrap => {
+  const term = wrap.getAttribute('data-wiki');
+  fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(term))
+    .then(r=>r.json()).then(d=>{
+      const url = d.thumbnail?.source;
+      if(url){ wrap.innerHTML='<img src="'+url+'" alt="'+term+'">'; }
+    }).catch(()=>{});
+});
+
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
