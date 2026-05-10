@@ -405,22 +405,22 @@
 
 
     <div style="display:grid;gap:8px">
-      <button class="route-btn" onclick="var r=ROUTES['heletur'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">
+      <button class="route-btn" onclick="var r=ROUTES['heletur'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">
         <span>🗺</span>
         <span><strong>Hele turen</strong> — alle 14 stopp<br>
         <span style="font-size:11px;font-weight:400;color:var(--sky)">Arendal → Ribe → Celle → Trier → Strasbourg → Mittelwihr → Beaune → Oyé → Saint-Émilion → Amboise → Honfleur → Utrecht → Lübeck → Aalborg</span></span>
       </button>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-        <button class="route-btn" onclick="var r=ROUTES['utreise'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">
+        <button class="route-btn" onclick="var r=ROUTES['utreise'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">
           <span>✈️</span>
           <span><strong>→ Utreise</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Arendal · Hirtshals · Ribe · Celle · Trier · Strasbourg · Mittelwihr · Beaune · Oyé</span></span>
         </button>
-        <button class="route-btn" onclick="var r=ROUTES['frankrike'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">
+        <button class="route-btn" onclick="var r=ROUTES['frankrike'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">
           <span>🇫🇷</span>
           <span><strong>→ Frankrike-løkken</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Oyé · Brive ⚡ · Saint-Émilion · Amboise · Honfleur</span></span>
         </button>
-        <button class="route-btn" onclick="var r=ROUTES['hjemreise'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">
+        <button class="route-btn" onclick="var r=ROUTES['hjemreise'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">
           <span>🏠</span>
           <span><strong>→ Hjemreise</strong><br><span style="font-size:10px;font-weight:400;color:var(--sky)">Honfleur · Belgia · Utrecht · Lübeck · Aalborg · Hirtshals · (ferge 12:15) · Arendal</span></span>
         </button>
@@ -457,7 +457,7 @@
         </div>
       </div>
       <div style="padding:0 16px 16px">
-        <button class="route-btn" onclick="console.log('dag1r clicked, ROUTES:', typeof ROUTES, 'buildRouteURL:', typeof buildRouteURL); var r=ROUTES['dag1r'];if(r){console.log('URL:', buildRouteURL(r.stops));window.open(buildRouteURL(r.stops),"_blank");}else{console.log('ROUTES dag1r not found');}">→ Kjørerute Google Maps</button>
+        <button class="route-btn" onclick="console.log('dag1r clicked, ROUTES:', typeof ROUTES, 'buildRouteURL:', typeof buildRouteURL); var r=ROUTES['dag1r'];if(r){console.log('URL:', buildRouteURL(r.stops));window.open(buildRouteURL(r.stops),'_blank');}else{console.log('ROUTES dag1r not found');}">→ Kjørerute Google Maps</button>
         <a class="detail-link" href="detail_pages/ribe.html">🗺 Utforsk Ribe — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-dagmar').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button>
       </div>
@@ -514,7 +514,7 @@
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Aral Hamburg Moorfleet</strong> (~225 km fra Ribe) · <button onclick="var p=PLACES['moorfleet'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}">📍 Kart</button></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag2r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag2r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <button class="waypoint-btn" onclick="document.getElementById('wp-dag2').classList.add('open')">📌 Severdigheter på veien</button>
         
         <button class="booking-btn" onclick="document.getElementById('modal-furstenhof').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
@@ -570,7 +570,7 @@
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Ionity Kirchheimer Dreieck</strong> (~190 km) · <button onclick="var p=PLACES['kirchheim'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}">📍 Kart</button></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag3r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag3r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <button class="booking-btn" onclick="document.getElementById('modal-nells').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
         <a class="detail-link" href="detail_pages/trier.html">🗺 Utforsk Trier — restauranter &amp; opplevelser</a></div>
     </div>
@@ -624,7 +624,7 @@
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Avklar parkering direkte</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag4r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag4r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <a class="detail-link" href="detail_pages/strasbourg.html">🗺 Utforsk Strasbourg — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -701,7 +701,7 @@
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.hotelmittelwihr.fr" target="_blank">hotelmittelwihr.fr</a></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag5r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag5r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <a class="detail-link" href="detail_pages/alsace.html">🗺 Utforsk Alsace — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-mittelwihr').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button></div>
     </div>
@@ -805,7 +805,7 @@
           <div class="info-row"><span class="info-label">Parkering + EV</span><span class="info-val">⚡ Dedikert plass med EV-lader bekreftet ✅ · €20/kjøretøy</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag7r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag7r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <a class="detail-link" href="detail_pages/beaune.html">🗺 Utforsk Beaune — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-henry2').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button></div>
     </div>
@@ -875,7 +875,7 @@
   <div class="day-body">
     <div class="day-left">
       <div style="padding:16px"><div class="info-rows"><div class="info-row"><span class="info-label">Sted</span><span class="info-val">Oyé 🏡 — Foreldrehuset</span></div><div class="info-row"><span class="info-label">Adresse</span><span class="info-val">5 La Croix, 71800 Oyé <button style="font-size:11px" onclick="var p=PLACES['dag8'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}">📍 Kart</button></span></div><div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Rolig ankomstdag. Base 19.–26. juli.</span></div></div>
-      <button class="route-btn" onclick="var r=ROUTES['dag8r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+      <button class="route-btn" onclick="var r=ROUTES['dag8r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <a class="detail-link" href="detail_pages/oye.html">🗺 Utforsk Oyé-uken — gjøreliste &amp; begivenheter</a></div>
     </div>
     <div class="day-right">
@@ -952,7 +952,7 @@
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Tesla Brive-la-Gaillarde</strong> (~220 km) · <button onclick="var p=PLACES['brive'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}">📍 Kart</button></span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag9r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag9r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <button class="waypoint-btn" onclick="document.getElementById('wp-dag9').classList.add('open')">📌 Severdigheter på veien</button>
         
         <a class="detail-link" href="detail_pages/stemilion.html">🗺 Utforsk Saint-Émilion — restauranter &amp; opplevelser</a></div>
@@ -1033,7 +1033,7 @@
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Parkering €15 inkl. · Kjæledyrtillegg €30 · Byskat €5,10</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag11r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag11r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <button class="waypoint-btn" onclick="document.getElementById('wp-dag11').classList.add('open')">📌 Severdigheter på veien</button>
         
         <button class="booking-btn" onclick="document.getElementById('modal-amboise').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
@@ -1090,7 +1090,7 @@
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Ring og avklar parkering og lading</span></div>
         </div>
       </div>
-      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag12r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+      <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag12r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <a class="detail-link" href="detail_pages/honfleur.html">🗺 Utforsk Honfleur — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-reglisse').classList.add('open')">✓ Bekreftet reservasjon — vis detaljer</button></div>
     </div>
@@ -1168,7 +1168,7 @@
         <div class="info-row"><span class="info-label">Lading</span><span class="info-val">Ingen nødvendig (~400 km innen rekkevidde fra Honfleur)</span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <button class="route-btn" onclick="var r=ROUTES['dag13r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+        <button class="route-btn" onclick="var r=ROUTES['dag13r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <div style="margin-top:6px;padding:7px 10px;background:var(--sky-soft);border-radius:10px;border-left:3px solid var(--sky)">
           <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Bunnik (Postillion Hotel) — Randhoeve 2, 3995 GA Bunnik (~8 km fra hotellet, 10 min). 24×250 kW, CCS, 24/7. <button onclick="window.open('https://www.google.com/maps/search/?api=1&query=52.0658,5.2083','_blank')">📍 Kart</button></p></div>
         <button class="waypoint-btn" onclick="document.getElementById('wp-dag13').classList.add('open')">📌 Severdigheter på veien</button>
@@ -1227,7 +1227,7 @@
         <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Gratis gate-P utenfor · Garasje €20/dag (forhåndsbest.) · maks 5m/1,85m høyde</span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <button class="route-btn" onclick="var r=ROUTES['dag14r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+        <button class="route-btn" onclick="var r=ROUTES['dag14r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <div style="margin-top:6px;padding:7px 10px;background:var(--sky-soft);border-radius:10px;border-left:3px solid var(--sky)">
           <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Lübeck (Cafe Del Sol) — Stockelsdorfer Str. 1, 23554 Lübeck (~2 km fra hotellet, 5 min). 8×250 kW, CCS, 24/7. <button onclick="window.open('https://www.google.com/maps/search/?api=1&query=53.8780,10.6860','_blank')">📍 Kart</button></p></div>
         <button class="waypoint-btn" onclick="document.getElementById('wp-dag14').classList.add('open')">📌 Severdigheter på veien</button>
@@ -1279,7 +1279,7 @@
         <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>IONITY Aabenraa</strong> (~200 km) · <button onclick="var p=PLACES['aabenraa'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}">📍 Kart</button></span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <button class="route-btn" onclick="var r=ROUTES['dag15r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+        <button class="route-btn" onclick="var r=ROUTES['dag15r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
         <div style="margin-top:6px;padding:7px 10px;background:var(--sky-soft);border-radius:10px;border-left:3px solid var(--sky)">
           <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Svenstrup J — 4 Skjoldet, 9230 Svenstrup J (~27 km fra hotellet, 22 min, ved McDonalds avkj. E45). 24×250 kW, CCS, 24/7. Alt: Aalborg City Syd, 452 Hobrovej (~28 km). <button onclick="window.open('https://www.google.com/maps/search/?api=1&query=56.9280,9.8730','_blank')">📍 Kart</button></p></div>
         <button class="waypoint-btn" onclick="document.getElementById('wp-dag15').classList.add('open')">📌 Severdigheter på veien</button>
@@ -1329,7 +1329,7 @@
         <div class="info-row"><span class="info-label">Ankomst</span><span class="info-val">🏡 Arendal ca. 16:25</span></div>
       </div></div>
       <div style="padding:0 16px 16px">
-        <button class="route-btn" onclick="var r=ROUTES['dag16r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+        <button class="route-btn" onclick="var r=ROUTES['dag16r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
       </div>
     </div>
     <div class="day-right">
