@@ -3,34 +3,43 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Celle, Tyskland – Reisebok Frankrike 2026</title>
+<title>Celle – Reisebok Frankrike 2026</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
-:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;--accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;--warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e4f7ec;--r:18px}
-*{box-sizing:border-box}html{font-size:16px}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;
+  --accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;
+  --warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e4f7ec;--r:18px}
+*{box-sizing:border-box}html{font-size:16px;scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
 a{color:var(--sky)}
-.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px}
+.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
 .back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}
 .topbar h1{margin:0;font-size:17px;font-weight:700}
-.hero-map{height:240px;width:100%}
+.hero-map{height:220px;width:100%}
 .content{padding:16px;max-width:760px;margin:0 auto}
-.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--sky);border-radius:var(--r);padding:16px;margin-bottom:14px}
 h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
 .tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
 .tag.green{background:#eaf5ee;color:#2d7a4f}.tag.blue{background:#e6f0fb;color:#185fa5}
-.place{border-bottom:1px solid var(--line);padding:12px 0}
+.place{border-bottom:1px solid var(--line);padding:14px 0}
 .place:last-child{border-bottom:none;padding-bottom:0}
-.place-title{font-size:15px;font-weight:700;margin:0 0 4px}
-.place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
-.place-links{display:flex;gap:8px;flex-wrap:wrap}
-.plink{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none}
-.plink.map{background:#e6f0fb;color:#185fa5}
-.info-row{display:flex;gap:8px;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line)}
+.place-inner{display:flex;gap:12px;align-items:flex-start}
+.place-img{width:90px;height:70px;object-fit:cover;border-radius:10px;flex-shrink:0;background:#eee}
+.place-body{flex:1;min-width:0}
+.place-title{font-size:15px;font-weight:700;margin:0 0 3px}
+.place-meta{font-size:11px;font-weight:600;color:var(--sky);margin:0 0 5px;display:flex;gap:8px;flex-wrap:wrap}
+.place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.55}
+.place-links{display:flex;gap:6px;flex-wrap:wrap}
+.plink{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.plink.ticket{background:var(--accent-soft);color:var(--accent);border:1px solid #f0b070}
+.plink.map{background:#e6f0fb;color:#185fa5;border:1px solid #b0cef5}
+.plink.web{background:#f0f9fc;color:#0d2e45;border:1px solid var(--line)}
+.tip-box{background:var(--warn-soft);border:1px solid #e8c97a;border-radius:12px;padding:11px 14px;font-size:13px;margin-top:10px;line-height:1.55}
+.info-row{display:flex;gap:10px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}
 .info-row:last-child{border-bottom:none}
-.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
-@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:300px}}
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:90px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}.place-img{width:110px;height:82px}}
 </style>
 </head>
 <body>
@@ -39,68 +48,8 @@ h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
   <h1>Celle, Tyskland</h1>
 </div>
 <div id="map" class="hero-map"></div>
-<div class="content">
-<div class="section">
-  <h2>Om Celle</h2>
-  <p style="font-size:14px;color:var(--muted);margin:0 0 10px">Celle er en eventyrlig liten by med over 400 halvtimber­hus — den tetteste konsentrasjonen i Europa. Byen unngikk andre verdens­krig nærmest uskadd, og gamlebyen er som å vandre rett inn i et eventyr. Flat og perfekt for sykling.</p>
-  <div><span class="tag">400+ halvtimberhus</span><span class="tag">Godt bevart middelalder</span><span class="tag green">Flat sykkelby</span><span class="tag">Elven Aller</span></div>
-</div>
-<div class="section">
-  <h2>🚶 Gåturer & attraksjoner</h2>
-  <div class="place">
-    <p class="place-title">Gamlebyen — halvtimberhus</p>
-    <p class="place-desc">Vandre gjennom Celles middel­alder­kjerne med over 400 halvtimberhus fra 1400–1800-tallet. Se opp etter innskrifter og utskjæringer på bjelkene. Smug og hemmelige gårdsplasser leder deg fra ett skjult rom til det neste. Ta deg god tid — du vil ikke gå fort her.</p>
-    <div><span class="tag">Gratis</span><span class="tag">1–2 t</span><span class="tag">Historisk</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Celle+Altstadt" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Hoppener Haus (1532)</p>
-    <p class="place-desc">Det mest berømte halvtimberhuset i Celle, bygget i 1532. Fantastisk utskåret fasade med figurer og symboler. Står i Poststraße — selve hjertet av gamlebyen.</p>
-    <div><span class="tag">Gratis</span><span class="tag">Fotomotiv nr. 1</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Hoppener+Haus+Celle" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Herzogschloss — Celles slott</p>
-    <p class="place-desc">Residensslott fra middelalderen med en imponerende blanding av gotisk, renessanse og barokk arkitektur. Huser det eldste slotsteater i Tyskland som fremdeles er i bruk. Guiding tirdag–fredag 10:30–16:30.</p>
-    <div><span class="tag">Inngangspenger</span><span class="tag">Eldste slottsteater i Tys.</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Schloss+Celle" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Bomann Museum</p>
-    <p class="place-desc">Et av Nedre Sachsens viktigste kulturhistoriske museer. Rekonstruerte bondehus, tekstiler, og utstillinger om Celles og regionens historie fra middelalderen til i dag. Gratis lørdag etter kl. 13:00.</p>
-    <div><span class="tag">Gratis lørdag etter 13</span><span class="tag">Regional historie</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Bomann+Museum+Celle" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">🚲 Sykkel langs Aller-elven</p>
-    <p class="place-desc">Flat og idyllisk sykkelrute langs elven Aller utenfor sentrum. Perfekte stier for rolig sykling — naturreservat med fugler, bekkekanter og grønne enger. Ta med matpakke og finn en benk.</p>
-    <div><span class="tag green">Sykkeltur ~10 km</span><span class="tag">Flat</span><span class="tag">Naturskjønn</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Aller+Celle+sykkelsti" target="_blank">📍 Kart</a></div>
-  </div>
-</div>
-<div class="section">
-  <h2>🍽 Restauranter & kafeer</h2>
-  <div class="place">
-    <p class="place-title">Ratskeller i Altes Rathaus</p>
-    <p class="place-desc">Historisk restaurant i kjelleren av det gamle rådhuset fra 1200-tallet — selve hjertet av Celle. Tradisjonell tysk mat inkludert den lokale spesialiteten «Rohe Roulade» (rå roulade — sert kald, særegen lokal rett). Hyggelig og autentisk.</p>
-    <div><span class="tag">Historisk</span><span class="tag">Tysk tradisjonskjøkken</span><span class="tag">Sentral beliggenhet</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ratskeller+Celle+Altes+Rathaus" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Thaers Wirtshaus</p>
-    <p class="place-desc">Hyggelig og tradisjonelt vertshus med god mat og god stemning. Kjent for sin varme atmosfære og klassiske tyske retter. Populært blant lokalbefolkningen.</p>
-    <div><span class="tag">Tradisjonelt</span><span class="tag">Lokal favoritt</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Thaers+Wirtshaus+Celle" target="_blank">📍 Kart</a></div>
-  </div>
-</div>
-<div class="section">
-  <h2>ℹ️ Praktisk</h2>
-<div class="info-row"><span class="label">Parkering</span><span>Parkhaus Südwall nær sentrum. Parkering er greit tilgjengelig rundt gamlebyen.</span></div><div class="info-row"><span class="label">Sykkel</span><span>Celle er flat og perfekt for sykkel. Langs Aller-elven er en fin ~10 km tur.</span></div><div class="info-row"><span class="label">Tips</span><span>Lørdag: Bomann Museum er gratis etter kl. 13. Stikk innom smugene mellom husene — mange har skjulte gårdsplasser.</span></div>
-</div>
-
-</div>
+<div class="content"><div class="section"><p style="font-size:14px;color:var(--muted);margin:0 0 10px">Celle er en eventyrlig liten by med over 400 halvtimberhus — den tetteste konsentrasjonen i Europa. Gamlebyen unngikk andre verdenskrig nærmest uskadd. Flat og perfekt for sykling.</p><div><span class="tag">400+ halvtimberhus</span><span class="tag">Tetteste konsentrasjon i Europa</span><span class="tag">Aller-elven sykling</span><span class="tag">Bomann Museum gratis lørdag</span></div></div><div class="section"><h2>🏛️ Attraksjoner & gåturer</h2><div class="place"><div class="place-inner"><img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Celle_Altstadt.jpg/640px-Celle_Altstadt.jpg" alt="Gamlebyen — 400+ halvtimberhus" loading="lazy" onerror="this.style.display='none'"><div class="place-body"><p class="place-title">Gamlebyen — 400+ halvtimberhus</p><p class="place-meta">📍 ·   · A · l · t · s · t · a · d · t ·   · · ·   · ⏱ ·   · 1 · – · 2 ·   · t ·   · · ·   · 💶 ·   · G · r · a · t · i · s</p><p class="place-desc">Vandre gjennom Celles middelalder­kjerne. Se opp etter innskrifter og utskjæringer på bjelkene — mange hus har datoer fra 1400-1700-tallet. Smug og hemmelige gårdsplasser leder fra ett skjult rom til det neste. Poststraße er den fotogene hoved­gaten.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Celle+Altstadt" target="_blank">📍 Kart</a><a class="plink web" href="https://www.celle-tourismus.de" target="_blank">🌐 celle-tourismus.de</a></div></div></div></div><div class="place"><div class="place-inner"><img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Celle_Hoppenerhaus_01.jpg/640px-Celle_Hoppenerhaus_01.jpg" alt="Hoppener Haus (1532)" loading="lazy" onerror="this.style.display='none'"><div class="place-body"><p class="place-title">Hoppener Haus (1532)</p><p class="place-meta">📍 ·   · P · o · s · t · s · t · r · a · ß · e ·   · 8 ·   · · ·   · 💶 ·   · G · r · a · t · i · s ·   · u · t · s · i · d · e · n</p><p class="place-desc">Det mest berømte halvtimberhuset i Celle — bygget i 1532 med fantastisk utskåret fasade. Nabobygget (Stechbahn 10, 1526) er enda eldre. Stå foran begge og la detalj­rikdommen synke inn.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Hoppener+Haus+Celle" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Celle_-_Schloss_1.jpg/640px-Celle_-_Schloss_1.jpg" alt="Herzogschloss — Celles slott" loading="lazy" onerror="this.style.display='none'"><div class="place-body"><p class="place-title">Herzogschloss — Celles slott</p><p class="place-meta">📍 ·   · S · c · h · l · o · s · s · p · l · a · t · z ·   · 1 ·   · · ·   · ⏱ ·   · 1 · , · 5 ·   · t ·   · · ·   · 💶 ·   · ~ · € · 8 ·   · v · o · k · s · n · e</p><p class="place-desc">Residensslott fra 1292 med gotisk, renessanse og barokk arkitektur. Huser det eldste slotsteater i Europa som fremdeles er i bruk (Schlosstheater). Guidede turer tirdag–fredag 10:30–16:30.</p><div class="place-links"><a class="plink ticket" href="https://schloss-celle.de/besuch/" target="_blank">🎟 Billetter</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Schloss+Celle" target="_blank">📍 Kart</a><a class="plink web" href="https://schloss-celle.de" target="_blank">🌐 schloss-celle.de</a></div></div></div></div><div class="place"><div class="place-inner"><img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Celle_Bomann_Museum.JPG/640px-Celle_Bomann_Museum.JPG" alt="Bomann Museum" loading="lazy" onerror="this.style.display='none'"><div class="place-body"><p class="place-title">Bomann Museum</p><p class="place-meta">📍 ·   · S · c · h · l · o · s · s · p · l · a · t · z ·   · 7 ·   · · ·   · ⏱ ·   · 1 · – · 1 · , · 5 ·   · t ·   · · ·   · 💶 ·   · ~ · € · 8 ·   · ( · g · r · a · t · i · s ·   · l · ø · r · d · a · g ·   · e · t · t · e · r ·   · 1 · 3 · )</p><p class="place-desc">Et av Nedre Sachsens viktigste kulturhistoriske museer — rekonstruerte bondehus, tekstiler, og lokal­historiske utstillinger fra middelalder til i dag. Lørdag etter kl. 13 er inngangen gratis.</p><div class="place-links"><a class="plink ticket" href="https://bomann-museum.de/besuch/" target="_blank">🎟 Info</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Bomann+Museum+Celle" target="_blank">📍 Kart</a><a class="plink web" href="https://bomann-museum.de" target="_blank">🌐 bomann-museum.de</a></div></div></div></div><div class="place"><div class="place-inner"><img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Aller_Celle.jpg/640px-Aller_Celle.jpg" alt="🚲 Sykkel langs Aller-elven" loading="lazy" onerror="this.style.display='none'"><div class="place-body"><p class="place-title">🚲 Sykkel langs Aller-elven</p><p class="place-meta">📍 ·   · S · t · a · r · t · : ·   · A · l · t · e ·   · H · e · e · r · s · t · r · a · ß · e ·   · · ·   · ⏱ ·   · ~ · 2 ·   · t ·   · · ·   · 💶 ·   · G · r · a · t · i · s</p><p class="place-desc">Flat og idyllisk sykkelrute langs elven Aller utenfor sentrum — naturreservat med fugler, bekkekanter og grønne enger. ~10 km rundtur. Ta med mat og finn en benk ved vannet.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Aller+Celle+Fahrradweg" target="_blank">📍 Kart</a></div></div></div></div><div class="tip-box">💡 Lørdag: Bomann Museum gratis etter kl. 13. Stikk innom smugene mellom husene — mange har skjulte gårdsplasser du ikke ser fra gaten.</div></div><div class="section"><h2>🍽️ Restauranter & kafeer</h2><div class="place"><div class="place-inner"><div class="place-body"><p class="place-title">Ratskeller i Altes Rathaus</p><p class="place-meta">📍 ·   · M · a · r · k · t ·   · 1 · 4 ·   · · ·   · 💶 ·   · M · i · d · d · e · l · s ·   · p · r · i · s</p><p class="place-desc">Historisk restaurant i kjelleren av det gamle rådhuset fra 1292. Berømt for «Rohe Roulade» — den lokale spesialiteten servert kald. Autentisk og hyggelig atmosfære.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ratskeller+Celle" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-body"><p class="place-title">Thaers Wirtshaus</p><p class="place-meta">📍 ·   · C · e · l · l · e ·   · s · e · n · t · r · u · m ·   · · ·   · 💶 ·   · M · i · d · d · e · l · s ·   · p · r · i · s</p><p class="place-desc">Tradisjonelt vertshus med god mat og varm stemning. Populært blant lokalbefolkningen — et godt tegn.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Thaers+Wirtshaus+Celle" target="_blank">📍 Kart</a></div></div></div></div></div><div class="section"><h2>ℹ️ Praktisk</h2><div class="info-row"><span class="label">Parkering</span><span>Parkhaus Südwall nær sentrum. Ellers gateparkering rundt gamlebyen.</span></div><div class="info-row"><span class="label">Sykkel</span><span>Celle er helt flatt. Langs Aller-elven (~10 km) og i gamlebyen er det trivelig å sykle.</span></div><div class="info-row"><span class="label">Åpningstider</span><span>Bomann Museum: man-søn 10-17. Herzogschloss: ti-fr 10:30-16:30.</span></div></div></div>
 <script>
-
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
@@ -108,20 +57,15 @@ L.Icon.Default.mergeOptions({
   shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'
 });
 const m=L.map('map',{scrollWheelZoom:false});
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
-
-const places=[
-  [52.6247,10.0798,'Althoff Hotel Fürstenhof','Overnatting'],
-  [52.625,10.08,'Hoppener Haus','Berømt halvtimberhus 1532'],
-  [52.625,10.082,'Herzogschloss','Slott med eldste teater i Tys.'],
-  [52.624,10.08,'Bomann Museum','Kulturhistorie, gratis lørdag'],
-  [52.625,10.079,'Ratskeller Altes Rathaus','Historisk restaurant i rådhuset'],
-];
-places.forEach(([lat,lng,name,note])=>{
-  L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${name}</strong><br><small>${note}</small>`);
-});
-m.setView([52.6247,10.0798],14);
-
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+  {attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
+L.marker([52.6247,10.0798]).addTo(m).bindPopup('<strong>Althoff Fürstenhof</strong><br><small>Overnatting</small>');
+L.marker([52.6252,10.0808]).addTo(m).bindPopup('<strong>Hoppener Haus</strong><br><small>Berømt halvtimberhus fra 1532</small>');
+L.marker([52.6253,10.082]).addTo(m).bindPopup('<strong>Herzogschloss</strong><br><small>Slott med Europas eldste slottsteater</small>');
+L.marker([52.6247,10.082]).addTo(m).bindPopup('<strong>Bomann Museum</strong><br><small>Kulturhistorie — gratis lørdag etter 13</small>');
+L.marker([52.6248,10.0793]).addTo(m).bindPopup('<strong>Altes Rathaus / Ratskeller</strong><br><small>Historisk rådhus fra 1292</small>');
+L.marker([52.623,10.083]).addTo(m).bindPopup('<strong>Französischer Garten</strong><br><small>Rolig park</small>');
+m.setView([52.6247,10.0808],14);
 </script>
 </body>
 </html>

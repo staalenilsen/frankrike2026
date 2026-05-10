@@ -3,34 +3,43 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Trier, Tyskland – Reisebok Frankrike 2026</title>
+<title>Trier – Reisebok Frankrike 2026</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
-:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;--accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;--warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e4f7ec;--r:18px}
-*{box-sizing:border-box}html{font-size:16px}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;
+  --accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;
+  --warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e4f7ec;--r:18px}
+*{box-sizing:border-box}html{font-size:16px;scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
 a{color:var(--sky)}
-.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px}
+.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
 .back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}
 .topbar h1{margin:0;font-size:17px;font-weight:700}
-.hero-map{height:240px;width:100%}
+.hero-map{height:220px;width:100%}
 .content{padding:16px;max-width:760px;margin:0 auto}
-.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--sky);border-radius:var(--r);padding:16px;margin-bottom:14px}
 h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
 .tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
 .tag.green{background:#eaf5ee;color:#2d7a4f}.tag.blue{background:#e6f0fb;color:#185fa5}
-.place{border-bottom:1px solid var(--line);padding:12px 0}
+.place{border-bottom:1px solid var(--line);padding:14px 0}
 .place:last-child{border-bottom:none;padding-bottom:0}
-.place-title{font-size:15px;font-weight:700;margin:0 0 4px}
-.place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.6}
-.place-links{display:flex;gap:8px;flex-wrap:wrap}
-.plink{font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent);text-decoration:none}
-.plink.map{background:#e6f0fb;color:#185fa5}
-.info-row{display:flex;gap:8px;font-size:13px;padding:6px 0;border-bottom:1px solid var(--line)}
+.place-inner{display:flex;gap:12px;align-items:flex-start}
+.place-img{width:90px;height:70px;object-fit:cover;border-radius:10px;flex-shrink:0;background:#eee}
+.place-body{flex:1;min-width:0}
+.place-title{font-size:15px;font-weight:700;margin:0 0 3px}
+.place-meta{font-size:11px;font-weight:600;color:var(--sky);margin:0 0 5px;display:flex;gap:8px;flex-wrap:wrap}
+.place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.55}
+.place-links{display:flex;gap:6px;flex-wrap:wrap}
+.plink{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;text-decoration:none;white-space:nowrap}
+.plink.ticket{background:var(--accent-soft);color:var(--accent);border:1px solid #f0b070}
+.plink.map{background:#e6f0fb;color:#185fa5;border:1px solid #b0cef5}
+.plink.web{background:#f0f9fc;color:#0d2e45;border:1px solid var(--line)}
+.tip-box{background:var(--warn-soft);border:1px solid #e8c97a;border-radius:12px;padding:11px 14px;font-size:13px;margin-top:10px;line-height:1.55}
+.info-row{display:flex;gap:10px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}
 .info-row:last-child{border-bottom:none}
-.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:80px;flex-shrink:0;padding-top:2px}
-@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:300px}}
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:90px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}.place-img{width:110px;height:82px}}
 </style>
 </head>
 <body>
@@ -39,80 +48,8 @@ h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
   <h1>Trier, Tyskland</h1>
 </div>
 <div id="map" class="hero-map"></div>
-<div class="content">
-<div class="section">
-  <h2>Om Trier</h2>
-  <p style="font-size:14px;color:var(--muted);margin:0 0 10px">Tysklands eldste by, grunnlagt av romerne i 16 f.Kr. Trier har 8 UNESCO-listeede monumenter — mer enn noen annen by i Tyskland. Her kan dere vandre gjennom 2000 år med ett skritt. Moseldalen rundt er perfekt for sykkel.</p>
-  <div><span class="tag">Tysklands eldste by</span><span class="tag green">8 UNESCO-monumenter</span><span class="tag">Moseldalen</span><span class="tag">Karl Marx-fødested</span></div>
-</div>
-<div class="section">
-  <h2>🚶 Gåturer & attraksjoner</h2>
-  <div class="place">
-    <p class="place-title">Porta Nigra — klatre tårnet</p>
-    <p class="place-desc">Den best bevarte romerske byporten i verden, bygget rundt 180 e.Kr. Klatr opp i tårnet (€4) for strålende utsikt over Trier. Nede: gå gjennom selve porten og rundt den. En av Europas mest imponerende romerske bygverk.</p>
-    <div><span class="tag">UNESCO</span><span class="tag">€4 tårn­besøk</span><span class="tag">Romertid 180 e.Kr.</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Porta+Nigra+Trier" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Konstantin-basilikaen (Aula Palatina)</p>
-    <p class="place-desc">Keiser Konstantins enorme tronsall fra 300-tallet — den største bevarte enkeltromlige bygningen fra antikken i verden. Ubeskrivelig storstilt og gratis å besøke. Tar bare 15–20 minutter, men setter ting i perspektiv.</p>
-    <div><span class="tag">Gratis</span><span class="tag">Verdens største antikke hall</span><span class="tag">Romerkeiser Konstantin</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Konstantinbasilika+Trier" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Kaiserthermen — underjordiske kanaler</p>
-    <p class="place-desc">Keiserbadene fra 300-tallet — aldri ferdigstilt av romerne, men nå et fascinerende arkeologisk område. Vandre ned i de underjordiske kanalene som fremdeles har vann. €4. Følg «Rundgang»-løypen under bakken.</p>
-    <div><span class="tag">UNESCO</span><span class="tag">€4</span><span class="tag">Underjordiske kanaler</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Kaiserthermen+Trier" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Karl Marx-huset</p>
-    <p class="place-desc">Fødestaden til Karl Marx i 1818 — nå et fascinerende museum om hans liv, ideer og innflytelse. Personlige gjenstander, brev og kunst. Korsveier med lyskryss med Marx-figur utenfor.</p>
-    <div><span class="tag">Museum</span><span class="tag">Spesiell historie</span><span class="tag">Sentral beliggenhet</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Karl+Marx+Haus+Trier" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Hauptmarkt og Petrusbrunnen</p>
-    <p class="place-desc">Trieres vakre sentrale torg med fontenen Petrusbrunnen, omgitt av bygninger fra ulike epoker. Perfekt for å sitte på en kafé og nyte livet. Markeds­dager og strålende folkeliv.</p>
-    <div><span class="tag">Gratis</span><span class="tag">Sentralt</span><span class="tag">Perfekt lunsj-stopp</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Hauptmarkt+Trier" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">🚲 Moselsykling langs elven</p>
-    <p class="place-desc">Rolig og nydelig sykkelsti langs Mosel-elven — flat, vakker og full av vinranker. Sykkel sørover til Zurlauben-bryggen (~3 km) og videre om ønskelig. Perfekt for et par timer.</p>
-    <div><span class="tag green">Sykkeltur ~5–10 km</span><span class="tag">Flat langs elven</span><span class="tag">Vinlandskap</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Moselpfad+Trier+sykkelsti" target="_blank">📍 Kart</a></div>
-  </div>
-</div>
-<div class="section">
-  <h2>🍽 Restauranter & kafeer</h2>
-  <div class="place">
-    <p class="place-title">Weinstube Kesselstatt</p>
-    <p class="place-desc">Sjarmerende vinkjeller og restaurant med strålende utsikt mot domkirken. Det beste stedet i Trier for et glass Mosel Riesling og en matbit. Uteservering om sommeren. Lokale vinbønder serverer egne viner.</p>
-    <div><span class="tag">Vinbar</span><span class="tag">Katedralutsikt</span><span class="tag">Riesling-mekka</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Weinstube+Kesselstatt+Trier" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Brasserie ZUR SIM</p>
-    <p class="place-desc">Historisk brasserie med uteservering rett ved Porta Nigra — Trieres best beliggende restaurant. God mat (schnitzel, fleischkäse, salater), vakker omgivelse.</p>
-    <div><span class="tag">Uteservering</span><span class="tag">Ved Porta Nigra</span><span class="tag">God mat</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Brasserie+ZUR+SIM+Trier" target="_blank">📍 Kart</a></div>
-  </div>
-  <div class="place">
-    <p class="place-title">Zurlauben-bryggen</p>
-    <p class="place-desc">Sjarmerende fiskerbrygge fra 1700-tallet med rekke restauranter langs Mosel. Perfekt for en lunsj eller kveldsmiddag ved vannet. Noe for enhver smak — fra enkel fisk til fin dining.</p>
-    <div><span class="tag">Elverestauranter</span><span class="tag">Nydelig beliggenhet</span><span class="tag">Lunsj</span></div>
-    <div class="place-links" style="margin-top:8px"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Zurlauben+Trier+restaurant" target="_blank">📍 Kart</a></div>
-  </div>
-</div>
-<div class="section">
-  <h2>ℹ️ Praktisk</h2>
-<div class="info-row"><span class="label">AntikenCard</span><span>Gir adgang til Porta Nigra, Kaiserthermen, Amphitheater og Rheinisches Landesmuseum — €12 voksen. God verdi om du vil se flere romerske steder.</span></div><div class="info-row"><span class="label">Sykkel</span><span>Moselsykling langs elven er flat og enkel. Sykkel sørover til Zurlauben-bryggen (~3 km) eller videre innover i Mosel-dalen.</span></div><div class="info-row"><span class="label">Tips</span><span>Basilika og Hauptmarkt er gratis. Begynn ved Porta Nigra og gå derfra. Bruk kvelden på Weinstube Kesselstatt for lokale viner.</span></div>
-</div>
-
-</div>
+<div class="content"><div class="section"><p style="font-size:14px;color:var(--muted);margin:0 0 10px">Tysklands eldste by, grunnlagt av romerne i 16 f.Kr. Trier har 8 UNESCO-listede monumenter. Her vandrer dere gjennom 2000 år med ett skritt. Moseldalen rundt er perfekt for sykkel og vinsmaking.</p><div><span class="tag">Tysklands eldste by</span><span class="tag green">8 UNESCO-monumenter</span><span class="tag">Moseldalen & Riesling</span><span class="tag">Karl Marx-fødested</span></div></div><div class="section"><h2>🏛️ Attraksjoner & gåturer</h2><div class="place"><div class="place-inner"><img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Porta_Nigra_BW_2016-06-07_09-16-55.jpg/640px-Porta_Nigra_BW_2016-06-07_09-16-55.jpg" alt="Porta Nigra — klatre tårnet" loading="lazy" onerror="this.style.display='none'"><div class="place-body"><p class="place-title">Porta Nigra — klatre tårnet</p><p class="place-meta">📍 ·   · P · o · r · t · a · - · N · i · g · r · a · - · P · l · a · t · z ·   · · ·   · ⏱ ·   · 3 · 0 · – · 4 · 5 ·   · m · i · n ·   · · ·   · 💶 ·   · € · 4 ·   · v · o · k · s · n · e</p><p class="place-desc">Den best bevarte romerske byporten i verden, bygget ca. 180 e.Kr. Klatr opp i tårnet for strålende utsikt over Trier og runde av Moselomdalen. Inngangen er i hjørnet — se skilting. AntikenCard gir adgang til flere steder.</p><div class="place-links"><a class="plink ticket" href="https://www.trier-info.de/antikencard" target="_blank">🎟 AntikenCard</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Porta+Nigra+Trier" target="_blank">📍 Kart</a><a class="plink web" href="https://www.trier-info.de" target="_blank">🌐 trier-info.de</a></div></div></div></div><div class="place"><div class="place-inner"><img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Trier_Konstantinbasilika_BW_2016-06-07_09-28-18.jpg/640px-Trier_Konstantinbasilika_BW_2016-06-07_09-28-18.jpg" alt="Konstantin-basilikaen (Aula Palatina)" loading="lazy" onerror="this.style.display='none'"><div class="place-body"><p class="place-title">Konstantin-basilikaen (Aula Palatina)</p><p class="place-meta">📍 ·   · K · o · n · s · t · a · n · t · i · n · p · l · a · t · z ·   · · ·   · ⏱ ·   · 1 · 5 · – · 2 · 0 ·   · m · i · n ·   · · ·   · 💶 ·   · G · r · a · t · i · s</p><p class="place-desc">Keiser Konstantins enorme tronssal fra 300-tallet — den største bevarte enkeltromlige bygningen fra antikken. Ubeskrivelig storstilt og gratis å besøke. En av turens overraskende høydepunkter.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Konstantinbasilika+Trier" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Kaiserthermen_Trier_BW_2016-06-07_09-54-34.jpg/640px-Kaiserthermen_Trier_BW_2016-06-07_09-54-34.jpg" alt="Kaiserthermen — underjordiske kanaler" loading="lazy" onerror="this.style.display='none'"><div class="place-body"><p class="place-title">Kaiserthermen — underjordiske kanaler</p><p class="place-meta">📍 ·   · W · e · b · e · r · b · a · c · h ·   · 4 · 1 ·   · · ·   · ⏱ ·   · 4 · 5 · – · 6 · 0 ·   · m · i · n ·   · · ·   · 💶 ·   · € · 4 ·   · v · o · k · s · n · e</p><p class="place-desc">Keiserbadene fra 300-tallet — aldri ferdigstilt, men nå et fascinerende arkeologisk kompleks. Vandre ned i de underjordiske kanalene som fremdeles har vann. Følg Rundgang-løypen. Inngår i AntikenCard.</p><div class="place-links"><a class="plink ticket" href="https://www.trier-info.de/antikencard" target="_blank">🎟 AntikenCard</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Kaiserthermen+Trier" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Trier_-_Karl_Marx_Haus_01.jpg/640px-Trier_-_Karl_Marx_Haus_01.jpg" alt="Karl Marx-huset" loading="lazy" onerror="this.style.display='none'"><div class="place-body"><p class="place-title">Karl Marx-huset</p><p class="place-meta">📍 ·   · B · r · ü · c · k · e · n · s · t · r · a · ß · e ·   · 1 · 0 ·   · · ·   · ⏱ ·   · 1 · – · 1 · , · 5 ·   · t ·   · · ·   · 💶 ·   · € · 5 ·   · v · o · k · s · n · e</p><p class="place-desc">Fødestaden til Karl Marx (1818) — et fascinerende museum om hans liv, ideer og globale innflytelse. Brev, personlige gjenstander og kunst. Kuriøst: lyskreutzet utenfor har en Marx-silhuett.</p><div class="place-links"><a class="plink ticket" href="https://www.museum-karl-marx-haus.de/" target="_blank">🎟 Billetter</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Karl+Marx+Haus+Trier" target="_blank">📍 Kart</a><a class="plink web" href="https://www.museum-karl-marx-haus.de" target="_blank">🌐 museum-karl-marx-haus.de</a></div></div></div></div><div class="place"><div class="place-inner"><img class="place-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Mosel_near_Trier.jpg/640px-Mosel_near_Trier.jpg" alt="🚲 Moselsykling langs elven" loading="lazy" onerror="this.style.display='none'"><div class="place-body"><p class="place-title">🚲 Moselsykling langs elven</p><p class="place-meta">📍 ·   · S · t · a · r · t · : ·   · Z · u · r · l · a · u · b · e · n ·   · · ·   · ⏱ ·   · ~ · 2 ·   · t ·   · · ·   · 💶 ·   · G · r · a · t · i · s</p><p class="place-desc">Rolig og nydelig sykkelsti langs Mosel-elven — flat, vakker og full av vinranker. Sykkel sørover til Zurlauben-bryggen (~3 km) med restauranter langs elven. Enkelt å forlenge om ønskelig.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Moselpromenade+Trier+sykkelsti" target="_blank">📍 Kart</a></div></div></div></div><div class="tip-box">💡 AntikenCard (€12) gir adgang til 4 romerske steder og er god verdi. Konstantinbasilika er gratis og ofte oversett — ikke gå glipp av den.</div></div><div class="section"><h2>🍽️ Restauranter & vinbarer</h2><div class="place"><div class="place-inner"><div class="place-body"><p class="place-title">Weinstube Kesselstatt</p><p class="place-meta">📍 ·   · L · i · e · b · f · r · a · u · e · n · s · t · r · a · ß · e ·   · 1 · 0 ·   · · ·   · 💶 ·   · M · i · d · d · e · l · s ·   · p · r · i · s</p><p class="place-desc">Sjarmerende vinkjeller med utsikt mot domkirken. Det beste stedet i Trier for et glass Mosel Riesling og lokale retter. Reservasjon anbefales om kvelden.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Weinstube+Kesselstatt+Trier" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-body"><p class="place-title">Brasserie ZUR SIM</p><p class="place-meta">📍 ·   · S · i · m · e · o · n · s · t · r · a · ß · e ·   · 1 ·   · · ·   · 💶 ·   · M · i · d · d · e · l · s ·   · p · r · i · s</p><p class="place-desc">Historisk brasserie med nydelig uteservering rett ved Porta Nigra. God mat og sentral beliggenhet.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Brasserie+ZUR+SIM+Trier" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-body"><p class="place-title">Zurlauben-bryggen</p><p class="place-meta">📍 ·   · Z · u · r · l · a · u · b · e · n · u · f · e · r ·   · · ·   · 💶 ·   · U · l · i · k · e ·   · p · r · i · s · n · i · v · å · e · r</p><p class="place-desc">Rekke av restauranter i sjarmerende 1700-tallshus langs Mosel. Perfekt for lunsj eller kveldsmiddag ved vannet.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Zurlauben+Trier+restaurant" target="_blank">📍 Kart</a></div></div></div></div></div><div class="section"><h2>ℹ️ Praktisk</h2><div class="info-row"><span class="label">AntikenCard</span><span>€12 — Porta Nigra, Kaiserthermen, Amphitheater og Landesmuseum. Kjøp ved Porta Nigra.</span></div><div class="info-row"><span class="label">Sykkel</span><span>Mosel­sykkel­vei langs elven er flat og enkel. Zurlauben­bryggen er ~3 km fra sentrum.</span></div><div class="info-row"><span class="label">Vin</span><span>Trier er Mosel Rieslings hjemby. Prøv et glass ved Weinstube Kesselstatt om kvelden.</span></div></div></div>
 <script>
-
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
@@ -120,22 +57,17 @@ L.Icon.Default.mergeOptions({
   shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'
 });
 const m=L.map('map',{scrollWheelZoom:false});
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
-
-const places=[
-  [49.7673,6.6415,'Nells Park Hotel','Overnatting'],
-  [49.7573,6.6437,'Porta Nigra','UNESCO — romsk byporten fra 180 e.Kr.'],
-  [49.7542,6.6424,'Konstantinbasilika','Gratis — verdens største antikke hall'],
-  [49.7531,6.6368,'Kaiserthermen','Underjordiske kanaler €4'],
-  [49.7513,6.6383,'Karl Marx-huset','Fødested 1818'],
-  [49.7571,6.6432,'Hauptmarkt','Centralt torg med fontene'],
-  [49.76,6.6303,'Weinstube Kesselstatt','Riesling og katedralutsikt'],
-];
-places.forEach(([lat,lng,name,note])=>{
-  L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${name}</strong><br><small>${note}</small>`);
-});
-m.setView([49.7673,6.6415],14);
-
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+  {attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
+L.marker([49.7673,6.6415]).addTo(m).bindPopup('<strong>Nells Park Hotel</strong><br><small>Overnatting</small>');
+L.marker([49.7573,6.6437]).addTo(m).bindPopup('<strong>Porta Nigra</strong><br><small>UNESCO — romsk byporten fra 180 e.Kr.</small>');
+L.marker([49.7542,6.6424]).addTo(m).bindPopup('<strong>Konstantinbasilika</strong><br><small>Gratis — verdens største antikke hall</small>');
+L.marker([49.7531,6.6368]).addTo(m).bindPopup('<strong>Kaiserthermen</strong><br><small>Underjordiske kanaler €4</small>');
+L.marker([49.7513,6.6383]).addTo(m).bindPopup('<strong>Karl Marx-huset</strong><br><small>Fødested 1818</small>');
+L.marker([49.7571,6.6432]).addTo(m).bindPopup('<strong>Hauptmarkt</strong><br><small>Centralt torg</small>');
+L.marker([49.76,6.6303]).addTo(m).bindPopup('<strong>Weinstube Kesselstatt</strong><br><small>Riesling og katedralutsikt</small>');
+L.marker([49.757,6.638]).addTo(m).bindPopup('<strong>Amphitheater</strong><br><small>Romersk amfiteater €4</small>');
+m.setView([49.755,6.641],14);
 </script>
 </body>
 </html>
