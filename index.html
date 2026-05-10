@@ -271,7 +271,35 @@
     .day-link:hover{color:var(--sky);text-decoration:underline}
     .ov-table tr:has(.day-link){cursor:pointer}
     .ov-table tr:has(.day-link):hover td{background:var(--sky-soft)}
-  </style>
+  
+    /* ── Underveisattraksjoner ── */
+    .waypoint-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
+      padding:11px;border-radius:var(--r-sm);background:#fff8f0;color:#b35e00;
+      font-weight:700;font-size:13px;border:1.5px solid #e8a060;margin:8px 0 0;cursor:pointer;
+      font-family:inherit}
+    .waypoint-btn:hover{background:#ffeedd}
+    .wmodal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);
+      z-index:900;align-items:flex-end;justify-content:center}
+    .wmodal-overlay.open{display:flex}
+    .wmodal{background:white;border-radius:20px 20px 0 0;width:100%;max-width:640px;
+      max-height:85vh;overflow-y:auto;padding:20px}
+    .wmodal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+    .wmodal-head h3{margin:0;font-size:17px;color:#0d2e45}
+    .wmodal-close{background:none;border:none;font-size:22px;cursor:pointer;color:#888;
+      padding:0 4px;line-height:1}
+    .wstop{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #c8e8f0}
+    .wstop:last-child{border-bottom:none}
+    .wstop-img{width:88px;height:66px;object-fit:cover;border-radius:10px;flex-shrink:0;background:#eee}
+    .wstop-body{flex:1;min-width:0}
+    .wstop-name{font-size:14px;font-weight:700;margin:0 0 2px;color:#0d2e45}
+    .wstop-meta{font-size:11px;font-weight:600;color:#0097c4;margin:0 0 4px}
+    .wstop-desc{font-size:12px;color:#6b7f8a;margin:0 0 7px;line-height:1.5}
+    .wstop-links{display:flex;gap:5px;flex-wrap:wrap}
+    .wslink{font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;text-decoration:none}
+    .wslink.map{background:#e6f0fb;color:#185fa5;border:1px solid #b0cef5}
+    .wslink.web{background:#f0f9fc;color:#0d2e45;border:1px solid #c8e8f0}
+    .wslink.tip{background:#fff8e1;color:#b35e00;border:1px solid #e8c97a}
+    </style>
 </head>
 <body>
 
@@ -487,6 +515,8 @@
         </div>
       </div>
       <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag2r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+        <button class="waypoint-btn" onclick="document.getElementById('wp-dag2').classList.add('open')">📌 Severdigheter på veien</button>
+        
         <button class="booking-btn" onclick="document.getElementById('modal-furstenhof').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
         <a class="detail-link" href="detail_pages/celle.html">🗺 Utforsk Celle — restauranter &amp; opplevelser</a></div>
     </div>
@@ -923,6 +953,8 @@
         </div>
       </div>
       <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag9r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+        <button class="waypoint-btn" onclick="document.getElementById('wp-dag9').classList.add('open')">📌 Severdigheter på veien</button>
+        
         <a class="detail-link" href="detail_pages/stemilion.html">🗺 Utforsk Saint-Émilion — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -1002,6 +1034,8 @@
         </div>
       </div>
       <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag11r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+        <button class="waypoint-btn" onclick="document.getElementById('wp-dag11').classList.add('open')">📌 Severdigheter på veien</button>
+        
         <button class="booking-btn" onclick="document.getElementById('modal-amboise').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
         <a class="detail-link" href="detail_pages/amboise.html">🗺 Utforsk Amboise — restauranter &amp; opplevelser</a></div>
     </div>
@@ -1135,6 +1169,8 @@
       </div></div>
       <div style="padding:0 16px 16px">
         <button class="route-btn" onclick="var r=ROUTES['dag13r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+        <button class="waypoint-btn" onclick="document.getElementById('wp-dag13').classList.add('open')">📌 Severdigheter på veien</button>
+        
         
         <a class="detail-link" href="detail_pages/utrecht.html">🗺️ Utforsk Utrecht — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-karelv').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
@@ -1190,6 +1226,8 @@
       </div></div>
       <div style="padding:0 16px 16px">
         <button class="route-btn" onclick="var r=ROUTES['dag14r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+        <button class="waypoint-btn" onclick="document.getElementById('wp-dag14').classList.add('open')">📌 Severdigheter på veien</button>
+        
         
         <a class="detail-link" href="detail_pages/lubeck.html">🗺️ Utforsk Lübeck — restauranter &amp; opplevelser</a>
         <button class="booking-btn" onclick="document.getElementById('modal-liho').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
@@ -1238,6 +1276,8 @@
       </div></div>
       <div style="padding:0 16px 16px">
         <button class="route-btn" onclick="var r=ROUTES['dag15r'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">→ Kjørerute Google Maps</button>
+        <button class="waypoint-btn" onclick="document.getElementById('wp-dag15').classList.add('open')">📌 Severdigheter på veien</button>
+        
         <button class="booking-btn" onclick="document.getElementById('modal-koppes').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
       </div>
     </div>
@@ -1855,6 +1895,118 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>24. juli 2026 kl. 23:59</strong>. Fra 25. juli: <strong>DKK 900</strong> (hele beløpet).</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne</p></div>
     <div class="modal-warn">&#x26A0;&#xFE0F; Liten B&amp;B &mdash; meld fra om forventet ankomsttid p&aring; forh&aring;nd. Ingen utdrikningslag/grupper.</div>
+  </div>
+</div>
+<div class="wmodal-overlay" id="wp-dag2" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="wmodal">
+    <div class="wmodal-head">
+      <h3>📌 Severdigheter på veien</h3>
+      <button class="wmodal-close" onclick="document.getElementById('wp-dag2').classList.remove('open')">✕</button>
+    </div>
+    <p style="font-size:12px;color:#6b7f8a;margin:0 0 12px;background:#f0f9fc;padding:8px 10px;border-radius:10px">
+      <strong>Ribe → Celle via Hamburg Moorfleet</strong><br>Avkjøring fra A39 mot Lüneburg — ca. 10 min omvei. Ellers rett motorvei.
+    </p>
+    <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Luneburg_Alter_Kran_01.jpg/640px-Luneburg_Alter_Kran_01.jpg" alt="Lüneburg Altstadt" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
+    <p class="wstop-name">Lüneburg Altstadt</p>
+    <p class="wstop-meta">~10 min avkjøring fra A39 · Fri parkering · 30–60 min</p>
+    <p class="wstop-desc">En av Nord-Tysklands vakreste hansabyer — kompakt gamlebyskjerne med skjeve halvtimberhus, Rathausplatz og den pittoreske Stintmarkt-bryggen langs Ilmenau-elven. Unngikk andre verdenskrig uskadd. Ypperlig for en rask kaffe og benstrekk.</p>
+    <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Lüneburg+Altstadt+Stintmarkt" target="_blank">📍 Kart</a><a class="wslink web" href="https://www.lueneburg.de/Tourismus" target="_blank">🌐 lueneburg.de</a></div>
+  </div></div>
+  </div>
+</div>
+<div class="wmodal-overlay" id="wp-dag9" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="wmodal">
+    <div class="wmodal-head">
+      <h3>📌 Severdigheter på veien</h3>
+      <button class="wmodal-close" onclick="document.getElementById('wp-dag9').classList.remove('open')">✕</button>
+    </div>
+    <p style="font-size:12px;color:#6b7f8a;margin:0 0 12px;background:#f0f9fc;padding:8px 10px;border-radius:10px">
+      <strong>Oyé → Saint-Émilion via A89 og Brive</strong><br>Périgueux ligger rett på A89 mellom Brive og Bordeaux — ingen merkbar omvei.
+    </p>
+    <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Périgueux_vieille_ville.jpg/640px-Périgueux_vieille_ville.jpg" alt="Périgueux — romerbyen" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
+    <p class="wstop-name">Périgueux — romerbyen</p>
+    <p class="wstop-meta">Rett på A89 · Gratis parkering ved kvarteret · 30–45 min</p>
+    <p class="wstop-desc">Dobbel historisk by: romertiden og middelalderen side om side. Tour de Vésone (27 m høy romertempel fra 100-tallet) og ruinene av amfiteatret er gratis å besøke utenifra. Katedralen Saint-Front (UNESCO-pilegrimsrute) er et halvbysantinsk mesterwerk. Ideell lunsj-stopp.</p>
+    <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Tour+de+Vésone+Périgueux" target="_blank">📍 Tour de Vésone</a><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Cathédrale+Saint-Front+Périgueux" target="_blank">📍 Katedralen</a><a class="wslink web" href="https://www.tourisme-grandperigueux.fr/en" target="_blank">🌐 tourisme-grandperigueux.fr</a></div>
+  </div></div>
+  </div>
+</div>
+<div class="wmodal-overlay" id="wp-dag13" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="wmodal">
+    <div class="wmodal-head">
+      <h3>📌 Severdigheter på veien</h3>
+      <button class="wmodal-close" onclick="document.getElementById('wp-dag13').classList.remove('open')">✕</button>
+    </div>
+    <p style="font-size:12px;color:#6b7f8a;margin:0 0 12px;background:#f0f9fc;padding:8px 10px;border-radius:10px">
+      <strong>Honfleur → Utrecht via Belgia (E40/A16)</strong><br>Gent og Brügge ligger begge rett på E40. LEZ-sone i Gent — nordisk elbil er OK. Brügge: parkering ved jernbanestasjonen.
+    </p>
+    <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Bruges_-_panoramio_%2830%29.jpg/640px-Bruges_-_panoramio_%2830%29.jpg" alt="Brügge — Markt og kanalene" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
+    <p class="wstop-name">Brügge — Markt og kanalene</p>
+    <p class="wstop-meta">~15 min avkjøring fra E40, avkj. 8 · Stasjonsparkering ~€5 · 45–90 min</p>
+    <p class="wstop-desc">Europas best bevarte middelalderbyen. Markt-plassen med Belforttårnet, kanalene i Rozenhoedkaai og brosteins­gatene er uslåelige. Går du rett fra parkeringen ved stasjonen er det 10 min til sentrum. Merk: sentrum er bilfritt.</p>
+    <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Markt+Bruges+Belgium" target="_blank">📍 Markt Brügge</a><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Interparking+Station+Brugge" target="_blank">📍 Stasjonsparkering</a><a class="wslink web" href="https://www.visitbruges.be/en" target="_blank">🌐 visitbruges.be</a></div>
+  </div></div><div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Gent_Graslei.jpg/640px-Gent_Graslei.jpg" alt="Gent — Graslei og Korenlei" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
+    <p class="wstop-name">Gent — Graslei og Korenlei</p>
+    <p class="wstop-meta">~10 min avkjøring fra E40 · P+R Expo gratis · 30–45 min</p>
+    <p class="wstop-desc">Gents vakre middelalderbrygger Graslei og Korenlei er blant Belgias vakreste. Rett fra P+R Expo-parkeringen (gratis, med gratis trikk inn). Gravensteen-borgen (1180) er synlig fra bryggen. Merk: LEZ-sone — nordisk elbil er OK, men registrer kjøretøyet på low-emissionzone.be.</p>
+    <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Graslei+Gent+Belgium" target="_blank">📍 Graslei Gent</a><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Park+and+Ride+Expo+Gent" target="_blank">📍 P+R Expo</a><a class="wslink web" href="https://visit.gent.be/en" target="_blank">🌐 visitgent.be</a><a class="wslink tip" href="https://www.low-emissionzone.be" target="_blank">💡 LEZ-registrering</a></div>
+  </div></div>
+  </div>
+</div>
+<div class="wmodal-overlay" id="wp-dag14" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="wmodal">
+    <div class="wmodal-head">
+      <h3>📌 Severdigheter på veien</h3>
+      <button class="wmodal-close" onclick="document.getElementById('wp-dag14').classList.remove('open')">✕</button>
+    </div>
+    <p style="font-size:12px;color:#6b7f8a;margin:0 0 12px;background:#f0f9fc;padding:8px 10px;border-radius:10px">
+      <strong>Utrecht → Lübeck via Hamburg Moorfleet</strong><br>Bremen ligger rett på A1 mellom Utrecht og Hamburg — ca. 10 min avkjøring til Marktplatz.
+    </p>
+    <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Bremer_Rathaus_und_Roland.jpg/640px-Bremer_Rathaus_und_Roland.jpg" alt="Bremen — Marktplatz og Roland (UNESCO)" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
+    <p class="wstop-name">Bremen — Marktplatz og Roland (UNESCO)</p>
+    <p class="wstop-meta">~10 min avkjøring fra A1 · Parkhaus Am Brill · 30–45 min</p>
+    <p class="wstop-desc">Et av Nordeuropas vakreste markedsplasser — det gotiske rådhuset og Roland-statuen (1404) er UNESCO-verdensarv. Bremer Stadtmusikanten (eventyrfigurene fra Brødre Grimm) står rett ved siden av. Gratis å se alt fra plassen. Kjøre innom for en rask lunsj og kaffe.</p>
+    <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Marktplatz+Bremen+Germany" target="_blank">📍 Marktplatz Bremen</a><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Am+Brill+Bremen" target="_blank">📍 Parkhaus Am Brill</a><a class="wslink web" href="https://www.bremen.eu/tourism" target="_blank">🌐 bremen.eu</a></div>
+  </div></div>
+  </div>
+</div>
+<div class="wmodal-overlay" id="wp-dag15" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="wmodal">
+    <div class="wmodal-head">
+      <h3>📌 Severdigheter på veien</h3>
+      <button class="wmodal-close" onclick="document.getElementById('wp-dag15').classList.remove('open')">✕</button>
+    </div>
+    <p style="font-size:12px;color:#6b7f8a;margin:0 0 12px;background:#f0f9fc;padding:8px 10px;border-radius:10px">
+      <strong>Lübeck → Borup/Nibe via Padborg E45</strong><br>Schleswig og Kolding ligger begge rett på E45. Begge er enkle avkjøringer uten omvei.
+    </p>
+    <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Wikingermuseum_Haithabu.jpg/640px-Wikingermuseum_Haithabu.jpg" alt="Schleswig — Wikingermuseet Haithabu" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
+    <p class="wstop-name">Schleswig — Wikingermuseet Haithabu</p>
+    <p class="wstop-meta">~10 min avkjøring E45, avkj. 71 · Åpent 09–17 · €9 voksne · 45–60 min</p>
+    <p class="wstop-desc">Et av Europas fremste vikingemuseer — rett ved bredden av Schlei-fjorden. Originale vikingeskip, arkeologiske funn og rekonstruert vikinglandsby (Haithabu var 900-tallets største nordeuropeiske handelsby). Sentralt beliggende rett av E45 — perfekt halvveis-stopp.</p>
+    <div class="wstop-links"><a class="wslink map" href="https://haithabu.de/en/besuch" target="_blank">🎟 Billetter</a><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Wikinger+Museum+Haithabu+Busdorf" target="_blank">📍 Kart</a><a class="wslink web" href="https://haithabu.de/en" target="_blank">🌐 haithabu.de</a></div>
+  </div></div><div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Koldinghus_2008-04-14.jpg/640px-Koldinghus_2008-04-14.jpg" alt="Koldinghus — slottet ved fjorden" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
+    <p class="wstop-name">Koldinghus — slottet ved fjorden</p>
+    <p class="wstop-meta">~8 min avkjøring E45, avkj. 61 · Gratis utenfor · Parkering sentrum · 20–30 min</p>
+    <p class="wstop-desc">Koldinghus er et av Danmarks mest dramatiske slott — ruiner og rekonstruerte deler troner over Kolding Fjord. Gratis å se fra utsiden og parken. Museet inne koster ~DKK 90. God lunsj ved fjordkanten etter Haithabu-besøket.</p>
+    <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Koldinghus+Kolding+Denmark" target="_blank">📍 Koldinghus</a><a class="wslink web" href="https://www.koldinghus.dk/en" target="_blank">🌐 koldinghus.dk</a></div>
+  </div></div>
+  </div>
+</div>
+<div class="wmodal-overlay" id="wp-dag11" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="wmodal">
+    <div class="wmodal-head">
+      <h3>📌 Severdigheter på veien</h3>
+      <button class="wmodal-close" onclick="document.getElementById('wp-dag11').classList.remove('open')">✕</button>
+    </div>
+    <p style="font-size:12px;color:#6b7f8a;margin:0 0 12px;background:#f0f9fc;padding:8px 10px;border-radius:10px">
+      <strong>Saint-Émilion → Amboise via Bordeaux og Tours</strong><br>Poitiers Baptisteriet (4. årh.) og Notre-Dame la Grande er rett ved E11/N10 — 10 min avkjøring.
+    </p>
+    <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Notre_Dame_la_Grande.jpg/640px-Notre_Dame_la_Grande.jpg" alt="Poitiers — Notre-Dame la Grande" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
+    <p class="wstop-name">Poitiers — Notre-Dame la Grande</p>
+    <p class="wstop-meta">~10 min avkjøring fra A10/E5 · Gratis · 20–30 min</p>
+    <p class="wstop-desc">Notre-Dame la Grande er en av Frankrikes mest spektakulære romanske kirker — fasaden fra 1100-tallet med intrikate skulpturer er unik i Europa. Gratis å besøke. Like ved: Baptiste Saint-Jean, det eldste kristne baptisteriyet i Frankrike (fra 360-tallet). Sentrumsparkering er lett.</p>
+    <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Notre-Dame+la+Grande+Poitiers" target="_blank">📍 Notre-Dame la Grande</a><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Baptistère+Saint-Jean+Poitiers" target="_blank">📍 Baptisteriet</a><a class="wslink web" href="https://www.poitiers.fr/c__231_671__accueil.aspx" target="_blank">🌐 poitiers.fr</a></div>
+  </div></div>
   </div>
 </div>
 </body>
