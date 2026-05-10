@@ -7,25 +7,35 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
-:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#fff;--bg:#f0f9fc;--accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;--warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--r:18px}
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#fff;--bg:#f0f9fc;
+  --accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;
+  --warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e8f5ee;
+  --r:18px}
 *{box-sizing:border-box}html{font-size:16px;scroll-behavior:smooth}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6}
 a{color:var(--sky)}
-.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;
+  display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
 .back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}
 .topbar h1{margin:0;font-size:17px;font-weight:700}
 .hero-map{height:220px;width:100%}
 .content{padding:16px;max-width:760px;margin:0 auto}
-.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--sky);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--sky);
+  border-radius:var(--r);padding:16px;margin-bottom:14px}
+.section.bike{border-top-color:#1e9654}
 h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
-.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
-.tag.green{background:#eaf5ee;color:#2d7a4f}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
 .place{border-bottom:1px solid var(--line);padding:14px 0}
 .place:last-child{border-bottom:none;padding-bottom:0}
 .place-inner{display:flex;gap:12px;align-items:flex-start}
-.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px}.place-img-wrap img{width:100%;height:100%;object-fit:cover}
+.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;
+  background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;
+  display:flex;align-items:center;justify-content:center;font-size:24px}
+.place-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
 .place-body{flex:1;min-width:0}
-.place-title{font-size:15px;font-weight:700;margin:0 0 3px}
+.place-title{font-size:15px;font-weight:700;margin:0 0 3px;color:var(--ink)}
 .place-meta{font-size:11px;font-weight:600;color:var(--sky);margin:0 0 5px}
 .place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.55}
 .place-links{display:flex;gap:6px;flex-wrap:wrap}
@@ -33,36 +43,65 @@ h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
 .plink.ticket{background:var(--accent-soft);color:var(--accent);border:1px solid #f0b070}
 .plink.map{background:#e6f0fb;color:#185fa5;border:1px solid #b0cef5}
 .plink.web{background:#f0f9fc;color:#0d2e45;border:1px solid var(--line)}
-.tip-box{background:var(--warn-soft);border:1px solid #e8c97a;border-radius:12px;padding:11px 14px;font-size:13px;margin-top:10px;line-height:1.55}
+.plink.ride{background:var(--green-soft);color:#0d5c2e;border:1px solid #7dc99a;font-weight:700}
+.bike-card{background:var(--green-soft);border:1px solid #7dc99a;border-radius:14px;
+  padding:13px 15px;margin-bottom:10px}
+.bike-card:last-child{margin-bottom:0}
+.bike-title{font-size:14px;font-weight:700;color:#0d5c2e;margin:0 0 4px;display:flex;align-items:center;gap:7px}
+.bike-meta{font-size:11px;font-weight:600;color:#1e9654;margin:0 0 6px}
+.bike-desc{font-size:13px;color:#4a5e4a;margin:0 0 9px;line-height:1.5}
+.bike-links{display:flex;gap:6px;flex-wrap:wrap}
+.tip-box{background:var(--warn-soft);border:1px solid #e8c97a;border-radius:12px;
+  padding:11px 14px;font-size:13px;margin-top:10px;line-height:1.55}
 .info-row{display:flex;gap:10px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}
 .info-row:last-child{border-bottom:none}
-.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:90px;flex-shrink:0;padding-top:2px}
-@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px}.place-img-wrap img{width:100%;height:100%;object-fit:cover}}
-</style></head><body>
-<div class="topbar"><a class="back" href="../">← Reisebok</a><h1>Strasbourg, Frankrike</h1></div>
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--sky);min-width:90px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}
+  .place-img-wrap{width:110px;height:82px}}
+</style>
+</head>
+<body>
+<div class="topbar"><a class="back" href="../">← Reisebok</a><h1>Strasbourg, Frankrike 🇫🇷</h1></div>
 <div id="map" class="hero-map"></div>
-<div class="content"><div class="section"><p style="font-size:14px;color:var(--muted);margin:0 0 10px">Alsaces vakre halvfranske, halvtyske hovedstad — en levende UNESCO-verdensarv. Katedralen, Petite France og kanalene gjør Strasbourg til en av Europas vakreste byer. En av Frankrikes mest sykkel­vennlige byer.</p><div><span class="tag">UNESCO Grande Île</span><span class="tag">Sykkelby nr.1 i Frankrike</span><span class="tag">Alsatisk mat</span><span class="tag">Europaparlamentet</span></div></div><div class="section"><h2>🏛️ Attraksjoner & gåturer</h2><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Petite France, Strasbourg">🏘️</div><div class="place-body"><p class="place-title">Petite France — kanalene</p><p class="place-meta">📍 Rue du Bain-aux-Plantes · ⏱ 1 t gange · 💶 Gratis</p><p class="place-desc">Den mest pittoreske bydelen — brosteins­gater, halvtimberhus fra 1500-tallet og kanaler. Rue du Bain-aux-Plantes er Strasbourgs vakreste gate med husene speilet i vannet. Morgen eller kveld er best.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Petite+France+Strasbourg" target="_blank">📍 Kart</a><a class="plink web" href="https://www.visitstrasbourg.fr" target="_blank">🌐 visitstrasbourg.fr</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Strasbourg Cathedral">⛪</div><div class="place-body"><p class="place-title">Strasbourg-katedralen (Notre-Dame)</p><p class="place-meta">📍 Place de la Cathédrale · ⏱ 1–2 t · 💶 Gratis inne · Tårn €4,90</p><p class="place-desc">En av Europas vakreste gotiske katedraler (begynnt 1015). Den astronomiske klokken fra 1843 er fortsatt i gang. Klatre platformen (66 m, 332 trinn) for utsikt over taktoppene og Vogesene.</p><div class="place-links"><a class="plink ticket" href="https://www.cathedrale-strasbourg.fr/visites/" target="_blank">🎟 Tårn-billett</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Cathédrale+Notre-Dame+Strasbourg" target="_blank">📍 Kart</a><a class="plink web" href="https://www.cathedrale-strasbourg.fr" target="_blank">🌐 cathedrale-strasbourg.fr</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Palais Rohan, Strasbourg">🏛️</div><div class="place-body"><p class="place-title">Palais Rohan — 3 museer</p><p class="place-meta">📍 2 Place du Château · ⏱ 2 t · 💶 €6,50 per museum</p><p class="place-desc">Elegante 1700-tallspalasset huser tre museer: Musée des Beaux-Arts, Musée Archéologique og Musée des Arts Décoratifs. Kombinasjonsbillett anbefales.</p><div class="place-links"><a class="plink ticket" href="https://musees.strasbourg.eu/rohan" target="_blank">🎟 Billetter</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Palais+Rohan+Strasbourg" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Strasbourg">🚲</div><div class="place-body"><p class="place-title">🚲 Sykkel langs kanalene (10–15 km)</p><p class="place-meta">📍 Start: Petite France · ⏱ 2 t · 💶 Fra €5/dag (Vélhop)</p><p class="place-desc">Strasbourg er Frankrikes mest sykkel­vennlige by. Sykkel fra Petite France langs kanalene til Orangerie-parken og Europaparlamentet — flat, skiltet og enkel. Vélhop har stasjoner overalt.</p><div class="place-links"><a class="plink ticket" href="https://velhop.strasbourg.eu" target="_blank">🚲 Vélhop utleie</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Parc+de+l+Orangerie+Strasbourg" target="_blank">📍 Orangerie-parken</a></div></div></div></div><div class="tip-box">💡 Katedralen er gratis å gå inn i — kun tårnet koster. Petite France er vakrest tidlig morgen (07–09) og sent om kvelden.</div></div><div class="section"><h2>🍽️ Restauranter & kafeer</h2><div class="place"><div class="place-inner"><div class="place-body"><p class="place-title">La Corde à Linge</p><p class="place-meta">📍 2 Place Benjamin Zix, Petite France · 💶 Middels pris</p><p class="place-desc">Populær restaurant med nydelig kanalutsikt. Alsatisk mat — tarte flambée, choucroute og lokale spesialiteter. Bestill utebordet.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=La+Corde+à+Linge+Strasbourg" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-body"><p class="place-title">Maison des Tanneurs</p><p class="place-meta">📍 42 Rue du Bain-aux-Plantes · 💶 Middels–høy</p><p class="place-desc">Historisk restaurant fra 1572 i Petite France. Berømt choucroute garnie og alsatisk kjøkken i autentiske omgivelser.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Maison+des+Tanneurs+Strasbourg" target="_blank">📍 Kart</a><a class="plink web" href="https://www.maison-des-tanneurs.com" target="_blank">🌐 maison-des-tanneurs.com</a></div></div></div></div></div><div class="section"><h2>ℹ️ Praktisk</h2><div class="info-row"><span class="label">Sykkel</span><span>Vélhop-sykkelutleie fra €5/dag. Stasjoner finnes over hele byen inkl. ved hotellet.</span></div><div class="info-row"><span class="label">Tips</span><span>Tarte flambée er Alsaces signaturrett — prøv den i en winstub. Alsace-viner er halvtørre og aromatiske.</span></div><div class="info-row"><span class="label">Parkering</span><span>Sofitel Grande Île: avklar parkering med hotellet. Sentrum er bilfritt — best å sykle.</span></div></div></div>
+<div class="content"><div class="section"><p style="font-size:14px;color:var(--muted);margin:0 0 10px">Alsaces hjerte — et unikt sted der fransk og tysk kultur smelter sammen. Petite France, en imponerende gotisk katedral og fantastiske kanaler.</p><div><span class="tag">Petite France-kanalene</span><span class="tag">Gotisk katedral</span><span class="tag">Rohan-palasset</span><span class="tag">Verdens beste julenissemarkeder</span></div></div><div class="section "><h2>🏛️ Attraksjoner</h2><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Petite France, Strasbourg" data-emoji="🏘️">🏘️</div><div class="place-body"><p class="place-title">Petite France — kanalene</p><p class="place-meta">📍 Rue du Bain-aux-Plantes · ⏱ 1 t gange · 💶 Gratis</p><p class="place-desc">Det vakreste kvarteret i Strasbourg — halvtimberhus langs kanalene fra 1500-tallet. Beste fotospot: Ponts Couverts (de fire tårnene). Tidlig morgen er det nesten ingen turister.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Petite+France+Strasbourg" target="_blank">📍 Kart</a><a class="plink web" href="https://www.strasbourg.eu/en" target="_blank">🌐 strasbourg.eu</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Strasbourg Cathedral" data-emoji="⛪">⛪</div><div class="place-body"><p class="place-title">Strasbourg-katedralen Notre-Dame</p><p class="place-meta">📍 Place de la Cathédrale · ⏱ 1–1,5 t · 💶 Gratis</p><p class="place-desc">En av verdens vakreste gotiske katedraler fra 1015. 142 m høy spir. Den astronomiske klokken virker tre ganger daglig. Klatr den spiraltrappen for utsikt over Elsass.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Cathédrale+Notre-Dame+Strasbourg" target="_blank">📍 Kart</a><a class="plink web" href="https://www.cathedrale-strasbourg.fr" target="_blank">🌐 cathedrale-strasbourg.fr</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Palais Rohan, Strasbourg" data-emoji="🏛️">🏛️</div><div class="place-body"><p class="place-title">Palais Rohan — 3 museer</p><p class="place-meta">📍 2 Place du Château · ⏱ 1,5 t · 💶 €7/museum</p><p class="place-desc">Rokoko-palasset fra 1742 huser tre museer: Fine Arts, Decorative Arts og Archaeology. Et av Frankrikes vakreste slottsinteriører.</p><div class="place-links"><a class="plink ticket" href="https://www.musees.strasbourg.eu/billetterie" target="_blank">🎟 Billetter</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Palais+Rohan+Strasbourg" target="_blank">📍 Kart</a></div></div></div></div><div class="tip-box">💡 Katedralen er best i morgenlyset. Petite France er fotografisk perfekt ved soloppgang — kom kl. 07:30 for å unngå turistbussene.</div></div><div class="section bike"><h2>🚲 Sykkelruter</h2><div class="bike-card">
+  <p class="bike-title">🚲 Strasbourg Kanal-rundt</p>
+  <p class="bike-meta">📏 14 km · ⏱ ~55 min · 🏙</p>
+  <p class="bike-desc">Sykkel langs L'Ill-kanalen gjennom hele storbyen: Petite France → Orangerie (EU-kvarteret) → Port du Rhin (grensen til Tyskland) → Neustadt → tilbake via kanalene. Strasbourg er Frankrikes beste sykkelby.</p>
+  <div class="bike-links">
+    <a class="plink ride" href="https://www.google.com/maps/dir/?api=1&origin=48.5795,7.7465&destination=48.5795,7.7465&travelmode=bicycling&waypoints=48.586,7.77|48.595,7.79|48.5815,7.75" target="_blank">🗺 Naviger i Google Maps</a>
+  </div>
+</div></div><div class="section "><h2>🍽️ Restauranter</h2><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Strasbourg" data-emoji="🍽️">🍽️</div><div class="place-body"><p class="place-title">La Corde à Linge</p><p class="place-meta">📍 2 Place Benjamin Zix · 💶 Middels-høy pris</p><p class="place-desc">Fantastisk terrasse i Petite France med utsikt over kanalene. Tradisjonell alsasiansk mat: Tarte Flambée og Choucroute garnie.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=La+Corde+à+Linge+Strasbourg" target="_blank">📍 Kart</a></div></div></div></div></div><div class="section"><h2>ℹ️ Praktisk</h2><div class=info-row><span class=label>Sykkel</span><span>Strasbourg er Frankrikes beste sykkelby. Villo!-bysykkel tilgjengelig overalt.</span></div><div class=info-row><span class=label>Katedralen</span><span>Astronomisk klokke: 12:30 (kortere show) og 18:30 (fullt show).</span></div></div></div>
 <script>
 
-// Last bilder via Wikipedia REST API
+// Bildehenting: prøv Wikipedia REST API, fallback til OG-bilde, deretter emoji
 document.querySelectorAll('[data-wiki]').forEach(wrap => {
   const term = wrap.getAttribute('data-wiki');
+  const ogUrl = wrap.getAttribute('data-og');
   fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(term))
     .then(r=>r.json()).then(d=>{
       const url = d.thumbnail?.source;
       if(url){ wrap.innerHTML='<img src="'+url+'" alt="'+term+'">'; }
-    }).catch(()=>{});
+      else if(ogUrl){ loadOG(wrap, ogUrl); }
+    }).catch(()=>{ if(ogUrl) loadOG(wrap, ogUrl); });
 });
+function loadOG(wrap, url){
+  fetch('https://api.allorigins.win/get?url='+encodeURIComponent(url))
+    .then(r=>r.json()).then(d=>{
+      const m = d.contents?.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/);
+      if(m && m[1]){ wrap.innerHTML='<img src="'+m[1]+'" alt="" onerror="this.parentElement.innerHTML=this.parentElement.getAttribute('data-emoji')">'; }
+    }).catch(()=>{});
+}
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});
 const m=L.map('map',{scrollWheelZoom:false});
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
-L.marker([48.583,7.745]).addTo(m).bindPopup('<strong>Sofitel Strasbourg</strong><br><small>Overnatting</small>');
-L.marker([48.58,7.74]).addTo(m).bindPopup('<strong>Petite France</strong><br><small>Kanalbydelen</small>');
-L.marker([48.5818,7.7507]).addTo(m).bindPopup('<strong>Katedralen Notre-Dame</strong><br><small>Gotisk mesterverk</small>');
-L.marker([48.578,7.739]).addTo(m).bindPopup('<strong>La Corde à Linge</strong><br><small>Kanalutsikt og alsatisk mat</small>');
-L.marker([48.584,7.748]).addTo(m).bindPopup('<strong>Palais Rohan</strong><br><small>3 museer i ett</small>');
-L.marker([48.587,7.764]).addTo(m).bindPopup('<strong>Europaparlamentet</strong><br><small>Sykkeltur ~3 km</small>');
-m.setView([48.581,7.747],14);
-</script></body></html>
+L.marker([48.5795,7.7465]).addTo(m).bindPopup('<strong>Petite France</strong><br><small>Kanalkvarteret fra 1500-tallet</small>');
+L.marker([48.5839,7.7508]).addTo(m).bindPopup('<strong>Katedralen Notre-Dame</strong><br><small>Gotisk mesterverk 142 m</small>');
+L.marker([48.5804,7.7497]).addTo(m).bindPopup('<strong>Palais Rohan</strong><br><small>Rokoko-palasset — 3 museer</small>');
+L.marker([48.58,7.7439]).addTo(m).bindPopup('<strong>Ponts Couverts</strong><br><small>Beste fotospott i Petite France</small>');
+m.setView([48.58,7.749],14);
+</script>
+</body>
+</html>

@@ -3,29 +3,39 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Alsace / Mittelwihr – Reisebok</title>
+<title>Alsace – Reisebok</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
-:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#fff;--bg:#f0f9fc;--accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;--warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--r:18px}
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#fff;--bg:#f0f9fc;
+  --accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;
+  --warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e8f5ee;
+  --r:18px}
 *{box-sizing:border-box}html{font-size:16px;scroll-behavior:smooth}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6}
 a{color:var(--sky)}
-.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;
+  display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
 .back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}
 .topbar h1{margin:0;font-size:17px;font-weight:700}
 .hero-map{height:220px;width:100%}
 .content{padding:16px;max-width:760px;margin:0 auto}
-.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--sky);border-radius:var(--r);padding:16px;margin-bottom:14px}
+.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--sky);
+  border-radius:var(--r);padding:16px;margin-bottom:14px}
+.section.bike{border-top-color:#1e9654}
 h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
-.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
-.tag.green{background:#eaf5ee;color:#2d7a4f}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
 .place{border-bottom:1px solid var(--line);padding:14px 0}
 .place:last-child{border-bottom:none;padding-bottom:0}
 .place-inner{display:flex;gap:12px;align-items:flex-start}
-.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px}.place-img-wrap img{width:100%;height:100%;object-fit:cover}
+.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;
+  background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;
+  display:flex;align-items:center;justify-content:center;font-size:24px}
+.place-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
 .place-body{flex:1;min-width:0}
-.place-title{font-size:15px;font-weight:700;margin:0 0 3px}
+.place-title{font-size:15px;font-weight:700;margin:0 0 3px;color:var(--ink)}
 .place-meta{font-size:11px;font-weight:600;color:var(--sky);margin:0 0 5px}
 .place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.55}
 .place-links{display:flex;gap:6px;flex-wrap:wrap}
@@ -33,36 +43,72 @@ h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
 .plink.ticket{background:var(--accent-soft);color:var(--accent);border:1px solid #f0b070}
 .plink.map{background:#e6f0fb;color:#185fa5;border:1px solid #b0cef5}
 .plink.web{background:#f0f9fc;color:#0d2e45;border:1px solid var(--line)}
-.tip-box{background:var(--warn-soft);border:1px solid #e8c97a;border-radius:12px;padding:11px 14px;font-size:13px;margin-top:10px;line-height:1.55}
+.plink.ride{background:var(--green-soft);color:#0d5c2e;border:1px solid #7dc99a;font-weight:700}
+.bike-card{background:var(--green-soft);border:1px solid #7dc99a;border-radius:14px;
+  padding:13px 15px;margin-bottom:10px}
+.bike-card:last-child{margin-bottom:0}
+.bike-title{font-size:14px;font-weight:700;color:#0d5c2e;margin:0 0 4px;display:flex;align-items:center;gap:7px}
+.bike-meta{font-size:11px;font-weight:600;color:#1e9654;margin:0 0 6px}
+.bike-desc{font-size:13px;color:#4a5e4a;margin:0 0 9px;line-height:1.5}
+.bike-links{display:flex;gap:6px;flex-wrap:wrap}
+.tip-box{background:var(--warn-soft);border:1px solid #e8c97a;border-radius:12px;
+  padding:11px 14px;font-size:13px;margin-top:10px;line-height:1.55}
 .info-row{display:flex;gap:10px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}
 .info-row:last-child{border-bottom:none}
-.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:90px;flex-shrink:0;padding-top:2px}
-@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px}.place-img-wrap img{width:100%;height:100%;object-fit:cover}}
-</style></head><body>
-<div class="topbar"><a class="back" href="../">← Reisebok</a><h1>Alsace — Route du Vin</h1></div>
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--sky);min-width:90px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}
+  .place-img-wrap{width:110px;height:82px}}
+</style>
+</head>
+<body>
+<div class="topbar"><a class="back" href="../">← Reisebok</a><h1>Alsace — Mittelwihr 🇫🇷</h1></div>
 <div id="map" class="hero-map"></div>
-<div class="content"><div class="section"><p style="font-size:14px;color:var(--muted);margin:0 0 10px">To dager i Mittelwihr midt på Route du Vin. Fra hotellet er det flat sykkeltur gjennom vinmarker til noen av Frankrikes flotteste middelalder­landsbyer.</p><div><span class="tag">Route du Vin</span><span class="tag">Flat sykkelrute</span><span class="tag">Riquewihr · Kaysersberg</span><span class="tag">Alsatisk vin og mat</span></div></div><div class="section"><h2>🚲 Sykkelruter fra Mittelwihr</h2><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Riquewihr">🏘️</div><div class="place-body"><p class="place-title">Riquewihr — Alsaces perle (~5 km t/r)</p><p class="place-meta">📍 Riquewihr · ⏱ 2–3 t · 💶 Gratis å vandre</p><p class="place-desc">Den vakreste landsbyen i Alsace — omgitt av middelaldermurer, fargerike halvtimberhus og brosteins­gater fra 1400-tallet. Bilfri innenfor murene. Prøv lokal Riesling i en winstub. Kom tidlig morgen for roligste opplevelse.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Riquewihr+Alsace" target="_blank">📍 Kart</a><a class="plink web" href="https://www.riquewihr.fr" target="_blank">🌐 riquewihr.fr</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Kaysersberg Vignoble">🏰</div><div class="place-body"><p class="place-title">Kaysersberg (~8 km t/r)</p><p class="place-meta">📍 Kaysersberg · ⏱ 2 t · 💶 Gratis å vandre</p><p class="place-desc">Sjarmerende middelalder­landsby med en slotsruin som gir panorama­utsikt over vinmarkene og Vogesene. Roligere enn Riquewihr. Klatre borgborgen for utsikten. God plass for kaffepause.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Kaysersberg+Alsace" target="_blank">📍 Kart</a><a class="plink web" href="https://www.kaysersberg.com" target="_blank">🌐 kaysersberg.com</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Ribeauvillé">🏙️</div><div class="place-body"><p class="place-title">Ribeauvillé (~6 km t/r)</p><p class="place-meta">📍 Ribeauvillé · ⏱ 1,5 t · 💶 Gratis</p><p class="place-desc">Vakker landsby med renessansefontener og tre kastelborger oppe i åsene. Levende handelsgater og kjente Riesling-produsenter. Populær winstub: La Flammerie.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribeauvillé+Alsace" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Colmar">🛶</div><div class="place-body"><p class="place-title">🚲 Colmar — Lille Venezia (~20 km t/r)</p><p class="place-meta">📍 Colmar · ⏱ Halvdag · 💶 Gratis</p><p class="place-desc">Alsaces vakreste by med fargerike halvtimberhus langs kanalene i Petite Venise. Issenheim-alterstykket i Unterlinden-museet er verdt alene. Sykkel sørover langs Véloroute du Vignoble (druekvist-symboler).</p><div class="place-links"><a class="plink ticket" href="https://www.musee-unterlinden.com/" target="_blank">🎟 Unterlinden Museum</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Colmar+Alsace" target="_blank">📍 Kart</a><a class="plink web" href="https://www.tourisme-colmar.com" target="_blank">🌐 tourisme-colmar.com</a></div></div></div></div><div class="tip-box">💡 Riquewihr er best tidlig morgen (07–09) før turistbussene ankommer. Sykkelruten er merket med druekvist-symboler — følg dem sørover.</div></div><div class="section"><h2>🍽️ Mat & vin</h2><div class="place"><div class="place-inner"><div class="place-body"><p class="place-title">Winstub i Mittelwihr / Ribeauvillé</p><p class="place-meta">📍 Langs vinruten · 💶 Middels pris</p><p class="place-desc">En «winstub» (tradisjonell alsatisk restaurant) er det rette stedet for tarte flambée, baeckeoffe og lokal Gewurztraminer. Avslappet stemning og personlig service.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=winstub+Route+du+Vin+Alsace" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-body"><p class="place-title">Domaine vinicole — vinsmak</p><p class="place-meta">📍 Langs ruten · 💶 Fri smak</p><p class="place-desc">Mange lokale produsenter tilbyr gratis vinsmaking. Spør på hotellet om anbefalinger — Riesling, Gewurztraminer og Pinot Gris er regionens beste druer.</p><div class="place-links"><a class="plink web" href="https://www.wineroute.alsace" target="_blank">🌐 vineroute.alsace</a></div></div></div></div></div><div class="section"><h2>ℹ️ Praktisk</h2><div class="info-row"><span class="label">Sykkel</span><span>Véloroute du Vignoble er godt skiltet med druekvist. Flat og enkel langs vinmarkene.</span></div><div class="info-row"><span class="label">Mat</span><span>Prøv: tarte flambée, baeckeoffe, munster-ost og lokal Crémant d'Alsace (musserende).</span></div><div class="info-row"><span class="label">Tidspunkt</span><span>Riquewihr og Kaysersberg er best morgen og ettermiddag — unngå middag på sommeren.</span></div></div></div>
+<div class="content"><div class="section"><p style="font-size:14px;color:var(--muted);margin:0 0 10px">Mittelwihr er midt i Alsaces vinmarker langs Route du Vin. Herfra kan dere sykle til vinlandsbyene Riquewihr, Ribeauvillé og Colmar.</p><div><span class="tag">Route du Vin</span><span class="tag">Middelalderlandsbyer</span><span class="tag">Vinmark-sykling</span><span class="tag">Haut-Koenigsbourg-slottet</span></div></div><div class="section "><h2>🏛️ Attraksjoner & utflukter</h2><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Riquewihr" data-emoji="🏘️">🏘️</div><div class="place-body"><p class="place-title">Riquewihr — Alsaces perle</p><p class="place-meta">📍 ~5 km syd · ⏱ 1,5 t · 💶 Gratis å vandre</p><p class="place-desc">Bilfri middelalderby fra 1400-tallet — kanskje Alsaces vakreste. Blomsterpotter på hvert vindu, brosteinsgate og Dolder-tårnet over porten. Kom tidlig morgen eller etter kl. 17 for å unngå turistbussene.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Riquewihr+Alsace" target="_blank">📍 Kart</a><a class="plink web" href="https://www.riquewihr.fr" target="_blank">🌐 riquewihr.fr</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Ribeauvillé" data-emoji="🏙️">🏙️</div><div class="place-body"><p class="place-title">Ribeauvillé — tre kastelborger</p><p class="place-meta">📍 ~8 km nord · ⏱ 2 t · 💶 Gratis</p><p class="place-desc">Charmerende by med tre middelalderborger på åsen over. Sentrum er bilfritt og fullt av Riesling-produsenter. Vandre opp til Ribeaupierre-tårnene for panoramautsikt.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribeauvillé+Alsace" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Kaysersberg Vignoble" data-emoji="🏰">🏰</div><div class="place-body"><p class="place-title">Kaysersberg — Schweitzerby</p><p class="place-meta">📍 ~8 km nord · ⏱ 1,5 t · 💶 Gratis</p><p class="place-desc">Albert Schweitzers fødeby — sjarmerende og mindre turistifisert enn Riquewihr. Imponerende slottsruin på toppen. Vandre over den gamle steinbroen over Weiss-elven.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Kaysersberg+Alsace" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Colmar" data-emoji="🛶">🛶</div><div class="place-body"><p class="place-title">Colmar — Petite Venise</p><p class="place-meta">📍 ~20 km syd · ⏱ 2–3 t · 💶 Gratis å vandre</p><p class="place-desc">Alsaces kulturhovedstad med fargede halvtimberhus langs kanalene. Unterlinden-museet (Issenheim-alterstykket) er verdensklasse. Rosenborg-kvarteret er det vakreste.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Colmar+Petite+Venise" target="_blank">📍 Kart</a><a class="plink web" href="https://www.tourisme-colmar.com" target="_blank">🌐 tourisme-colmar.com</a></div></div></div></div><div class="tip-box">💡 Riquewihr er best tidlig morgen eller sen ettermiddag — turistbussene ankommer fra kl. 10.</div></div><div class="section bike"><h2>🚲 Sykkelruter</h2><div class="bike-card">
+  <p class="bike-title">🚲 Route du Vin — vinlandsbyene</p>
+  <p class="bike-meta">📏 30 km · ⏱ ~110 min · ⬛</p>
+  <p class="bike-desc">Den klassiske Alsace-sykkelruten: Mittelwihr → Riquewihr → Ribeauvillé → Kaysersberg → tilbake. Flat langs Route du Vin D1b gjennom vinmarkene. Absolutt vakker tur.</p>
+  <div class="bike-links">
+    <a class="plink ride" href="https://www.google.com/maps/dir/?api=1&origin=48.158,7.308&destination=48.158,7.308&travelmode=bicycling&waypoints=48.166,7.298|48.196,7.322|48.144,7.262" target="_blank">🗺 Naviger i Google Maps</a>
+  </div>
+</div><div class="bike-card">
+  <p class="bike-title">🚲 Colmar tur-retur via vinmarkene</p>
+  <p class="bike-meta">📏 22 km · ⏱ ~80 min · ⬛</p>
+  <p class="bike-desc">Sykkel sørover langs vinmarkene til Colmar. Flat terreng på sykkelvei. Besøk Petite Venise og Unterlinden-museet, og sykkel tilbake via en annen rute gjennom landsbyene.</p>
+  <div class="bike-links">
+    <a class="plink ride" href="https://www.google.com/maps/dir/?api=1&origin=48.158,7.308&destination=48.158,7.308&travelmode=bicycling&waypoints=48.08,7.32|48.0796,7.359|48.092,7.34" target="_blank">🗺 Naviger i Google Maps</a>
+  </div>
+</div></div><div class="section"><h2>ℹ️ Praktisk</h2><div class=info-row><span class=label>Sykkelutleie</span><span>Sykkelutleie i Colmar og Riquewihr. Hotellet kan ofte ordne.</span></div><div class=info-row><span class=label>Vinsmak</span><span>Mange domener langs Route du Vin tilbyr gratis eller rimelig smak.</span></div></div></div>
 <script>
 
-// Last bilder via Wikipedia REST API
+// Bildehenting: prøv Wikipedia REST API, fallback til OG-bilde, deretter emoji
 document.querySelectorAll('[data-wiki]').forEach(wrap => {
   const term = wrap.getAttribute('data-wiki');
+  const ogUrl = wrap.getAttribute('data-og');
   fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(term))
     .then(r=>r.json()).then(d=>{
       const url = d.thumbnail?.source;
       if(url){ wrap.innerHTML='<img src="'+url+'" alt="'+term+'">'; }
-    }).catch(()=>{});
+      else if(ogUrl){ loadOG(wrap, ogUrl); }
+    }).catch(()=>{ if(ogUrl) loadOG(wrap, ogUrl); });
 });
+function loadOG(wrap, url){
+  fetch('https://api.allorigins.win/get?url='+encodeURIComponent(url))
+    .then(r=>r.json()).then(d=>{
+      const m = d.contents?.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/);
+      if(m && m[1]){ wrap.innerHTML='<img src="'+m[1]+'" alt="" onerror="this.parentElement.innerHTML=this.parentElement.getAttribute('data-emoji')">'; }
+    }).catch(()=>{});
+}
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});
 const m=L.map('map',{scrollWheelZoom:false});
 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
-L.marker([48.127,7.357]).addTo(m).bindPopup('<strong>Hôtel Le Mittelwihr</strong><br><small>Basecamp 2 netter</small>');
-L.marker([48.166,7.297]).addTo(m).bindPopup('<strong>Riquewihr</strong><br><small>Alsaces vakreste landsby</small>');
-L.marker([48.142,7.263]).addTo(m).bindPopup('<strong>Kaysersberg</strong><br><small>Slottsruin og panorama</small>');
-L.marker([48.195,7.317]).addTo(m).bindPopup('<strong>Ribeauvillé</strong><br><small>3 kastelborger og Riesling</small>');
-L.marker([48.08,7.357]).addTo(m).bindPopup('<strong>Colmar</strong><br><small>Lille Venezia — 20 km sør</small>');
-L.marker([48.127,7.357]).addTo(m).bindPopup('<strong>Vignoble-sykkelruta</strong><br><small>Følg druekvist-symbolene</small>');
-m.setView([48.127,7.3],12);
-</script></body></html>
+L.marker([48.158,7.308]).addTo(m).bindPopup('<strong>Mittelwihr</strong><br><small>Utgangspunkt</small>');
+L.marker([48.166,7.298]).addTo(m).bindPopup('<strong>Riquewihr</strong><br><small>Alsaces perle — bilfri middelalderby</small>');
+L.marker([48.196,7.322]).addTo(m).bindPopup('<strong>Ribeauvillé</strong><br><small>Tre kastelborger over byen</small>');
+L.marker([48.0796,7.359]).addTo(m).bindPopup('<strong>Colmar</strong><br><small>Petite Venise</small>');
+m.setView([48.155,7.305],13);
+</script>
+</body>
+</html>

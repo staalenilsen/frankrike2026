@@ -1,15 +1,106 @@
-<!DOCTYPE html><html lang="no"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Saint-Émilion – Reisebok</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/><script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script><style>:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#fff;--bg:#f0f9fc;--accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;--warn:#d4950a;--warn-soft:#fff8e1;--r:18px}*{box-sizing:border-box}html{font-size:16px;scroll-behavior:smooth}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}a{color:var(--sky)}.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}.back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}.topbar h1{margin:0;font-size:17px;font-weight:700}.hero-map{height:220px;width:100%}.content{padding:16px;max-width:760px;margin:0 auto}.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--sky);border-radius:var(--r);padding:16px;margin-bottom:14px}h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}.tag.green{background:#eaf5ee;color:#2d7a4f}.place{border-bottom:1px solid var(--line);padding:14px 0}.place:last-child{border-bottom:none;padding-bottom:0}.place-inner{display:flex;gap:12px;align-items:flex-start}.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px}.place-img-wrap img{width:100%;height:100%;object-fit:cover}.place-body{flex:1;min-width:0}.place-title{font-size:15px;font-weight:700;margin:0 0 3px}.place-meta{font-size:11px;font-weight:600;color:var(--sky);margin:0 0 5px}.place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.55}.place-links{display:flex;gap:6px;flex-wrap:wrap}.plink{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;text-decoration:none}.plink.ticket{background:var(--accent-soft);color:var(--accent);border:1px solid #f0b070}.plink.map{background:#e6f0fb;color:#185fa5;border:1px solid #b0cef5}.plink.web{background:#f0f9fc;color:#0d2e45;border:1px solid var(--line)}.tip-box{background:var(--warn-soft);border:1px solid #e8c97a;border-radius:12px;padding:11px 14px;font-size:13px;margin-top:10px;line-height:1.55}.info-row{display:flex;gap:10px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}.info-row:last-child{border-bottom:none}.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:90px;flex-shrink:0;padding-top:2px}@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px}.place-img-wrap img{width:100%;height:100%;object-fit:cover}}</style></head><body><div class="topbar"><a class="back" href="../">← Reisebok</a><h1>Saint-Émilion, Bordeaux</h1></div><div id="map" class="hero-map"></div><div class="content"><div class="section"><p style="font-size:14px;color:var(--muted);margin:0 0 10px">UNESCO-listet middelalder­landsby omgitt av verdens mest prestisjefylte vinmarker. Brosteins­gater, kalkhvite bygninger, underjordiske kirker og et hav av chateauer.</p><div><span class=tag>UNESCO 1999</span><span class=tag>Merlot og Cabernet Franc</span><span class=tag>30+ sykkelruter</span><span class=tag>Underjordisk kirke</span></div></div><div class="section"><h2>🏛️ Attraksjoner</h2><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Saint-Émilion">🏘️</div><div class="place-body"><p class="place-title">Bymidten og koblet UNESCO-sone</p><p class="place-meta">📍 Place du Marché · ⏱ 1–2 t · 💶 Gratis</p><p class="place-desc">Vandre rolig gjennom Saint-Émilions brosteins­gater — alle bygningene i kalkstein gir en unik stemning. Place du Marché med Monolithic Church-klokkertårnet er sentrum. Fantastisk utsikt over vinmarkene.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Saint-Émilion+Place+du+Marché" target="_blank">📍 Kart</a><a class="plink web" href="https://www.saint-emilion-tourisme.com" target="_blank">🌐 saint-emilion-tourisme.com</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Monolithic church of Saint-Émilion">⛪</div><div class="place-body"><p class="place-title">Monolittisk underjords­kirke — guidet tur</p><p class="place-meta">📍 Office de Tourisme, Place des Créneaux · ⏱ 45 min · 💶 ~€8</p><p class="place-desc">En av Frankrikes mest særegne severdigheter — kirken er hugget ut av klippen i middelalderen og kan romme 2000 mennesker. Guidet tur inkluderer katakom­bene. Bestill på turistkontoret.</p><div class="place-links"><a class="plink ticket" href="https://www.saint-emilion-tourisme.com/visites/" target="_blank">🎟 Bestill</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Eglise+monolithe+Saint-Emilion" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Saint-Émilion wine">🍷</div><div class="place-body"><p class="place-title">🚲 Sykkel mellom chateauene</p><p class="place-meta">📍 Fra landsbyen · ⏱ 2–4 t · 💶 E-sykkel ~€35/dag</p><p class="place-desc">Over 30 sykkelruter. Fra landsbyen ut i vinmarkene er delvis flatt — fantastisk utsikt over chateauer og ranker. E-sykkel anbefales pga. noen bakker. Stopp for vinsmak underveis.</p><div class="place-links"><a class="plink web" href="https://www.saint-emilion-tourisme.com/mobilites/velo/" target="_blank">🌐 Sykkelutleie</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Saint-Émilion+vélo" target="_blank">📍 Kart</a></div></div></div></div><div class="tip-box">💡 Bestill tur til den monolittiske kirken på turistkontoret ved ankomst — plassene fylles opp. Bruk gode gåsko — brosteins­gatene er ujevne.</div></div><div class="section"><h2>🍽️ Mat & vin</h2><div class="place"><div class="place-inner"><div class="place-body"><p class="place-title">Maison du Vin de Saint-Émilion</p><p class="place-meta">📍 Place Pierre Meyrat · 💶 Gratis inngang</p><p class="place-desc">Offisielt vin-informasjonssenter med vinsmak av regionens viner. Perfekt for å orientere seg og bestille vinsmaking hos chateauene.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Maison+du+Vin+Saint-Emilion" target="_blank">📍 Kart</a><a class="plink web" href="https://www.maisonduvinsaintemilion.com" target="_blank">🌐 maisonduvinsaintemilion.com</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-body"><p class="place-title">L'Envers du Décor</p><p class="place-meta">📍 11 Rue du Clocher · 💶 Middels pris</p><p class="place-desc">Sjarmerende bistro og vinbar med godt utvalg lokale viner og enkle men gode retter. Be om terrassen.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=L+Envers+du+Décor+Saint-Emilion" target="_blank">📍 Kart</a></div></div></div></div></div><div class="section"><h2>ℹ️ Praktisk</h2><div class=info-row><span class=label>Turkirken</span><span>Bestill monolittisk kirke-tur tidlig — fyller opp.</span></div><div class=info-row><span class=label>E-sykkel</span><span>Sterkt anbefalt pga. kupert terreng. Utleie i landsbyen.</span></div><div class=info-row><span class=label>Lokalt</span><span>Prøv de lokale mandelmakronene — en gammel Saint-Émilion-tradisjon.</span></div></div></div><script>
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Saint-Émilion – Reisebok</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#fff;--bg:#f0f9fc;
+  --accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;
+  --warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e8f5ee;
+  --r:18px}
+*{box-sizing:border-box}html{font-size:16px;scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:var(--sky)}
+.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;
+  display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}
+.topbar h1{margin:0;font-size:17px;font-weight:700}
+.hero-map{height:220px;width:100%}
+.content{padding:16px;max-width:760px;margin:0 auto}
+.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--sky);
+  border-radius:var(--r);padding:16px;margin-bottom:14px}
+.section.bike{border-top-color:#1e9654}
+h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
+.place{border-bottom:1px solid var(--line);padding:14px 0}
+.place:last-child{border-bottom:none;padding-bottom:0}
+.place-inner{display:flex;gap:12px;align-items:flex-start}
+.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;
+  background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;
+  display:flex;align-items:center;justify-content:center;font-size:24px}
+.place-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.place-body{flex:1;min-width:0}
+.place-title{font-size:15px;font-weight:700;margin:0 0 3px;color:var(--ink)}
+.place-meta{font-size:11px;font-weight:600;color:var(--sky);margin:0 0 5px}
+.place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.55}
+.place-links{display:flex;gap:6px;flex-wrap:wrap}
+.plink{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;text-decoration:none}
+.plink.ticket{background:var(--accent-soft);color:var(--accent);border:1px solid #f0b070}
+.plink.map{background:#e6f0fb;color:#185fa5;border:1px solid #b0cef5}
+.plink.web{background:#f0f9fc;color:#0d2e45;border:1px solid var(--line)}
+.plink.ride{background:var(--green-soft);color:#0d5c2e;border:1px solid #7dc99a;font-weight:700}
+.bike-card{background:var(--green-soft);border:1px solid #7dc99a;border-radius:14px;
+  padding:13px 15px;margin-bottom:10px}
+.bike-card:last-child{margin-bottom:0}
+.bike-title{font-size:14px;font-weight:700;color:#0d5c2e;margin:0 0 4px;display:flex;align-items:center;gap:7px}
+.bike-meta{font-size:11px;font-weight:600;color:#1e9654;margin:0 0 6px}
+.bike-desc{font-size:13px;color:#4a5e4a;margin:0 0 9px;line-height:1.5}
+.bike-links{display:flex;gap:6px;flex-wrap:wrap}
+.tip-box{background:var(--warn-soft);border:1px solid #e8c97a;border-radius:12px;
+  padding:11px 14px;font-size:13px;margin-top:10px;line-height:1.55}
+.info-row{display:flex;gap:10px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}
+.info-row:last-child{border-bottom:none}
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--sky);min-width:90px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}
+  .place-img-wrap{width:110px;height:82px}}
+</style>
+</head>
+<body>
+<div class="topbar"><a class="back" href="../">← Reisebok</a><h1>Saint-Émilion, Bordeaux 🇫🇷</h1></div>
+<div id="map" class="hero-map"></div>
+<div class="content"><div class="section"><p style="font-size:14px;color:var(--muted);margin:0 0 10px">UNESCO-vinlandsby i hjertet av Bordeaux-regionen. Middelalderterrasser, underjordiske kirker og umiddelbar nærhet til noen av verdens beste viner.</p><div><span class="tag">UNESCO-verdensarv</span><span class="tag">Verdens beste rødviner</span><span class="tag">Underjordisk kirke</span><span class="tag">Middelalderterrasser</span></div></div><div class="section "><h2>🏛️ Attraksjoner</h2><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Saint-Émilion" data-emoji="🏘️">🏘️</div><div class="place-body"><p class="place-title">Bymidten og UNESCO-sonen</p><p class="place-meta">📍 Place du Marché · ⏱ 1–2 t · 💶 Gratis å vandre</p><p class="place-desc">Kompakt middelalderkjerne på en kalksteinsterrasse — kanskje Frankrikes vakreste vinlandsby. Vandre de brosteinslagte gatene, besøk turistkontoret og nyt utsikten over vinmarkene fra kirkemuren.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Place+du+Marché+Saint-Émilion" target="_blank">📍 Kart</a><a class="plink web" href="https://www.saint-emilion-tourisme.com" target="_blank">🌐 saint-emilion-tourisme.com</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Monolithic church of Saint-Émilion" data-emoji="⛪">⛪</div><div class="place-body"><p class="place-title">Monolittisk underjords­kirke — guidet tur</p><p class="place-meta">📍 Place du Marché · ⏱ 45 min · 💶 ~€7</p><p class="place-desc">Uthulet i én sammenhengende kalkstein­klippe fra 700-1100-tallet — den største underjordiske kirken i Europa. Kun med guidet tur (fra turistkontoret). Mørk, kul og åndelig.</p><div class="place-links"><a class="plink ticket" href="https://www.saint-emilion-tourisme.com/en/discover/heritage/guided-tour" target="_blank">🎟 Guidet tur</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Église+Monolithe+Saint-Émilion" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Saint-Émilion wine" data-emoji="🍷">🍷</div><div class="place-body"><p class="place-title">Maison du Vin — vinsmak</p><p class="place-meta">📍 Place Pierre Meyrat · ⏱ 1 t · 💶 ~€12–25</p><p class="place-desc">Regionens offisielle vinkjøkken med 100+ Saint-Émilion Grand Cru til smak. Eksperten her er entusiastisk og hjelper dere finne rett vin for smaken.</p><div class="place-links"><a class="plink web" href="https://www.maisonduvinsaintemilion.fr" target="_blank">🌐 maisonduvinsaintemilion.fr</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Maison+du+Vin+Saint-Émilion" target="_blank">📍 Kart</a></div></div></div></div><div class="tip-box">💡 Underjordisk kirke: kjøp billett fra turistkontoret på Place du Marché — turene er begrensede og populære.</div></div><div class="section bike"><h2>🚲 Sykkelruter</h2><div class="bike-card">
+  <p class="bike-title">🚲 Saint-Émilion chateaux-runde</p>
+  <p class="bike-meta">📏 26 km · ⏱ ~95 min · 🍷</p>
+  <p class="bike-desc">Sykkel gjennom Pomerol og Saint-Émilion-appellation: Château Pétrus-eiendommen → Château Cheval Blanc → Château Angélus → tilbake gjennom vinmarkene. Lett kupert terreng.</p>
+  <div class="bike-links">
+    <a class="plink ride" href="https://www.google.com/maps/dir/?api=1&origin=44.891,8.428&destination=44.891,8.428&travelmode=bicycling&waypoints=44.928,8.455|44.9,8.41" target="_blank">🗺 Naviger i Google Maps</a>
+  </div>
+</div></div><div class="section "><h2>🍷 Restauranter</h2><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Saint-Émilion" data-emoji="🍽️">🍽️</div><div class="place-body"><p class="place-title">L'Envers du Décor</p><p class="place-meta">📍 11 Rue du Clocher · 💶 Middels-høy pris</p><p class="place-desc">Rustikk vinbar og restaurant i en middelalderbu — vinlisten er fenomenal og prisene rimelige for nivået. Bestill bord.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=L'Envers+du+Décor+Saint-Émilion" target="_blank">📍 Kart</a></div></div></div></div></div><div class="section"><h2>ℹ️ Praktisk</h2><div class=info-row><span class=label>Parkering</span><span>Gratis parkering ved byporten. Sentrum er bilfritt.</span></div><div class=info-row><span class=label>Sykkelutleie</span><span>Saint-Émilion Tourisme tilbyr sykkelutleie.</span></div></div></div>
+<script>
 
-// Last bilder via Wikipedia REST API
+// Bildehenting: prøv Wikipedia REST API, fallback til OG-bilde, deretter emoji
 document.querySelectorAll('[data-wiki]').forEach(wrap => {
   const term = wrap.getAttribute('data-wiki');
+  const ogUrl = wrap.getAttribute('data-og');
   fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(term))
     .then(r=>r.json()).then(d=>{
       const url = d.thumbnail?.source;
       if(url){ wrap.innerHTML='<img src="'+url+'" alt="'+term+'">'; }
-    }).catch(()=>{});
+      else if(ogUrl){ loadOG(wrap, ogUrl); }
+    }).catch(()=>{ if(ogUrl) loadOG(wrap, ogUrl); });
 });
-delete L.Icon.Default.prototype._getIconUrl;L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});const m=L.map('map',{scrollWheelZoom:false});L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);L.marker([44.894,-0.155]).addTo(m).bindPopup('<strong>Saint-Émilion sentrum</strong><br><small>UNESCO-landsby</small>');
-L.marker([44.891,-0.155]).addTo(m).bindPopup('<strong>Monolittisk kirke</strong><br><small>Hugget i klippen</small>');
-L.marker([44.895,-0.158]).addTo(m).bindPopup('<strong>Maison du Vin</strong><br><small>Vinsmak</small>');
-m.setView([44.893,-0.156],14);</script></body></html>
+function loadOG(wrap, url){
+  fetch('https://api.allorigins.win/get?url='+encodeURIComponent(url))
+    .then(r=>r.json()).then(d=>{
+      const m = d.contents?.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/);
+      if(m && m[1]){ wrap.innerHTML='<img src="'+m[1]+'" alt="" onerror="this.parentElement.innerHTML=this.parentElement.getAttribute('data-emoji')">'; }
+    }).catch(()=>{});
+}
+
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});
+const m=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
+L.marker([44.894,8.43]).addTo(m).bindPopup('<strong>Place du Marché</strong><br><small>Bykjernen UNESCO</small>');
+L.marker([44.894,8.43]).addTo(m).bindPopup('<strong>Underjordisk kirke</strong><br><small>Guidet tur fra turistkontoret</small>');
+L.marker([44.895,8.431]).addTo(m).bindPopup('<strong>Maison du Vin</strong><br><small>100+ Grand Cru til smak</small>');
+m.setView([44.894,8.43],15);
+</script>
+</body>
+</html>

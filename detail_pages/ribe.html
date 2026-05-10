@@ -3,196 +3,113 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Ribe – Reisebok Frankrike 2026</title>
+<title>Ribe – Reisebok</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <style>
-:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#ffffff;--bg:#f0f9fc;
+:root{--ink:#1a2e3b;--muted:#6b7f8a;--line:#c8e8f0;--paper:#fff;--bg:#f0f9fc;
   --accent:#e07b1f;--accent-soft:#fef0e0;--sky:#0097c4;--sky-soft:#e0f4fb;
-  --warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e4f7ec;--r:18px}
+  --warn:#d4950a;--warn-soft:#fff8e1;--green:#1e9654;--green-soft:#e8f5ee;
+  --r:18px}
 *{box-sizing:border-box}html{font-size:16px;scroll-behavior:smooth}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6}
 a{color:var(--sky)}
-.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
+.topbar{background:white;border-bottom:2px solid var(--sky);padding:14px 16px;
+  display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
 .back{font-size:14px;font-weight:600;color:var(--sky);text-decoration:none}
 .topbar h1{margin:0;font-size:17px;font-weight:700}
 .hero-map{height:220px;width:100%}
 .content{padding:16px;max-width:760px;margin:0 auto}
-.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--sky);border-radius:var(--r);padding:16px;margin-bottom:14px}
-h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45;display:flex;align-items:center;gap:6px}
-h3{margin:10px 0 4px;font-size:14px;font-weight:700;color:var(--ink)}
-.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
-.tag.green{background:#eaf5ee;color:#2d7a4f}.tag.blue{background:#e6f0fb;color:#185fa5}
-.tag.sky{background:var(--sky-soft);color:var(--sky)}
-
-/* ── PLACE CARD ── */
+.section{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--sky);
+  border-radius:var(--r);padding:16px;margin-bottom:14px}
+.section.bike{border-top-color:#1e9654}
+h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
+  background:var(--accent-soft);color:var(--accent);margin-right:5px;margin-bottom:4px}
 .place{border-bottom:1px solid var(--line);padding:14px 0}
 .place:last-child{border-bottom:none;padding-bottom:0}
 .place-inner{display:flex;gap:12px;align-items:flex-start}
-.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px}.place-img-wrap img{width:100%;height:100%;object-fit:cover}
+.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;
+  background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;
+  display:flex;align-items:center;justify-content:center;font-size:24px}
+.place-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
 .place-body{flex:1;min-width:0}
-.place-title{font-size:15px;font-weight:700;margin:0 0 3px}
-.place-meta{font-size:11px;font-weight:600;color:var(--sky);margin:0 0 4px;display:flex;gap:8px;flex-wrap:wrap}
+.place-title{font-size:15px;font-weight:700;margin:0 0 3px;color:var(--ink)}
+.place-meta{font-size:11px;font-weight:600;color:var(--sky);margin:0 0 5px}
 .place-desc{font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.55}
-.place-links{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
-.plink{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
-.plink.primary{background:var(--sky-soft);color:var(--sky);border:1px solid var(--sky)}
-.plink.ticket{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
+.place-links{display:flex;gap:6px;flex-wrap:wrap}
+.plink{font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;text-decoration:none}
+.plink.ticket{background:var(--accent-soft);color:var(--accent);border:1px solid #f0b070}
 .plink.map{background:#e6f0fb;color:#185fa5;border:1px solid #b0cef5}
 .plink.web{background:#f0f9fc;color:#0d2e45;border:1px solid var(--line)}
-
-/* ── TIPS BOX ── */
-.tip-box{background:var(--warn-soft);border:1px solid #e8c97a;border-radius:12px;padding:11px 14px;font-size:13px;margin-top:10px;line-height:1.55}
-.tip-box b{color:var(--warn)}
-
-/* ── PRACTICAL TABLE ── */
+.plink.ride{background:var(--green-soft);color:#0d5c2e;border:1px solid #7dc99a;font-weight:700}
+.bike-card{background:var(--green-soft);border:1px solid #7dc99a;border-radius:14px;
+  padding:13px 15px;margin-bottom:10px}
+.bike-card:last-child{margin-bottom:0}
+.bike-title{font-size:14px;font-weight:700;color:#0d5c2e;margin:0 0 4px;display:flex;align-items:center;gap:7px}
+.bike-meta{font-size:11px;font-weight:600;color:#1e9654;margin:0 0 6px}
+.bike-desc{font-size:13px;color:#4a5e4a;margin:0 0 9px;line-height:1.5}
+.bike-links{display:flex;gap:6px;flex-wrap:wrap}
+.tip-box{background:var(--warn-soft);border:1px solid #e8c97a;border-radius:12px;
+  padding:11px 14px;font-size:13px;margin-top:10px;line-height:1.55}
 .info-row{display:flex;gap:10px;font-size:13px;padding:7px 0;border-bottom:1px solid var(--line)}
 .info-row:last-child{border-bottom:none}
-.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--sky);min-width:90px;flex-shrink:0;padding-top:2px}
-
-/* ── TICKET BADGE ── */
-.ticket-badge{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;
-  padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-left:6px}
-
-@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}.place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px}.place-img-wrap img{width:100%;height:100%;object-fit:cover}}
+.label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--sky);min-width:90px;flex-shrink:0;padding-top:2px}
+@media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}
+  .place-img-wrap{width:110px;height:82px}}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <a class="back" href="../">← Reisebok</a>
-  <h1>Ribe, Danmark</h1>
-</div>
+<div class="topbar"><a class="back" href="../">← Reisebok</a><h1>Ribe, Danmark 🇩🇰</h1></div>
 <div id="map" class="hero-map"></div>
-<div class="content"><div class="section"><p style="font-size:14px;color:var(--muted);margin:0 0 10px">Skandinavias eldste by — grunnlagt av vikingene rundt år 700 e.Kr. Den kompakte middelalderbyen er enestående bevart med brosteinsgate, halvtimberhus fra 1600-tallet og en imponerende romansk domkirke. Her ankommer dere kvelden etter Color Line-fergen.</p><div><span class="tag">Skandinavias eldste by</span><span class="tag green">UNESCO Vadehavet</span><span class="tag">Vikinghistorie</span><span class="tag">Kompakt og gåvennlig</span></div></div><div class="section"><h2>🏛️ Attraksjoner & gåturer</h2><div class="place">
-  <div class="place-inner">
-    <div class="place-img-wrap" data-wiki="Ribe Cathedral">⛪</div>
-    <div class="place-body">
-      <p class="place-title">Ribe Domkirke — klatre tårnet</p>
-      <div class="place-meta"><span>📍 Torvet, Ribe</span><span>⏱ 1–2 timer</span><span>💶 ~DKK 30 voksne</span></div>
-      <p class="place-desc">Den romanske katedralen fra 1100-tallet dominerer Ribe. Klatr det 52 meter høye borgertårnet for en av Danmarks flotteste utsikter — over bymidten og ut over Vadehavsmarsken. Inne er Carl-Henning Pedersens vakre mosaikker og middelalderfresker. Én av Danmarks mest solide sehenswürdigkeiter.</p>
-      <div class="place-meta"></div>
-      <div class="place-links"><a class="plink ticket" href="https://ribedomkirke.dk" target="_blank">🎟 Billetter</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribe+Domkirke" target="_blank">📍 Kart</a><a class="plink web" href="https://ribedomkirke.dk" target="_blank">🌐 Les mer</a></div>
-    </div>
+<div class="content"><div class="section"><p style="font-size:14px;color:var(--muted);margin:0 0 10px">Danmarks eldste by (700-tallet). Kompakt middelalderkjerne med skjev domkirke, nattvaktparade og vikinghistorie. Ideell for sykling og vandring.</p><div><span class="tag">Danmarks eldste by</span><span class="tag">Nattvaktens by</span><span class="tag">Vikingehistorie</span><span class="tag">Vadehavet UNESCO</span></div></div><div class="section "><h2>🏛️ Attraksjoner & gåturer</h2><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Ribe Cathedral" data-emoji="⛪" data-og="https://www.ribedomkirke.dk/besog">⛪</div><div class="place-body"><p class="place-title">Ribe Domkirke — klatre tårnet</p><p class="place-meta">📍 Torvet · ⏱ 30–45 min · 💶 Klatring ~DKK 40</p><p class="place-desc">Romansk katedral fra 1100-tallet med skjev tårn — klatr opp for panoramautsikt over Ribe og Vadehavet. Katedralen har blitt reparert og ombygd gjennom århundrene, og forteller historien om middelalderens Ribe.</p><div class="place-links"><a class="plink ticket" href="https://www.ribedomkirke.dk/besog" target="_blank">🎟 Info</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribe+Domkirke" target="_blank">📍 Kart</a><a class="plink web" href="https://www.ribedomkirke.dk" target="_blank">🌐 ribedomkirke.dk</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Witch trials in early modern period" data-emoji="🧙" data-og="https://hexmuseum.dk">🧙</div><div class="place-body"><p class="place-title">HEX! Museum of Witch Hunt</p><p class="place-meta">📍 Sct. Nicolaj Gade 8 · ⏱ 1–1,5 t · 💶 DKK 115 voksne</p><p class="place-desc">Fascinerende museum om hekseprosessene i Europa — Ribe var sentrum for mange av dem. Interaktive utstillinger med skjelettrester og autentiske rekvisitter fra 1500-1700-tallet.</p><div class="place-links"><a class="plink ticket" href="https://hexmuseum.dk/billetter" target="_blank">🎟 Billetter</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=HEX+Museum+Ribe" target="_blank">📍 Kart</a><a class="plink web" href="https://hexmuseum.dk" target="_blank">🌐 hexmuseum.dk</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Ribe, Denmark" data-emoji="🌙">🌙</div><div class="place-body"><p class="place-title">Nattvakten — gratis kveldstur</p><p class="place-meta">📍 Start: Torvet · ⏱ 1 t · 💶 Gratis · Avganger 20:00 (mai–okt)</p><p class="place-desc">Ribe Nattvakt har patruljert gatene siden 1634. En mann i 1600-tallsdrakt synger og forteller historier om byens fortid. Kveldstur i mørket gjennom de skjeve stengater — genuint og sjarmerende. Gratis å delta.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribe+Torv" target="_blank">📍 Kart</a><a class="plink web" href="https://natvaegteren.dk" target="_blank">🌐 natvaegteren.dk</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Ribe Viking Centre" data-emoji="⚔️">⚔️</div><div class="place-body"><p class="place-title">Ribe VikingeCenter</p><p class="place-meta">📍 Lustrupvej 4 (~3 km syd) · ⏱ 2–3 t · 💶 DKK 155 voksne</p><p class="place-desc">Levende vikinglandsby fra 700-800-tallet — håndverkere, sjøfolk og bønder demonstrerer dagliglivet. Beste vikingeopplevelse i Sør-Jylland. Lett å nå med sykkel langs flat markvei.</p><div class="place-links"><a class="plink ticket" href="https://ribevikingecenter.dk/billetter" target="_blank">🎟 Billetter</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribe+VikingeCenter" target="_blank">📍 Kart</a><a class="plink web" href="https://ribevikingecenter.dk" target="_blank">🌐 ribevikingecenter.dk</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Wadden Sea National Park (Denmark)" data-emoji="🌊">🌊</div><div class="place-body"><p class="place-title">Vadehavscentret — UNESCO Verdensarv</p><p class="place-meta">📍 Okholmvej 5, Vester Vedsted (~10 km vest) · ⏱ 2 t · 💶 DKK 130</p><p class="place-desc">Moderne naturformidlingssenter ved Vadehavet — UNESCO-verdensarv. Lær om tidevann, fugleflukt og fjordøkosystemet. Utgang til observasjonstårnet med vidde­utsikt over Vadehavet.</p><div class="place-links"><a class="plink ticket" href="https://vadehavscentret.dk/besog" target="_blank">🎟 Info</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Vadehavscentret" target="_blank">📍 Kart</a><a class="plink web" href="https://vadehavscentret.dk" target="_blank">🌐 vadehavscentret.dk</a></div></div></div></div><div class="tip-box">💡 Nattvakten starter kl. 20:00 fra Torvet (mai–okt) — kombinér med middag på Weis Stue rett etter.</div></div><div class="section bike"><h2>🚲 Sykkelruter</h2><div class="bike-card">
+  <p class="bike-title">🚲 Ribe Historisk Rundtur</p>
+  <p class="bike-meta">📏 10 km · ⏱ ~40 min · ⬛</p>
+  <p class="bike-desc">Historisk bysirkel som besøker alle høydepunkter: Domkirken → Ribe Rådhus → Kunstmuseet → VikingeCenter → tilbake langs Ribå-elven. Flat rute på stier og rolige gater.</p>
+  <div class="bike-links">
+    <a class="plink ride" href="https://www.google.com/maps/dir/?api=1&origin=55.328,8.764&destination=55.3256,8.764&travelmode=bicycling&waypoints=55.323,8.7578|55.32,8.755" target="_blank">🗺 Naviger i Google Maps</a>
   </div>
-</div><div class="place">
-  <div class="place-inner">
-    <div class="place-img-wrap" data-wiki="Ribe, Denmark">🏛️</div>
-    <div class="place-body">
-      <p class="place-title">HEX! Museum of Witch Hunt</p>
-      <div class="place-meta"><span>📍 Skt. Nicolaj Gade 10</span><span>⏱ 1–1,5 timer</span><span>💶 ~DKK 85 voksne</span></div>
-      <p class="place-desc">Et unikt og fascinerende museum om hekseprosessene på 1500- og 1600-tallet. Personlige historier formidlet gjennom gode filmer og utstillinger. Maren Spliid — Danmarks mest kjente «heks» — ble henrettet her i Ribe i 1641. Besøkende roser det som ett av de mest spesielle museene i Danmark.</p>
-      <div class="place-meta"></div>
-      <div class="place-links"><a class="plink ticket" href="https://hexribs.dk/" target="_blank">🎟 Billetter</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=HEX+Museum+Witch+Hunt+Ribe" target="_blank">📍 Kart</a><a class="plink web" href="https://hexribs.dk/" target="_blank">🌐 hexribs.dk</a></div>
-    </div>
+</div><div class="bike-card">
+  <p class="bike-title">🚲 Vadehavet og marsklandet</p>
+  <p class="bike-meta">📏 22 km · ⏱ ~80 min · ⬛</p>
+  <p class="bike-desc">Flat tur vestover gjennom marsklandskapet til Vadehavscentret og tilbake. Sykkel langs diker og stier med utsikt over Vadehavet og UNESCO-fjorden. Lett terreng — medbring vann og mat.</p>
+  <div class="bike-links">
+    <a class="plink ride" href="https://www.google.com/maps/dir/?api=1&origin=55.328,8.764&destination=55.328,8.764&travelmode=bicycling&waypoints=55.31,8.68|55.295,8.61" target="_blank">🗺 Naviger i Google Maps</a>
   </div>
-</div><div class="place">
-  <div class="place-inner">
-    <div class="place-img-wrap" data-wiki="Ribe, Denmark">🏛️</div>
-    <div class="place-body">
-      <p class="place-title">Nattvakten — gratis kveldstur</p>
-      <div class="place-meta"><span>📍 Start: Weis Stue, Torvet</span><span>⏱ 45 min</span><span>💶 Gratis</span></div>
-      <p class="place-desc">En av Ribes mest sjarmerende opplevelser: en gratis guidet tur gjennom middelalderbyen med Nattvakten, som synger og forteller historier om byens fortid. Starter kl. 20:00 fra mai til oktober (også kl. 22:00 i juli og august). Gjennomføres på dansk og engelsk.</p>
-      <div class="place-meta"></div>
-      <div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Weis+Stue+Ribe" target="_blank">📍 Kart</a><a class="plink web" href="https://www.visitribe.dk/oplevelser/natvaegteren" target="_blank">🌐 Les mer</a></div>
-    </div>
-  </div>
-</div><div class="place">
-  <div class="place-inner">
-    <div class="place-img-wrap">🏛️</div>
-    <div class="place-body">
-      <p class="place-title">St. Catharinae Kloster</p>
-      <div class="place-meta"><span>📍 Skt. Catharinæ Plads</span><span>⏱ 20–30 min</span><span>💶 Liten avgift</span></div>
-      <p class="place-desc">Et av de best bevarte dominikaner­klosterene i Danmark fra 1200-tallet. Det stille klostertorget gir en nesten meditativ atmosfær av middelalder. Om sommeren holdes konserter her. En skjult perle i Ribe.</p>
-      <div class="place-meta"></div>
-      <div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Sct+Catharinae+Kirke+Ribe" target="_blank">📍 Kart</a></div>
-    </div>
-  </div>
-</div><div class="place">
-  <div class="place-inner">
-    <div class="place-img-wrap">🏛️</div>
-    <div class="place-body">
-      <p class="place-title">🚲 Ribe VikingeCenter (~3 km tur-retur)</p>
-      <div class="place-meta"><span>📍 Lustrupvej 4, Ribe</span><span>⏱ 2–3 timer</span><span>💶 ~DKK 175 voksne</span></div>
-      <p class="place-desc">En av Skandinavias beste vikinge­opplevelser — rekonstruert vikinglandsby fra år 710–980 med levende formidling av dagligliv, håndverk og handel. Åpent med aktiviteter i sommer­månedene. Lett sykkeltur på 3 km sørover langs flate veier.</p>
-      <div class="place-meta"></div>
-      <div class="place-links"><a class="plink ticket" href="https://ribevikingecenter.dk/billetter/" target="_blank">🎟 Billetter</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Ribe+VikingeCenter" target="_blank">📍 Kart</a><a class="plink web" href="https://ribevikingecenter.dk" target="_blank">🌐 ribevikingecenter.dk</a></div>
-    </div>
-  </div>
-</div><div class="place">
-  <div class="place-inner">
-    <div class="place-img-wrap">🏛️</div>
-    <div class="place-body">
-      <p class="place-title">🚲 Vadehavscentret — UNESCO (~5 km)</p>
-      <div class="place-meta"><span>📍 Okholmvej 5, Vester Vedsted</span><span>⏱ 1,5–2 timer</span><span>💶 ~DKK 125 voksne</span></div>
-      <p class="place-desc">Besøkssenter for det UNESCO-listede Vadehavet — Nord­søens unike tidevannsnatur. Spennende utstillinger om trekkfugler, sel og tidevannet. Herfra kan dere ta «Mandøbussen» — en traktor­buss som kjører ut til øya Mandø over havbunnen ved lavvann.</p>
-      <div class="place-meta"></div>
-      <div class="place-links"><a class="plink ticket" href="https://vadehavscentret.dk/billetter/" target="_blank">🎟 Billetter</a><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Vadehavscentret+Vester+Vedsted" target="_blank">📍 Kart</a><a class="plink web" href="https://vadehavscentret.dk" target="_blank">🌐 vadehavscentret.dk</a></div>
-    </div>
-  </div>
-</div><div class="tip-box">💡 Nattvakten er gratis og passer perfekt som kveldsprogram etter middag. Domkirke­tårnet og VikingeCenter krever billett — kjøp gjerne på nett på forhånd om sommeren.</div></div><div class="section"><h2>🍽️ Restauranter & kafeer</h2><div class="place">
-  <div class="place-inner">
-    
-    <div class="place-body">
-      <p class="place-title">Kolvig</p>
-      <div class="place-meta"><span>📍 Skibbroen 13</span><span>💶 Fine dining</span><span>📞 +45 75 41 04 88</span></div>
-      <p class="place-desc">Fin dining i et gammelt sjømannsskur med direkteutsikt over Ribe Å. Kreative retter med lokale råvarer og en imponerende vinliste. Regnes som en av Ribes beste restauranter. Reservasjon anbefales på kveldstid.</p>
-      <div class="place-meta"></div>
-      <div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Kolvig+Ribe" target="_blank">📍 Kart</a><a class="plink web" href="https://kolvig.dk" target="_blank">🌐 kolvig.dk</a></div>
-    </div>
-  </div>
-</div><div class="place">
-  <div class="place-inner">
-    
-    <div class="place-body">
-      <p class="place-title">Weis Stue</p>
-      <div class="place-meta"><span>📍 Torvet 2</span><span>💶 Middels pris</span><span>🕐 Fra 1600-tallet</span></div>
-      <p class="place-desc">Danmarks eldste gjestgiveri — et halvtimberhus fra 1600-tallet, ett av de aller eldste bevarte husene i landet. Klassisk dansk mat og god stemning i historiske omgivelser. Nydelig for en øl og smørrebrød etter at Nattvakten starter herfra.</p>
-      <div class="place-meta"></div>
-      <div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Weis+Stue+Ribe" target="_blank">📍 Kart</a><a class="plink web" href="https://www.weisstue.dk" target="_blank">🌐 weisstue.dk</a></div>
-    </div>
-  </div>
-</div><div class="place">
-  <div class="place-inner">
-    
-    <div class="place-body">
-      <p class="place-title">Quedens Gaard — kafé</p>
-      <div class="place-meta"><span>📍 Gammel Rådhustorv 1</span><span>💶 Lunsj-nivå</span></div>
-      <p class="place-desc">Sjarmerende kafé i en gammel kjøpmannsbolig midt i gamlebyen. Lokal fiskemat, burgere og omeletter. Perfekt for en rolig lunsj i hyggelige omgivelser med gårdsplass.</p>
-      <div class="place-meta"></div>
-      <div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Quedens+Gaard+Ribe" target="_blank">📍 Kart</a></div>
-    </div>
-  </div>
-</div></div><div class="section"><h2>ℹ️ Praktisk info</h2><div class="info-row"><span class="label">Parkering</span><span>Hotel Dagmar: privat plass ~50 m unna, DKK 200/natt (forhåndsbestilt). Offentlig: Saltgade 21 og Tøndervej.</span></div><div class="info-row"><span class="label">Sykkel</span><span>Ribe er helt flatt — perfekt for sykkel. Ribe Å-ruten og veien til VikingeCenter (3 km) og Vadehavscentret (5 km) er enkel og nydelig.</span></div><div class="info-row"><span class="label">Tips</span><span>Nattvakten starter foran Weis Stue kl. 20:00 (mai–okt). Kom deg opp i domkirketårnet for solnedgangen over Vadehavsmarsken.</span></div><div class="info-row"><span class="label">VisitRibe</span><span>Turistkontoret ved Torvet har gratis sykkelkart og Mandøbuss-info.</span></div></div></div>
+</div></div><div class="section "><h2>🍽️ Restauranter & kafeer</h2><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Weis Stue Ribe" data-emoji="🍽️">🍽️</div><div class="place-body"><p class="place-title">Weis Stue</p><p class="place-meta">📍 Torvet 2 · 💶 Middels-høy pris</p><p class="place-desc">Danmarks eldste kro (fra 1600-tallet) — trekonstruksjon med lav himling og autentisk atmosfære. Berømt for kold frokost og smørrebrød. Bestill bord til middag på kvelden.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Weis+Stue+Ribe" target="_blank">📍 Kart</a><a class="plink web" href="https://www.weisstue.dk" target="_blank">🌐 weisstue.dk</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="" data-emoji="🍺">🍺</div><div class="place-body"><p class="place-title">Kolvig — Brasserie</p><p class="place-meta">📍 Overdammen 1 · 💶 Middels pris</p><p class="place-desc">Moderne brasserie med lokal mat og godt ølutvalg. Fantastisk terrasse langs elven om sommeren.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Kolvig+Ribe" target="_blank">📍 Kart</a></div></div></div></div></div><div class="section"><h2>ℹ️ Praktisk</h2><div class=info-row><span class=label>Sykkelutleie</span><span>Ribe har lett tilgang til sykler — hotellet kan hjelpe. Alternativt Ribe Vandrehjem.</span></div><div class=info-row><span class=label>Parkering</span><span>Sykkel kan parkeres trygt ved Torvet. Bil: gratis parkering ved Ribe Kunstmuseum.</span></div><div class=info-row><span class=label>Nattvakten</span><span>Mai–oktober kl. 20:00 fra Torvet. Gratis. 1 time.</span></div></div></div>
 <script>
 
-// Last bilder via Wikipedia REST API
+// Bildehenting: prøv Wikipedia REST API, fallback til OG-bilde, deretter emoji
 document.querySelectorAll('[data-wiki]').forEach(wrap => {
   const term = wrap.getAttribute('data-wiki');
+  const ogUrl = wrap.getAttribute('data-og');
   fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(term))
     .then(r=>r.json()).then(d=>{
       const url = d.thumbnail?.source;
       if(url){ wrap.innerHTML='<img src="'+url+'" alt="'+term+'">'; }
-    }).catch(()=>{});
+      else if(ogUrl){ loadOG(wrap, ogUrl); }
+    }).catch(()=>{ if(ogUrl) loadOG(wrap, ogUrl); });
 });
+function loadOG(wrap, url){
+  fetch('https://api.allorigins.win/get?url='+encodeURIComponent(url))
+    .then(r=>r.json()).then(d=>{
+      const m = d.contents?.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/);
+      if(m && m[1]){ wrap.innerHTML='<img src="'+m[1]+'" alt="" onerror="this.parentElement.innerHTML=this.parentElement.getAttribute('data-emoji')">'; }
+    }).catch(()=>{});
+}
 
 delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
-  iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-  shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'
-});
+L.Icon.Default.mergeOptions({iconRetinaUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',iconUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',shadowUrl:'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png'});
 const m=L.map('map',{scrollWheelZoom:false});
-L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-  {attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
-L.marker([55.3247,8.7735]).addTo(m).bindPopup('<strong>Hotel Dagmar</strong><br><small>Overnatting</small>');
-L.marker([55.3243,8.7733]).addTo(m).bindPopup('<strong>Ribe Domkirke</strong><br><small>Klatre tårnet — panoramautsikt</small>');
-L.marker([55.3236,8.7709]).addTo(m).bindPopup('<strong>HEX! Heksejaktmuseet</strong><br><small>Særegent museum om hekseprosessene</small>');
-L.marker([55.3238,8.7695]).addTo(m).bindPopup('<strong>Kolvig</strong><br><small>Fine dining, havn-utsikt</small>');
-L.marker([55.3245,8.773]).addTo(m).bindPopup('<strong>Weis Stue</strong><br><small>Danmarks eldste vertshus fra 1600-tallet</small>');
-L.marker([55.3252,8.7722]).addTo(m).bindPopup('<strong>St. Catharinae Kloster</strong><br><small>Fredfull middelalder-torg</small>');
-L.marker([55.321,8.773]).addTo(m).bindPopup('<strong>Ribe VikingeCenter</strong><br><small>Vikinglandsby 3 km sør</small>');
-L.marker([55.295,8.769]).addTo(m).bindPopup('<strong>Vadehavscentret</strong><br><small>UNESCO-naturpark 5 km</small>');
-m.setView([55.3245,8.773],13);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap · © CARTO',maxZoom:19}).addTo(m);
+L.marker([55.3278,8.764]).addTo(m).bindPopup('<strong>Ribe Domkirke</strong><br><small>Klatr tårnet — utsikt over byen</small>');
+L.marker([55.328,8.766]).addTo(m).bindPopup('<strong>HEX! Museum</strong><br><small>Hekseprosessene 1500-1700</small>');
+L.marker([55.3275,8.7628]).addTo(m).bindPopup('<strong>Nattvakten / Torvet</strong><br><small>Gratis kveldstur kl. 20:00</small>');
+L.marker([55.306,8.742]).addTo(m).bindPopup('<strong>Ribe VikingeCenter</strong><br><small>Levende vikinglandsby ~3 km syd</small>');
+L.marker([55.29,8.61]).addTo(m).bindPopup('<strong>Vadehavscentret</strong><br><small>UNESCO ~10 km vest</small>');
+m.setView([55.328,8.764],14);
 </script>
 </body>
 </html>
