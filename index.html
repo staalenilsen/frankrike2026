@@ -246,8 +246,13 @@
       background:rgba(0,0,0,.03);padding:8px 10px;border-radius:8px;
       margin:8px 0;line-height:1.6;word-break:break-word}
     .scenic-stops{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:5px}
-    .scenic-stops li{font-size:13px;color:var(--ink);display:flex;gap:8px;
-      align-items:flex-start;padding:5px 0;border-bottom:1px solid rgba(0,150,100,.1)}
+    .scenic-stop-img{width:80px;height:60px;object-fit:cover;border-radius:8px;flex-shrink:0;margin-top:2px}
+    .scenic-stop-links{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}
+    .scenic-slink{font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;text-decoration:none;white-space:nowrap}
+    .scenic-slink.ticket{background:var(--accent-soft);color:var(--accent);border:1px solid #f0b070}
+    .scenic-slink.map{background:#e6f0fb;color:#185fa5;border:1px solid #b0cef5}
+    .scenic-slink.web{background:#f0f9fc;color:#0d2e45;border:1px solid var(--line)}
+    .scenic-stops li{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
     .scenic-stops li:last-child{border-bottom:none}
     .scenic-stops .s-icon{font-size:16px;flex-shrink:0;line-height:1}
     .scenic-extra{font-size:12px;color:var(--muted);margin-top:8px;
@@ -629,10 +634,21 @@
           <span class="scenic-badge">+60 km · +1t 15m</span>
         </div>
         <div class="scenic-route">Trier → Saarburg → Saarschleife/Mettlach → Sarreguemine → Saverne → Strasbourg</div>
-        <ul class="scenic-stops"><li><span class="s-icon">🏰</span><div><strong>Saarburg (24 km)</strong><br><span style="color:var(--muted);font-size:12px">Pittoresk by med fossefall midt i gamlebyen og Saarburg slott på klippen over Saar-elven</span></div></li><li><span class="s-icon">🌀</span><div><strong>Saarschleife ved Mettlach (55 km)</strong><br><span style="color:var(--muted);font-size:12px">Europas vakreste flodbue — Saar-svingen sett fra Cloef-platået. 20 min gåtur til utsiktet. Villeroy & Boch museum nedfor</span></div></li><li><span class="s-icon">🌸</span><div><strong>Saverne — Col de Saverne (100 km)</strong><br><span style="color:var(--muted);font-size:12px">Rosenbyen Saverne med Rohan-slottet og 8800 rosebusker. Historisk fjellpass ned fra Vosges til Alsace-sletten</span></div></li></ul>
-        <div class="scenic-extra">🚴 Saarburg: Spektakulær foss midt i gamlebyen — gå ned via trapper. En skjult perle i Rhinland-Pfalz.</div>
+        <ul class="scenic-stops"><li><span class="s-icon">🏰</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Saarburg_Leukbach-Wasserfall.jpg/640px-Saarburg_Leukbach-Wasserfall.jpg" alt="Saarburg" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Saarburg (24 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">Pittoresk by med fossefall midt i gamlebyen og Saarburg slott på klippen over Saar-elven. Gå ned via trappene til fossen — en skjult perle i Rhinland-Pfalz. Gratis å se utenifra.</span>
+      <div class="scenic-stop-links"><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Saarburg+Wasserfall" target="_blank">📍 Kart</a><a class="scenic-slink web" href="https://www.saarburg.de/tourismus" target="_blank">🌐 saarburg.de</a></div>
+    </div></li><li><span class="s-icon">🌀</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Saarschleife_bei_Mettlach.jpg/640px-Saarschleife_bei_Mettlach.jpg" alt="Saarschleife — Cloef-utsiktet" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Saarschleife — Cloef-utsiktet (55 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">Europas vakreste flodbue sett fra Cloef-platået, 180 m over Saar-elven. Nasjonalt geotop siden 2006. Gratis utsikt fra platået. Baumwipfelpfad (trekroner-sti 1,25 km) koster €13 ekstra — ikke nødvendig for utsikten.</span><br><em style="font-size:11px;color:var(--warn)">💡 Gratisparkeringen ligger ved Cloef-Atrium i Orscholz. 10 min gange til utsiktet.</em>
+      <div class="scenic-stop-links"><a class="scenic-slink ticket" href="https://www.baumwipfelpfad-saarschleife.de" target="_blank">🎟 Baumwipfelpfad</a><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Aussichtspunkt+Cloef+Mettlach" target="_blank">📍 Kart</a></div>
+    </div></li><li><span class="s-icon">🌸</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Saverne_Rosengarten_Schlossgarten.jpg/640px-Saverne_Rosengarten_Schlossgarten.jpg" alt="Saverne — Col de Saverne" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Saverne — Col de Saverne (100 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">Rosenbyen Saverne med det vakre Rohan-slottet og over 8800 rosebusker i slottshagen (åpent sommer). Historisk fjellpass ned fra Vosges mot Alsace-sletten.</span>
+      <div class="scenic-stop-links"><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Saverne+Château+Rohan" target="_blank">📍 Kart</a><a class="scenic-slink web" href="https://www.tourisme-saverne.fr" target="_blank">🌐 tourisme-saverne.fr</a></div>
+    </div></li></ul>
         <div class="scenic-maps">
-          <button class="scenic-map-btn" onclick="var r=ROUTES['dag4s'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">🗺 Åpne i Google Maps</button>
+          <button class="scenic-map-btn" onclick="var r=ROUTES['dag4s'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">🗺 Åpne i Google Maps</button>
         </div>
       </div>
 </section>
@@ -696,10 +712,21 @@
           <span class="scenic-badge">+10 km · +1t 30m (stopp)</span>
         </div>
         <div class="scenic-route">Strasbourg → Obernai → Château Haut-Koenigsbourg → Ribeauvillé → Riquewihr → Mittelwihr</div>
-        <ul class="scenic-stops"><li><span class="s-icon">🏘</span><div><strong>Obernai (35 km)</strong><br><span style="color:var(--muted);font-size:12px">En av Alsaces vakreste byer — middelaldermarkedsplass, trehusrekker og vindyrking ved foten av Sainte-Odile-fjellet</span></div></li><li><span class="s-icon">🏰</span><div><strong>Château du Haut-Koenigsbourg (55 km)</strong><br><span style="color:var(--muted);font-size:12px">Gotisk riddersborg restaurert av Kaiser Wilhelm II (755 m) — panoramautsikt over Alsace-sletten og Schwarzwald</span></div></li><li><span class="s-icon">💎</span><div><strong>Ribeauvillé (70 km)</strong><br><span style="color:var(--muted);font-size:12px">Tre middelalderslott på åsene. Riquewihr (80 km) regnes som Alsaces vakreste landsby — Dolder-porten fra 1291 og beste Riesling-mark</span></div></li></ul>
-        <div class="scenic-extra">🚴 Château Haut-Koenigsbourg: 30 min avvik (D159). Et av Alsaces mest imponerende middelalderslott med panoramautsikt over Rhinsletten og Schwarzwald.</div>
+        <ul class="scenic-stops"><li><span class="s-icon">🏘</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Obernai_vue_tour.jpg/640px-Obernai_vue_tour.jpg" alt="Obernai" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Obernai (35 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">En av Alsaces vakreste byer — middelaldermarkedsplass, trehusrekker og vindyrking ved foten av Sainte-Odile-fjellet. Ingen inngangspenger for å vandre — bare stopp og nyt gaten.</span>
+      <div class="scenic-stop-links"><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Obernai+Alsace" target="_blank">📍 Kart</a><a class="scenic-slink web" href="https://www.obernai.fr" target="_blank">🌐 obernai.fr</a></div>
+    </div></li><li><span class="s-icon">🏰</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Chateau-Haut-Koenigsbourg-2015-2.jpg/640px-Chateau-Haut-Koenigsbourg-2015-2.jpg" alt="Château du Haut-Koenigsbourg" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Château du Haut-Koenigsbourg (55 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">Gotisk riddersborg fra 1100-tallet restaurert av Kaiser Wilhelm II, troner på 757 m høyde med panoramautsikt over Alsace-sletten og Schwarzwald. Juli/aug åpent 09–19. Voksne €12, barn €8.</span><br><em style="font-size:11px;color:var(--warn)">💡 Kjøp billett online — lang kø i høysesongen. Slottet er kjølig selv om sommeren; ta en jakke.</em>
+      <div class="scenic-stop-links"><a class="scenic-slink ticket" href="https://tickets.haut-koenigsbourg.fr" target="_blank">🎟 Kjøp billett</a><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Château+du+Haut-Koenigsbourg" target="_blank">📍 Kart</a><a class="scenic-slink web" href="https://www.haut-koenigsbourg.fr/en" target="_blank">🌐 haut-koenigsbourg.fr</a></div>
+    </div></li><li><span class="s-icon">💎</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Riquewihr_01.jpg/640px-Riquewihr_01.jpg" alt="Ribeauvillé & Riquewihr" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Ribeauvillé & Riquewihr (70–80 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">To av Alsaces vakreste middelalderlandsbyer på rad — Ribeauvillé med tre kastelborger i åsene og Riesling-produsenter, Riquewihr (5 km videre) med bilfrie brosteins­gater fra 1400-tallet.</span><br><em style="font-size:11px;color:var(--warn)">💡 Riquewihr er best tidlig morgen — turistbussene ankommer fra 10.</em>
+      <div class="scenic-stop-links"><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Riquewihr+Alsace" target="_blank">📍 Riquewihr</a><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Ribeauvillé+Alsace" target="_blank">📍 Ribeauvillé</a></div>
+    </div></li></ul>
         <div class="scenic-maps">
-          <button class="scenic-map-btn" onclick="var r=ROUTES['dag5s'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">🗺 Åpne i Google Maps</button>
+          <button class="scenic-map-btn" onclick="var r=ROUTES['dag5s'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">🗺 Åpne i Google Maps</button>
         </div>
       </div>
 </section>
@@ -789,10 +816,21 @@
           <span class="scenic-badge">+45 km · +1t 30m</span>
         </div>
         <div class="scenic-route">Mittelwihr → Colmar → Guebwiller → Col de Bussang (727m) → Luxeuil-les-Bains → Gray → Beaune</div>
-        <ul class="scenic-stops"><li><span class="s-icon">🏘</span><div><strong>Colmar (10 km)</strong><br><span style="color:var(--muted);font-size:12px">La Petite Venise — fargede trehus langs kanalene, Issenheim-alterstykket i museum. Rask morgenstopp før fjellet</span></div></li><li><span class="s-icon">⛰</span><div><strong>Col de Bussang (727m, 75 km)</strong><br><span style="color:var(--muted);font-size:12px">Fjellpass over Ballons des Vosges — slående panoramautsikt tilbake over Alsace-sletten og fremover mot Burgund. Smilende sauer.</span></div></li><li><span class="s-icon">🏛</span><div><strong>Luxeuil-les-Bains (105 km)</strong><br><span style="color:var(--muted);font-size:12px">Vakker gammel kurby med romanske klosterruiner, historisk gamlekvarter og thermalbad. Utmerket lunsjstopp</span></div></li></ul>
-        <div class="scenic-extra">🚴 Col de Bussang er et klassisk sykkelpas. Sykkel opp fra parkeringen for panoramautsikt over Alsace og Schwarzwald.</div>
+        <ul class="scenic-stops"><li><span class="s-icon">🏘</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Colmar_petite_venise.jpg/640px-Colmar_petite_venise.jpg" alt="Colmar — Petite Venise" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Colmar — Petite Venise (10 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">La Petite Venise: fargede halvtimberhus langs kanalene og Issenheim-alterstykket i Unterlinden-museet (regnet som ett av de viktigste maleriene i verden). Rask morgenstopp — åpner 09:00.</span><br><em style="font-size:11px;color:var(--warn)">💡 Musée Unterlinden åpner kl. 09. Petite Venise og sentrum er gratis å vandre i.</em>
+      <div class="scenic-stop-links"><a class="scenic-slink ticket" href="https://www.musee-unterlinden.com/en/visit/" target="_blank">🎟 Unterlinden</a><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Colmar+Petite+Venise" target="_blank">📍 Kart</a><a class="scenic-slink web" href="https://www.tourisme-colmar.com" target="_blank">🌐 tourisme-colmar.com</a></div>
+    </div></li><li><span class="s-icon">⛰</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Col_de_Bussang_%28Vosges%29.jpg/640px-Col_de_Bussang_%28Vosges%29.jpg" alt="Col de Bussang (727 m)" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Col de Bussang (727 m) (75 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">Fjellpass over Ballons des Vosges — slående panoramautsikt tilbake over Alsace-sletten og fremover mot Burgund. Rolig, naturskjønn fjellkjøring med lite trafikk. Ingen inngangspenger.</span>
+      <div class="scenic-stop-links"><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Col+de+Bussang+Vosges" target="_blank">📍 Kart</a></div>
+    </div></li><li><span class="s-icon">🏛</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Luxeuil-les-Bains_place_de_la_baille.jpg/640px-Luxeuil-les-Bains_place_de_la_baille.jpg" alt="Luxeuil-les-Bains" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Luxeuil-les-Bains (150 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">Elegant kurbad-by med imponerende romansk abbedi fra 400-tallet og vakre art déco-badebygg. Kjøp lokal Munster-ost hos ostemarkedet og nyt en kaffekopp i de sjarmerende omgivelsene.</span>
+      <div class="scenic-stop-links"><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Luxeuil-les-Bains+abbaye" target="_blank">📍 Kart</a></div>
+    </div></li></ul>
         <div class="scenic-maps">
-          <button class="scenic-map-btn" onclick="var r=ROUTES['dag7s'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">🗺 Åpne i Google Maps</button>
+          <button class="scenic-map-btn" onclick="var r=ROUTES['dag7s'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">🗺 Åpne i Google Maps</button>
         </div>
       </div>
 </section>
@@ -844,14 +882,25 @@
       <div id="scenic-dag8" class="scenic-panel">
         <div class="scenic-header">
           <span>🌿</span>
-          <h4>Route des Grands Crus — Champs-Elysées du Vin</h4>
+          <h4>Route des Grands Crus — Champs-Élysées du Vin</h4>
           <span class="scenic-badge">+55 km · +1t 15m</span>
         </div>
         <div class="scenic-route">Beaune → Pommard → Meursault → Puligny-Montrachet → Santenay → Autun → Bourbon-Lancy → Oyé</div>
-        <ul class="scenic-stops"><li><span class="s-icon">🍷</span><div><strong>Pommard & Meursault (10–15 km)</strong><br><span style="color:var(--muted);font-size:12px">To av Burgunds mest kjente vinlandsbyer på D974. Château de Meursault tar imot besøkende — hvite viner av absolutt verdensklasse</span></div></li><li><span class="s-icon">✨</span><div><strong>Puligny-Montrachet & Chassagne (20 km)</strong><br><span style="color:var(--muted);font-size:12px">Verdens beste Chardonnay-terroir. Montrachet Grand Cru. Stille gårdsveier mellom stenvegger og vinmarker i tidlig morgen</span></div></li><li><span class="s-icon">🏛</span><div><strong>Autun (65 km)</strong><br><span style="color:var(--muted);font-size:12px">Romertidens glemte storby — Augustus-triumfbue, romansk katedral Saint-Lazare, Musée Rolin. Ideell lunsjstans på Place du Champ de Mars</span></div></li></ul>
-        <div class="scenic-extra">🚴 Route des Grands Crus: Sykkel gjennom UNESCO-vinmarkene fra Meursault til Santenay. Flat, vakker og med direkteadgang til prestisjevinhus som selger glass fra €5.</div>
+        <ul class="scenic-stops"><li><span class="s-icon">🍷</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pommard_vineyard.jpg/640px-Pommard_vineyard.jpg" alt="Pommard & Meursault" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Pommard & Meursault (10–15 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">To av Burgunds mest kjente vinlandsbyer langs D974. Château de Meursault tar imot besøkende for hvitvinsmak — Chardonnay av absolutt verdensklasse. Gratis å kjøre gjennom og stoppe.</span><br><em style="font-size:11px;color:var(--warn)">💡 Château de Meursault: vinsmak fra ~€20/pers. Bestill på nett i forveien.</em>
+      <div class="scenic-stop-links"><a class="scenic-slink ticket" href="https://www.chateau-de-meursault.com/en/wine-tourism/" target="_blank">🎟 Château Meursault</a><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Meursault+Bourgogne" target="_blank">📍 Kart</a></div>
+    </div></li><li><span class="s-icon">✨</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Puligny-Montrachet_vineyard.jpg/640px-Puligny-Montrachet_vineyard.jpg" alt="Puligny-Montrachet & Chassagne" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Puligny-Montrachet & Chassagne (20 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">Verdens beste Chardonnay-terroir. Montrachet Grand Cru-vinmarkene er skilt med steingjerder — det er mulig å stoppe og gå langs veiene mellom vinmarkene. Svært stille og pittoresk.</span>
+      <div class="scenic-stop-links"><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Puligny-Montrachet+Bourgogne" target="_blank">📍 Kart</a></div>
+    </div></li><li><span class="s-icon">🏛</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Porte_d_Arroux_Autun.jpg/640px-Porte_d_Arroux_Autun.jpg" alt="Autun — romersk by" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Autun — romersk by (120 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">Undervurdert by med impønerende romerske monumenter: Porte d'Arroux og Porte Saint-André (begge bevarte romerbuer). Katedralen Saint-Lazare med vakre middelalderskulpturer. Gratis å se.</span>
+      <div class="scenic-stop-links"><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Autun+Porte+Arroux" target="_blank">📍 Kart</a><a class="scenic-slink web" href="https://www.autun-tourisme.fr" target="_blank">🌐 autun-tourisme.fr</a></div>
+    </div></li></ul>
         <div class="scenic-maps">
-          <button class="scenic-map-btn" onclick="var r=ROUTES['dag8s'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">🗺 Åpne i Google Maps</button>
+          <button class="scenic-map-btn" onclick="var r=ROUTES['dag8s'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">🗺 Åpne i Google Maps</button>
         </div>
       </div>
 </section>
@@ -1044,14 +1093,25 @@
       <div id="scenic-dag12" class="scenic-panel">
         <div class="scenic-header">
           <span>🌿</span>
-          <h4>Loire-chateaux & Normandie bocage</h4>
+          <h4>Loire-chateaux &amp; Normandie bocage</h4>
           <span class="scenic-badge">+50 km · +1t 15m</span>
         </div>
         <div class="scenic-route">Amboise → Blois → Le Mans → Alençon → Camembert-landet → Lisieux → Honfleur</div>
-        <ul class="scenic-stops"><li><span class="s-icon">🏰</span><div><strong>Blois (40 km)</strong><br><span style="color:var(--muted);font-size:12px">Château Royal de Blois — fire kongers residens, fire arkitektoniske stilarter i ett bygg. Bratt historisk kjerne ned mot Loire</span></div></li><li><span class="s-icon">🏎</span><div><strong>Le Mans — La Cité Plantagenêt (130 km)</strong><br><span style="color:var(--muted);font-size:12px">Middelalderkvarteret inne i bymurene er et av Frankrikes best bevarte — ingenting å gjøre med bilrace. Kaffe og croissant her</span></div></li><li><span class="s-icon">🍎</span><div><strong>Normandie bocage + Camembert (220 km)</strong><br><span style="color:var(--muted);font-size:12px">Vimoutiers og Camembert-landsbyen (5 km avvik fra D916): Musée du Camembert og originale gårder. Normandie-landskapet er nydelig</span></div></li></ul>
-        <div class="scenic-extra">🚴 D579 via Lisieux og Pays d'Auge: trehus, epletrær, kyr og Côte Fleurie. Sluttseksjonen på D280 mot Honfleur er spektakulær med utsikt over Seineestuaret.</div>
+        <ul class="scenic-stops"><li><span class="s-icon">🏰</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Chateau_de_Blois_Facade_des_Loges.jpg/640px-Chateau_de_Blois_Facade_des_Loges.jpg" alt="Château Royal de Blois" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Château Royal de Blois (40 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">Fire kongers residens med fire arkitektoniske stilarter i ett bygg — gotisk, renessanse, barokk og klassisk. En av Loirens viktigste slott. Åpent 09–18 (juli/aug 09–19). Voksne €16.</span><br><em style="font-size:11px;color:var(--warn)">💡 Kombiner gjerne med Chambord (16 km unna) om dere har tid — Chambord er det mest spektakulære Loire-slottet.</em>
+      <div class="scenic-stop-links"><a class="scenic-slink ticket" href="https://en.chateaudeblois.fr" target="_blank">🎟 Kjøp billett</a><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Château+Royal+de+Blois" target="_blank">📍 Kart</a><a class="scenic-slink web" href="https://en.chateaudeblois.fr" target="_blank">🌐 chateaudeblois.fr</a></div>
+    </div></li><li><span class="s-icon">🏎</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Le_Mans_-_Vieille_ville_2.jpg/640px-Le_Mans_-_Vieille_ville_2.jpg" alt="Le Mans — La Cité Plantagenêt" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Le Mans — La Cité Plantagenêt (130 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">Middelalderkvarteret inne i de gamle bymurene er et av Frankrikes best bevarte — ingenting å gjøre med bilrace. Kaffe og croissant i de smale gatene fra 500-1200-tallet. Gratis å vandre.</span>
+      <div class="scenic-stop-links"><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Cité+Plantagenêt+Le+Mans" target="_blank">📍 Kart</a><a class="scenic-slink web" href="https://www.lemans-tourisme.com/en" target="_blank">🌐 lemans-tourisme.com</a></div>
+    </div></li><li><span class="s-icon">🍎</span><img class="scenic-stop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Normandie_bocage.jpg/640px-Normandie_bocage.jpg" alt="Livarot & Camembert-landet" loading="lazy" onerror="this.style.display='none'"><div>
+      <strong>Livarot & Camembert-landet (230 km)</strong>
+      <br><span style="color:var(--muted);font-size:12px">Normandie bocage med epletrær og Norman­diske gårder. Livarot og Camembert er to av Normandies berømte oster — kjøp hos en lokal gård langs veien og nyt med et glass cider.</span>
+      <div class="scenic-stop-links"><a class="scenic-slink map" href="https://www.google.com/maps/search/?api=1&query=Livarot+Normandie" target="_blank">📍 Kart</a></div>
+    </div></li></ul>
         <div class="scenic-maps">
-          <button class="scenic-map-btn" onclick="var r=ROUTES['dag12s'];if(r){window.open(buildRouteURL(r.stops),"_blank");}">🗺 Åpne i Google Maps</button>
+          <button class="scenic-map-btn" onclick="var r=ROUTES['dag12s'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">🗺 Åpne i Google Maps</button>
         </div>
       </div>
 </section>
