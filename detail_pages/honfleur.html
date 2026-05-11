@@ -32,7 +32,8 @@ h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
 .place-inner{display:flex;gap:12px;align-items:flex-start}
 .place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;
   background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;
-  display:flex;align-items:center;justify-content:center;font-size:24px}
+  display:flex;align-items:center;justify-content:center;font-size:24px;
+  min-width:90px}
 .place-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
 .place-body{flex:1;min-width:0}
 .place-title{font-size:15px;font-weight:700;margin:0 0 3px;color:var(--ink)}
@@ -58,7 +59,11 @@ h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
 .label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
   color:var(--sky);min-width:90px;flex-shrink:0;padding-top:2px}
 @media(min-width:600px){.content{padding:20px 24px}.hero-map{height:280px}
-  .place-img-wrap{width:110px;height:82px}}
+  .place-img-wrap{width:90px;height:70px;border-radius:10px;flex-shrink:0;
+  background:linear-gradient(135deg,#e0f4fb,#b8dde8);overflow:hidden;
+  display:flex;align-items:center;justify-content:center;font-size:24px;
+  min-width:90px}
+.place-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}}
 </style>
 </head>
 <body>
@@ -81,23 +86,26 @@ h2{margin:0 0 12px;font-size:16px;font-weight:700;color:#0d2e45}
 </div></div><div class="section "><h2>🍽️ Restauranter</h2><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Honfleur" data-emoji="🍽️">🍽️</div><div class="place-body"><p class="place-title">Sa.Qua.Na — 2 Michelin-stjerner</p><p class="place-meta">📍 22 Place Hamelin · 💶 Meget høy pris</p><p class="place-desc">Alexandre Bourdas' signaturrestaurant med sjømat og kreaturer fra Normandie. Forhåndsbooking essensielt.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Sa.Qua.Na+Honfleur" target="_blank">📍 Kart</a></div></div></div></div><div class="place"><div class="place-inner"><div class="place-img-wrap" data-wiki="Honfleur" data-emoji="🍺">🍺</div><div class="place-body"><p class="place-title">Le Vieux Honfleur</p><p class="place-meta">📍 13 Quai Saint-Étienne · 💶 Middels pris</p><p class="place-desc">Tradisjonell normannisk restaurant rett ved havnebassenget. Moules, crevettes og calvados. Flott terrasse.</p><div class="place-links"><a class="plink map" href="https://www.google.com/maps/search/?api=1&query=Le+Vieux+Honfleur" target="_blank">📍 Kart</a></div></div></div></div></div><div class="section"><h2>ℹ️ Praktisk</h2><div class=info-row><span class=label>Sykkel</span><span>Pont de Normandie er gratis for syklister. Medbring sykkelkobling for bruelengde (2,1 km).</span></div><div class=info-row><span class=label>Parkering</span><span>Parkering ute av sentrum; sentrum er trafikkbelastet i høysesong.</span></div></div></div>
 <script>
 
-// Bildehenting: prøv Wikipedia REST API, fallback til OG-bilde, deretter emoji
-document.querySelectorAll('[data-wiki]').forEach(wrap => {
-  const term = wrap.getAttribute('data-wiki');
-  const ogUrl = wrap.getAttribute('data-og');
-  fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(term))
-    .then(r=>r.json()).then(d=>{
-      const url = d.thumbnail?.source;
-      if(url){ wrap.innerHTML='<img src="'+url+'" alt="'+term+'">'; }
-      else if(ogUrl){ loadOG(wrap, ogUrl); }
-    }).catch(()=>{ if(ogUrl) loadOG(wrap, ogUrl); });
-});
-function loadOG(wrap, url){
-  fetch('https://api.allorigins.win/get?url='+encodeURIComponent(url))
-    .then(r=>r.json()).then(d=>{
-      const m = d.contents?.match(/<meta[^>]+property="og:image"[^>]+content="([^"]+)"/);
-      if(m && m[1]){ wrap.innerHTML='<img src="'+m[1]+'" alt="" onerror="this.parentElement.innerHTML=this.parentElement.getAttribute('data-emoji')">'; }
-    }).catch(()=>{});
+
+// Last bilder via Wikipedia REST API
+function loadWikiImages() {
+  document.querySelectorAll('[data-wiki]').forEach(wrap => {
+    const term = wrap.getAttribute('data-wiki');
+    const emoji = wrap.getAttribute('data-emoji') || wrap.textContent.trim();
+    fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(term))
+      .then(r=>r.json()).then(d=>{
+        const url = d.thumbnail?.source;
+        if(url){
+          wrap.innerHTML='<img src="'+url+'" alt="'+term+'" style="width:100%;height:100%;object-fit:cover;display:block">';
+        }
+      }).catch(()=>{});
+  });
+}
+// Kjør etter DOM og bilder er klare
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', loadWikiImages);
+} else {
+  loadWikiImages();
 }
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -110,6 +118,10 @@ L.marker([49.418,0.229]).addTo(m).bindPopup('<strong>Musée Boudin</strong><br><
 L.marker([49.41,0.205]).addTo(m).bindPopup('<strong>Notre-Dame de Grâce</strong><br><small>Kapell med utsikt over havna</small>');
 L.marker([49.436,0.295]).addTo(m).bindPopup('<strong>Pont de Normandie</strong><br><small>Gratis for syklister</small>');
 m.setView([49.419,0.233],14);
+
+// Sikre at kartet rendres riktig (viktig for mobil)
+setTimeout(function(){ if(typeof m !== 'undefined') m.invalidateSize(); }, 300);
+window.addEventListener('resize', function(){ if(typeof m !== 'undefined') m.invalidateSize(); });
 </script>
 </body>
 </html>

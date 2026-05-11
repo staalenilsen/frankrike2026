@@ -158,36 +158,57 @@
       border:1.5px solid var(--green);border-radius:999px;padding:3px 10px;margin-left:8px}
 
     /* ── MODAL ── */
-    .modal-overlay{display:none;position:fixed;inset:0;z-index:1000;
-      background:rgba(31,45,58,.6);backdrop-filter:blur(4px);
-      -webkit-backdrop-filter:blur(4px);
-      align-items:flex-end;justify-content:center;padding:0}
-    @media(min-width:600px){
-      .modal-overlay{align-items:center;padding:20px}
-    }
-    .modal-overlay.open{display:flex}
-    .modal-box{background:var(--paper);border-radius:var(--r-lg) var(--r-lg) 0 0;
-      width:100%;max-height:90vh;overflow-y:auto;padding:20px 18px 32px;position:relative}
-    @media(min-width:600px){
-      .modal-box{border-radius:var(--r-lg);max-width:520px}
-    }
-    .modal-handle{width:40px;height:4px;background:var(--line);border-radius:4px;
-      margin:0 auto 16px;display:block}
-    @media(min-width:600px){.modal-handle{display:none}}
-    .modal-close{position:absolute;top:14px;right:14px;background:var(--accent-soft);
-      border:none;border-radius:50%;width:34px;height:34px;cursor:pointer;
-      font-size:16px;display:flex;align-items:center;justify-content:center;color:var(--accent)}
-    .modal-logo{font-size:19px;font-weight:700;margin:0 0 3px}
-    .modal-sub{font-size:12px;color:var(--muted);margin:0 0 14px}
+    /* ── Felles fullskjerm-modal (booking + severdigheter) ── */
+    .modal-overlay,.wmodal-overlay{
+      display:none;position:fixed;inset:0;z-index:1000;
+      background:rgba(18,32,44,.65);backdrop-filter:blur(3px);
+      -webkit-backdrop-filter:blur(3px);
+      align-items:flex-end;justify-content:center}
+    .modal-overlay.open,.wmodal-overlay.open{display:flex}
+
+    /* Felles modal-boks */
+    .modal-box,.wmodal{
+      background:var(--paper);width:100%;max-width:600px;
+      height:88vh;max-height:88vh;border-radius:20px 20px 0 0;
+      display:flex;flex-direction:column;overflow:hidden;
+      box-shadow:0 -4px 32px rgba(0,0,0,.22)}
+
+    /* Felles header */
+    .modal-header{
+      flex-shrink:0;padding:16px 18px 14px;
+      border-bottom:1px solid var(--line);background:var(--paper);
+      display:flex;align-items:center;justify-content:space-between;
+      position:sticky;top:0;z-index:2}
+    .modal-header h3{margin:0;font-size:16px;font-weight:700;color:#0d2e45;line-height:1.3}
+    .modal-header-close{
+      background:#f0f9fc;border:1px solid var(--line);border-radius:999px;
+      font-size:13px;font-weight:700;cursor:pointer;padding:6px 14px;
+      color:var(--sky);font-family:inherit;line-height:1;white-space:nowrap;flex-shrink:0}
+
+    /* Felles body (scrollbar) */
+    .modal-body{
+      flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;
+      padding:16px 18px}
+
+    /* Felles footer med stor lukk-knapp */
+    .modal-footer{
+      flex-shrink:0;padding:14px 18px;background:var(--paper);
+      border-top:1px solid var(--line)}
+    .modal-footer-btn{
+      display:block;width:100%;padding:15px;border-radius:13px;
+      background:var(--sky);color:white;font-size:15px;font-weight:700;
+      border:none;cursor:pointer;font-family:inherit;text-align:center;
+      letter-spacing:.01em}
+    .modal-footer-btn:active{background:#007aa0}
+
+    /* Booking-spesifikke stiler */
+    .modal-handle{display:none}
+    .modal-close{display:none}
+    .modal-logo{font-size:17px;font-weight:700;margin:0 0 3px}
+    .modal-sub{font-size:12px;color:var(--muted);margin:0 0 12px}
     .modal-badge{display:inline-flex;align-items:center;gap:6px;background:var(--green-soft);
       border:1.5px solid #7abe98;color:var(--green);font-weight:700;font-size:12px;
-      border-radius:999px;padding:5px 12px;margin-bottom:14px}
-    .mtable{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px;
-      border:1px solid var(--line);border-radius:var(--r-sm);overflow:hidden}
-    .mtable th{background:var(--accent-soft);color:var(--accent);padding:7px 10px;
-      text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
-    .mtable td{padding:8px 10px;border-bottom:1px solid #e9e2d8;font-size:13px}
-    .mtable tr:last-child td{border-bottom:none}
+      border-radius:999px;padding:5px 12px;margin-bottom:12px}
     .modal-total{display:flex;justify-content:space-between;align-items:center;
       background:var(--accent-soft);border-radius:var(--r-sm);
       padding:11px 14px;margin-bottom:12px;font-weight:700;font-size:14px}
@@ -198,85 +219,28 @@
     .modal-warn{background:var(--warn-soft);border:1px solid #e8c97a;
       border-radius:var(--r-sm);padding:11px 13px;font-size:13px;margin-bottom:12px;line-height:1.6}
 
-    /* ── OVERVIEW MAP ── */
-    .ov-map{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;margin-top:14px}
-    .ov-map .lmap-tall{height:320px;width:100%}
-    @media(min-width:600px){.ov-map .lmap-tall{height:440px}}
+    /* Severdigheter-spesifikke stiler */
+    .wmodal-route-note{font-size:12px;color:#6b7f8a;margin:0 0 12px;
+      background:#f0f9fc;padding:8px 10px;border-radius:10px;line-height:1.5}
+    .wstop{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+    .wstop:last-child{border-bottom:none}
+    .wstop-img{width:88px;height:66px;object-fit:cover;border-radius:10px;
+      flex-shrink:0;background:#eee}
+    .wstop-body{flex:1;min-width:0}
+    .wstop-name{font-size:14px;font-weight:700;margin:0 0 2px;color:#0d2e45}
+    .wstop-meta{font-size:11px;font-weight:600;color:var(--sky);margin:0 0 4px}
+    .wstop-desc{font-size:12px;color:#6b7f8a;margin:0 0 7px;line-height:1.5}
+    .wstop-links{display:flex;gap:5px;flex-wrap:wrap}
+    .wslink{font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;text-decoration:none}
+    .wslink.map{background:#e6f0fb;color:#185fa5;border:1px solid #b0cef5}
+    .wslink.web{background:#f0f9fc;color:#0d2e45;border:1px solid var(--line)}
+    .wslink.tip{background:#fff8e1;color:#b35e00;border:1px solid #e8c97a}
 
-    /* ── FOOTER ── */
-    .footer{text-align:center;padding:24px 16px 48px;color:var(--muted);font-size:12px;background:linear-gradient(to bottom,var(--bg),#e0f4fb)}
-
-    /* ── PRINT ── */
-    @media print{
-      .nav-wrap,.hero-actions{display:none!important}
-      .lmap,.lmap-tall{height:180px!important}
-      body{background:white}
-    }
-
-    .detail-link {
-      display: flex; align-items: center; justify-content: center; gap: 8px;
-      width: 100%; padding: 13px; border-radius: var(--r-sm);
-      background: var(--accent-soft); color: var(--accent);
-      font-weight: 700; font-size: 14px;
-      border: 1.5px solid var(--accent);
-      margin: 8px 0 0; text-decoration: none;
-    }
-    .detail-link:hover { background: #fde8cc; }
-    .detail-link:active { filter: brightness(.94); }
-
-    /* ── Timing row ── */
-    .trow.note{font-size:12px;color:var(--muted);line-height:1.6;padding-top:2px;
-      border-top:1px dashed var(--line);margin-top:2px}
-
-    /* ── SCENIC ROUTE ── */
-    .scenic-btn{display:flex;align-items:center;justify-content:center;gap:8px;
-      width:100%;padding:13px;border-radius:var(--r-sm);background:var(--green-soft);
-      color:var(--green);font-weight:700;font-size:14px;border:1.5px solid var(--green);
-      margin:8px 0 0;cursor:pointer;text-decoration:none}
-    .scenic-btn:hover{background:#d0edda}
-    .scenic-btn:active{filter:brightness(.94)}
-    .scenic-panel{display:none;background:linear-gradient(135deg,#f0faf4 0%,#f8fff9 100%);
-      border-top:2px solid var(--green);padding:14px 16px}
-    .scenic-panel.open{display:block}
-    .scenic-header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
-    .scenic-header h4{margin:0;font-size:14px;font-weight:700;color:var(--green)}
-    .scenic-badge{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;
-      background:var(--green-soft);color:var(--green);border:1px solid var(--green)}
-    .scenic-route{font-size:12px;color:var(--sky);font-family:monospace;
-      background:rgba(0,0,0,.03);padding:8px 10px;border-radius:8px;
-      margin:8px 0;line-height:1.6;word-break:break-word}
-    .scenic-stops{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:5px}
-    .scenic-stop-img{width:80px;height:60px;object-fit:cover;border-radius:8px;flex-shrink:0;margin-top:2px}
-    .scenic-stop-links{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}
-    .scenic-slink{font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;text-decoration:none;white-space:nowrap}
-    .scenic-slink.ticket{background:var(--accent-soft);color:var(--accent);border:1px solid #f0b070}
-    .scenic-slink.map{background:#e6f0fb;color:#185fa5;border:1px solid #b0cef5}
-    .scenic-slink.web{background:#f0f9fc;color:#0d2e45;border:1px solid var(--line)}
-    .scenic-stops li{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
-    .scenic-stops li:last-child{border-bottom:none}
-    .scenic-stops .s-icon{font-size:16px;flex-shrink:0;line-height:1}
-    .scenic-extra{font-size:12px;color:var(--muted);margin-top:8px;
-      background:rgba(255,255,255,.7);padding:8px 10px;border-radius:8px;
-      border-left:3px solid var(--green)}
-    .scenic-maps{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-    .scenic-map-btn{font-size:12px;font-weight:600;padding:7px 14px;border-radius:999px;
-      background:white;color:var(--green);border:1.5px solid var(--green);
-      text-decoration:none;display:inline-flex;align-items:center;gap:5px}
-
-    /* ── GOOGLE MAPS PANEL ── */
-    
-    /* ── KLIKKBARE DAGSRADER ── */
-    .day-link{color:var(--ink);text-decoration:none;font-weight:600;display:block;
-      padding:2px 0}
-    .day-link:hover{color:var(--sky);text-decoration:underline}
-    .ov-table tr:has(.day-link){cursor:pointer}
-    .ov-table tr:has(.day-link):hover td{background:var(--sky-soft)}
-  
-    /* ── Underveisattraksjoner ── */
+    /* Waypoint-knapp */
     .waypoint-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;
       padding:11px;border-radius:var(--r-sm);background:#fff8f0;color:#b35e00;
-      font-weight:700;font-size:13px;border:1.5px solid #e8a060;margin:8px 0 0;cursor:pointer;
-      font-family:inherit}
+      font-weight:700;font-size:13px;border:1.5px solid #e8a060;margin:8px 0 0;
+      cursor:pointer;font-family:inherit}
     .waypoint-btn:hover{background:#ffeedd}
     .wmodal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);
       z-index:900;align-items:flex-end;justify-content:center}
@@ -1625,9 +1589,12 @@ document.addEventListener("DOMContentLoaded",function(){
 <!-- ── MODAL DAGMAR ── -->
 <div class="modal-overlay" id="modal-reglisse" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-reglisse').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">R&eacute;glisse et Pain d&#x27;E&#x301;pices</p>
+    <div class="modal-header">
+      <h3>🏨 Réglisse et Pain d'E&#x301;pices</h3>
+      <button class="modal-header-close" onclick="document.getElementById('modal-reglisse').classList.remove('open')">Lukk ✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-logo">R&eacute;glisse et Pain d&#x27;E&#x301;pices</p>
     <p class="modal-sub">61 Rue Haute, 14600 Honfleur &middot; +33 2 31 87 84 80</p>
     <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5575.716.061</div>
     <table class="mtable">
@@ -1647,13 +1614,20 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis avbestilling til <strong>14. juli 2026 kl. 23:59</strong>. Etter 15. juli: gebyr p&aring; &euro;126. Datoene kan ikke endres.</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; Bekreftet p&aring; e-post: ijensen@q3p.no</p></div>
     <div class="modal-sec"><h4>&#x1F4AC; Velkomstbrev fra Fr&eacute;d&eacute;ric</h4><p style="font-size:12px;line-height:1.6"><strong>Innsjekk:</strong> Personlig 16:30&ndash;18:30 &middot; Self check-in 18:30&ndash;00:00 (instruksjoner sendes p&aring; e-post).<br><strong>Utsjekk:</strong> 09:00&ndash;11:00.<br><strong>Kontakt Fr&eacute;d&eacute;ric:</strong> <a href="tel:+33681603080">+33 6 81 60 30 80</a><br><br><strong>Frokost:</strong> Typisk fransk frokost 08:30&ndash;10:30 i felles frokoststue.<br><br><strong>&#x1F17F;&#xFE0F; Parkering:</strong> Gratis p&aring; <em>Parking du Naturospace</em>, Boulevard Charles V &mdash; 5 min gange. Rask av-/p&aring;lasting i Rue Haute er mulig (obs: gategrunn p&aring; hverdager og helger p&aring;ske&ndash;september). Adressen er nr. 61 Rue Haute, p&aring; venstre side i en liten smug rett overfor nr. 64 (etter restauranten &laquo;Gambetta&raquo;).<br><br><strong>&#x1F374; Restauranttips fra Frederic:</strong> L'Absinthe &middot; Le Lingot &middot; L'Endroit &middot; L'Envie &middot; Le Bistro du Port &middot; Le Petit Mareyeur.<br><br><strong>Betaling:</strong> P&aring; stedet ved avreise &mdash; kredittkort eller kontant.<br><strong>Nettsted:</strong> <a href="https://www.rpe-chambres-honfleur.fr" target="_blank">rpe-chambres-honfleur.fr</a></p></div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('modal-reglisse').classList.remove('open')">✕ Lukk</button>
+    </div>
   </div>
 </div>
 <div class="modal-overlay" id="modal-henry2" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-henry2').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">H&ocirc;tel Henry II Beaune Centre</p>
+    <div class="modal-header">
+      <h3>🏨 H&ocirc;tel Henry II Beaune Centre</h3>
+      <button class="modal-header-close" onclick="document.getElementById('modal-henry2').classList.remove('open')">Lukk ✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-logo">H&ocirc;tel Henry II Beaune Centre</p>
     <p class="modal-sub">12&ndash;14 Rue du Faubourg Saint Nicolas, 21200 Beaune &middot; +33 3 80 22 83 84</p>
     <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6502.640.090</div>
     <table class="mtable">
@@ -1675,13 +1649,20 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fra 16:00 (maks 00:00). Utsjekk 06:00&ndash;12:00. Meld ankomsttid p&aring; forh&aring;nd.</p></div>
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>18. juli 2026 kl. 16:00</strong>. Etter: gebyr &euro;153,09. Datoene kan ikke endres.</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('modal-henry2').classList.remove('open')">✕ Lukk</button>
+    </div>
   </div>
 </div>
 <div class="modal-overlay" id="modal-mittelwihr" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-mittelwihr').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">H&ocirc;tel Le Mittelwihr</p>
+    <div class="modal-header">
+      <h3>🏨 H&ocirc;tel Le Mittelwihr</h3>
+      <button class="modal-header-close" onclick="document.getElementById('modal-mittelwihr').classList.remove('open')">Lukk ✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-logo">H&ocirc;tel Le Mittelwihr</p>
     <p class="modal-sub">19 Route du Vin, 68630 Mittelwihr &middot; +33 3 89 49 09 90</p>
     <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6182.780.798</div>
     <table class="mtable">
@@ -1702,13 +1683,20 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>13. juli 2026 kl. 23:59</strong>. Fra 14. juli 2026: <strong>ingen refusjon</strong> (fullt bel&oslash;p belastes).</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
     <div class="modal-sec"><h4>&#x1F4AC; Bekreftelse fra Th&eacute;o (front desk)</h4><p style="font-size:12px;line-height:1.6;font-style:italic">&laquo;I confirm we accept dogs in our hotel for your stay. A special kit is prepared with pillows, water and dog's food &mdash; extra of &euro;20 per animal. Concerning parking, I confirm you will have a parking place with an electric charge &mdash; extra of &euro;20 per vehicle.&raquo;</p><p style="font-size:11px;color:var(--muted);margin-top:4px">&mdash; Th&eacute;o, Front desk Hotel Henry</p></div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('modal-mittelwihr').classList.remove('open')">✕ Lukk</button>
+    </div>
   </div>
 </div>
 <div class="modal-overlay" id="modal-karelv" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-karelv').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">Grand Hotel Karel V</p>
+    <div class="modal-header">
+      <h3>🏨 Grand Hotel Karel V</h3>
+      <button class="modal-header-close" onclick="document.getElementById('modal-karelv').classList.remove('open')">Lukk ✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-logo">Grand Hotel Karel V</p>
     <p class="modal-sub">Geertebolwerk 1, 3511 XA Utrecht &middot; +31 30 233 7555 &middot; <a href="https://www.karelv.nl" target="_blank">karelv.nl</a></p>
     <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6502.659.566</div>
     <table class="mtable">
@@ -1731,13 +1719,20 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fra kl. 15:00 torsdag 30. juli. Utsjekk til kl. 11:00 fredag 31. juli.</p></div>
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>28. juli 2026 kl. 23:59</strong>. Fra 29. juli 2026: gebyr &euro;219. Datoene kan ikke endres.</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('modal-karelv').classList.remove('open')">✕ Lukk</button>
+    </div>
   </div>
 </div>
 <div class="modal-overlay" id="modal-liho" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-liho').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">LIHO &mdash; einfach L&uuml;beck</p>
+    <div class="modal-header">
+      <h3>🏨 LIHO &mdash; einfach L&uuml;beck</h3>
+      <button class="modal-header-close" onclick="document.getElementById('modal-liho').classList.remove('open')">Lukk ✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-logo">LIHO &mdash; einfach L&uuml;beck</p>
     <p class="modal-sub">Lindenstr. 1A, 23558 L&uuml;beck &middot; +49 451 872100</p>
     <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5741.610.224</div>
     <table class="mtable">
@@ -1758,6 +1753,10 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fredag 31. juli kl. 15:00&ndash;00:00. Utsjekk l&oslash;rdag 1. august kl. 07:00&ndash;11:00.</p></div>
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>27. juli 2026 kl. 23:59</strong>. Fra 28. juli 2026: <strong>ingen refusjon</strong> (fullt bel&oslash;p).</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne &middot; ijensen@q3p.no</p></div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('modal-liho').classList.remove('open')">✕ Lukk</button>
+    </div>
   </div>
 
 
@@ -1766,9 +1765,12 @@ document.addEventListener("DOMContentLoaded",function(){
 </div>
 <div class="modal-overlay" id="modal-dagmar" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-dagmar').classList.remove('open')">✕</button>
-    <p class="modal-logo">Hotel Dagmar</p>
+    <div class="modal-header">
+      <h3>🏨 Hotel Dagmar</h3>
+      <button class="modal-header-close" onclick="document.getElementById('modal-dagmar').classList.remove('open')">Lukk ✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-logo">Hotel Dagmar</p>
     <p class="modal-sub">Torvet 1, 6760 Ribe · +45 75 42 00 33 · info@hoteldagmar.dk</p>
     <div class="modal-badge">✓ Bekreftet — Res.nr. 3126411</div>
     <table class="mtable">
@@ -1787,6 +1789,10 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-sec"><h4>Innsjekk / Utsjekk</h4><p>Innsjekk fra 15:00. Ankommer etter 16:00? Ring på forhånd. Utsjekk senest 11:00.</p></div>
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til og med 2 dager før. Kun skriftlig til info@hoteldagmar.dk</p></div>
     <div class="modal-sec"><h4>Kontakt</h4><p><a href="tel:+4575420033">+45 75 42 00 33</a> · <a href="mailto:info@hoteldagmar.dk">info@hoteldagmar.dk</a></p></div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('modal-dagmar').classList.remove('open')">✕ Lukk</button>
+    </div>
   </div>
 </div>
 
@@ -1800,9 +1806,12 @@ document.addEventListener("DOMContentLoaded",function(){
 
 <div class="modal-overlay" id="modal-amboise" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-amboise').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">La Maison Rabelais &mdash; Amboise</p>
+    <div class="modal-header">
+      <h3>🏨 La Maison Rabelais &mdash; Amboise</h3>
+      <button class="modal-header-close" onclick="document.getElementById('modal-amboise').classList.remove('open')">Lukk ✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-logo">La Maison Rabelais &mdash; Amboise</p>
     <p class="modal-sub">8 Rue Rabelais, 37400 Amboise &middot; +33 2 19 00 31 00</p>
     <div class="modal-badge">&#x2713; Bekreftet &mdash; direkte e-post booking &middot; Kontakt: Quentin</div>
     <table class="mtable">
@@ -1823,14 +1832,21 @@ document.addEventListener("DOMContentLoaded",function(){
     <p>Quentin &mdash; Resepsjonist &middot; <a href="tel:+33219003100">+33 2 19 00 31 00</a> &middot; <a href="mailto:info@maisonrabelais.com">info@maisonrabelais.com</a></p>
     <p><a href="https://www.maisonrabelais.fr" target="_blank">maisonrabelais.fr</a></p></div>
     <div class="modal-warn">&#x26A0;&#xFE0F; Ingen booking.com-bekreftelsesnummer &mdash; direkte e-postbooking. Ta vare p&aring; e-posten fra Quentin som dokumentasjon ved innsjekk.</div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('modal-amboise').classList.remove('open')">✕ Lukk</button>
+    </div>
   </div>
 </div>
 
 <div class="modal-overlay" id="modal-furstenhof" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-furstenhof').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">Althoff Hotel F&uuml;rstenhof &mdash; Celle</p>
+    <div class="modal-header">
+      <h3>🏨 Althoff Hotel F&uuml;rstenhof &mdash; Celle</h3>
+      <button class="modal-header-close" onclick="document.getElementById('modal-furstenhof').classList.remove('open')">Lukk ✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-logo">Althoff Hotel F&uuml;rstenhof &mdash; Celle</p>
     <p class="modal-sub">Hannoversche Str. 55/56, 29221 Celle &middot; +49 5141 201140</p>
     <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5694452013</div>
     <table class="mtable">
@@ -1850,13 +1866,20 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>11. juli 2026 kl. 23:59</strong>. Fra 12. juli: <strong>&euro;136,32</strong>.</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne</p></div>
     <div class="modal-warn">&#x26A0;&#xFE0F; Ingen forskuddsbetaling, men depositum kan reserveres p&aring; kortet. Oppgi forventet ankomsttid p&aring; forh&aring;nd.</div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('modal-furstenhof').classList.remove('open')">✕ Lukk</button>
+    </div>
   </div>
 </div>
 <div class="modal-overlay" id="modal-nells" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-nells').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">Nells Park Hotel &mdash; Trier</p>
+    <div class="modal-header">
+      <h3>🏨 Nells Park Hotel &mdash; Trier</h3>
+      <button class="modal-header-close" onclick="document.getElementById('modal-nells').classList.remove('open')">Lukk ✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-logo">Nells Park Hotel &mdash; Trier</p>
     <p class="modal-sub">Dasbachstr. 12, 54292 Trier &middot; +49 651 14440</p>
     <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 5986039170</div>
     <table class="mtable">
@@ -1876,13 +1899,20 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>14. juli 2026 kl. 18:00</strong>. Etter dette: <strong>&euro;141,30</strong> (hele totalprisen).</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne</p></div>
     <div class="modal-warn">&#x26A0;&#xFE0F; Smal avbestillingsfrist: gratis kun frem til kl. 18:00 p&aring; selve innsjekkingsdagen (14. juli).</div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('modal-nells').classList.remove('open')">✕ Lukk</button>
+    </div>
   </div>
 </div>
 <div class="modal-overlay" id="modal-koppes" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="modal-box">
-    <span class="modal-handle"></span>
-    <button class="modal-close" onclick="document.getElementById('modal-koppes').classList.remove('open')">&#x2715;</button>
-    <p class="modal-logo">Koppes M&oslash;lle B&amp;B &mdash; Borup</p>
+    <div class="modal-header">
+      <h3>🏨 Koppes M&oslash;lle B&B &mdash; Borup</h3>
+      <button class="modal-header-close" onclick="document.getElementById('modal-koppes').classList.remove('open')">Lukk ✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-logo">Koppes M&oslash;lle B&amp;B &mdash; Borup</p>
     <p class="modal-sub">Halk&aelig;rvej 100, 9240 Borup, Danmark &middot; +45 25 67 35 04</p>
     <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6000718885</div>
     <table class="mtable">
@@ -1901,15 +1931,19 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>24. juli 2026 kl. 23:59</strong>. Fra 25. juli: <strong>DKK 900</strong> (hele beløpet).</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne</p></div>
     <div class="modal-warn">&#x26A0;&#xFE0F; Liten B&amp;B &mdash; meld fra om forventet ankomsttid p&aring; forh&aring;nd. Ingen utdrikningslag/grupper.</div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('modal-koppes').classList.remove('open')">✕ Lukk</button>
+    </div>
   </div>
 </div>
 <div class="wmodal-overlay" id="wp-dag2" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="wmodal">
-    <div class="wmodal-header">
+    <div class="modal-header">
       <h3>📌 Severdigheter på veien</h3>
-      <button class="wmodal-close-top" onclick="document.getElementById('wp-dag2').classList.remove('open')">Lukk ✕</button>
+      <button class="modal-header-close" onclick="document.getElementById('wp-dag2').classList.remove('open')">Lukk ✕</button>
     </div>
-    <div class="wmodal-body">
+    <div class="modal-body">
       <p class="wmodal-route-note"><strong>Ribe → Celle via Hamburg Moorfleet</strong><br>Avkjøring fra A39 mot Lüneburg — ca. 10 min omvei. Ellers rett motorvei.</p>
       <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Luneburg_Alter_Kran_01.jpg/640px-Luneburg_Alter_Kran_01.jpg" alt="Lüneburg Altstadt" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
     <p class="wstop-name">Lüneburg Altstadt</p>
@@ -1918,18 +1952,18 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Lüneburg+Altstadt+Stintmarkt" target="_blank">📍 Kart</a><a class="wslink web" href="https://www.lueneburg.de/Tourismus" target="_blank">🌐 lueneburg.de</a></div>
   </div></div>
     </div>
-    <div class="wmodal-footer">
-      <button class="wmodal-close-btn" onclick="document.getElementById('wp-dag2').classList.remove('open')">✕ Lukk</button>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('wp-dag2').classList.remove('open')">✕ Lukk</button>
     </div>
   </div>
 </div>
 <div class="wmodal-overlay" id="wp-dag9" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="wmodal">
-    <div class="wmodal-header">
+    <div class="modal-header">
       <h3>📌 Severdigheter på veien</h3>
-      <button class="wmodal-close-top" onclick="document.getElementById('wp-dag9').classList.remove('open')">Lukk ✕</button>
+      <button class="modal-header-close" onclick="document.getElementById('wp-dag9').classList.remove('open')">Lukk ✕</button>
     </div>
-    <div class="wmodal-body">
+    <div class="modal-body">
       <p class="wmodal-route-note"><strong>Oyé → Saint-Émilion via A89 og Brive</strong><br>Périgueux ligger rett på A89 mellom Brive og Bordeaux — ingen merkbar omvei.</p>
       <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Périgueux_vieille_ville.jpg/640px-Périgueux_vieille_ville.jpg" alt="Périgueux — romerbyen" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
     <p class="wstop-name">Périgueux — romerbyen</p>
@@ -1938,18 +1972,18 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Tour+de+Vésone+Périgueux" target="_blank">📍 Tour de Vésone</a><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Cathédrale+Saint-Front+Périgueux" target="_blank">📍 Katedralen</a><a class="wslink web" href="https://www.tourisme-grandperigueux.fr/en" target="_blank">🌐 tourisme-grandperigueux.fr</a></div>
   </div></div>
     </div>
-    <div class="wmodal-footer">
-      <button class="wmodal-close-btn" onclick="document.getElementById('wp-dag9').classList.remove('open')">✕ Lukk</button>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('wp-dag9').classList.remove('open')">✕ Lukk</button>
     </div>
   </div>
 </div>
 <div class="wmodal-overlay" id="wp-dag11" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="wmodal">
-    <div class="wmodal-header">
+    <div class="modal-header">
       <h3>📌 Severdigheter på veien</h3>
-      <button class="wmodal-close-top" onclick="document.getElementById('wp-dag11').classList.remove('open')">Lukk ✕</button>
+      <button class="modal-header-close" onclick="document.getElementById('wp-dag11').classList.remove('open')">Lukk ✕</button>
     </div>
-    <div class="wmodal-body">
+    <div class="modal-body">
       <p class="wmodal-route-note"><strong>Saint-Émilion → Amboise via Bordeaux og Tours</strong><br>Poitiers Baptisteriet (4. årh.) og Notre-Dame la Grande er rett ved E11/N10 — 10 min avkjøring.</p>
       <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Notre_Dame_la_Grande.jpg/640px-Notre_Dame_la_Grande.jpg" alt="Poitiers — Notre-Dame la Grande" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
     <p class="wstop-name">Poitiers — Notre-Dame la Grande</p>
@@ -1958,18 +1992,18 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Notre-Dame+la+Grande+Poitiers" target="_blank">📍 Notre-Dame la Grande</a><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Baptistère+Saint-Jean+Poitiers" target="_blank">📍 Baptisteriet</a><a class="wslink web" href="https://www.poitiers.fr/c__231_671__accueil.aspx" target="_blank">🌐 poitiers.fr</a></div>
   </div></div>
     </div>
-    <div class="wmodal-footer">
-      <button class="wmodal-close-btn" onclick="document.getElementById('wp-dag11').classList.remove('open')">✕ Lukk</button>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('wp-dag11').classList.remove('open')">✕ Lukk</button>
     </div>
   </div>
 </div>
 <div class="wmodal-overlay" id="wp-dag13" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="wmodal">
-    <div class="wmodal-header">
+    <div class="modal-header">
       <h3>📌 Severdigheter på veien</h3>
-      <button class="wmodal-close-top" onclick="document.getElementById('wp-dag13').classList.remove('open')">Lukk ✕</button>
+      <button class="modal-header-close" onclick="document.getElementById('wp-dag13').classList.remove('open')">Lukk ✕</button>
     </div>
-    <div class="wmodal-body">
+    <div class="modal-body">
       <p class="wmodal-route-note"><strong>Honfleur → Utrecht via Belgia (E40/A16)</strong><br>Gent og Brügge ligger begge rett på E40. LEZ-sone i Gent — nordisk elbil er OK. Brügge: parkering ved jernbanestasjonen.</p>
       <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Bruges_-_panoramio_%2830%29.jpg/640px-Bruges_-_panoramio_%2830%29.jpg" alt="Brügge — Markt og kanalene" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
     <p class="wstop-name">Brügge — Markt og kanalene</p>
@@ -1984,18 +2018,18 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Graslei+Gent+Belgium" target="_blank">📍 Graslei Gent</a><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Park+and+Ride+Expo+Gent" target="_blank">📍 P+R Expo</a><a class="wslink web" href="https://visit.gent.be/en" target="_blank">🌐 visitgent.be</a><a class="wslink tip" href="https://www.low-emissionzone.be" target="_blank">💡 LEZ-registrering</a></div>
   </div></div>
     </div>
-    <div class="wmodal-footer">
-      <button class="wmodal-close-btn" onclick="document.getElementById('wp-dag13').classList.remove('open')">✕ Lukk</button>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('wp-dag13').classList.remove('open')">✕ Lukk</button>
     </div>
   </div>
 </div>
 <div class="wmodal-overlay" id="wp-dag14" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="wmodal">
-    <div class="wmodal-header">
+    <div class="modal-header">
       <h3>📌 Severdigheter på veien</h3>
-      <button class="wmodal-close-top" onclick="document.getElementById('wp-dag14').classList.remove('open')">Lukk ✕</button>
+      <button class="modal-header-close" onclick="document.getElementById('wp-dag14').classList.remove('open')">Lukk ✕</button>
     </div>
-    <div class="wmodal-body">
+    <div class="modal-body">
       <p class="wmodal-route-note"><strong>Utrecht → Lübeck via Hamburg Moorfleet</strong><br>Bremen ligger rett på A1 mellom Utrecht og Hamburg — ca. 10 min avkjøring til Marktplatz.</p>
       <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Bremer_Rathaus_und_Roland.jpg/640px-Bremer_Rathaus_und_Roland.jpg" alt="Bremen — Marktplatz og Roland (UNESCO)" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
     <p class="wstop-name">Bremen — Marktplatz og Roland (UNESCO)</p>
@@ -2004,18 +2038,18 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Marktplatz+Bremen+Germany" target="_blank">📍 Marktplatz Bremen</a><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Parkhaus+Am+Brill+Bremen" target="_blank">📍 Parkhaus Am Brill</a><a class="wslink web" href="https://www.bremen.eu/tourism" target="_blank">🌐 bremen.eu</a></div>
   </div></div>
     </div>
-    <div class="wmodal-footer">
-      <button class="wmodal-close-btn" onclick="document.getElementById('wp-dag14').classList.remove('open')">✕ Lukk</button>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('wp-dag14').classList.remove('open')">✕ Lukk</button>
     </div>
   </div>
 </div>
 <div class="wmodal-overlay" id="wp-dag15" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="wmodal">
-    <div class="wmodal-header">
+    <div class="modal-header">
       <h3>📌 Severdigheter på veien</h3>
-      <button class="wmodal-close-top" onclick="document.getElementById('wp-dag15').classList.remove('open')">Lukk ✕</button>
+      <button class="modal-header-close" onclick="document.getElementById('wp-dag15').classList.remove('open')">Lukk ✕</button>
     </div>
-    <div class="wmodal-body">
+    <div class="modal-body">
       <p class="wmodal-route-note"><strong>Lübeck → Borup/Nibe via Padborg E45</strong><br>Schleswig og Kolding ligger begge rett på E45. Begge er enkle avkjøringer uten omvei.</p>
       <div class="wstop"><img class="wstop-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Wikingermuseum_Haithabu.jpg/640px-Wikingermuseum_Haithabu.jpg" alt="Schleswig — Wikingermuseet Haithabu" loading="lazy" onerror="this.style.display='none'"><div class="wstop-body">
     <p class="wstop-name">Schleswig — Wikingermuseet Haithabu</p>
@@ -2030,8 +2064,8 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="wstop-links"><a class="wslink map" href="https://www.google.com/maps/search/?api=1&query=Koldinghus+Kolding+Denmark" target="_blank">📍 Koldinghus</a><a class="wslink web" href="https://www.koldinghus.dk/en" target="_blank">🌐 koldinghus.dk</a></div>
   </div></div>
     </div>
-    <div class="wmodal-footer">
-      <button class="wmodal-close-btn" onclick="document.getElementById('wp-dag15').classList.remove('open')">✕ Lukk</button>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('wp-dag15').classList.remove('open')">✕ Lukk</button>
     </div>
   </div>
 </div>

@@ -83,6 +83,10 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
 const places=[[57.048,9.918,'Scandic Aalborg City','Overnatting'],[57.043,9.920,'Jomfru Ane Gade','Festgaten'],[57.046,9.914,'Limfjorden-promenaden','Fin hundetursttur'],[57.048,9.916,'Restaurant Provence','Fransk, havneutsikt'],[57.047,9.917,'Penny Lane Café','Hundrevennlig bakeri'],[57.048,9.915,'Budolfi Kirke','Historisk gamlebyen']];
 places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
 m.setView([57.047,9.917],14);
+
+// Sikre at kartet rendres riktig (viktig for mobil)
+setTimeout(function(){ if(typeof m !== 'undefined') m.invalidateSize(); }, 300);
+window.addEventListener('resize', function(){ if(typeof m !== 'undefined') m.invalidateSize(); });
 </script>
 </body>
 </html>

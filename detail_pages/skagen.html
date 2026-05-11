@@ -155,6 +155,10 @@ const places=[
 ];
 places.forEach(([lat,lng,n,note])=>L.marker([lat,lng]).addTo(m).bindPopup(`<strong>${n}</strong><br><small>${note}</small>`));
 m.setView([57.7350,10.590],13);
+
+// Sikre at kartet rendres riktig (viktig for mobil)
+setTimeout(function(){ if(typeof m !== 'undefined') m.invalidateSize(); }, 300);
+window.addEventListener('resize', function(){ if(typeof m !== 'undefined') m.invalidateSize(); });
 </script>
 </body>
 </html>
