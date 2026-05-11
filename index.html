@@ -475,6 +475,7 @@
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+495141201140">+49 5141 201140</a></span></div>
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.althoffcollection.com/en/althoff-hotel-fuerstenhof-celle" target="_blank">althoffhotels.com</a></span></div>
           <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Frokost €32/pers · Middag €60/pers (ikke inkl.)</span></div>
+          <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">Underjordisk garasje €18/natt · Utendørs foran €10/natt · EV-lading €0,52/kWh</span></div>
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Aral Hamburg Moorfleet</strong> (~225 km fra Ribe) · <button onclick="var p=PLACES['moorfleet'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}">📍 Kart</button></span></div>
         </div>
       </div>
@@ -531,6 +532,7 @@
           <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">Dasbachstraße 12, 54292 Trier<br><button style="font-size:11px" onclick="var p=PLACES['dag3'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}">📍 Kart</button></span></div>
           <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+4965114440">+49 651 14440</a></span></div>
           <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://nellsparkhotel.de" target="_blank">nellsparkhotel.de</a></span></div>
+          <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">€8/natt foran hotellet, ingen reservasjon · EV-lading €0,46/kWh</span></div>
           <div class="info-row"><span class="info-label warn">⚡ Lading</span><span class="info-val warn"><strong>Ionity Kirchheimer Dreieck</strong> (~190 km) · <button onclick="var p=PLACES['kirchheim'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}">📍 Kart</button></span></div>
         </div>
       </div>
@@ -582,13 +584,16 @@
       <div style="padding:16px 16px 0"><h3>Overnatting</h3></div>
       <div style="padding:0 16px 0">
         <div class="info-rows">
-          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Sofitel Strasbourg Grande Île</span></div>
-          <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+33388154900">+33 3 88 15 49 00</a></span></div>
-          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://sofitel.accor.com/en/hotels/0568.html" target="_blank">sofitel.accor.com</a></span></div>
-          <div class="info-row"><span class="info-label">Merknad</span><span class="info-val">Avklar parkering direkte</span></div>
+          <div class="info-row"><span class="info-label">Hotell</span><span class="info-val">Hôtel LÉONOR the place to live <span class="booket-badge">✓ BOOKET</span></span></div>
+          <div class="info-row"><span class="info-label">Adresse</span><span class="info-val">11 Rue de la Nuée-Bleue, 67000 Strasbourg<br><button onclick="var p=PLACES['dag4'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}">📍 Kart</button></span></div>
+          <div class="info-row"><span class="info-label">Telefon</span><span class="info-val"><a href="tel:+33367292929">+33 3 67 29 29 29</a></span></div>
+          <div class="info-row"><span class="info-label">Nettside</span><span class="info-val"><a href="https://www.staycollection.com" target="_blank">staycollection.com</a></span></div>
+          <div class="info-row"><span class="info-label">Parkering</span><span class="info-val">€35/natt, utendørs (bak bygget), ingen EV-lading. Reserver i forkant.</span></div>
+          <div class="info-row"><span class="info-label">Frokost</span><span class="info-val">€29 per person per natt (tillegg)</span></div>
         </div>
       </div>
       <div style="padding:0 16px 16px"><button class="route-btn" onclick="var r=ROUTES['dag4r'];if(r){window.open(buildRouteURL(r.stops),'_blank');}">→ Kjørerute Google Maps</button>
+        <button class="booking-btn" onclick="document.getElementById('modal-leonor').classList.add('open')">&#x2713; Bekreftet reservasjon &mdash; vis detaljer</button>
         <a class="detail-link" href="detail_pages/strasbourg.html">🗺 Utforsk Strasbourg — restauranter &amp; opplevelser</a></div>
     </div>
     <div class="day-right">
@@ -616,7 +621,7 @@
           <p style="font-size:12px;color:var(--muted);margin:0">☀️ <strong>Morgen:</strong> God tid til frokost og morgentur langs Mosel</p>
           <p style="font-size:12px;color:var(--muted);margin:0">🌙 <strong>Kveld:</strong> Ankommer Strasbourg til lunsj → hel ettermiddag og kveld i Petite France</p>
         <div style="margin-top:6px;padding:7px 10px;background:var(--sky-soft);border-radius:10px;border-left:3px solid var(--sky)">
-          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Strasbourg Sud — Rue du 23 Novembre, Ostwald (~7 km fra hotellet, 8 min). 8×150 kW, CCS, 24/7. <button onclick="var p=PLACES['dag4'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}">📍 Kart</button></p></div>
+          <p style="font-size:12px;margin:0;color:var(--ink)">⚡ <strong>Nærladning:</strong> Tesla Supercharger Strasbourg Sud — Rue du 23 Novembre, Ostwald (~6 km fra hotellet, ~8 min). 8×150 kW, CCS, 24/7. <button onclick="var p=PLACES['dag4'];if(p){window.open('https://www.google.com/maps/search/?api=1&query='+p.mapsQ,'_blank');}">📍 Kart</button></p></div>
         </div>
       </div>
 
@@ -1381,7 +1386,7 @@ const PLACES = {
   dag1:  { lat:55.332,  lon:8.773,   name:"Hotel Dagmar",                 address:"Torvet 1, 6760 Ribe",                             mapsQ:"Torvet+1+6760+Ribe+Denmark" },
   dag2:  { lat:52.6247,  lon:10.0798,  name:"Althoff Hotel Fürstenhof",     address:"Hannoversche Str. 55/56, 29221 Celle",             mapsQ:"Hannoversche+Strasse+55+29221+Celle+Germany" },
   dag3:  { lat:49.7673,  lon:6.6415,   name:"Nells Park Hotel",             address:"Dasbachstraße 12, 54292 Trier",                   mapsQ:"Dasbachstrasse+12+54292+Trier+Germany" },
-  dag4:  { lat:48.583,  lon:7.745,   name:"Sofitel Strasbourg Grande Île",address:"4 Place Saint-Pierre-le-Jeune, 67000 Strasbourg", mapsQ:"4+Place+Saint-Pierre-le-Jeune+67000+Strasbourg+France" },
+  dag4:  { lat:48.5843, lon:7.7477,  name:"Hôtel LÉONOR the place to live",      address:"11 Rue de la Nuée-Bleue, 67000 Strasbourg",           mapsQ:"11+Rue+de+la+Nuée-Bleue+67000+Strasbourg+France" },
   dag5:  { lat:48.127,  lon:7.357,   name:"Hôtel Le Mittelwihr",         address:"19 Route du Vin, 68630 Mittelwihr",               mapsQ:"19+Route+du+Vin+68630+Mittelwihr+France" },
   dag7:  { lat:47.021,  lon:4.836,   name:"Hôtel Henry II Beaune Centre",address:"12-14 Faubourg Saint Nicolas, 21200 Beaune",     mapsQ:"12-14+Faubourg+Saint+Nicolas+21200+Beaune+France" },
   dag8:  { lat:46.373,  lon:4.325,   name:"Oyé 🏡 Foreldrehuset", address:"5 La Croix, 71800 Oyé",                           mapsQ:"5+La+Croix+71800+Oy%C3%A9+France" },
@@ -1528,7 +1533,7 @@ document.addEventListener("DOMContentLoaded",function(){
     fit(m,ROADS.d3);})();
 
   (function(){const m=mkMap('m4');if(!m)return;route(m,ROADS.d4);
-    mk(m,...S.trier,DS,'Trier','');mk(m,...S.luxembourg,DM,'Luxembourg','');mk(m,...S.strasbourg,DE,'Strasbourg','Sofitel Grande Île · 4 Place Saint-Pierre-le-Jeune');
+    mk(m,...S.trier,DS,'Trier','');mk(m,...S.luxembourg,DM,'Luxembourg','');mk(m,...S.strasbourg,DE,'Strasbourg','Hôtel LÉONOR · 11 Rue de la Nuée-Bleue');
     fit(m,ROADS.d4);})();
 
   (function(){const m=mkMap('m5');if(!m)return;route(m,ROADS.d5);
@@ -1865,6 +1870,8 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-total"><span>Totalt (rom)</span><span>&euro;151,47</span></div>
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>11. juli 2026 kl. 23:59</strong>. Fra 12. juli: <strong>&euro;136,32</strong>.</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne</p></div>
+      <div class="modal-sec"><h4>Parkering</h4>
+        <p>Underjordisk garasje: <strong>&euro;18/natt</strong> &middot; Utendørs foran: <strong>&euro;10/natt</strong> &middot; EV-lading: €0,52/kWh. Reserver i forkant.</p></div>
     <div class="modal-warn">&#x26A0;&#xFE0F; Ingen forskuddsbetaling, men depositum kan reserveres p&aring; kortet. Oppgi forventet ankomsttid p&aring; forh&aring;nd.</div>
     </div>
     <div class="modal-footer">
@@ -1898,7 +1905,9 @@ document.addEventListener("DOMContentLoaded",function(){
     <div class="modal-total"><span>Totalt inkl. byskat</span><span>&euro;146,60</span></div>
     <div class="modal-sec"><h4>Avbestilling</h4><p>Gratis til <strong>14. juli 2026 kl. 18:00</strong>. Etter dette: <strong>&euro;141,30</strong> (hele totalprisen).</p></div>
     <div class="modal-sec"><h4>Gjest</h4><p>Ingvild Jensen &middot; 2 voksne</p></div>
-    <div class="modal-warn">&#x26A0;&#xFE0F; Smal avbestillingsfrist: gratis kun frem til kl. 18:00 p&aring; selve innsjekkingsdagen (14. juli).</div>
+    <div class="modal-sec"><h4>Parkering</h4>
+        <p>€8/natt foran hotellet &middot; Ingen reservasjon nødvendig &middot; EV-lading: €0,46/kWh</p></div>
+      <div class="modal-warn">&#x26A0;&#xFE0F; Smal avbestillingsfrist: gratis kun frem til kl. 18:00 p&aring; selve innsjekkingsdagen (14. juli).</div>
     </div>
     <div class="modal-footer">
       <button class="modal-footer-btn" onclick="document.getElementById('modal-nells').classList.remove('open')">✕ Lukk</button>
@@ -2070,6 +2079,47 @@ document.addEventListener("DOMContentLoaded",function(){
   </div>
 </div>
 
+<div class="modal-overlay" id="modal-leonor" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>🏨 Hôtel LÉONOR the place to live</h3>
+      <button class="modal-header-close" onclick="document.getElementById('modal-leonor').classList.remove('open')">Lukk ✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-logo">Hôtel LÉONOR the place to live By Stay Collection</p>
+      <p class="modal-sub">11 Rue de la Nuée-Bleue, 67000 Strasbourg &middot; +33 3 67 29 29 29</p>
+      <div class="modal-badge">&#x2713; Bekreftet &mdash; Res.nr. 6773041369</div>
+      <table class="mtable">
+        <thead><tr><th>Rom</th><th>Ankomst</th><th>Avreise</th><th>Pris</th></tr></thead>
+        <tbody><tr><td>Dobbeltrom Classic</td><td>15.07 kl. 15:00&ndash;24:00</td><td>16.07 kl. 06:00&ndash;12:00</td><td>&euro;153,16</td></tr></tbody>
+      </table>
+      <table class="mtable">
+        <thead><tr><th>Kostnad</th><th>Pris</th></tr></thead>
+        <tbody>
+          <tr><td>Rom</td><td>&euro;153,16</td></tr>
+          <tr><td>MVA</td><td>&euro;15,32</td></tr>
+          <tr><td>Byskatt</td><td>&euro;5,72 (betales på stedet)</td></tr>
+        </tbody>
+      </table>
+      <div class="modal-total"><span>Total pris (rom)</span><strong>&euro;168,48</strong></div>
+      <div class="modal-warn">&#x26A0;&#xFE0F; Betaling planlagt automatisk 8. juli 2026 &mdash; kort •••• 2862 &mdash; €168,48. Byskatt €5,72 betales på hotellet.</div>
+      <div class="modal-sec"><h4>Avbestilling</h4>
+        <p>Gratis til <strong>9. juli 2026 kl. 23:59</strong>. Fra 10. juli: &euro;168,48.</p></div>
+      <div class="modal-sec"><h4>Gjest</h4>
+        <p>Ingvild Jensen &middot; 2 voksne</p></div>
+      <div class="modal-sec"><h4>Frokost</h4>
+        <p>&euro;29 per person per natt (tillegg, ikke inkludert)</p></div>
+      <div class="modal-sec"><h4>Parkering</h4>
+        <p>&euro;35/natt &middot; Utendørs, bak bygget, ingen EV-lading. <strong>Reserver på forhånd.</strong> Bruk parkeringen foran hotellet ved innsjekk for bagasje.</p></div>
+      <div class="modal-sec"><h4>EV-lading</h4>
+        <p>Ingen lading på hotellet. Tesla Supercharger Strasbourg Sud &mdash; Rue du 23 Novembre, Ostwald (~7 km fra hotellet). 8&times;150 kW, CCS, 24/7.</p></div>
+      <div class="modal-warn">&#x2139;&#xFE0F; Meld fra om forventet ankomsttid på forhånd. PIN: 9106 (konfidensielt). OBS: Hotellet er stengt 3.&ndash;17. august 2026 (etter vår avreise).</div>
+    </div>
+    <div class="modal-footer">
+      <button class="modal-footer-btn" onclick="document.getElementById('modal-leonor').classList.remove('open')">&#x2715; Lukk</button>
+    </div>
+  </div>
+</div>
 </body>
 
 <!-- deployed: 20260509155325 -->
